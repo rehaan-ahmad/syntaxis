@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap');
+@import "tailwindcss";
+@config "../tailwind.config.ts";
+
+:root {
+  /* BRAND PALETTE */
+  --color-bg:          #11100e;   /* Primary Background */
+  --color-accent:      #5d1c34;   /* Accent / Crimson */
+  --color-brand:       #a67d45;   /* Hero Brand / Gold */
+  --color-text-sec:    #899581;   /* Secondary Text / Sage */
+  --color-text-body:   #cdbbad;   /* Body Text / Parchment */
+  --color-text-pri:    #f0e9e3;   /* Primary Text / Ivory */
+
+  /* DERIVED */
+  --color-bg-glass:    rgba(17, 16, 14, 0.80);
+  --color-accent-glow: rgba(93, 28, 52, 0.40);
+  --color-brand-glow:  rgba(166, 125, 69, 0.30);
+  --color-border:      rgba(93, 28, 52, 0.40);
+  --color-border-gold: rgba(166, 125, 69, 0.40);
+
+  /* SPACING */
+  --space-unit: 8px;
+  --section-pad: clamp(4rem, 8vw, 8rem);
+
+  /* TYPOGRAPHY */
+  --font-heading: 'Cinzel', 'Georgia', 'Raleway SemiBold', serif;
+  --font-body:    'Inter', 'system-ui', sans-serif;
+  --font-mono:    'JetBrains Mono', monospace;
+
+  /* RADIUS */
+  --radius-sm:  4px;
+  --radius-md:  8px;
+  --radius-lg:  16px;
+  --radius-xl:  24px;
+  --radius-pill: 9999px;
+
+  /* Z-INDEX STACK */
+  --z-plasma:   0;
+  --z-sections: 10;
+  --z-glass:    5;
+  --z-nav:      50;
+  --z-effects:  20;
+  --z-modal:    100;
+}
+
+/* Base Styles */
+html {
+  scroll-behavior: smooth;
+  background-color: var(--color-bg);
+  color: var(--color-text-pri);
+  font-family: var(--font-body);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-bg);
+  color: var(--color-text-body);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom Thin Accent Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-accent);
+  border-radius: var(--radius-pill);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-brand);
+}
+
+/* Selection */
+::selection {
+  background-color: var(--color-accent);
+  color: var(--color-text-pri);
+}
+
+/* Typography Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  color: var(--color-text-pri);
+}
+
+/* Glass Card Helper Class */
+.glass-panel {
+  background: var(--color-bg-glass);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-panel:hover {
+  border-color: var(--color-border-gold);
+  box-shadow: 0 8px 32px 0 var(--color-brand-glow);
+}
+
+/* Abstergo Loader styling for contact form submission */
+.ui-abstergo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.abstergo-loader {
+  width: 48px;
+  height: 48px;
+  display: grid;
+}
+
+.abstergo-loader::before,
+.abstergo-loader::after {
+  content: "";
+  grid-area: 1/1;
+  background: var(--color-brand);
+  clip-path: polygon(50% 0%, 15% 100%, 98% 35%, 2% 35%, 85% 100%);
+  animation: abstergo-spin 1.8s infinite linear;
+}
+
+.abstergo-loader::after {
+  background: var(--color-accent);
+  animation-delay: -0.9s;
+}
+
+@keyframes abstergo-spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Theme Switch Toggle Styling (Reserved for V2 - Dark Mode Default V1) */
+.theme-switch-wrapper {
+  display: none; /* Invisible in V1 */
+}
+
+/* Text styles */
+.text-sage {
+  color: var(--color-text-sec);
+}
+.text-parchment {
+  color: var(--color-text-body);
+}
+.text-ivory {
+  color: var(--color-text-pri);
+}
+.text-gold {
+  color: var(--color-brand);
+}
+.text-crimson {
+  color: var(--color-accent);
+}

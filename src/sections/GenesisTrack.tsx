@@ -1,0 +1,193 @@
+import { motion } from 'framer-motion';
+import { Award, ShieldAlert, GraduationCap, ArrowRight } from 'lucide-react';
+import SectionHeading from '../components/ui/SectionHeading';
+import Card from '../components/ui/Card';
+import Badge from '../components/ui/Badge';
+import { SECTION_IDS, EXTERNAL_LINKS } from '../lib/constants';
+
+export function GenesisTrack() {
+  const juniorEvents = [
+    {
+      title: 'Genesis Hack',
+      description: 'A junior algorithmic and logic battle. Work in teams to build basic computational logic coordinates and solve escape puzzles.',
+      teamSize: '2-3 Students',
+      prize: '[PRIZE POOL TBD]'
+    },
+    {
+      title: 'Genesis Quiz',
+      description: 'Science, technology, and logical reasoning trivia contest testing broad awareness and STEM concepts.',
+      teamSize: '2 Students',
+      prize: '[PRIZE POOL TBD]'
+    }
+  ];
+
+  const fadeUpVariants = {
+    initial: { opacity: 0, y: 40 },
+    animate: { 
+      opacity: 1, 
+      y: 0,
+      transition: { duration: 0.8, ease: 'easeOut' as const }
+    }
+  };
+
+  return (
+    <div 
+      className="border-y border-[var(--color-border-gold)]"
+      style={{
+        background: 'linear-gradient(to bottom, rgba(17, 16, 14, 0.85), rgba(26, 22, 17, 0.9))',
+        backdropFilter: 'blur(12px)',
+        WebkitBackdropFilter: 'blur(12px)'
+      }}
+    >
+      <section 
+        id={SECTION_IDS.genesis} 
+        className="max-w-7xl mx-auto px-6 py-20 sm:py-32 flex flex-col gap-16 relative z-10"
+      >
+        {/* Section Heading with Outreach Badge */}
+        <motion.div
+          initial="initial"
+          whileInView="animate"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={fadeUpVariants}
+          className="flex flex-col items-center"
+        >
+          {/* School outreach ribbon badge */}
+          <Badge variant="brand" className="mb-4 bg-[var(--color-brand)]/20 border-[var(--color-brand)] text-[var(--color-brand)] px-4 py-1 tracking-[0.2em] font-semibold text-[10px] rounded-full animate-pulse shadow-[0_0_15px_var(--color-brand-glow)]">
+            School Outreach Wing
+          </Badge>
+          <SectionHeading title="GENESIS TRACK" subtitle="FOR CLASSES 9 & 10" />
+        </motion.div>
+
+        {/* 2-Column: Details and Image */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          {/* Left Description info */}
+          <motion.div 
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={fadeUpVariants}
+            className="flex flex-col gap-6"
+          >
+            <h3 className="text-2xl sm:text-3xl font-extrabold font-heading text-[var(--color-brand)] tracking-wider">
+              NURTURING JUNIOR GENIUSES
+            </h3>
+            <p className="text-base text-[var(--color-text-body)] leading-relaxed">
+              Curated exclusively for students in grades 9 and 10, the **Genesis Track** provides school students an introduction to the inter-college tech ecosystem. This dedicated wing aims to build interest in STEM concepts, logical thinking, and engineering fields.
+            </p>
+
+            {/* Why Join Points */}
+            <div className="flex flex-col gap-4 mt-2">
+              <div className="flex gap-4">
+                <div className="w-10 h-10 shrink-0 bg-[var(--color-brand)]/15 border border-[var(--color-brand)]/40 rounded-[var(--radius-md)] flex items-center justify-center text-[var(--color-brand)]">
+                  <GraduationCap className="w-5 h-5" />
+                </div>
+                <div>
+                  <h4 className="font-bold text-[var(--color-text-pri)] font-heading">STEM Foundations</h4>
+                  <p className="text-xs text-[var(--color-text-body)] mt-1">Develop key problem-solving skills, basic logic constructs, and algorithms.</p>
+                </div>
+              </div>
+              <div className="flex gap-4">
+                <div className="w-10 h-10 shrink-0 bg-[var(--color-brand)]/15 border border-[var(--color-brand)]/40 rounded-[var(--radius-md)] flex items-center justify-center text-[var(--color-brand)]">
+                  <Award className="w-5 h-5" />
+                </div>
+                <div>
+                  <h4 className="font-bold text-[var(--color-text-pri)] font-heading">Mentorship</h4>
+                  <p className="text-xs text-[var(--color-text-body)] mt-1">Receive guidance from RDEC tech mentors and college computer science professors.</p>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Right Image Showcase */}
+          <motion.div 
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={fadeUpVariants}
+            className="relative"
+          >
+            <div className="absolute inset-0 bg-gradient-to-br from-[var(--color-brand)] to-transparent rounded-[var(--radius-lg)] blur-md opacity-25" />
+            <img 
+              src={`https://placehold.co/400x400/${encodeURIComponent('a67d45')}/${encodeURIComponent('11100e')}?text=Genesis+Track`}
+              alt="[IMAGE PLACEHOLDER — 400x400 — Genesis Track photo]" 
+              className="w-full max-w-md mx-auto aspect-square object-cover rounded-[var(--radius-lg)] border border-[var(--color-border-gold)] shadow-2xl relative z-10"
+              loading="lazy"
+            />
+          </motion.div>
+        </div>
+
+        {/* Junior Event Cards Section */}
+        <div className="flex flex-col gap-8 mt-4">
+          <h4 className="text-xl font-bold uppercase font-heading text-center text-[var(--color-text-pri)] tracking-wider">
+            GENESIS EVENT SLATE
+          </h4>
+          <motion.div 
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={{
+              animate: { transition: { staggerChildren: 0.15 } }
+            }}
+            className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 max-w-4xl mx-auto w-full"
+          >
+            {juniorEvents.map((event, idx) => (
+              <motion.div key={idx} variants={fadeUpVariants}>
+                <Card className="h-full border border-[var(--color-border-gold)] p-8 flex flex-col justify-between hover:shadow-[0_0_20px_var(--color-brand-glow)] transition-all duration-300">
+                  <div className="flex flex-col gap-4">
+                    <Badge variant="brand" className="w-fit">Junior Division</Badge>
+                    <h5 className="text-2xl font-bold font-heading text-[var(--color-brand)] tracking-wide">
+                      {event.title}
+                    </h5>
+                    <p className="text-sm text-[var(--color-text-body)] leading-relaxed">
+                      {event.description}
+                    </p>
+                  </div>
+                  <div className="flex justify-between items-center text-[10px] text-[var(--color-text-sec)] font-bold tracking-wider mt-6 border-t border-[var(--color-border-gold)]/40 pt-4">
+                    <span>TEAM: {event.teamSize}</span>
+                    <span>PRIZE: {event.prize}</span>
+                  </div>
+                </Card>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+
+        {/* Eligibility criteria box and parent CTA */}
+        <motion.div 
+          initial="initial"
+          whileInView="animate"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={fadeUpVariants}
+          className="bg-[var(--color-bg)]/80 border border-[var(--color-border-gold)] p-6 sm:p-8 rounded-[var(--radius-lg)] flex flex-col md:flex-row justify-between items-center gap-6 max-w-4xl mx-auto w-full mt-4"
+        >
+          <div className="flex gap-4">
+            <div className="w-10 h-10 shrink-0 bg-[var(--color-accent)]/20 border border-[var(--color-accent)]/50 rounded-full flex items-center justify-center text-[var(--color-text-pri)]">
+              <ShieldAlert className="w-5 h-5 text-[var(--color-brand)]" />
+            </div>
+            <div>
+              <h5 className="font-bold text-[var(--color-text-pri)] font-heading">Eligibility Criteria</h5>
+              <ul className="text-xs text-[var(--color-text-body)] mt-1 list-disc list-inside flex flex-col gap-1 pr-4">
+                <li>Strictly limited to current class 9 and 10 students.</li>
+                <li>Official school nomination letter or valid school ID card is mandatory.</li>
+                <li>Zero registration fees for all qualified participants.</li>
+              </ul>
+            </div>
+          </div>
+          
+          <a 
+            href={EXTERNAL_LINKS.pragma}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 bg-[var(--color-brand)] text-[var(--color-bg)] font-bold px-6 py-3 rounded-[var(--radius-md)] hover:scale-105 transition-transform duration-200 text-xs shrink-0 whitespace-nowrap"
+          >
+            <span>Learn More on Pragma</span>
+            <ArrowRight className="w-3.5 h-3.5" />
+          </a>
+        </motion.div>
+
+      </section>
+    </div>
+  );
+}
+
+export default GenesisTrack;
