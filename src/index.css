@@ -5,6 +5,7 @@
 :root {
   /* BRAND PALETTE */
   --color-bg:          #11100e;   /* Primary Background */
+  --color-bg-deep:     #0a0908;   /* Deepest Background */
   --color-accent:      #5d1c34;   /* Accent / Crimson */
   --color-brand:       #a67d45;   /* Hero Brand / Gold */
   --color-text-sec:    #899581;   /* Secondary Text / Sage */

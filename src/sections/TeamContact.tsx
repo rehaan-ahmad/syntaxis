@@ -104,6 +104,7 @@ export function TeamContact() {
         setError(data.message || "Something went wrong. Email us at syntaxis@rdec.in");
       }
     } catch (err) {
+      console.error(err);
       setError("Something went wrong. Email us at syntaxis@rdec.in");
     } finally {
       setLoading(false);
@@ -195,7 +196,7 @@ export function TeamContact() {
             whileInView="animate"
             viewport={{ once: true, margin: "-100px" }}
             variants={fadeUpVariants}
-            className="flex flex-col bg-[#11100e]/50 border border-[var(--color-border)] p-6 sm:p-10 rounded-[var(--radius-lg)] shadow-2xl backdrop-blur-sm gap-6 mt-4"
+            className="flex flex-col bg-bg/50 border border-[var(--color-border)] p-6 sm:p-10 rounded-[var(--radius-lg)] shadow-2xl backdrop-blur-sm gap-6 mt-4"
           >
             {/* NO FORM TAGS - CONTROLLED DIV INPUT WORKFLOW */}
             <div className="flex flex-col gap-4">
@@ -207,7 +208,7 @@ export function TeamContact() {
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   placeholder="Enter your name"
-                  className="bg-[#11100e]/80 border border-[var(--color-border)] text-[var(--color-text-pri)] rounded-[var(--radius-sm)] px-4 py-3 text-sm focus:outline-none focus:border-[var(--color-brand)] transition-colors"
+                  className="bg-bg/80 border border-[var(--color-border)] text-[var(--color-text-pri)] rounded-[var(--radius-sm)] px-4 py-3 text-sm focus:outline-none focus:border-[var(--color-brand)] transition-colors"
                   disabled={loading}
                 />
               </div>
@@ -220,7 +221,7 @@ export function TeamContact() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Enter your email"
-                  className="bg-[#11100e]/80 border border-[var(--color-border)] text-[var(--color-text-pri)] rounded-[var(--radius-sm)] px-4 py-3 text-sm focus:outline-none focus:border-[var(--color-brand)] transition-colors"
+                  className="bg-bg/80 border border-[var(--color-border)] text-[var(--color-text-pri)] rounded-[var(--radius-sm)] px-4 py-3 text-sm focus:outline-none focus:border-[var(--color-brand)] transition-colors"
                   disabled={loading}
                 />
               </div>
@@ -233,7 +234,7 @@ export function TeamContact() {
                   value={institution}
                   onChange={(e) => setInstitution(e.target.value)}
                   placeholder="Enter your college name"
-                  className="bg-[#11100e]/80 border border-[var(--color-border)] text-[var(--color-text-pri)] rounded-[var(--radius-sm)] px-4 py-3 text-sm focus:outline-none focus:border-[var(--color-brand)] transition-colors"
+                  className="bg-bg/80 border border-[var(--color-border)] text-[var(--color-text-pri)] rounded-[var(--radius-sm)] px-4 py-3 text-sm focus:outline-none focus:border-[var(--color-brand)] transition-colors"
                   disabled={loading}
                 />
               </div>
@@ -246,7 +247,7 @@ export function TeamContact() {
                   onChange={(e) => setMessage(e.target.value)}
                   placeholder="Type your query here..."
                   rows={4}
-                  className="bg-[#11100e]/80 border border-[var(--color-border)] text-[var(--color-text-pri)] rounded-[var(--radius-sm)] px-4 py-3 text-sm focus:outline-none focus:border-[var(--color-brand)] transition-colors resize-none"
+                  className="bg-bg/80 border border-[var(--color-border)] text-[var(--color-text-pri)] rounded-[var(--radius-sm)] px-4 py-3 text-sm focus:outline-none focus:border-[var(--color-brand)] transition-colors resize-none"
                   disabled={loading}
                 />
               </div>

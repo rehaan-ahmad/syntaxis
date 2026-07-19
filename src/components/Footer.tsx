@@ -5,7 +5,7 @@ import { SECTION_IDS, EXTERNAL_LINKS, FEST_INFO } from '../lib/constants';
 
 export function Footer() {
   return (
-    <footer className="bg-[#0a0908] border-t border-[var(--color-accent)]/40 relative z-10 select-none py-12 px-6">
+    <footer className="bg-deep border-t border-[var(--color-accent)]/40 relative z-10 select-none py-12 px-6">
       <div className="max-w-7xl mx-auto flex flex-col gap-10">
         
         {/* Main Grid */}
@@ -32,7 +32,7 @@ export function Footer() {
                 href={EXTERNAL_LINKS.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-8 h-8 rounded-full border border-[var(--color-border)]/50 bg-[#11100e] flex items-center justify-center text-[var(--color-text-sec)] hover:text-[var(--color-brand)] hover:border-[var(--color-brand)] transition-colors cursor-pointer"
+                className="w-8 h-8 rounded-full border border-[var(--color-border)]/50 bg-bg flex items-center justify-center text-[var(--color-text-sec)] hover:text-[var(--color-brand)] hover:border-[var(--color-brand)] transition-colors cursor-pointer"
                 aria-label="Instagram"
               >
                 <Instagram className="w-4 h-4" />
@@ -41,7 +41,7 @@ export function Footer() {
                 href={EXTERNAL_LINKS.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-8 h-8 rounded-full border border-[var(--color-border)]/50 bg-[#11100e] flex items-center justify-center text-[var(--color-text-sec)] hover:text-[var(--color-brand)] hover:border-[var(--color-brand)] transition-colors cursor-pointer"
+                className="w-8 h-8 rounded-full border border-[var(--color-border)]/50 bg-bg flex items-center justify-center text-[var(--color-text-sec)] hover:text-[var(--color-brand)] hover:border-[var(--color-brand)] transition-colors cursor-pointer"
                 aria-label="LinkedIn"
               >
                 <Linkedin className="w-4 h-4" />
@@ -50,7 +50,7 @@ export function Footer() {
                 href={EXTERNAL_LINKS.twitter}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-8 h-8 rounded-full border border-[var(--color-border)]/50 bg-[#11100e] flex items-center justify-center text-[var(--color-text-sec)] hover:text-[var(--color-brand)] hover:border-[var(--color-brand)] transition-colors cursor-pointer"
+                className="w-8 h-8 rounded-full border border-[var(--color-border)]/50 bg-bg flex items-center justify-center text-[var(--color-text-sec)] hover:text-[var(--color-brand)] hover:border-[var(--color-brand)] transition-colors cursor-pointer"
                 aria-label="Twitter"
               >
                 <Twitter className="w-4 h-4" />

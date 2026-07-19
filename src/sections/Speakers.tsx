@@ -86,7 +86,7 @@ export function Speakers() {
               variants={fadeUpVariants}
               className="h-full"
             >
-              <Card className="h-full flex flex-col items-center justify-between text-center bg-[#11100e]/60 backdrop-blur-sm border border-[#5d1c34]/40 hover:border-[var(--color-border-gold)] p-8 transition-colors duration-300">
+              <Card className="h-full flex flex-col items-center justify-between text-center bg-bg/60 backdrop-blur-sm border border-accent/40 hover:border-[var(--color-border-gold)] p-8 transition-colors duration-300">
                 {/* Photo container */}
                 <div className="relative w-40 h-40 rounded-full overflow-hidden border border-[var(--color-border)] mb-6 shrink-0 group">
                   {/* Photo Placeholder */}

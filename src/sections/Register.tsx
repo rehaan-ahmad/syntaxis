@@ -44,7 +44,7 @@ export function Register() {
           whileInView="animate"
           viewport={{ once: true }}
           variants={fadeUpVariants}
-          className="w-full bg-[#11100e]/30 border border-white/10 p-6 rounded-[var(--radius-lg)] shadow-2xl backdrop-blur-sm"
+          className="w-full bg-bg/30 border border-white/10 p-6 rounded-[var(--radius-lg)] shadow-2xl backdrop-blur-sm"
         >
           <CountdownTimer />
         </motion.div>
