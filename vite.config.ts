@@ -4,7 +4,7 @@ import react from '@vitejs/plugin-react'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: '/syntaxis/',        // CRITICAL for WP subdirectory
+  base: process.env.VERCEL ? '/' : '/syntaxis/',        // Root for Vercel preview, subdirectory for WP
   build: {
     outDir: 'dist',
     rollupOptions: {
