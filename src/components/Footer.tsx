@@ -15,9 +15,9 @@ export function Footer() {
           <div className="flex flex-col gap-4">
             <div className="flex items-center gap-3">
               <img
-                src={`${import.meta.env.BASE_URL}assets/logo/syntaxis-logo.svg`}
-                alt="[SYNTAXIS LOGO PLACEHOLDER]"
-                className="h-8 w-auto"
+                src={`${import.meta.env.BASE_URL}assets/logo/syntaxis-logo.png`}
+                alt="Syntaxis Logo"
+                className="h-8 w-auto object-contain"
               />
               <span className="text-xl font-bold font-heading text-[var(--color-text-pri)] tracking-wider">
                 SYNTAXIS 2026

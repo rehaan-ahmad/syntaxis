@@ -43,8 +43,21 @@ export function Navbar({ className, ...props }: React.HTMLAttributes<HTMLElement
       <header className={clsx("fixed top-0 inset-x-0 z-50 h-16 flex px-0", className)} {...props}>
         
         {/* Left Side Bar - Flexible width */}
-        <div className="flex-1 h-10 bg-[var(--color-bg-glass)] backdrop-blur-[12px] border-b border-[var(--color-border)] z-20 relative min-w-0">
-          <svg className="absolute inset-0 w-full h-full" preserveAspectRatio="none">
+        <div className="flex-1 h-10 bg-[var(--color-bg-glass)] backdrop-blur-[12px] border-b border-[var(--color-border)] z-20 relative min-w-0 flex items-center px-2 sm:px-4">
+          <a 
+            href={EXTERNAL_LINKS.college} 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="flex items-center gap-2 hover:opacity-90 transition-opacity"
+            title="R.D. Engineering College"
+          >
+            <img 
+              src={`${import.meta.env.BASE_URL}assets/logo/college-logo.png`} 
+              alt="College Logo" 
+              className="h-6 sm:h-7 md:h-8 w-auto object-contain" 
+            />
+          </a>
+          <svg className="absolute inset-0 w-full h-full pointer-events-none" preserveAspectRatio="none">
             <line x1="0" y1="39.5" x2="100%" y2="39.5" stroke="var(--color-border)" strokeOpacity={0.5} strokeWidth={0.5} />
           </svg>
         </div>
@@ -94,9 +107,9 @@ export function Navbar({ className, ...props }: React.HTMLAttributes<HTMLElement
               <div className="flex justify-center shrink-0 mx-2 md:mx-4 mt-1">
                 <ScrollLink to="home" smooth={true} duration={600} className="flex items-center justify-center relative group cursor-pointer">
                   <img 
-                    src={`${import.meta.env.BASE_URL}assets/logo/syntaxis-logo.svg`} 
-                    alt="[LOGO PLACEHOLDER]" 
-                    className="h-7 w-auto hover:scale-105 transition-transform" 
+                    src={`${import.meta.env.BASE_URL}assets/logo/syntaxis-logo.png`} 
+                    alt="Syntaxis Logo" 
+                    className="h-7 md:h-8 w-auto hover:scale-105 transition-transform object-contain" 
                   />
                 </ScrollLink>
               </div>
@@ -158,8 +171,20 @@ export function Navbar({ className, ...props }: React.HTMLAttributes<HTMLElement
         </div>
 
         {/* Right Side Bar - Flexible width */}
-        <div className="flex-1 h-10 bg-[var(--color-bg-glass)] backdrop-blur-[12px] border-b border-[var(--color-border)] z-20 relative min-w-0 -ml-px">
-          <svg className="absolute inset-0 w-full h-full" preserveAspectRatio="none">
+        <div className="flex-1 h-10 bg-[var(--color-bg-glass)] backdrop-blur-[12px] border-b border-[var(--color-border)] z-20 relative min-w-0 -ml-px flex items-center justify-end px-2 sm:px-4 gap-2 sm:gap-3">
+          <img 
+            src={`${import.meta.env.BASE_URL}assets/logo/aktu-logo.png`} 
+            alt="AKTU Logo" 
+            className="h-5 sm:h-6 md:h-7 w-auto object-contain" 
+            title="Dr. A.P.J. Abdul Kalam Technical University"
+          />
+          <img 
+            src={`${import.meta.env.BASE_URL}assets/logo/naac-logo.png`} 
+            alt="NAAC Logo" 
+            className="h-5 sm:h-6 md:h-7 w-auto object-contain" 
+            title="NAAC Accredited"
+          />
+          <svg className="absolute inset-0 w-full h-full pointer-events-none" preserveAspectRatio="none">
             <line x1="0" y1="39.5" x2="100%" y2="39.5" stroke="var(--color-border)" strokeOpacity={0.5} strokeWidth={0.5} />
           </svg>
         </div>

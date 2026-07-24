@@ -38,8 +38,8 @@ export function Hero() {
         <motion.div variants={itemVariants} className="relative group">
           <div className="absolute inset-0 bg-gradient-to-tr from-[var(--color-accent)] to-[var(--color-brand)] rounded-full blur-xl opacity-20 group-hover:opacity-40 transition-opacity duration-700" />
           <img 
-            src={`${import.meta.env.BASE_URL}assets/logo/syntaxis-logo.svg`} 
-            alt="[LOGO PLACEHOLDER 200x200]" 
+            src={`${import.meta.env.BASE_URL}assets/logo/syntaxis-logo.png`} 
+            alt="Syntaxis Logo" 
             className="w-40 h-40 md:w-48 md:h-48 relative z-10 object-contain hover:scale-105 transition-transform duration-500 cursor-pointer"
           />
         </motion.div>

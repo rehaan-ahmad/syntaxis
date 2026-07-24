@@ -21,7 +21,7 @@ export function TeamContact() {
       id: 1,
       name: 'Rehaan Ahmad',
       role: 'Technical Director',
-      image: `https://placehold.co/150x150/${encodeURIComponent('5d1c34')}/${encodeURIComponent('f0e9e3')}?text=Rehaan`,
+      image: `${import.meta.env.BASE_URL}assets/team/rehaan.png`,
       linkedin: 'https://www.linkedin.com/in/rehaan-ahmad'
     },
     {
