@@ -44,7 +44,7 @@ export function Schedule() {
           title: 'Lunch Break',
           venue: 'Venue: Campus',
           duration: 'Duration: 1 Hour',
-          notes: 'Mid-day break and networking.'
+          notes: 'Mid-day break.'
         },
         {
           time: '01:30 PM',
@@ -55,10 +55,17 @@ export function Schedule() {
         },
         {
           time: '03:15 PM',
-          title: 'Rhesis (TEDx-style Talks) + Archithon Problem Statements',
+          title: 'Rhesis (TEDx-style Talks) + Problem Statements Released for Archithon',
           venue: 'Venue: RDEC Campus',
           duration: 'Duration: 1.5 Hours',
           notes: '2 speakers delivering ideas and spoken discourse. 45 minutes per speaker. Hybrid setup, streamed via YouTube Live.'
+        },
+        {
+          time: '05:30 PM',
+          title: 'End of Day 1',
+          venue: 'Venue: RDEC Campus',
+          duration: '',
+          notes: 'Day 1 concludes.'
         }
       ]
     },
@@ -82,7 +89,7 @@ export function Schedule() {
         },
         {
           time: '01:00 PM',
-          title: 'Lunch Break & Pantheon Games',
+          title: 'Lunch Break and Pantheon Games',
           venue: 'Venue: Campus',
           duration: 'Duration: 1.5 Hours',
           notes: 'Mid-day break followed by multi-genre gaming competitions.'
@@ -107,6 +114,13 @@ export function Schedule() {
           venue: 'Venue: RDEC Campus',
           duration: 'Duration: 15 Mins',
           notes: 'Daily standing update and result announcements.'
+        },
+        {
+          time: '05:30 PM',
+          title: 'End of Day 2',
+          venue: 'Venue: RDEC Campus',
+          duration: '',
+          notes: 'Day 2 concludes.'
         }
       ]
     },

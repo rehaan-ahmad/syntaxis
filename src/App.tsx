@@ -13,6 +13,7 @@ import Register from './sections/Register';
 import FAQ from './sections/FAQ';
 import TeamContact from './sections/TeamContact';
 import Footer from './components/Footer';
+import PragmaModal from './components/ui/PragmaModal';
 
 export function App() {
   return (
@@ -81,6 +82,9 @@ export function App() {
 
       {/* Footer bar */}
       <Footer />
+      
+      {/* Modals */}
+      <PragmaModal />
     </>
   );
 }

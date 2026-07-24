@@ -95,6 +95,15 @@ export function GenesisTrack() {
                   <p className="text-xs text-[var(--color-text-body)] mt-1">Receive guidance from RDEC tech mentors and college computer science professors.</p>
                 </div>
               </div>
+              <div className="flex gap-4">
+                <div className="w-10 h-10 shrink-0 bg-[var(--color-brand)]/15 border border-[var(--color-brand)]/40 rounded-[var(--radius-md)] flex items-center justify-center text-[var(--color-brand)]">
+                  <Award className="w-5 h-5" />
+                </div>
+                <div>
+                  <h4 className="font-bold text-[var(--color-text-pri)] font-heading">7+ Partnered Schools</h4>
+                  <p className="text-xs text-[var(--color-text-body)] mt-1">Join students from approximately 7+ partnered schools across the region in this exclusive track.</p>
+                </div>
+              </div>
             </div>
           </motion.div>
 

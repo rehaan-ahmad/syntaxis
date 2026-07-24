@@ -8,7 +8,7 @@ export function About() {
   const stats = [
     { value: FEST_INFO.colleges, label: 'NCR Colleges Participating' },
     { value: FEST_INFO.participants, label: 'Expected Participants' },
-    { value: '4 Days', label: 'Tech & Non-Tech Events' }
+    { value: '3 Days', label: 'Tech & Non-Tech Events' }
   ];
 
   const pillars = [

@@ -4,14 +4,16 @@ import { useCountdown } from '../../hooks/useCountdown';
 interface RevealCountdownProps {
   targetDate: number;
   label: string;
+  children?: React.ReactNode;
+  revealText?: string;
 }
 
-export function RevealCountdown({ targetDate, label }: RevealCountdownProps) {
+export function RevealCountdown({ targetDate, label, children, revealText = "Revealing on August 10, 2026" }: RevealCountdownProps) {
   const { days, hours, minutes, seconds, isExpired } = useCountdown(targetDate);
 
   const pad = (num: number) => String(num).padStart(2, '0');
 
-  if (isExpired) return null;
+  if (isExpired) return <>{children}</>;
 
   return (
     <div className="flex flex-col items-center justify-center gap-6 p-12 border border-[var(--color-border)] bg-[var(--color-bg-glass)] rounded-[var(--radius-lg)] backdrop-blur-sm max-w-2xl mx-auto">
@@ -43,7 +45,7 @@ export function RevealCountdown({ targetDate, label }: RevealCountdownProps) {
         ))}
       </div>
       <p className="text-xs text-[var(--color-text-body)] italic opacity-70">
-        Revealing on August 10, 2026
+        {revealText}
       </p>
     </div>
   );

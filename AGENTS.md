@@ -8,14 +8,12 @@
 
 **Site:** SYNTAXIS 2026 — Inter-college Tech Fest  
 **College:** R.D. Engineering College (RDEC), Ghaziabad  
-**Dates:** September 21–24, 2026  
-**Scale:** 15+ NCR Colleges, 500–900 participants  
+**Dates:** September 11-13, 2026  
+**Scale:** 25+ NCR Colleges, 700–900 participants  
 **Contact:** syntaxis@rdec.in  
 **EMS:** Pragma (separate system — link only, do not build here)
 
-**Deployment target:** WordPress subdirectory at `rdec.ac.in/syntaxis`  
-No Next.js. No SSR. No router. React SPA only.  
-Vite build. Static output. Uploaded manually to cPanel.
+**Deployment target:** Subdomain: syntaxis.rdec.ac.in  
 
 ---
 
