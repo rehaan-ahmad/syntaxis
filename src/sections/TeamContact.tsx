@@ -12,45 +12,52 @@ interface TeamMember {
   name: string;
   role: string;
   image: string;
+  linkedin: string;
 }
 
 export function TeamContact() {
   const team: TeamMember[] = [
     {
       id: 1,
-      name: '[TEAM MEMBER NAME PLACEHOLDER]',
-      role: '[CONVENER ROLE PLACEHOLDER]',
-      image: `https://placehold.co/150x150/${encodeURIComponent('5d1c34')}/${encodeURIComponent('f0e9e3')}?text=Team+1`
+      name: 'Rehaan Ahmad',
+      role: 'Technical Director',
+      image: `https://placehold.co/150x150/${encodeURIComponent('5d1c34')}/${encodeURIComponent('f0e9e3')}?text=Rehaan`,
+      linkedin: 'https://www.linkedin.com/in/rehaan-ahmad'
     },
     {
       id: 2,
-      name: '[TEAM MEMBER NAME PLACEHOLDER]',
-      role: '[CO-CONVENER ROLE PLACEHOLDER]',
-      image: `https://placehold.co/150x150/${encodeURIComponent('5d1c34')}/${encodeURIComponent('f0e9e3')}?text=Team+2`
+      name: 'Anurag Kumar',
+      role: 'Operations Director',
+      image: `https://placehold.co/150x150/${encodeURIComponent('5d1c34')}/${encodeURIComponent('f0e9e3')}?text=Anurag`,
+      linkedin: 'https://www.linkedin.com/in/anurag-kumar002'
     },
     {
       id: 3,
-      name: '[TEAM MEMBER NAME PLACEHOLDER]',
-      role: '[TECH LEAD ROLE PLACEHOLDER]',
-      image: `https://placehold.co/150x150/${encodeURIComponent('5d1c34')}/${encodeURIComponent('f0e9e3')}?text=Team+3`
+      name: 'Palak Tyagi',
+      role: 'Executive Director',
+      image: `https://placehold.co/150x150/${encodeURIComponent('5d1c34')}/${encodeURIComponent('f0e9e3')}?text=Palak`,
+      linkedin: 'https://www.linkedin.com/in/palak-tyagi-'
     },
     {
       id: 4,
-      name: '[TEAM MEMBER NAME PLACEHOLDER]',
-      role: '[DESIGN HEAD ROLE PLACEHOLDER]',
-      image: `https://placehold.co/150x150/${encodeURIComponent('5d1c34')}/${encodeURIComponent('f0e9e3')}?text=Team+4`
+      name: 'Priyanshi Garg',
+      role: 'Marketing Head',
+      image: `https://placehold.co/150x150/${encodeURIComponent('5d1c34')}/${encodeURIComponent('f0e9e3')}?text=Priyanshi`,
+      linkedin: 'https://www.linkedin.com/in/priyanshi-garg-a34835325'
     },
     {
       id: 5,
-      name: '[TEAM MEMBER NAME PLACEHOLDER]',
-      role: '[LOGISTICS HEAD ROLE PLACEHOLDER]',
-      image: `https://placehold.co/150x150/${encodeURIComponent('5d1c34')}/${encodeURIComponent('f0e9e3')}?text=Team+5`
+      name: 'Prabhati Pandey',
+      role: 'Creative Head',
+      image: `https://placehold.co/150x150/${encodeURIComponent('5d1c34')}/${encodeURIComponent('f0e9e3')}?text=Prabhati`,
+      linkedin: 'https://www.linkedin.com/in/prabhati-pandey-12p'
     },
     {
       id: 6,
-      name: '[TEAM MEMBER NAME PLACEHOLDER]',
-      role: '[PR OUTREACH ROLE PLACEHOLDER]',
-      image: `https://placehold.co/150x150/${encodeURIComponent('5d1c34')}/${encodeURIComponent('f0e9e3')}?text=Team+6`
+      name: 'Priya Sharma',
+      role: 'Documentation Head',
+      image: `https://placehold.co/150x150/${encodeURIComponent('5d1c34')}/${encodeURIComponent('f0e9e3')}?text=Priya`,
+      linkedin: 'https://www.linkedin.com/in/priya-sharma-48b247330'
     }
   ];
 
@@ -166,7 +173,7 @@ export function TeamContact() {
                   </span>
                   
                   <a 
-                    href="#" 
+                    href={member.linkedin} 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="text-[var(--color-text-sec)] hover:text-[var(--color-brand)] transition-colors mt-auto"
