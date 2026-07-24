@@ -4,6 +4,7 @@ import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
 import { Mail } from 'lucide-react';
 import SectionHeading from '../components/ui/SectionHeading';
+import RevealCountdown from '../components/ui/RevealCountdown';
 import { SECTION_IDS, EXTERNAL_LINKS } from '../lib/constants';
 
 interface SponsorLogoProps {
@@ -55,18 +56,24 @@ export function Sponsors() {
   const associateSponsors = Array.from({ length: 6 }).map((_, idx) => `Tier 5 Associate ${idx + 1}`);
 
   return (
-    <section 
-      id={SECTION_IDS.sponsors} 
+    <section
+      id={SECTION_IDS.sponsors}
       className="max-w-7xl mx-auto px-6 py-20 sm:py-32 relative z-10 bg-[var(--color-bg)] flex flex-col gap-16"
     >
       {/* Section Heading */}
       <SectionHeading title="FEST SPONSORS" subtitle="OUR PARTNERS" />
 
+      {/* Conditional Reveal */}
+      <RevealCountdown
+        targetDate={new Date('2026-08-10T00:00:00+05:30').getTime()}
+        label="Sponsors Reveal In"
+      />
+
       {/* Sponsors Layout hierarchy */}
       <div className="flex flex-col gap-12 max-w-5xl mx-auto w-full">
-        
+
         {/* Tier 1: Title Sponsor (1 Logo) */}
-        <motion.div 
+        <motion.div
           initial="initial"
           whileInView="animate"
           viewport={{ once: true, margin: "-100px" }}
@@ -169,7 +176,7 @@ export function Sponsors() {
           Partner With Us
         </h4>
         <p className="text-xs text-[var(--color-text-body)] mb-6 leading-relaxed">
-          Expose your brand to 900+ tech-focused students and future developers from NCR colleges. Let's build collaborative outreach campaigns.
+          Expose your brand to 700-900 tech-focused students and future developers from NCR colleges. Let's build collaborative outreach campaigns.
         </p>
         <a 
           href={EXTERNAL_LINKS.email}

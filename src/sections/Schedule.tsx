@@ -23,88 +23,152 @@ export function Schedule() {
   const scheduleData: DaySchedule[] = [
     {
       dayLabel: 'Day 1',
-      dateLabel: 'Sep 21, 2026',
+      dateLabel: 'Sep 11, 2026',
       events: [
         {
           time: '09:30 AM',
-          title: '[INAUGURAL CEREMONY PLACEHOLDER]',
-          venue: 'Venue: [MAIN AUDITORIUM PLACEHOLDER]',
-          duration: 'Duration: [1.5 HOURS PLACEHOLDER]',
-          notes: '[Schedule TBD — to be updated by organizing team]'
+          title: 'The Kindling (Inauguration)',
+          venue: 'Venue: RDEC Campus',
+          duration: 'Duration: 1.5 Hours',
+          notes: 'Lamp lighting, welcome address, and official fest reveal. Sponsor acknowledgements and opening keynote.'
         },
         {
-          time: '11:30 AM',
-          title: '[HACKATHON LAUNCH PLACEHOLDER]',
-          venue: 'Venue: [SEMINAR HALL PLACEHOLDER]',
-          duration: 'Duration: [1 HOUR PLACEHOLDER]',
-          notes: '[Schedule TBD — to be updated by organizing team]'
+          time: '11:00 AM',
+          title: 'Syndesis (API Building with FastAPI)',
+          venue: 'Venue: RDEC Campus',
+          duration: 'Duration: 1.5 Hours',
+          notes: 'Building a Python script to build and test a live endpoint. Hybrid enabled.'
         },
         {
-          time: '02:00 PM',
-          title: '[CODE BATTLE PRELIMS PLACEHOLDER]',
-          venue: 'Venue: [LAB 3 PLACEHOLDER]',
-          duration: 'Duration: [2 HOURS PLACEHOLDER]',
-          notes: '[Schedule TBD — to be updated by organizing team]'
+          time: '12:30 PM',
+          title: 'Lunch Break',
+          venue: 'Venue: Campus',
+          duration: 'Duration: 1 Hour',
+          notes: 'Mid-day break and networking.'
+        },
+        {
+          time: '01:30 PM',
+          title: 'Logika (DSA Workshop)',
+          venue: 'Venue: RDEC Campus',
+          duration: 'Duration: 1.75 Hours',
+          notes: 'Intensive session on Data Structures and Algorithms focusing on pure logical thinking. Hybrid enabled.'
+        },
+        {
+          time: '03:15 PM',
+          title: 'Rhesis (TEDx-style Talks) + Archithon Problem Statements',
+          venue: 'Venue: RDEC Campus',
+          duration: 'Duration: 1.5 Hours',
+          notes: '2 speakers delivering ideas and spoken discourse. 45 minutes per speaker. Hybrid setup, streamed via YouTube Live.'
         }
       ]
     },
     {
       dayLabel: 'Day 2',
-      dateLabel: 'Sep 22, 2026',
+      dateLabel: 'Sep 12, 2026',
       events: [
         {
-          time: '10:00 AM',
-          title: '[AI WORKSHOP SESSION 1 PLACEHOLDER]',
-          venue: 'Venue: [SEMINAR HALL PLACEHOLDER]',
-          duration: 'Duration: [3 HOURS PLACEHOLDER]',
-          notes: '[Schedule TBD — to be updated by organizing team]'
+          time: '09:00 AM',
+          title: 'Heureka (DSA/Problem Solving)',
+          venue: 'Venue: RDEC Campus',
+          duration: 'Duration: 2.5 Hours',
+          notes: 'Individual competition hosted on the GeeksforGeeks platform.'
         },
         {
-          time: '02:00 PM',
-          title: '[TECH DEBATE ROUND 1 PLACEHOLDER]',
-          venue: 'Venue: [ROOM 204 PLACEHOLDER]',
-          duration: 'Duration: [2 HOURS PLACEHOLDER]',
-          notes: '[Schedule TBD — to be updated by organizing team]'
+          time: '11:30 AM',
+          title: 'Agon (Competitive Programming)',
+          venue: 'Venue: RDEC Campus',
+          duration: 'Duration: 1.5 Hours',
+          notes: 'Individual competitive programming contest hosted on HackerRank.'
+        },
+        {
+          time: '01:00 PM',
+          title: 'Lunch Break & Pantheon Games',
+          venue: 'Venue: Campus',
+          duration: 'Duration: 1.5 Hours',
+          notes: 'Mid-day break followed by multi-genre gaming competitions.'
+        },
+        {
+          time: '02:30 PM',
+          title: 'Katharsis (Debugging Duel)',
+          venue: 'Venue: RDEC Campus',
+          duration: 'Duration: 1.5 Hours',
+          notes: 'Duo competition focused on purging bugs from broken code. Manual submission.'
+        },
+        {
+          time: '04:00 PM',
+          title: 'Networking Session / Alumni Meet',
+          venue: 'Venue: RDEC Campus',
+          duration: 'Duration: 1.25 Hours',
+          notes: 'Participants can connect with each other and gain guidance from college alumni.'
+        },
+        {
+          time: '05:15 PM',
+          title: 'Results & Leaderboard Update',
+          venue: 'Venue: RDEC Campus',
+          duration: 'Duration: 15 Mins',
+          notes: 'Daily standing update and result announcements.'
         }
       ]
     },
     {
       dayLabel: 'Day 3',
-      dateLabel: 'Sep 23, 2026',
+      dateLabel: 'Sep 13, 2026',
       events: [
         {
-          time: '10:00 AM',
-          title: '[GENESIS TRACK HACK PLACEHOLDER]',
-          venue: 'Venue: [JUNIOR LAB PLACEHOLDER]',
-          duration: 'Duration: [4 HOURS PLACEHOLDER]',
-          notes: '[Schedule TBD — to be updated by organizing team]'
+          time: '09:00 AM',
+          title: 'Genesis Track Arrival',
+          venue: 'Venue: RDEC Campus',
+          duration: 'Duration: 30 Mins',
+          notes: 'School students arrive for the science-fair style exhibition.'
         },
         {
-          time: '01:30 PM',
-          title: '[ARENA GAMING QUARTERS PLACEHOLDER]',
-          venue: 'Venue: [MAIN HALL PLACEHOLDER]',
-          duration: 'Duration: [3 HOURS PLACEHOLDER]',
-          notes: '[Schedule TBD — to be updated by organizing team]'
-        }
-      ]
-    },
-    {
-      dayLabel: 'Day 4',
-      dateLabel: 'Sep 24, 2026',
-      events: [
-        {
           time: '09:30 AM',
-          title: '[HACKATHON FINAL EVALUATION PLACEHOLDER]',
-          venue: 'Venue: [CS CONFERENCE ROOM PLACEHOLDER]',
-          duration: 'Duration: [3.5 HOURS PLACEHOLDER]',
-          notes: '[Schedule TBD — to be updated by organizing team]'
+          title: 'Archithon Final Submissions',
+          venue: 'Venue: RDEC Campus',
+          duration: 'Duration: 30 Mins',
+          notes: 'The development clock ends. Code and hardware freezes.'
+        },
+        {
+          time: '10:00 AM',
+          title: 'Pythia Expo (Parallel Tracks)',
+          venue: 'Venue: College Grounds',
+          duration: 'Duration: 4.5 Hours',
+          notes: 'College Track: Projects displayed for industry judges. Genesis Track: School projects displayed in parallel zone.'
+        },
+        {
+          time: '10:00 AM',
+          title: 'Eureka Pitch Finals',
+          venue: 'Venue: RDEC Campus',
+          duration: 'Duration: 4.5 Hours',
+          notes: 'Top 5 college and top 3 school teams deliver extended 3-minute pitches + 3-minute Q&A.'
         },
         {
           time: '02:30 PM',
-          title: '[VALEDICTORY & PRIZE DISTRIBUTION PLACEHOLDER]',
-          venue: 'Venue: [MAIN AUDITORIUM PLACEHOLDER]',
-          duration: 'Duration: [2 HOURS PLACEHOLDER]',
-          notes: '[Schedule TBD — to be updated by organizing team]'
+          title: 'The Tribunal (Hackathon Judging)',
+          venue: 'Venue: RDEC Campus',
+          duration: 'Duration: 1.5 Hours',
+          notes: 'Archithon teams present their finalized builds to the judging council.'
+        },
+        {
+          time: '04:00 PM',
+          title: 'Results & Genesis Departure',
+          venue: 'Venue: RDEC Campus',
+          duration: 'Duration: 30 Mins',
+          notes: 'Final results compiled. School students depart campus safely.'
+        },
+        {
+          time: '04:30 PM',
+          title: 'Apotheosis (Valediction)',
+          venue: 'Venue: RDEC Campus',
+          duration: 'Duration: 1 Hour',
+          notes: 'Highest honors awarded. Prize distribution for all events.'
+        },
+        {
+          time: '05:30 PM',
+          title: 'Epilogos',
+          venue: 'Venue: RDEC Campus',
+          duration: 'Duration: 30 Mins',
+          notes: 'Final closing remarks. Syntaxis 2026 officially ends.'
         }
       ]
     }

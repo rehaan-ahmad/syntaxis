@@ -32,75 +32,93 @@ export function Events() {
 
   const eventList: EventItem[] = [
     {
-      title: 'Hackathon',
-      category: 'Technical',
-      description: 'A 24-hour code sprint to build innovative, functional software solutions answering real-world problem statements.',
-      teamSize: '3-4 Members',
-      prizePool: '[PRIZE POOL TBD]',
-      image: `https://placehold.co/400x200/${encodeURIComponent('5d1c34')}/${encodeURIComponent('f0e9e3')}?text=Hackathon`,
-      pragmaUrl: EXTERNAL_LINKS.pragma
-    },
-    {
-      title: 'Code Battle',
-      category: 'Technical',
-      description: 'An intense algorithmic speed-coding contest. Test your logic, syntax speed, and complexity choices under pressure.',
-      teamSize: 'Individual',
-      prizePool: '[PRIZE POOL TBD]',
-      image: `https://placehold.co/400x200/${encodeURIComponent('5d1c34')}/${encodeURIComponent('f0e9e3')}?text=Code+Battle`,
-      pragmaUrl: EXTERNAL_LINKS.pragma
-    },
-    {
-      title: 'Tech Debate',
-      category: 'Non-Technical',
-      description: 'Clash of opinions regarding artificial intelligence ethics, cybersecurity laws, and the socio-economic impacts of next-gen tech.',
-      teamSize: '2 Members',
-      prizePool: '[PRIZE POOL TBD]',
-      image: `https://placehold.co/400x200/${encodeURIComponent('5d1c34')}/${encodeURIComponent('f0e9e3')}?text=Tech+Debate`,
-      pragmaUrl: EXTERNAL_LINKS.pragma
-    },
-    {
-      title: 'Lens Sprint',
-      category: 'Non-Technical',
-      description: 'On-campus photography and composition run. Capture the raw energy, structural angles, and human emotion of Syntaxis 2026.',
-      teamSize: 'Individual',
-      prizePool: '[PRIZE POOL TBD]',
-      image: `https://placehold.co/400x200/${encodeURIComponent('5d1c34')}/${encodeURIComponent('f0e9e3')}?text=Lens+Sprint`,
-      pragmaUrl: EXTERNAL_LINKS.pragma
-    },
-    {
-      title: 'AI Workshop',
+      title: 'Syndesis',
       category: 'Workshop',
-      description: 'Interactive crash course on training large language models, prompt engineering, and visual generation APIs.',
+      description: 'Master API building with FastAPI. Build and test a live endpoint using Python scripts in this hands-on session.',
       teamSize: 'Individual',
       prizePool: 'Certificates Offered',
-      image: `https://placehold.co/400x200/${encodeURIComponent('5d1c34')}/${encodeURIComponent('f0e9e3')}?text=AI+Workshop`,
+      image: `https://placehold.co/400x200/${encodeURIComponent('5d1c34')}/${encodeURIComponent('f0e9e3')}?text=Syndesis`,
       pragmaUrl: EXTERNAL_LINKS.pragma
     },
     {
-      title: 'Web Dev Bootcamp',
+      title: 'Logika',
       category: 'Workshop',
-      description: 'Hands-on session on advanced reactive states, caching strategies, CSS grid layout architectures, and bundler compilation.',
+      description: 'Deep dive into Data Structures and Algorithms focusing on pure logical thinking and efficient problem solving.',
       teamSize: 'Individual',
       prizePool: 'Certificates Offered',
-      image: `https://placehold.co/400x200/${encodeURIComponent('5d1c34')}/${encodeURIComponent('f0e9e3')}?text=Web+Dev+Bootcamp`,
+      image: `https://placehold.co/400x200/${encodeURIComponent('5d1c34')}/${encodeURIComponent('f0e9e3')}?text=Logika`,
       pragmaUrl: EXTERNAL_LINKS.pragma
     },
     {
-      title: 'Arena Gaming',
-      category: 'Open',
-      description: 'Multiplayer tactical battleground arena. Teams compete in high-precision rounds to determine the ultimate champions.',
-      teamSize: '5 Members',
+      title: 'Rhesis',
+      category: 'Non-Technical',
+      description: 'TEDx-style talks featuring visionary speakers delivering ideas and spoken discourse on technology and innovation.',
+      teamSize: 'Open',
+      prizePool: 'N/A',
+      image: `https://placehold.co/400x200/${encodeURIComponent('5d1c34')}/${encodeURIComponent('f0e9e3')}?text=Rhesis`,
+      pragmaUrl: EXTERNAL_LINKS.pragma
+    },
+    {
+      title: 'Heureka',
+      category: 'Technical',
+      description: 'Individual DSA and problem solving competition hosted on the GeeksforGeeks platform. Test your limits.',
+      teamSize: 'Individual',
       prizePool: '[PRIZE POOL TBD]',
-      image: `https://placehold.co/400x200/${encodeURIComponent('5d1c34')}/${encodeURIComponent('f0e9e3')}?text=Arena+Gaming`,
+      image: `https://placehold.co/400x200/${encodeURIComponent('5d1c34')}/${encodeURIComponent('f0e9e3')}?text=Heureka`,
       pragmaUrl: EXTERNAL_LINKS.pragma
     },
     {
-      title: 'Trivia Quiz',
-      category: 'Open',
-      description: 'Rapid-fire technology, science, and history trivia tournament. Challenge your logical deductions and background knowledge.',
+      title: 'Agon',
+      category: 'Technical',
+      description: 'Competitive programming contest on HackerRank. High-speed algorithmic challenges for the sharpest minds.',
+      teamSize: 'Individual',
+      prizePool: '[PRIZE POOL TBD]',
+      image: `https://placehold.co/400x200/${encodeURIComponent('5d1c34')}/${encodeURIComponent('f0e9e3')}?text=Agon`,
+      pragmaUrl: EXTERNAL_LINKS.pragma
+    },
+    {
+      title: 'Katharsis',
+      category: 'Technical',
+      description: 'The Debugging Duel. A duo competition focused on purging bugs from broken code under tight constraints.',
       teamSize: '2 Members',
       prizePool: '[PRIZE POOL TBD]',
-      image: `https://placehold.co/400x200/${encodeURIComponent('5d1c34')}/${encodeURIComponent('f0e9e3')}?text=Trivia+Quiz`,
+      image: `https://placehold.co/400x200/${encodeURIComponent('5d1c34')}/${encodeURIComponent('f0e9e3')}?text=Katharsis`,
+      pragmaUrl: EXTERNAL_LINKS.pragma
+    },
+    {
+      title: 'Pythia Expo',
+      category: 'Open',
+      description: 'A massive exhibition of innovation. Showcase your projects to industry judges and fellow developers.',
+      teamSize: 'Team',
+      prizePool: '[PRIZE POOL TBD]',
+      image: `https://placehold.co/400x200/${encodeURIComponent('5d1c34')}/${encodeURIComponent('f0e9e3')}?text=Pythia+Expo`,
+      pragmaUrl: EXTERNAL_LINKS.pragma
+    },
+    {
+      title: 'Eureka Pitch Finals',
+      category: 'Technical',
+      description: 'The ultimate pitch battle. Top teams deliver extended pitches and face a rigorous Q&A session with judges.',
+      teamSize: 'Team',
+      prizePool: '[PRIZE POOL TBD]',
+      image: `https://placehold.co/400x200/${encodeURIComponent('5d1c34')}/${encodeURIComponent('f0e9e3')}?text=Eureka+Pitch`,
+      pragmaUrl: EXTERNAL_LINKS.pragma
+    },
+    {
+      title: 'The Tribunal',
+      category: 'Technical',
+      description: 'Final Hackathon judging. Present your finalized builds and architectural decisions to the judging council.',
+      teamSize: 'Team',
+      prizePool: '[PRIZE POOL TBD]',
+      image: `https://placehold.co/400x200/${encodeURIComponent('5d1c34')}/${encodeURIComponent('f0e9e3')}?text=The+Tribunal`,
+      pragmaUrl: EXTERNAL_LINKS.pragma
+    },
+    {
+      title: 'Pantheon Games',
+      category: 'Open',
+      description: 'Multi-genre gaming arena featuring FreeFire, COD Mobile, and BGMI. Competitive play for gaming veterans.',
+      teamSize: 'Varies',
+      prizePool: '[PRIZE POOL TBD]',
+      image: `https://placehold.co/400x200/${encodeURIComponent('5d1c34')}/${encodeURIComponent('f0e9e3')}?text=Pantheon+Games`,
       pragmaUrl: EXTERNAL_LINKS.pragma
     }
   ];

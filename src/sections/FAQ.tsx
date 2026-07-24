@@ -23,7 +23,7 @@ export function FAQ() {
     },
     {
       question: 'What is the Genesis Track?',
-      answer: '[ANSWER PLACEHOLDER — to be filled by organizing team before launch. It is a junior division track curated exclusively for school students of classes 9 and 10.]'
+      answer: '[ANSWER PLACEHOLDER — to be filled by organizing team before launch. It is a junior division track curated exclusively for school students of classes 9 to 12.]'
     },
     {
       question: 'How many events can one team enter?',
@@ -35,7 +35,7 @@ export function FAQ() {
     },
     {
       question: 'When will winners be announced?',
-      answer: '[ANSWER PLACEHOLDER — to be filled by organizing team before launch. Winners will be announced during the Valedictory Ceremony on September 24, 2026.]'
+      answer: '[ANSWER PLACEHOLDER — to be filled by organizing team before launch. Winners will be announced during the Valedictory Ceremony on September 13, 2026.]'
     }
   ];
 

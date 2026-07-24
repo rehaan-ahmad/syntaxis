@@ -55,7 +55,7 @@ export function GenesisTrack() {
           <Badge variant="brand" className="mb-4 bg-[var(--color-brand)]/20 border-[var(--color-brand)] text-[var(--color-brand)] px-4 py-1 tracking-[0.2em] font-semibold text-[10px] rounded-full animate-pulse shadow-[0_0_15px_var(--color-brand-glow)]">
             School Outreach Wing
           </Badge>
-          <SectionHeading title="GENESIS TRACK" subtitle="FOR CLASSES 9 & 10" />
+          <SectionHeading title="GENESIS TRACK" subtitle="FOR CLASSES 9 TO 12" />
         </motion.div>
 
         {/* 2-Column: Details and Image */}
@@ -72,7 +72,7 @@ export function GenesisTrack() {
               NURTURING JUNIOR GENIUSES
             </h3>
             <p className="text-base text-[var(--color-text-body)] leading-relaxed">
-              Curated exclusively for students in grades 9 and 10, the **Genesis Track** provides school students an introduction to the inter-college tech ecosystem. This dedicated wing aims to build interest in STEM concepts, logical thinking, and engineering fields.
+              Curated exclusively for students in grades 9 to 12, the **Genesis Track** provides school students an introduction to the inter-college tech ecosystem. This dedicated wing aims to build interest in STEM concepts, logical thinking, and engineering fields.
             </p>
 
             {/* Why Join Points */}
@@ -167,7 +167,7 @@ export function GenesisTrack() {
             <div>
               <h5 className="font-bold text-[var(--color-text-pri)] font-heading">Eligibility Criteria</h5>
               <ul className="text-xs text-[var(--color-text-body)] mt-1 list-disc list-inside flex flex-col gap-1 pr-4">
-                <li>Strictly limited to current class 9 and 10 students.</li>
+                <li>Strictly limited to current class 9 to 12 students.</li>
                 <li>Official school nomination letter or valid school ID card is mandatory.</li>
                 <li>Zero registration fees for all qualified participants.</li>
               </ul>

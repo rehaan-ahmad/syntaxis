@@ -20,7 +20,7 @@ export function About() {
     {
       icon: Users,
       title: 'Collaboration',
-      description: 'Building bridges between students from 15+ campuses. Exchanging ideas, networking with industry veterans, and hacking in team battles.'
+      description: 'Building bridges between students from 25+ campuses. Exchanging ideas, networking with industry veterans, and hacking in team battles.'
     },
     {
       icon: Award,
@@ -95,7 +95,7 @@ export function About() {
               Inspired by the Greek root representing order, arrangement, and systematic coordination.
             </p>
             <p className="text-base leading-relaxed">
-              SYNTAXIS 2026 is the flag-bearer tech event of R.D. Engineering College (RDEC), Ghaziabad. We host NCR’s sharpest programmers, creative designers, logical debaters, and gaming veterans over four days of rigorous competition.
+              SYNTAXIS 2026 is the flag-bearer tech event of R.D. Engineering College (RDEC), Ghaziabad. We host NCR’s sharpest programmers, creative designers, logical debaters, and gaming veterans over three days of rigorous competition.
             </p>
             <p className="text-base leading-relaxed">
               From automated hackathons and cybersecurity drills to workshops on Artificial Intelligence and non-technical creative sprints, the festival provides a platform for participants to showcase their expertise, connect with tech leaders, and win massive prizes.

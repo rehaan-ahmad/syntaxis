@@ -3,6 +3,7 @@ import { Globe } from 'lucide-react';
 import { Linkedin, Twitter } from '../components/icons/SocialIcons';
 import SectionHeading from '../components/ui/SectionHeading';
 import Card from '../components/ui/Card';
+import RevealCountdown from '../components/ui/RevealCountdown';
 import { SECTION_IDS } from '../lib/constants';
 
 interface SpeakerItem {
@@ -56,8 +57,8 @@ export function Speakers() {
 
   return (
     <div className="bg-[var(--color-bg-glass)] backdrop-blur-[12px] border-y border-[var(--color-border)]">
-      <section 
-        id={SECTION_IDS.speakers} 
+      <section
+        id={SECTION_IDS.speakers}
         className="max-w-7xl mx-auto px-6 py-20 sm:py-32 flex flex-col gap-16 relative z-10"
       >
         {/* Section Heading */}
@@ -70,6 +71,12 @@ export function Speakers() {
           <SectionHeading title="KEYNOTE SPEAKERS" subtitle="GUEST LECTURERS" />
         </motion.div>
 
+        {/* Conditional Reveal */}
+        <RevealCountdown
+          targetDate={new Date('2026-08-10T00:00:00+05:30').getTime()}
+          label="Speakers Reveal In"
+        />
+
         {/* Speakers Grid */}
         <motion.div
           initial="initial"
@@ -81,8 +88,8 @@ export function Speakers() {
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 justify-center"
         >
           {speakers.map((speaker) => (
-            <motion.div 
-              key={speaker.id} 
+            <motion.div
+              key={speaker.id}
               variants={fadeUpVariants}
               className="h-full"
             >
@@ -90,9 +97,9 @@ export function Speakers() {
                 {/* Photo container */}
                 <div className="relative w-40 h-40 rounded-full overflow-hidden border border-[var(--color-border)] mb-6 shrink-0 group">
                   {/* Photo Placeholder */}
-                  <img 
-                    src={speaker.image} 
-                    alt="[SPEAKER PHOTO 200x200 circle — replace with actual photo]" 
+                  <img
+                    src={speaker.image}
+                    alt="[SPEAKER PHOTO 200x200 circle — replace with actual photo]"
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                     loading="lazy"
                   />
@@ -120,28 +127,28 @@ export function Speakers() {
 
                   {/* Social links */}
                   <div className="flex justify-center gap-4 mt-6 border-t border-[var(--color-border)]/50 pt-4">
-                    <a 
-                      href="#" 
-                      target="_blank" 
-                      rel="noopener noreferrer" 
+                    <a
+                      href="#"
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="text-[var(--color-text-sec)] hover:text-[var(--color-brand)] transition-colors"
                       aria-label="LinkedIn"
                     >
                       <Linkedin className="w-4 h-4" />
                     </a>
-                    <a 
-                      href="#" 
-                      target="_blank" 
-                      rel="noopener noreferrer" 
+                    <a
+                      href="#"
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="text-[var(--color-text-sec)] hover:text-[var(--color-brand)] transition-colors"
                       aria-label="Twitter"
                     >
                       <Twitter className="w-4 h-4" />
                     </a>
-                    <a 
-                      href="#" 
-                      target="_blank" 
-                      rel="noopener noreferrer" 
+                    <a
+                      href="#"
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="text-[var(--color-text-sec)] hover:text-[var(--color-brand)] transition-colors"
                       aria-label="Website"
                     >
