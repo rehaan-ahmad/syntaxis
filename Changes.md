@@ -12,4 +12,19 @@
 **Keynote Speakers**: Instead of showing blank details of speakers as of now, place a countdown on it, revealing it on 10th August, 2026.
 **Sponsors**: Do the same thing as speakers, but reveal it on 10th of August.
 
-# IMPLEMENT THESE CHANGES AS OF NOW, UPDATES FOR ORGANIZERS, FORM AND FAQS WILL BE PROVIDED SHORTLY.
+
+# NEW CHANGES/INCLUSIONS TO BE MADE
+**Fest Organizers [LEADS]**:
+    1. Rehaan Ahmad
+    2. Anurag Kumar
+    3. Palak Tyagi
+    4. Priyanshi Garg
+    5. Prabhati Pandey
+    6. Priya Sharma
+**Fest Organizers [FACULTY IN-CHARGES]**
+    1. Lav Dixit
+    2. Vishal Upmanu
+    3. 
+    
+# PRAGMA EMS
+1. Whenevere the user click on Pragma EMS link, redirect them to a page showing a countdown just like one for Speakers/Sponsors. Set it to reveal on

@@ -1,26 +1,27 @@
-Goal: Build a responsive, visually stunning single-page React application for the SYNTAXIS 2026 tech fest at R.D. Engineering College (RDEC), Ghaziabad, hosted in a WordPress subdirectory at rdec.ac.in/syntaxis.
+Goal: Build a responsive, visually stunning single-page React application for the SYNTAXIS 2026 tech fest at R.D. Engineering College (RDEC), Ghaziabad, hosted on the sub-domain syntaxis.rdec.ac.in.
 
-Current State: Fully completed all Phases (0 to 17) of the site build checklist. The SPA compiles cleanly and packages warning-free production assets split into optimal manual chunks.
+Current State: Fully completed all Phases (0 to 17) of the site build checklist. The SPA compiles cleanly and packages warning-free production assets split into optimal manual chunks. The site has been transitioned from a 4-day to a 3-day event structure with updated schedules and participant counts.
 
-Files in Flight: None (all layouts are completed, tested, and saved).
+Files in Flight: None.
 
 Changed:
 *   [Hero.tsx](file:///home/rehaanahmad/projects/syntaxis/src/sections/Hero.tsx) — Main landing layout, countdown timer, stats, and action CTAs.
-*   [About.tsx](file:///home/rehaanahmad/projects/syntaxis/src/sections/About.tsx) — Pillars grid, college descriptions, and campus atmosphere.
-*   [Events.tsx](file:///home/rehaanahmad/projects/syntaxis/src/sections/Events.tsx) — Tab-based event filters switching dynamically to mobile swipe slider.
+*   [About.tsx](file:///home/rehaanahmad/projects/syntaxis/src/sections/About.tsx) — Updated to reflect 3-day duration, 25+ NCR colleges, and 700-900 participants.
+*   [Events.tsx](file:///home/rehaanahmad/projects/syntaxis/src/sections/Events.tsx) — Tab-based event filters now synchronized with the finalized 3-day schedule.
 *   [EventCarousel.tsx](file:///home/rehaanahmad/projects/syntaxis/src/components/carousel/EventCarousel.tsx) — Embla-based mobile-responsive carousel.
-*   [GenesisTrack.tsx](file:///home/rehaanahmad/projects/syntaxis/src/sections/GenesisTrack.tsx) — Junior division section with gold themes.
-*   [Schedule.tsx](file:///home/rehaanahmad/projects/syntaxis/src/sections/Schedule.tsx) — Symmetric timeline schedule divided by event days.
-*   [Speakers.tsx](file:///home/rehaanahmad/projects/syntaxis/src/sections/Speakers.tsx) — Watermarked keynote speaker cards.
-*   [Sponsors.tsx](file:///home/rehaanahmad/projects/syntaxis/src/sections/Sponsors.tsx) — Grayscale-to-color tier catalog.
+*   [GenesisTrack.tsx](file:///home/rehaanahmad/projects/syntaxis/src/sections/GenesisTrack.tsx) — Junior division expanded to include students from classes 9 to 12.
+*   [Schedule.tsx](file:///home/rehaanahmad/projects/syntaxis/src/sections/Schedule.tsx) — Symmetric timeline schedule updated to strictly follow the official 3-day event flow.
+*   [Speakers.tsx](file:///home/rehaanahmad/projects/syntaxis/src/sections/Speakers.tsx) — Keynote speaker cards now hidden behind a reveal countdown (expires August 10, 2026).
+*   [Sponsors.tsx](file:///home/rehaanahmad/projects/syntaxis/src/sections/Sponsors.tsx) — Sponsor tier catalog now hidden behind a reveal countdown (expires August 10, 2026).
+*   [RevealCountdown.tsx](file:///home/rehaanahmad/projects/syntaxis/src/components/ui/RevealCountdown.tsx) — New utility component for time-gated content reveals.
 *   [Register.tsx](file:///home/rehaanahmad/projects/syntaxis/src/sections/Register.tsx) — High-contrast crimson registration call block.
-*   [FAQ.tsx](file:///home/rehaanahmad/projects/syntaxis/src/sections/FAQ.tsx) — Accordion queries block.
+*   [FAQ.tsx](file:///home/rehaanahmad/projects/syntaxis/src/sections/FAQ.tsx) — Updated eligibility for Genesis Track (9-12) and valedictory ceremony date (Sept 13).
 *   [TeamContact.tsx](file:///home/rehaanahmad/projects/syntaxis/src/sections/TeamContact.tsx) — Profiles grid and controlled contact form with Web3Forms integration and Abstergo loading spinner.
 *   [SocialIcons.tsx](file:///home/rehaanahmad/projects/syntaxis/src/components/icons/SocialIcons.tsx) — Brand logos SVG Mock icons (LinkedIn, Instagram, Twitter).
 *   [Footer.tsx](file:///home/rehaanahmad/projects/syntaxis/src/components/Footer.tsx) — Navigation, contact info, and copyright bar.
 *   [App.tsx](file:///home/rehaanahmad/projects/syntaxis/src/App.tsx) — Grid flow mounts.
 *   [main.tsx](file:///home/rehaanahmad/projects/syntaxis/src/main.tsx) — Mounting dual targets (#root & #syntaxis-root).
-*   [vite.config.ts](file:///home/rehaanahmad/projects/syntaxis/vite.config.ts) — Manual chunk rollups using function mapping.
+*   [vite.config.ts](file:///home/rehaanahmad/projects/syntaxis/vite.config.ts) — Base URL updated to '/' for sub-domain hosting.
 *   [postcss.config.js](file:///home/rehaanahmad/projects/syntaxis/postcss.config.js) — Tailwind v4 PostCSS compilation updates.
 *   [index.css](file:///home/rehaanahmad/projects/syntaxis/src/index.css) — Repositioned CSS imports.
 *   Cleaned up scaffolded CSS and unused asset placeholders.
@@ -31,9 +32,9 @@ Failed Attempts:
 *   Standard Tailwind v4 configurations failed to load through standard PostCSS. Resolved by installing `@tailwindcss/postcss` and updating `postcss.config.js`.
 *   Framer Motion transition strings failed type inference. Resolved by adding `as const` type assertions.
 
-Next Step: Review the compiled production files under the `dist/` directory and enqueue the enqueued build files inside the WordPress child theme templates.
+Next Step: Review the compiled production files under the `dist/` directory and deploy to the `syntaxis.rdec.ac.in` sub-domain.
 
-Warnings: Keep the base URL configured as `/syntaxis/` in `vite.config.ts`. Do not use absolute paths starting with `/` or browser storage, which are blocked on the WP subdirectory.
+Warnings: Keep the base URL configured as `/` in `vite.config.ts` for the new sub-domain deployment.
 
 Verification Run:
 Output of `npm run build` checking:

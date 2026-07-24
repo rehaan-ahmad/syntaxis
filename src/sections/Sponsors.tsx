@@ -5,6 +5,7 @@ import Autoplay from 'embla-carousel-autoplay';
 import { Mail } from 'lucide-react';
 import SectionHeading from '../components/ui/SectionHeading';
 import RevealCountdown from '../components/ui/RevealCountdown';
+import { useCountdown } from '../hooks/useCountdown';
 import { SECTION_IDS, EXTERNAL_LINKS } from '../lib/constants';
 
 interface SponsorLogoProps {
@@ -30,6 +31,9 @@ function SponsorLogo({ tier, className }: SponsorLogoProps) {
 }
 
 export function Sponsors() {
+  const revealDate = new Date('2026-08-10T00:00:00+05:30').getTime();
+  const { isExpired } = useCountdown(revealDate);
+
   const [isMobile, setIsMobile] = useState(false);
   const [emblaRef] = useEmblaCarousel({ loop: true, slidesToScroll: 1 }, [
     Autoplay({ delay: 2500, stopOnInteraction: false })
@@ -46,8 +50,8 @@ export function Sponsors() {
 
   const fadeUpVariants = {
     initial: { opacity: 0, y: 40 },
-    animate: { 
-      opacity: 1, 
+    animate: {
+      opacity: 1,
       y: 0,
       transition: { duration: 0.8, ease: 'easeOut' as const }
     }
@@ -63,109 +67,110 @@ export function Sponsors() {
       {/* Section Heading */}
       <SectionHeading title="FEST SPONSORS" subtitle="OUR PARTNERS" />
 
-      {/* Conditional Reveal */}
-      <RevealCountdown
-        targetDate={new Date('2026-08-10T00:00:00+05:30').getTime()}
-        label="Sponsors Reveal In"
-      />
+      {!isExpired ? (
+        <RevealCountdown
+          targetDate={revealDate}
+          label="Sponsors Reveal In"
+        />
+      ) : (
+        <>
+          {/* Sponsors Layout hierarchy */}
+          <div className="flex flex-col gap-12 max-w-5xl mx-auto w-full">
 
-      {/* Sponsors Layout hierarchy */}
-      <div className="flex flex-col gap-12 max-w-5xl mx-auto w-full">
+            {/* Tier 1: Title Sponsor (1 Logo) */}
+            <motion.div
+              initial="initial"
+              whileInView="animate"
+              viewport={{ once: true, margin: "-100px" }}
+              variants={fadeUpVariants}
+              className="flex flex-col items-center gap-4 text-center"
+            >
+              <span className="text-xs font-bold uppercase tracking-[0.25em] text-[var(--color-brand)]">Title Sponsor</span>
+              <SponsorLogo tier="Title" className="w-72 h-36 md:w-80 md:h-40" />
+            </motion.div>
 
-        {/* Tier 1: Title Sponsor (1 Logo) */}
-        <motion.div
-          initial="initial"
-          whileInView="animate"
-          viewport={{ once: true, margin: "-100px" }}
-          variants={fadeUpVariants}
-          className="flex flex-col items-center gap-4 text-center"
-        >
-          <span className="text-xs font-bold uppercase tracking-[0.25em] text-[var(--color-brand)]">Title Sponsor</span>
-          <SponsorLogo tier="Title" className="w-72 h-36 md:w-80 md:h-40" />
-        </motion.div>
-
-        {/* Tier 2: Platinum Sponsors (Up to 2) */}
-        <motion.div 
-          initial="initial"
-          whileInView="animate"
-          viewport={{ once: true, margin: "-100px" }}
-          variants={fadeUpVariants}
-          className="flex flex-col items-center gap-4 text-center mt-4"
-        >
-          <span className="text-xs font-bold uppercase tracking-[0.25em] text-[var(--color-text-pri)]">Platinum Partners</span>
-          <div className="flex flex-wrap gap-6 justify-center w-full">
-            <SponsorLogo tier="Platinum" className="w-56 h-28 md:w-64 md:h-32" />
-            <SponsorLogo tier="Platinum" className="w-56 h-28 md:w-64 md:h-32" />
-          </div>
-        </motion.div>
-
-        {/* Tier 3: Gold Sponsors (Up to 3) */}
-        <motion.div 
-          initial="initial"
-          whileInView="animate"
-          viewport={{ once: true, margin: "-100px" }}
-          variants={fadeUpVariants}
-          className="flex flex-col items-center gap-4 text-center mt-4"
-        >
-          <span className="text-xs font-bold uppercase tracking-[0.25em] text-[var(--color-brand)]">Gold Partners</span>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-6 justify-center w-full max-w-3xl">
-            <SponsorLogo tier="Gold" className="w-full h-24 md:h-28" />
-            <SponsorLogo tier="Gold" className="w-full h-24 md:h-28" />
-            <SponsorLogo tier="Gold" className="w-full h-24 md:h-28 col-span-2 md:col-span-1 max-w-[240px] md:max-w-none mx-auto w-full" />
-          </div>
-        </motion.div>
-
-        {/* Tier 4: Silver Sponsors (Up to 4) */}
-        <motion.div 
-          initial="initial"
-          whileInView="animate"
-          viewport={{ once: true, margin: "-100px" }}
-          variants={fadeUpVariants}
-          className="flex flex-col items-center gap-4 text-center mt-4"
-        >
-          <span className="text-xs font-bold uppercase tracking-[0.25em] text-[var(--color-text-sec)]">Silver Partners</span>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 justify-center w-full max-w-4xl">
-            <SponsorLogo tier="Silver" className="w-full h-20 md:h-24" />
-            <SponsorLogo tier="Silver" className="w-full h-20 md:h-24" />
-            <SponsorLogo tier="Silver" className="w-full h-20 md:h-24" />
-            <SponsorLogo tier="Silver" className="w-full h-20 md:h-24" />
-          </div>
-        </motion.div>
-
-        {/* Tier 5: Associate Sponsors (Up to 6) */}
-        <motion.div 
-          initial="initial"
-          whileInView="animate"
-          viewport={{ once: true, margin: "-100px" }}
-          variants={fadeUpVariants}
-          className="flex flex-col items-center gap-4 text-center mt-4"
-        >
-          <span className="text-xs font-bold uppercase tracking-[0.25em] text-[var(--color-text-sec)]/80">Associate Sponsors</span>
-          
-          {isMobile ? (
-            /* Embla slider on mobile for lower tiers */
-            <div className="w-full overflow-hidden" ref={emblaRef}>
-              <div className="flex -ml-4">
-                {associateSponsors.map((_, idx) => (
-                  <div key={idx} className="flex-[0_0_40%] min-w-0 pl-4">
-                    <SponsorLogo tier="Associate" className="w-full h-16" />
-                  </div>
-                ))}
+            {/* Tier 2: Platinum Sponsors (Up to 2) */}
+            <motion.div
+              initial="initial"
+              whileInView="animate"
+              viewport={{ once: true, margin: "-100px" }}
+              variants={fadeUpVariants}
+              className="flex flex-col items-center gap-4 text-center mt-4"
+            >
+              <span className="text-xs font-bold uppercase tracking-[0.25em] text-[var(--color-text-pri)]">Platinum Partners</span>
+              <div className="flex flex-wrap gap-6 justify-center w-full">
+                <SponsorLogo tier="Platinum" className="w-56 h-28 md:w-64 md:h-32" />
+                <SponsorLogo tier="Platinum" className="w-56 h-28 md:w-64 md:h-32" />
               </div>
-            </div>
-          ) : (
-            /* Grid on desktop */
-            <div className="grid grid-cols-3 md:grid-cols-6 gap-4 justify-center w-full max-w-5xl">
-              {associateSponsors.map((_, idx) => (
-                <SponsorLogo key={idx} tier="Associate" className="w-full h-16 md:h-20" />
-              ))}
-            </div>
-          )}
-        </motion.div>
-      </div>
+            </motion.div>
+
+            {/* Tier 3: Gold Sponsors (Up to 3) */}
+            <motion.div
+              initial="initial"
+              whileInView="animate"
+              viewport={{ once: true, margin: "-100px" }}
+              variants={fadeUpVariants}
+              className="flex flex-col items-center gap-4 text-center mt-4"
+            >
+              <span className="text-xs font-bold uppercase tracking-[0.25em] text-[var(--color-brand)]">Gold Partners</span>
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-6 justify-center w-full max-w-3xl">
+                <SponsorLogo tier="Gold" className="w-full h-24 md:h-28" />
+                <SponsorLogo tier="Gold" className="w-full h-24 md:h-28" />
+                <SponsorLogo tier="Gold" className="w-full h-24 md:h-28 col-span-2 md:col-span-1 max-w-[240px] md:max-w-none mx-auto w-full" />
+              </div>
+            </motion.div>
+
+            {/* Tier 4: Silver Sponsors (Up to 4) */}
+            <motion.div
+              initial="initial"
+              whileInView="animate"
+              viewport={{ once: true, margin: "-100px" }}
+              variants={fadeUpVariants}
+              className="flex flex-col items-center gap-4 text-center mt-4"
+            >
+              <span className="text-xs font-bold uppercase tracking-[0.25em] text-[var(--color-text-sec)]">Silver Partners</span>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 justify-center w-full max-w-4xl">
+                <SponsorLogo tier="Silver" className="w-full h-20 md:h-24" />
+                <SponsorLogo tier="Silver" className="w-full h-20 md:h-24" />
+                <SponsorLogo tier="Silver" className="w-full h-20 md:h-24" />
+                <SponsorLogo tier="Silver" className="w-full h-20 md:h-24" />
+              </div>
+            </motion.div>
+
+            {/* Tier 5: Associate Sponsors (Up to 6) */}
+            <motion.div
+              initial="initial"
+              whileInView="animate"
+              viewport={{ once: true, margin: "-100px" }}
+              variants={fadeUpVariants}
+              className="flex flex-col items-center gap-4 text-center mt-4"
+            >
+              <span className="text-xs font-bold uppercase tracking-[0.25em] text-[var(--color-text-sec)]/80">Associate Sponsors</span>
+
+              {isMobile ? (
+                <div className="w-full overflow-hidden" ref={emblaRef}>
+                  <div className="flex -ml-4">
+                    {associateSponsors.map((_, idx) => (
+                      <div key={idx} className="flex-[0_0_40%] min-w-0 pl-4">
+                        <SponsorLogo tier="Associate" className="w-full h-16" />
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ) : (
+                <div className="grid grid-cols-3 md:grid-cols-6 gap-4 justify-center w-full max-w-5xl">
+                  {associateSponsors.map((_, idx) => (
+                    <SponsorLogo key={idx} tier="Associate" className="w-full h-16 md:h-20" />
+                  ))}
+                </div>
+              )}
+            </motion.div>
+          </div>
+        </>
+      )}
 
       {/* Become a Sponsor CTA */}
-      <motion.div 
+      <motion.div
         initial="initial"
         whileInView="animate"
         viewport={{ once: true, margin: "-100px" }}
@@ -178,7 +183,7 @@ export function Sponsors() {
         <p className="text-xs text-[var(--color-text-body)] mb-6 leading-relaxed">
           Expose your brand to 700-900 tech-focused students and future developers from NCR colleges. Let's build collaborative outreach campaigns.
         </p>
-        <a 
+        <a
           href={EXTERNAL_LINKS.email}
           className="flex items-center gap-2 border border-[var(--color-brand)] text-[var(--color-brand)] hover:bg-[var(--color-brand)] hover:text-[var(--color-bg)] font-bold px-6 py-3 rounded-[var(--radius-md)] transition-all duration-200 text-xs shadow-md cursor-pointer select-none outline-none font-heading uppercase"
         >
@@ -186,7 +191,6 @@ export function Sponsors() {
           <span>Become a Sponsor</span>
         </a>
       </motion.div>
-      
     </section>
   );
 }
