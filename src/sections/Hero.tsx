@@ -32,17 +32,58 @@ export function Hero() {
         variants={containerVariants}
         initial="initial"
         animate="animate"
-        className="max-w-4xl mx-auto text-center flex flex-col items-center gap-6 sm:gap-8"
+        className="w-full max-w-6xl mx-auto text-center flex flex-col items-center gap-6 sm:gap-8"
       >
-        {/* Fest Logo Badge */}
-        <motion.div variants={itemVariants} className="relative group">
-          <div className="absolute inset-0 bg-gradient-to-tr from-[var(--color-accent)] to-[var(--color-brand)] rounded-full blur-xl opacity-20 group-hover:opacity-40 transition-opacity duration-700" />
+      {/* Top Header Logos Bar (Top of Page) */}
+      <motion.div 
+        variants={itemVariants}
+        className="w-full max-w-6xl mx-auto px-2 sm:px-6 mb-6 sm:mb-10 grid grid-cols-3 items-center justify-between gap-2 sm:gap-4"
+      >
+        {/* Top Left: College Logo */}
+        <div className="flex items-center justify-start">
+          <a 
+            href={EXTERNAL_LINKS.college} 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="hover:scale-105 transition-transform"
+            title="R.D. Engineering College"
+          >
+            <img 
+              src={`${import.meta.env.BASE_URL}assets/logo/college-logo.png`} 
+              alt="College Logo" 
+              className="h-16 sm:h-24 md:h-32 lg:h-36 w-auto object-contain drop-shadow-md" 
+            />
+          </a>
+        </div>
+
+        {/* Top Center: Syntaxis Logo (Enlarged) */}
+        <div className="flex items-center justify-center">
+          <div className="relative group">
+            <div className="absolute inset-0 bg-gradient-to-tr from-[var(--color-accent)] to-[var(--color-brand)] rounded-full blur-2xl opacity-30 group-hover:opacity-60 transition-opacity duration-700" />
+            <img 
+              src={`${import.meta.env.BASE_URL}assets/logo/syntaxis-logo.png`} 
+              alt="Syntaxis Logo" 
+              className="h-20 sm:h-32 md:h-44 lg:h-52 w-auto relative z-10 object-contain hover:scale-105 transition-transform duration-500 cursor-pointer drop-shadow-xl" 
+            />
+          </div>
+        </div>
+
+        {/* Top Right: AKTU & NAAC Logos */}
+        <div className="flex items-center justify-end gap-2 sm:gap-4 md:gap-6">
           <img 
-            src={`${import.meta.env.BASE_URL}assets/logo/syntaxis-logo.png`} 
-            alt="Syntaxis Logo" 
-            className="w-40 h-40 md:w-48 md:h-48 relative z-10 object-contain hover:scale-105 transition-transform duration-500 cursor-pointer"
+            src={`${import.meta.env.BASE_URL}assets/logo/aktu-logo.png`} 
+            alt="AKTU Logo" 
+            className="h-14 sm:h-20 md:h-28 lg:h-32 w-auto object-contain drop-shadow-md" 
+            title="Dr. A.P.J. Abdul Kalam Technical University"
           />
-        </motion.div>
+          <img 
+            src={`${import.meta.env.BASE_URL}assets/logo/naac-logo.png`} 
+            alt="NAAC Logo" 
+            className="h-14 sm:h-20 md:h-28 lg:h-32 w-auto object-contain drop-shadow-md" 
+            title="NAAC Accredited"
+          />
+        </div>
+      </motion.div>
 
         {/* Fest Title */}
         <motion.div variants={itemVariants} className="flex flex-col items-center">
