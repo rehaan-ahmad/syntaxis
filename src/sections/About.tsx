@@ -112,8 +112,8 @@ export function About() {
           >
             <div className="absolute inset-0 bg-gradient-to-tr from-[var(--color-accent)] to-transparent rounded-[var(--radius-lg)] blur-md opacity-20" />
             <img 
-              src={`https://placehold.co/500x400/${encodeURIComponent('5d1c34')}/${encodeURIComponent('f0e9e3')}?text=Fest+Atmosphere`}
-              alt="[IMAGE PLACEHOLDER — 500x400 — Fest atmosphere photo]" 
+              src={`${import.meta.env.BASE_URL}assets/about-atmosphere.PNG`}
+              alt="Syntaxis Fest Atmosphere" 
               className="w-full h-auto object-cover rounded-[var(--radius-lg)] border border-[var(--color-border)] shadow-2xl relative z-10"
               loading="lazy"
             />
