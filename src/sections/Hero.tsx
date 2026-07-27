@@ -28,20 +28,20 @@ export function Hero() {
       id={SECTION_IDS.home}
       className="min-h-screen flex flex-col justify-center items-center relative z-10 px-4 pt-16 select-none"
     >
-      <motion-div
+      <motion.div
         variants={containerVariants}
         initial="initial"
         animate="animate"
         className="w-full max-w-6xl mx-auto text-center flex flex-col items-center gap-6 sm:gap-8"
       >
         {/* Top Header Logos Bar (Top of Page) */}
-        <motion-div
+        <motion.div
           variants={itemVariants}
           className="w-full max-w-6xl mx-auto px-2 sm:px-6 mb-6 sm:mb-10 flex flex-col items-center gap-4"
         >
           {/* Banner Image Replacing College, AKTU, NAAC logos */}
           <img
-            src={`${import.meta.env.BASE_URL}assets/logo/College%20Banner.png`}
+            src={`${import.meta.env.BASE_URL}assets/logo/college-banner.png`}
             alt="College Banner"
             className="w-full max-h-48 object-contain hover:scale-105 transition-transform"
           />
@@ -52,20 +52,20 @@ export function Hero() {
             alt="Syntaxis Logo"
             className="h-36 sm:h-72 md:h-108 w-auto object-contain hover:scale-105 transition-transform"
           />
-        </motion-div>
+        </motion.div>
 
         {/* Fest Title */}
-        <motion-div variants={itemVariants} className="flex flex-col items-center">
+        <motion.div variants={itemVariants} className="flex flex-col items-center">
           <h1 className="text-6xl sm:text-7xl md:text-8xl font-black tracking-widest text-[var(--color-text-pri)] font-heading leading-none">
             SYNTAXIS
           </h1>
           <span className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-[0.25em] text-[var(--color-brand)] font-heading mt-2">
             2026
           </span>
-        </motion-div>
+        </motion.div>
 
         {/* Tagline / Subtitle */}
-        <motion-div variants={itemVariants} className="flex flex-col gap-2 max-w-2xl">
+        <motion.div variants={itemVariants} className="flex flex-col gap-2 max-w-2xl">
           <p className="text-lg sm:text-xl md:text-2xl font-semibold text-[var(--color-text-pri)] tracking-wide">
             {FEST_INFO.name} — PREMIER TECH FEST
           </p>
@@ -75,18 +75,18 @@ export function Hero() {
           <p className="text-xs sm:text-sm text-[var(--color-text-body)] tracking-wide max-w-xl mx-auto mt-2 italic">
             Connecting {FEST_INFO.colleges} NCR Colleges | {FEST_INFO.participants} Participants
           </p>
-        </motion-div>
+        </motion.div>
 
         {/* Countdown Timer Block */}
-        <motion-div
+        <motion.div
           variants={itemVariants}
           className="w-full bg-[var(--color-bg-glass)] border border-[var(--color-border)] p-4 sm:p-6 rounded-[var(--radius-lg)] shadow-2xl backdrop-blur-md"
         >
           <CountdownTimer />
-        </motion-div>
+        </motion.div>
 
         {/* Action Call-to-actions */}
-        <motion-div variants={itemVariants} className="flex flex-wrap gap-4 justify-center items-center mt-2">
+        <motion.div variants={itemVariants} className="flex flex-wrap gap-4 justify-center items-center mt-2">
           {/* Primary CTA (Gold) */}
           <a
             href={EXTERNAL_LINKS.pragma}
@@ -108,10 +108,10 @@ export function Hero() {
           >
             Explore Events
           </ScrollLink>
-        </motion-div>
+        </motion.div>
 
         {/* Bouncing Scroll indicator at bottom */}
-        <motion-div
+        <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 0.7 }}
           transition={{ delay: 1.5, duration: 1 }}
@@ -123,8 +123,8 @@ export function Hero() {
             </span>
             <ChevronDown className="w-5 h-5 text-[var(--color-brand)] animate-bounce mt-1" />
           </ScrollLink>
-        </motion-div>
-      </motion-div>
+        </motion.div>
+      </motion.div>
     </section>
   );
 }
