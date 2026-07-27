@@ -143,18 +143,7 @@ export function Footer() {
         {/* Footer Bottom copyright details */}
         <div className="border-t border-[var(--color-border)]/20 pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] font-semibold text-[var(--color-text-sec)] uppercase tracking-widest text-center md:text-left">
           <span>
-            &copy; 2026 Nexora — RDEC Tech Club. All rights reserved.
-          </span>
-          <span className="flex items-center gap-1.5">
-            <span>Powered by</span>
-            <a 
-              href={EXTERNAL_LINKS.pragma}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-[var(--color-brand)] hover:underline"
-            >
-              Pragma EMS
-            </a>
+            &copy; 2026 Nexora & GeeksforGeeks Student Community — RDEC Tech Club. All rights reserved.
           </span>
         </div>
 
