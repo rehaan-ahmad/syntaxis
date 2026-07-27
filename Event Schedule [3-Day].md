@@ -1,6 +1,6 @@
 # **SYNTAXIS 2026: Official Event Schedule**
 
-**Theme:** Automate. Innovate. Elevate. **Dates:** September 11-13, 2026 **Venue:** R.D. Engineering College (RDEC) Campus, Ghaziabad **Standard Operating Hours:** 9:00 AM – 5:30 PM 
+**Theme:** Automate. Innovate. Elevate. **Dates:** September 18-20, 2026 **Venue:** R.D. Engineering College (RDEC) Campus, Ghaziabad **Standard Operating Hours:** 9:00 AM – 5:30 PM 
 
 ## **Day 1: GENESIS (Origin & Discourse)**
 

@@ -7,7 +7,7 @@ import { useCountdown } from '../../hooks/useCountdown';
 
 export function PragmaModal() {
   const [isOpen, setIsOpen] = useState(false);
-  const revealDate = new Date('2026-08-05T00:00:00+05:30').getTime();
+  const revealDate = new Date('2026-08-10T00:00:00+05:30').getTime();
   const { isExpired } = useCountdown(revealDate);
 
   useEffect(() => {
@@ -78,7 +78,7 @@ export function PragmaModal() {
                   <RevealCountdown 
                     targetDate={revealDate} 
                     label="Pragma Launches In"
-                    revealText="Launching on August 5, 2026"
+                    revealText="Launching on August 10, 2026"
                   />
                 </div>
               ) : (

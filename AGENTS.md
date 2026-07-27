@@ -8,7 +8,7 @@
 
 **Site:** SYNTAXIS 2026 — Inter-college Tech Fest  
 **College:** R.D. Engineering College (RDEC), Ghaziabad  
-**Dates:** September 11-13, 2026  
+**Dates:** September 18-20, 2026  
 **Scale:** 25+ NCR Colleges, 700–900 participants  
 **Contact:** syntaxis@rdec.in  
 **EMS:** Pragma (separate system — link only, do not build here)
@@ -387,7 +387,7 @@ src={`https://placehold.co/400x200/${encodeURIComponent('5d1c34')}/${encodeURICo
 
 ```tsx
 // src/hooks/useCountdown.ts
-const TARGET = new Date('2026-09-21T09:00:00+05:30') // IST
+const TARGET = new Date('2026-09-18T09:00:00+05:30') // IST
 
 export function useCountdown() {
   // returns { days, hours, minutes, seconds, isExpired }
@@ -456,9 +456,9 @@ export const EXTERNAL_LINKS = {
 
 export const FEST_INFO = {
   name:     'SYNTAXIS 2026',
-  dates:    'September 21–24, 2026',
+  dates:    'September 18–20, 2026',
   venue:    'R.D. Engineering College, Ghaziabad',
-  target:   new Date('2026-09-21T09:00:00+05:30'),
+  target:   new Date('2026-09-18T09:00:00+05:30'),
   colleges: '15+',
   participants: '500–900',
 }

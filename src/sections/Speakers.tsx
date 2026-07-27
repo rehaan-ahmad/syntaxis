@@ -16,7 +16,7 @@ interface SpeakerItem {
 }
 
 export function Speakers() {
-  const revealDate = new Date('2026-08-10T00:00:00+05:30').getTime();
+  const revealDate = new Date('2026-08-15T00:00:00+05:30').getTime();
   const { isExpired } = useCountdown(revealDate);
 
   const speakers: SpeakerItem[] = [

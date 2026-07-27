@@ -27,9 +27,9 @@ export const EXTERNAL_LINKS = {
 
 export const FEST_INFO = {
   name:     'SYNTAXIS 2026',
-  dates:    'September 11–13, 2026',
+  dates:    'September 18–20, 2026',
   venue:    'R.D. Engineering College, Ghaziabad',
-  target:   new Date('2026-09-11T09:00:00+05:30'),
+  target:   new Date('2026-09-18T09:00:00+05:30'),
   colleges: '25+',
   participants: '700–900',
 }

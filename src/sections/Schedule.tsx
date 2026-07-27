@@ -23,7 +23,7 @@ export function Schedule() {
   const scheduleData: DaySchedule[] = [
     {
       dayLabel: 'Day 1',
-      dateLabel: 'Sep 11, 2026',
+      dateLabel: 'Sep 18, 2026',
       events: [
         {
           time: '09:30 AM',
@@ -71,7 +71,7 @@ export function Schedule() {
     },
     {
       dayLabel: 'Day 2',
-      dateLabel: 'Sep 12, 2026',
+      dateLabel: 'Sep 19, 2026',
       events: [
         {
           time: '09:00 AM',
@@ -126,7 +126,7 @@ export function Schedule() {
     },
     {
       dayLabel: 'Day 3',
-      dateLabel: 'Sep 13, 2026',
+      dateLabel: 'Sep 20, 2026',
       events: [
         {
           time: '09:00 AM',

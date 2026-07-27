@@ -11,11 +11,11 @@ Changed:
 *   [EventCarousel.tsx](file:///home/rehaanahmad/projects/syntaxis/src/components/carousel/EventCarousel.tsx) — Embla-based mobile-responsive carousel.
 *   [GenesisTrack.tsx](file:///home/rehaanahmad/projects/syntaxis/src/sections/GenesisTrack.tsx) — Junior division expanded to include students from classes 9 to 12.
 *   [Schedule.tsx](file:///home/rehaanahmad/projects/syntaxis/src/sections/Schedule.tsx) — Symmetric timeline schedule updated to strictly follow the official 3-day event flow.
-*   [Speakers.tsx](file:///home/rehaanahmad/projects/syntaxis/src/sections/Speakers.tsx) — Keynote speaker cards now hidden behind a reveal countdown (expires August 10, 2026).
-*   [Sponsors.tsx](file:///home/rehaanahmad/projects/syntaxis/src/sections/Sponsors.tsx) — Sponsor tier catalog now hidden behind a reveal countdown (expires August 10, 2026).
+*   [Speakers.tsx](file:///home/rehaanahmad/projects/syntaxis/src/sections/Speakers.tsx) — Keynote speaker cards now hidden behind a reveal countdown (expires August 15, 2026).
+*   [Sponsors.tsx](file:///home/rehaanahmad/projects/syntaxis/src/sections/Sponsors.tsx) — Sponsor tier catalog now hidden behind a reveal countdown (expires August 15, 2026).
 *   [RevealCountdown.tsx](file:///home/rehaanahmad/projects/syntaxis/src/components/ui/RevealCountdown.tsx) — New utility component for time-gated content reveals.
 *   [Register.tsx](file:///home/rehaanahmad/projects/syntaxis/src/sections/Register.tsx) — High-contrast crimson registration call block.
-*   [FAQ.tsx](file:///home/rehaanahmad/projects/syntaxis/src/sections/FAQ.tsx) — Updated eligibility for Genesis Track (9-12) and valedictory ceremony date (Sept 13).
+*   [FAQ.tsx](file:///home/rehaanahmad/projects/syntaxis/src/sections/FAQ.tsx) — Updated eligibility for Genesis Track (9-12) and valedictory ceremony date (Sept 20).
 *   [TeamContact.tsx](file:///home/rehaanahmad/projects/syntaxis/src/sections/TeamContact.tsx) — Profiles grid and controlled contact form with Web3Forms integration and Abstergo loading spinner.
 *   [SocialIcons.tsx](file:///home/rehaanahmad/projects/syntaxis/src/components/icons/SocialIcons.tsx) — Brand logos SVG Mock icons (LinkedIn, Instagram, Twitter).
 *   [Footer.tsx](file:///home/rehaanahmad/projects/syntaxis/src/components/Footer.tsx) — Navigation, contact info, and copyright bar.

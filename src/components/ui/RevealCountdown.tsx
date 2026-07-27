@@ -8,7 +8,7 @@ interface RevealCountdownProps {
   revealText?: string;
 }
 
-export function RevealCountdown({ targetDate, label, children, revealText = "Revealing on August 10, 2026" }: RevealCountdownProps) {
+export function RevealCountdown({ targetDate, label, children, revealText = "Revealing on August 15, 2026" }: RevealCountdownProps) {
   const { days, hours, minutes, seconds, isExpired } = useCountdown(targetDate);
 
   const pad = (num: number) => String(num).padStart(2, '0');
