@@ -51,3 +51,22 @@ export function useCountdown(targetDateMs: number = TARGET_DATE): CountdownState
 
   return timeLeft;
 }
+
+export function useIsRevealed(targetDateMs: number): boolean {
+  const [isRevealed, setIsRevealed] = useState(Date.now() >= targetDateMs);
+
+  useEffect(() => {
+    if (isRevealed) return;
+
+    const timer = setInterval(() => {
+      if (Date.now() >= targetDateMs) {
+        setIsRevealed(true);
+      }
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, [targetDateMs, isRevealed]);
+
+  return isRevealed;
+}
+

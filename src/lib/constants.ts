@@ -33,3 +33,5 @@ export const FEST_INFO = {
   colleges: '25+',
   participants: '700–900',
 }
+
+export const REVEAL_DATE = new Date('2026-08-10T00:00:00+05:30').getTime();

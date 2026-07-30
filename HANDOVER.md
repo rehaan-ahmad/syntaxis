@@ -1,26 +1,16 @@
 Goal: Build a responsive, visually stunning single-page React application for the SYNTAXIS 2026 tech fest at R.D. Engineering College (RDEC), Ghaziabad, hosted on the sub-domain syntaxis.rdec.ac.in.
 
-Current State: Fully completed all Phases (0 to 17) of the site build checklist. Migrated from Vercel to private server hosting. Code review and cleanup completed — removed Vercel-specific configuration, localized all external placeholder images, added SEO meta tags, cleaned up boilerplate artifacts. The SPA compiles cleanly and packages warning-free production assets split into optimal manual chunks. The site has been transitioned from a 4-day to a 3-day event structure with updated schedules and participant counts.
+Current State: Fully completed all Phases (0 to 17) of the site build checklist. Migrated from Vercel to private server hosting. Code review, cleanup, and layout adjustments completed — removed Vercel-specific configuration, localized all external placeholder images, added SEO meta tags, and implemented conditional visibility for Events, Speakers, and Sponsors sections until August 10, 2026. The SPA compiles cleanly and packages warning-free production assets split into optimal manual chunks.
 
 Files in Flight: None.
 
-Changed (Migration & Cleanup Session):
-*   [vite.config.ts](file:///home/rehaanahmad/projects/syntaxis/vite.config.ts) — Removed `process.env.VERCEL` conditional; base set to `'/'` for subdomain hosting.
-*   [package.json](file:///home/rehaanahmad/projects/syntaxis/package.json) — Renamed from `temp-init` to `syntaxis-2026`; added description, homepage, license, bumped to v1.0.0.
-*   [index.html](file:///home/rehaanahmad/projects/syntaxis/index.html) — Added Open Graph, Twitter Card, theme-color, and canonical meta tags.
-*   [Events.tsx](file:///home/rehaanahmad/projects/syntaxis/src/sections/Events.tsx) — Replaced 10 placehold.co URLs with local SVG placeholders.
-*   [Speakers.tsx](file:///home/rehaanahmad/projects/syntaxis/src/sections/Speakers.tsx) — Replaced 4 placehold.co URLs with local SVG placeholders.
-*   [TeamContact.tsx](file:///home/rehaanahmad/projects/syntaxis/src/sections/TeamContact.tsx) — Replaced 5 placehold.co URLs with local SVG placeholders; removed `console.error` leak.
-*   [GenesisTrack.tsx](file:///home/rehaanahmad/projects/syntaxis/src/sections/GenesisTrack.tsx) — Fixed markdown `**text**` rendering as literal; replaced placehold.co URL.
-*   [Sponsors.tsx](file:///home/rehaanahmad/projects/syntaxis/src/sections/Sponsors.tsx) — Fixed unused `_` variable in map callbacks.
-*   [.gitignore](file:///home/rehaanahmad/projects/syntaxis/.gitignore) — Added `.vercel` and `.netlify` exclusions.
-*   [README.md](file:///home/rehaanahmad/projects/syntaxis/README.md) — Rewritten for private server deployment with Nginx config example.
-*   Added `public/robots.txt` and `public/sitemap.xml` for SEO.
-*   Added branded SVG placeholders: `placeholder-event.svg`, `placeholder-speaker.svg`, `placeholder-team.svg`, `placeholder-genesis.svg`.
-*   Deleted `src/assets/vite.svg` (Vite boilerplate leftover).
-
-Failed Attempts:
-*   Bulk `AllowMultiple` replace on template literals with trailing text left residual characters — fixed with targeted per-line cleanup.
+Changed (Migration, Cleanup & Visibility Adjustments):
+*   [lib/constants.ts](file:///home/rehaanahmad/projects/syntaxis/src/lib/constants.ts) — Added `REVEAL_DATE` constant representing August 10, 2026.
+*   [hooks/useCountdown.ts](file:///home/rehaanahmad/projects/syntaxis/src/hooks/useCountdown.ts) — Implemented `useIsRevealed` custom hook to track and dynamically update reveal state.
+*   [App.tsx](file:///home/rehaanahmad/projects/syntaxis/src/App.tsx) — Conditionally render Events, Speakers, and Sponsors sections only after the reveal date.
+*   [Navbar.tsx](file:///home/rehaanahmad/projects/syntaxis/src/components/nav/Navbar.tsx) & [Footer.tsx](file:///home/rehaanahmad/projects/syntaxis/src/components/Footer.tsx) — Conditionally render link targets pointing to events/sponsors sections to avoid navigation bugs.
+*   [Hero.tsx](file:///home/rehaanahmad/projects/syntaxis/src/sections/Hero.tsx) & [Register.tsx](file:///home/rehaanahmad/projects/syntaxis/src/sections/Register.tsx) — Conditionally route CTAs to "About" ("Learn More" / "View Details") instead of "Events" prior to August 10.
+*   [TeamContact.tsx](file:///home/rehaanahmad/projects/syntaxis/src/sections/TeamContact.tsx) — Updated team member image paths for Anurag Kumar, Priyanshi Garg, and Priya Sharma to point to their newly placed photos (`anurag.png`, `priyanshi.png`, `priya.png`).
 
 Next Step: Replace placeholder external URLs in `constants.ts` with production values. Add Web3Forms API key. Replace placeholder images with real photos before final deployment.
 

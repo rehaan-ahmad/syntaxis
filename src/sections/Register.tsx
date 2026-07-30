@@ -2,9 +2,12 @@ import { motion } from 'framer-motion';
 import { Link as ScrollLink } from 'react-scroll';
 import { ArrowRight, Calendar, Compass } from 'lucide-react';
 import CountdownTimer from '../components/ui/CountdownTimer';
-import { SECTION_IDS, EXTERNAL_LINKS, FEST_INFO } from '../lib/constants';
+import { SECTION_IDS, EXTERNAL_LINKS, FEST_INFO, REVEAL_DATE } from '../lib/constants';
+import { useIsRevealed } from '../hooks/useCountdown';
 
 export function Register() {
+  const isRevealed = useIsRevealed(REVEAL_DATE);
+
   const fadeUpVariants = {
     initial: { opacity: 0, y: 35 },
     animate: { 
@@ -70,14 +73,14 @@ export function Register() {
           
           {/* Scroll link (white outline button) */}
           <ScrollLink 
-            to={SECTION_IDS.events}
+            to={isRevealed ? SECTION_IDS.events : SECTION_IDS.about}
             smooth={true}
             duration={600}
             offset={-80}
             className="flex items-center gap-2 border border-white text-white hover:bg-white hover:text-[var(--color-accent)] font-semibold px-8 py-3.5 rounded-[var(--radius-md)] transition-all duration-200 cursor-pointer text-sm uppercase tracking-wider font-heading text-center"
           >
             <Compass className="w-4 h-4" />
-            <span>View Events</span>
+            <span>{isRevealed ? "View Events" : "View Details"}</span>
           </ScrollLink>
         </motion.div>
 

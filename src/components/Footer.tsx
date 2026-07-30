@@ -1,9 +1,11 @@
 import { Link as ScrollLink } from 'react-scroll';
 import { Mail } from 'lucide-react';
 import { Instagram, Linkedin, Twitter } from './icons/SocialIcons';
-import { SECTION_IDS, EXTERNAL_LINKS, FEST_INFO } from '../lib/constants';
+import { SECTION_IDS, EXTERNAL_LINKS, FEST_INFO, REVEAL_DATE } from '../lib/constants';
+import { useIsRevealed } from '../hooks/useCountdown';
 
 export function Footer() {
+  const isRevealed = useIsRevealed(REVEAL_DATE);
   return (
     <footer className="bg-deep border-t border-[var(--color-accent)]/40 relative z-10 select-none py-12 px-6">
       <div className="max-w-7xl mx-auto flex flex-col gap-10">
@@ -82,15 +84,17 @@ export function Footer() {
               >
                 About
               </ScrollLink>
-              <ScrollLink
-                to={SECTION_IDS.events}
-                smooth={true}
-                duration={600}
-                offset={-80}
-                className="text-[var(--color-text-sec)] hover:text-[var(--color-text-pri)] transition-colors cursor-pointer w-fit"
-              >
-                Events
-              </ScrollLink>
+              {isRevealed && (
+                <ScrollLink
+                  to={SECTION_IDS.events}
+                  smooth={true}
+                  duration={600}
+                  offset={-80}
+                  className="text-[var(--color-text-sec)] hover:text-[var(--color-text-pri)] transition-colors cursor-pointer w-fit"
+                >
+                  Events
+                </ScrollLink>
+              )}
               <ScrollLink
                 to={SECTION_IDS.genesis}
                 smooth={true}

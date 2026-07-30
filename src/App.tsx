@@ -14,8 +14,11 @@ import FAQ from './sections/FAQ';
 import TeamContact from './sections/TeamContact';
 import Footer from './components/Footer';
 import PragmaModal from './components/ui/PragmaModal';
+import { REVEAL_DATE } from './lib/constants';
+import { useIsRevealed } from './hooks/useCountdown';
 
 export function App() {
+  const isRevealed = useIsRevealed(REVEAL_DATE);
   return (
     <>
       {/* Background canvas plasma shader or static radial fallback on mobile */}
@@ -47,9 +50,11 @@ export function App() {
           <About />
         </section>
         
-        <section id="events">
-          <Events />
-        </section>
+        {isRevealed && (
+          <section id="events">
+            <Events />
+          </section>
+        )}
         
         <section id="genesis">
           <GenesisTrack />
@@ -59,13 +64,17 @@ export function App() {
           <Schedule />
         </section>
         
-        <section id="speakers">
-          <Speakers />
-        </section>
-        
-        <section id="sponsors">
-          <Sponsors />
-        </section>
+        {isRevealed && (
+          <>
+            <section id="speakers">
+              <Speakers />
+            </section>
+            
+            <section id="sponsors">
+              <Sponsors />
+            </section>
+          </>
+        )}
         
         <section id="register">
           <Register />

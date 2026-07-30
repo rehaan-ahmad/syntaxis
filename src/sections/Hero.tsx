@@ -2,9 +2,11 @@ import { motion } from 'framer-motion';
 import { Link as ScrollLink } from 'react-scroll';
 import { ChevronDown, ArrowRight } from 'lucide-react';
 import CountdownTimer from '../components/ui/CountdownTimer';
-import { SECTION_IDS, EXTERNAL_LINKS, FEST_INFO } from '../lib/constants';
+import { SECTION_IDS, EXTERNAL_LINKS, FEST_INFO, REVEAL_DATE } from '../lib/constants';
+import { useIsRevealed } from '../hooks/useCountdown';
 
 export function Hero() {
+  const isRevealed = useIsRevealed(REVEAL_DATE);
   const containerVariants = {
     initial: {},
     animate: {
@@ -100,13 +102,13 @@ export function Hero() {
 
           {/* Secondary CTA (Outlined accent) */}
           <ScrollLink
-            to={SECTION_IDS.events}
+            to={isRevealed ? SECTION_IDS.events : SECTION_IDS.about}
             smooth={true}
             duration={600}
             offset={-80}
             className="border border-[var(--color-accent)] text-[var(--color-text-pri)] font-semibold px-8 py-3.5 rounded-[var(--radius-md)] hover:bg-[var(--color-accent)] hover:text-white transition-all duration-200 cursor-pointer whitespace-nowrap text-sm text-center"
           >
-            Explore Events
+            {isRevealed ? "Explore Events" : "Learn More"}
           </ScrollLink>
         </motion.div>
 

@@ -3,7 +3,8 @@ import { Link as ScrollLink } from "react-scroll";
 import { Menu, X, ArrowUpRight, Home, User, Calendar, Zap, Clock, Globe } from "lucide-react";
 import clsx from "clsx";
 import { motion, AnimatePresence } from "framer-motion";
-import { SECTION_IDS, EXTERNAL_LINKS } from "../../lib/constants";
+import { SECTION_IDS, EXTERNAL_LINKS, REVEAL_DATE } from "../../lib/constants";
+import { useIsRevealed } from "../../hooks/useCountdown";
 
 // Helper component for navigation links (scroll-based)
 const NavLink = ({ to, icon: Icon, label }: { to: string; icon: React.ComponentType<{ className?: string }>; label: string }) => (
@@ -23,18 +24,19 @@ const NavLink = ({ to, icon: Icon, label }: { to: string; icon: React.ComponentT
 
 export function Navbar({ className, ...props }: React.HTMLAttributes<HTMLElement>) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const isRevealed = useIsRevealed(REVEAL_DATE);
 
   // Navigation items configuration
   const items = {
     left: [
       { label: "Home", to: SECTION_IDS.home, icon: Home },
       { label: "About", to: SECTION_IDS.about, icon: User },
-      { label: "Events", to: SECTION_IDS.events, icon: Calendar },
+      ...(isRevealed ? [{ label: "Events", to: SECTION_IDS.events, icon: Calendar }] : []),
       { label: "Genesis Track", to: SECTION_IDS.genesis, icon: Zap }
     ],
     right: [
       { label: "Schedule", to: SECTION_IDS.schedule, icon: Clock },
-      { label: "Sponsors", to: SECTION_IDS.sponsors, icon: Globe }
+      ...(isRevealed ? [{ label: "Sponsors", to: SECTION_IDS.sponsors, icon: Globe }] : [])
     ]
   };
 
