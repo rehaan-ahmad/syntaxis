@@ -5,10 +5,10 @@
 **Hosting Requirements**: Make sure that the site has its current looks intact. 
 
 ## 2. Changes Required
-**Dates**: Change the dates from 21-24 September to 18-20 September. The TechFest is now happening only for three days. Update the countdown accordingly.
+**Dates**: Change the dates from 21-24 September to 17-18 September. The TechFest is now happening only for three days. Update the countdown accordingly.
 **About Sections**: Change NCR Colleges Count from 15+ to 25+, and the student count from 500-900 to 700-900. Update these things everywhere.
 **Event Schedule**: Update the finalized event schedule to match the one present in @"Event Schedule [3-Day].md", and strictly adhere to that schedules dates, times, event names and everything.
-**Genesis Track**: Update the classes from 9th and 11th to "from 9th to 12th", and whereevery required, change the schools partnered with count from 4+ to approximately 7+.
+**Genesis Track**: Update the classes from 9th and 11th to "from 9th to 12th", and wherever required, change the schools partnered with count from 4+ to 7+.
 **Keynote Speakers**: Instead of showing blank details of speakers as of now, place a countdown on it, revealing it on 10th August, 2026.
 **Sponsors**: Do the same thing as speakers, but reveal it on 10th of August.
 
@@ -22,10 +22,10 @@
     3. Palak Tyagi - Executive Director - https://www.linkedin.com/in/palak-tyagi-
     4. Priyanshi Garg - Marketing Head - https://www.linkedin.com/in/priyanshi-garg-a34835325
     5. Prabhati Pandey - Creative Head - https://www.linkedin.com/in/prabhati-pandey-12p
-    6. Priya Sharma - Documentation Head - https://www.linkedin.com/in/priya-sharma-48b247330
+    6. Priya Sharma - Chief Secretary - https://www.linkedin.com/in/priya-sharma-48b247330
     
 # PRAGMA EMS
-1. Whenevere the user click on Pragma EMS link, redirect them to a page showing a countdown just like one for Speakers/Sponsors. Set it to reveal on 5th August. I can't confirm, but there's a possibility that it'll be launched later.
+1. Whenever the user click on Pragma EMS link, redirect them to a page showing a countdown just like one for Speakers/Sponsors. Set it to reveal on 5th August. I can't confirm, but there's a possibility that it'll be launched later.
 
 # ANSWERS TO FAQS   
 1. Who Can Participate?

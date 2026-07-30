@@ -25,28 +25,28 @@ export function Speakers() {
       name: '[SPEAKER NAME — TO BE CONFIRMED]',
       designation: '[DESIGNATION PLACEHOLDER]',
       organization: '[ORGANIZATION PLACEHOLDER]',
-      image: `https://placehold.co/200x200/${encodeURIComponent('5d1c34')}/${encodeURIComponent('f0e9e3')}?text=Speaker+1`
+      image: `${import.meta.env.BASE_URL}assets/speakers/placeholder-speaker.svg`
     },
     {
       id: 2,
       name: '[SPEAKER NAME — TO BE CONFIRMED]',
       designation: '[DESIGNATION PLACEHOLDER]',
       organization: '[ORGANIZATION PLACEHOLDER]',
-      image: `https://placehold.co/200x200/${encodeURIComponent('5d1c34')}/${encodeURIComponent('f0e9e3')}?text=Speaker+2`
+      image: `${import.meta.env.BASE_URL}assets/speakers/placeholder-speaker.svg`
     },
     {
       id: 3,
       name: '[SPEAKER NAME — TO BE CONFIRMED]',
       designation: '[DESIGNATION PLACEHOLDER]',
       organization: '[ORGANIZATION PLACEHOLDER]',
-      image: `https://placehold.co/200x200/${encodeURIComponent('5d1c34')}/${encodeURIComponent('f0e9e3')}?text=Speaker+3`
+      image: `${import.meta.env.BASE_URL}assets/speakers/placeholder-speaker.svg`
     },
     {
       id: 4,
       name: '[SPEAKER NAME — TO BE CONFIRMED]',
       designation: '[DESIGNATION PLACEHOLDER]',
       organization: '[ORGANIZATION PLACEHOLDER]',
-      image: `https://placehold.co/200x200/${encodeURIComponent('5d1c34')}/${encodeURIComponent('f0e9e3')}?text=Speaker+4`
+      image: `${import.meta.env.BASE_URL}assets/speakers/placeholder-speaker.svg`
     }
   ];
 

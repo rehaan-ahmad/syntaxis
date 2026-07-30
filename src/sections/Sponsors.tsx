@@ -150,7 +150,7 @@ export function Sponsors() {
               {isMobile ? (
                 <div className="w-full overflow-hidden" ref={emblaRef}>
                   <div className="flex -ml-4">
-                    {associateSponsors.map((_, idx) => (
+                    {associateSponsors.map((_label, idx) => (
                       <div key={idx} className="flex-[0_0_40%] min-w-0 pl-4">
                         <SponsorLogo tier="Associate" className="w-full h-16" />
                       </div>
@@ -159,7 +159,7 @@ export function Sponsors() {
                 </div>
               ) : (
                 <div className="grid grid-cols-3 md:grid-cols-6 gap-4 justify-center w-full max-w-5xl">
-                  {associateSponsors.map((_, idx) => (
+                  {associateSponsors.map((_label, idx) => (
                     <SponsorLogo key={idx} tier="Associate" className="w-full h-16 md:h-20" />
                   ))}
                 </div>

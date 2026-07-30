@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="200" viewBox="0 0 400 200">
+  <rect width="400" height="200" fill="#5d1c34"/>
+  <text x="200" y="90" text-anchor="middle" font-family="Georgia, serif" font-size="18" font-weight="bold" fill="#f0e9e3" letter-spacing="3">EVENT</text>
+  <text x="200" y="120" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#cdbbad" letter-spacing="2">POSTER COMING SOON</text>
+  <line x1="160" y1="140" x2="240" y2="140" stroke="#a67d45" stroke-width="2"/>
+</svg>

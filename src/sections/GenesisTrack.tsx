@@ -72,7 +72,7 @@ export function GenesisTrack() {
               NURTURING JUNIOR GENIUSES
             </h3>
             <p className="text-base text-[var(--color-text-body)] leading-relaxed">
-              Curated exclusively for students in grades 9 to 12, the **Genesis Track** provides school students an introduction to the inter-college tech ecosystem. This dedicated wing aims to build interest in STEM concepts, logical thinking, and engineering fields.
+              Curated exclusively for students in grades 9 to 12, the <strong>Genesis Track</strong> provides school students an introduction to the inter-college tech ecosystem. This dedicated wing aims to build interest in STEM concepts, logical thinking, and engineering fields.
             </p>
 
             {/* Why Join Points */}
@@ -117,8 +117,8 @@ export function GenesisTrack() {
           >
             <div className="absolute inset-0 bg-gradient-to-br from-[var(--color-brand)] to-transparent rounded-[var(--radius-lg)] blur-md opacity-25" />
             <img 
-              src={`https://placehold.co/400x400/${encodeURIComponent('a67d45')}/${encodeURIComponent('11100e')}?text=Genesis+Track`}
-              alt="[IMAGE PLACEHOLDER — 400x400 — Genesis Track photo]" 
+              src={`${import.meta.env.BASE_URL}assets/events/placeholder-genesis.svg`}
+              alt="[Genesis Track — PLACEHOLDER photo]" 
               className="w-full max-w-md mx-auto aspect-square object-cover rounded-[var(--radius-lg)] border border-[var(--color-border-gold)] shadow-2xl relative z-10"
               loading="lazy"
             />

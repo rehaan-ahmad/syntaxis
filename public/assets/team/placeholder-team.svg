@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="150" height="150" viewBox="0 0 150 150">
+  <rect width="150" height="150" fill="#5d1c34"/>
+  <circle cx="75" cy="55" r="22" fill="none" stroke="#a67d45" stroke-width="1.5"/>
+  <circle cx="75" cy="55" r="2.5" fill="#a67d45"/>
+  <text x="75" y="105" text-anchor="middle" font-family="Georgia, serif" font-size="10" font-weight="bold" fill="#f0e9e3" letter-spacing="1">TEAM MEMBER</text>
+  <text x="75" y="120" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" fill="#cdbbad">PHOTO COMING SOON</text>
+</svg>

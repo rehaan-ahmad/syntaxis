@@ -37,7 +37,7 @@ export function Events() {
       description: 'Master API building with FastAPI. Build and test a live endpoint using Python scripts in this hands-on session.',
       teamSize: 'Individual',
       prizePool: 'Certificates Offered',
-      image: `https://placehold.co/400x200/${encodeURIComponent('5d1c34')}/${encodeURIComponent('f0e9e3')}?text=Syndesis`,
+      image: `${import.meta.env.BASE_URL}assets/events/placeholder-event.svg`,
       pragmaUrl: EXTERNAL_LINKS.pragma
     },
     {
@@ -46,7 +46,7 @@ export function Events() {
       description: 'Deep dive into Data Structures and Algorithms focusing on pure logical thinking and efficient problem solving.',
       teamSize: 'Individual',
       prizePool: 'Certificates Offered',
-      image: `https://placehold.co/400x200/${encodeURIComponent('5d1c34')}/${encodeURIComponent('f0e9e3')}?text=Logika`,
+      image: `${import.meta.env.BASE_URL}assets/events/placeholder-event.svg`,
       pragmaUrl: EXTERNAL_LINKS.pragma
     },
     {
@@ -55,7 +55,7 @@ export function Events() {
       description: 'TEDx-style talks featuring visionary speakers delivering ideas and spoken discourse on technology and innovation.',
       teamSize: 'Open',
       prizePool: 'N/A',
-      image: `https://placehold.co/400x200/${encodeURIComponent('5d1c34')}/${encodeURIComponent('f0e9e3')}?text=Rhesis`,
+      image: `${import.meta.env.BASE_URL}assets/events/placeholder-event.svg`,
       pragmaUrl: EXTERNAL_LINKS.pragma
     },
     {
@@ -64,7 +64,7 @@ export function Events() {
       description: 'Individual DSA and problem solving competition hosted on the GeeksforGeeks platform. Test your limits.',
       teamSize: 'Individual',
       prizePool: '[PRIZE POOL TBD]',
-      image: `https://placehold.co/400x200/${encodeURIComponent('5d1c34')}/${encodeURIComponent('f0e9e3')}?text=Heureka`,
+      image: `${import.meta.env.BASE_URL}assets/events/placeholder-event.svg`,
       pragmaUrl: EXTERNAL_LINKS.pragma
     },
     {
@@ -73,7 +73,7 @@ export function Events() {
       description: 'Competitive programming contest on HackerRank. High-speed algorithmic challenges for the sharpest minds.',
       teamSize: 'Individual',
       prizePool: '[PRIZE POOL TBD]',
-      image: `https://placehold.co/400x200/${encodeURIComponent('5d1c34')}/${encodeURIComponent('f0e9e3')}?text=Agon`,
+      image: `${import.meta.env.BASE_URL}assets/events/placeholder-event.svg`,
       pragmaUrl: EXTERNAL_LINKS.pragma
     },
     {
@@ -82,7 +82,7 @@ export function Events() {
       description: 'The Debugging Duel. A duo competition focused on purging bugs from broken code under tight constraints.',
       teamSize: '2 Members',
       prizePool: '[PRIZE POOL TBD]',
-      image: `https://placehold.co/400x200/${encodeURIComponent('5d1c34')}/${encodeURIComponent('f0e9e3')}?text=Katharsis`,
+      image: `${import.meta.env.BASE_URL}assets/events/placeholder-event.svg`,
       pragmaUrl: EXTERNAL_LINKS.pragma
     },
     {
@@ -91,7 +91,7 @@ export function Events() {
       description: 'A massive exhibition of innovation. Showcase your projects to industry judges and fellow developers.',
       teamSize: 'Team',
       prizePool: '[PRIZE POOL TBD]',
-      image: `https://placehold.co/400x200/${encodeURIComponent('5d1c34')}/${encodeURIComponent('f0e9e3')}?text=Pythia+Expo`,
+      image: `${import.meta.env.BASE_URL}assets/events/placeholder-event.svg`,
       pragmaUrl: EXTERNAL_LINKS.pragma
     },
     {
@@ -100,7 +100,7 @@ export function Events() {
       description: 'The ultimate pitch battle. Top teams deliver extended pitches and face a rigorous Q&A session with judges.',
       teamSize: 'Team',
       prizePool: '[PRIZE POOL TBD]',
-      image: `https://placehold.co/400x200/${encodeURIComponent('5d1c34')}/${encodeURIComponent('f0e9e3')}?text=Eureka+Pitch`,
+      image: `${import.meta.env.BASE_URL}assets/events/placeholder-event.svg`,
       pragmaUrl: EXTERNAL_LINKS.pragma
     },
     {
@@ -109,7 +109,7 @@ export function Events() {
       description: 'Final Hackathon judging. Present your finalized builds and architectural decisions to the judging council.',
       teamSize: 'Team',
       prizePool: '[PRIZE POOL TBD]',
-      image: `https://placehold.co/400x200/${encodeURIComponent('5d1c34')}/${encodeURIComponent('f0e9e3')}?text=The+Tribunal`,
+      image: `${import.meta.env.BASE_URL}assets/events/placeholder-event.svg`,
       pragmaUrl: EXTERNAL_LINKS.pragma
     },
     {
@@ -118,7 +118,7 @@ export function Events() {
       description: 'Multi-genre gaming arena featuring FreeFire, COD Mobile, and BGMI. Competitive play for gaming veterans.',
       teamSize: 'Varies',
       prizePool: '[PRIZE POOL TBD]',
-      image: `https://placehold.co/400x200/${encodeURIComponent('5d1c34')}/${encodeURIComponent('f0e9e3')}?text=Pantheon+Games`,
+      image: `${import.meta.env.BASE_URL}assets/events/placeholder-event.svg`,
       pragmaUrl: EXTERNAL_LINKS.pragma
     }
   ];

@@ -28,35 +28,35 @@ export function TeamContact() {
       id: 2,
       name: 'Anurag Kumar',
       role: 'Operations Director',
-      image: `https://placehold.co/150x150/${encodeURIComponent('5d1c34')}/${encodeURIComponent('f0e9e3')}?text=Anurag`,
+      image: `${import.meta.env.BASE_URL}assets/team/anurag.png`,
       linkedin: 'https://www.linkedin.com/in/anurag-kumar002'
     },
     {
       id: 3,
       name: 'Palak Tyagi',
       role: 'Executive Director',
-      image: `https://placehold.co/150x150/${encodeURIComponent('5d1c34')}/${encodeURIComponent('f0e9e3')}?text=Palak`,
+      image: `${import.meta.env.BASE_URL}assets/team/placeholder-team.svg`,
       linkedin: 'https://www.linkedin.com/in/palak-tyagi-'
     },
     {
       id: 4,
       name: 'Priyanshi Garg',
       role: 'Marketing Head',
-      image: `https://placehold.co/150x150/${encodeURIComponent('5d1c34')}/${encodeURIComponent('f0e9e3')}?text=Priyanshi`,
+      image: `${import.meta.env.BASE_URL}assets/team/priyanshi.png`,
       linkedin: 'https://www.linkedin.com/in/priyanshi-garg-a34835325'
     },
     {
       id: 5,
       name: 'Prabhati Pandey',
       role: 'Creative Head',
-      image: `https://placehold.co/150x150/${encodeURIComponent('5d1c34')}/${encodeURIComponent('f0e9e3')}?text=Prabhati`,
+      image: `${import.meta.env.BASE_URL}assets/team/placeholder-team.svg`,
       linkedin: 'https://www.linkedin.com/in/prabhati-pandey-12p'
     },
     {
       id: 6,
       name: 'Priya Sharma',
       role: 'Documentation Head',
-      image: `https://placehold.co/150x150/${encodeURIComponent('5d1c34')}/${encodeURIComponent('f0e9e3')}?text=Priya`,
+      image: `${import.meta.env.BASE_URL}assets/team/priya.png`,
       linkedin: 'https://www.linkedin.com/in/priya-sharma-48b247330'
     }
   ];
@@ -110,8 +110,7 @@ export function TeamContact() {
       } else {
         setError(data.message || "Something went wrong. Email us at syntaxis@rdec.in");
       }
-    } catch (err) {
-      console.error(err);
+    } catch {
       setError("Something went wrong. Email us at syntaxis@rdec.in");
     } finally {
       setLoading(false);

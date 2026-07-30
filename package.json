@@ -1,7 +1,10 @@
 {
-  "name": "temp-init",
+  "name": "syntaxis-2026",
+  "description": "Official website for SYNTAXIS 2026 — Inter-college Tech Fest at R.D. Engineering College, Ghaziabad",
+  "homepage": "https://syntaxis.rdec.ac.in",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "license": "UNLICENSED",
   "type": "module",
   "scripts": {
     "dev": "vite",
