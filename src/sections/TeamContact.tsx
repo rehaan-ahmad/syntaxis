@@ -91,7 +91,7 @@ export function TeamContact() {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          access_key: 'YOUR_ACCESS_KEY', // [PLACEHOLDER — add from web3forms.com]
+          access_key: 'a1e5eb6a-cabe-4409-b289-9a30811d8f7d',
           name,
           email,
           institution,
