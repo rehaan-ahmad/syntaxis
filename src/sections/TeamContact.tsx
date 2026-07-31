@@ -35,7 +35,7 @@ export function TeamContact() {
       id: 3,
       name: 'Palak Tyagi',
       role: 'Executive Director',
-      image: `${import.meta.env.BASE_URL}assets/team/placeholder-team.svg`,
+      image: `${import.meta.env.BASE_URL}assets/team/palak.png`,
       linkedin: 'https://www.linkedin.com/in/palak-tyagi-'
     },
     {
@@ -49,7 +49,7 @@ export function TeamContact() {
       id: 5,
       name: 'Prabhati Pandey',
       role: 'Creative Head',
-      image: `${import.meta.env.BASE_URL}assets/team/placeholder-team.svg`,
+      image: `${import.meta.env.BASE_URL}assets/team/prabhati.png`,
       linkedin: 'https://www.linkedin.com/in/prabhati-pandey-12p'
     },
     {
