@@ -26,3 +26,7 @@ dist-ssr
 # Platform-specific
 .vercel
 .netlify
+
+#Misc Files
+PROJECT_CHECKLIST.md
+forms.md

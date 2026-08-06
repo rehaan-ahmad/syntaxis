@@ -1,6 +1,6 @@
 import { Link as ScrollLink } from 'react-scroll';
 import { Mail } from 'lucide-react';
-import { Instagram, Linkedin, Twitter } from './icons/SocialIcons';
+import { Instagram, Linkedin } from './icons/SocialIcons';
 import { SECTION_IDS, EXTERNAL_LINKS, FEST_INFO, REVEAL_DATE } from '../lib/constants';
 import { useIsRevealed } from '../hooks/useCountdown';
 
@@ -47,15 +47,6 @@ export function Footer() {
                 aria-label="LinkedIn"
               >
                 <Linkedin className="w-4 h-4" />
-              </a>
-              <a
-                href={EXTERNAL_LINKS.twitter}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-8 h-8 rounded-full border border-[var(--color-border)]/50 bg-bg flex items-center justify-center text-[var(--color-text-sec)] hover:text-[var(--color-brand)] hover:border-[var(--color-brand)] transition-colors cursor-pointer"
-                aria-label="Twitter"
-              >
-                <Twitter className="w-4 h-4" />
               </a>
             </div>
           </div>

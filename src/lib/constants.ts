@@ -17,11 +17,10 @@ export const SECTION_IDS = {
 } as const
 
 export const EXTERNAL_LINKS = {
-  pragma:     'PRAGMA_REGISTRATION_URL',     // TODO: Replace with production registration URL upon launch
+  pragma:     'https://pragma.rdec.ac.in',
   college:    'https://rdec.ac.in',
-  instagram:  'SYNTAXIS_INSTAGRAM_URL',      // TODO: Replace with production Instagram URL
-  linkedin:   'SYNTAXIS_LINKEDIN_URL',       // TODO: Replace with production LinkedIn URL
-  twitter:    'SYNTAXIS_TWITTER_URL',        // TODO: Replace with production Twitter URL
+  instagram:  'https://www.instagram.com/rdengineeringcollege/',
+  linkedin:   'https://www.linkedin.com/company/rd-engineering-college/',
   email:      'mailto:syntaxis@rdec.in',
 }
 
