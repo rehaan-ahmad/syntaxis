@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { Link as ScrollLink } from 'react-scroll';
 import { ChevronDown, ArrowRight } from 'lucide-react';
 import CountdownTimer from '../components/ui/CountdownTimer';
+import { Instagram, Twitter, Linkedin, Youtube } from '../components/icons/SocialIcons';
 import { SECTION_IDS, EXTERNAL_LINKS, FEST_INFO, REVEAL_DATE } from '../lib/constants';
 import { useIsRevealed } from '../hooks/useCountdown';
 
@@ -28,7 +29,7 @@ export function Hero() {
   return (
     <section
       id={SECTION_IDS.home}
-      className="min-h-screen flex flex-col justify-center items-center relative z-10 px-4 pt-16 select-none"
+      className="min-h-screen flex flex-col justify-center items-center relative z-10 px-4 pt-20 pb-16 select-none"
     >
       <motion.div
         variants={containerVariants}
@@ -39,50 +40,91 @@ export function Hero() {
         {/* Top Header Logos Bar (Top of Page) */}
         <motion.div
           variants={itemVariants}
-          className="w-full max-w-6xl mx-auto px-2 sm:px-6 mb-6 sm:mb-10 flex flex-col items-center gap-4"
+          className="w-full max-w-6xl mx-auto px-2 sm:px-6 mb-4 flex flex-col items-center gap-4"
         >
-          {/* Banner Image Replacing College, AKTU, NAAC logos */}
+          {/* Banner Image */}
           <img
             src={`${import.meta.env.BASE_URL}assets/logo/college-banner.png`}
             alt="College Banner"
-            className="w-full max-h-48 object-contain hover:scale-105 transition-transform"
+            className="w-full max-h-48 object-contain hover:scale-105 transition-transform drop-shadow-md"
           />
 
           {/* Centered Syntaxis Logo below banner */}
           <img
             src={`${import.meta.env.BASE_URL}assets/logo/syntaxis-logo.png`}
             alt="Syntaxis Logo"
-            className="h-36 sm:h-72 md:h-108 w-auto object-contain hover:scale-105 transition-transform"
+            className="h-36 sm:h-72 md:h-96 w-auto object-contain hover:scale-105 transition-transform"
           />
         </motion.div>
 
         {/* Fest Title */}
         <motion.div variants={itemVariants} className="flex flex-col items-center">
-          <h1 className="text-6xl sm:text-7xl md:text-8xl font-black tracking-widest text-[var(--color-text-pri)] font-heading leading-none">
+          <h1 className="text-6xl sm:text-7xl md:text-8xl font-black tracking-widest text-[var(--color-text-pri)] font-heading leading-none drop-shadow-lg">
             SYNTAXIS
           </h1>
-          <span className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-[0.25em] text-[var(--color-brand)] font-heading mt-2">
+          <span className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-[0.25em] text-[var(--color-brand)] font-heading mt-2 drop-shadow-[0_0_15px_var(--color-brand-glow)]">
             2026
           </span>
         </motion.div>
 
         {/* Tagline / Subtitle */}
         <motion.div variants={itemVariants} className="flex flex-col gap-2 max-w-2xl">
-          <p className="text-lg sm:text-xl md:text-2xl font-semibold text-[var(--color-text-pri)] tracking-wide">
-            {FEST_INFO.name} — PREMIER TECH FEST
+          <p className="text-lg sm:text-xl md:text-2xl font-semibold text-[var(--color-text-pri)] tracking-wide font-heading">
+            {FEST_INFO.name} — PREMIER INTER-COLLEGE TECH FEST
           </p>
           <p className="text-sm sm:text-base text-[var(--color-text-sec)] font-medium tracking-widest uppercase">
             {FEST_INFO.dates} | {FEST_INFO.venue}
           </p>
-          <p className="text-xs sm:text-sm text-[var(--color-text-body)] tracking-wide max-w-xl mx-auto mt-2 italic">
-            Connecting {FEST_INFO.colleges} NCR Colleges | {FEST_INFO.participants} Participants
+          <p className="text-xs sm:text-sm text-[var(--color-text-body)] tracking-wide max-w-xl mx-auto mt-1 italic">
+            Connecting {FEST_INFO.colleges} NCR Colleges & School Innovation Tracks | {FEST_INFO.participants} Participants
           </p>
+        </motion.div>
+
+        {/* Social Links Chip Bar */}
+        <motion.div variants={itemVariants} className="flex items-center gap-3 bg-[var(--color-bg-glass)] border border-[var(--color-border)] px-4 py-2 rounded-full backdrop-blur-[12px] shadow-md">
+          <span className="text-[10px] font-bold uppercase tracking-widest text-[var(--color-text-sec)] mr-1">Follow Us:</span>
+          <a
+            href={EXTERNAL_LINKS.instagram}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[var(--color-text-sec)] hover:text-[var(--color-brand)] transition-colors p-1"
+            aria-label="Instagram"
+          >
+            <Instagram className="w-4 h-4" />
+          </a>
+          <a
+            href={EXTERNAL_LINKS.twitter}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[var(--color-text-sec)] hover:text-[var(--color-brand)] transition-colors p-1"
+            aria-label="Twitter"
+          >
+            <Twitter className="w-4 h-4" />
+          </a>
+          <a
+            href={EXTERNAL_LINKS.linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[var(--color-text-sec)] hover:text-[var(--color-brand)] transition-colors p-1"
+            aria-label="LinkedIn"
+          >
+            <Linkedin className="w-4 h-4" />
+          </a>
+          <a
+            href={EXTERNAL_LINKS.youtube}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[var(--color-text-sec)] hover:text-[var(--color-brand)] transition-colors p-1"
+            aria-label="YouTube"
+          >
+            <Youtube className="w-4 h-4" />
+          </a>
         </motion.div>
 
         {/* Countdown Timer Block */}
         <motion.div
           variants={itemVariants}
-          className="w-full bg-[var(--color-bg-glass)] border border-[var(--color-border)] p-4 sm:p-6 rounded-[var(--radius-lg)] shadow-2xl backdrop-blur-md"
+          className="w-full bg-[var(--color-bg-glass)] border border-[var(--color-border)] p-4 sm:p-6 rounded-[var(--radius-lg)] shadow-2xl backdrop-blur-[12px]"
         >
           <CountdownTimer />
         </motion.div>
@@ -94,7 +136,7 @@ export function Hero() {
             href={EXTERNAL_LINKS.pragma}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 bg-[var(--color-brand)] text-[var(--color-bg)] font-bold px-8 py-3.5 rounded-[var(--radius-md)] hover:scale-105 hover:shadow-[0_0_20px_var(--color-brand-glow)] transition-all duration-200 whitespace-nowrap text-sm"
+            className="flex items-center gap-2 bg-[var(--color-brand)] text-[var(--color-bg)] font-bold px-8 py-3.5 rounded-[var(--radius-md)] hover:scale-105 hover:shadow-[0_0_20px_var(--color-brand-glow)] transition-all duration-200 whitespace-nowrap text-sm font-heading uppercase"
           >
             <span>Register on Pragma</span>
             <ArrowRight className="w-4 h-4" />
@@ -106,7 +148,7 @@ export function Hero() {
             smooth={true}
             duration={600}
             offset={-80}
-            className="border border-[var(--color-accent)] text-[var(--color-text-pri)] font-semibold px-8 py-3.5 rounded-[var(--radius-md)] hover:bg-[var(--color-accent)] hover:text-white transition-all duration-200 cursor-pointer whitespace-nowrap text-sm text-center"
+            className="border border-[var(--color-accent)] text-[var(--color-text-pri)] font-semibold px-8 py-3.5 rounded-[var(--radius-md)] hover:bg-[var(--color-accent)] hover:text-white transition-all duration-200 cursor-pointer whitespace-nowrap text-sm text-center font-heading uppercase"
           >
             {isRevealed ? "Explore Events" : "Learn More"}
           </ScrollLink>
@@ -117,7 +159,7 @@ export function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 0.7 }}
           transition={{ delay: 1.5, duration: 1 }}
-          className="absolute bottom-6 flex flex-col items-center justify-center cursor-pointer"
+          className="mt-6 flex flex-col items-center justify-center cursor-pointer"
         >
           <ScrollLink to={SECTION_IDS.about} smooth={true} duration={600} offset={-80} className="flex flex-col items-center gap-1 group">
             <span className="text-[10px] font-bold tracking-[0.2em] text-[var(--color-text-sec)] group-hover:text-[var(--color-text-pri)] transition-colors">

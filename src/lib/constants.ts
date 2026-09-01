@@ -20,17 +20,20 @@ export const EXTERNAL_LINKS = {
   pragma:     'https://pragma.rdec.ac.in',
   college:    'https://rdec.ac.in',
   instagram:  'https://www.instagram.com/rdengineeringcollege/',
+  twitter:    'https://x.com/rdec_ghaziabad',
   linkedin:   'https://www.linkedin.com/company/rd-engineering-college/',
+  youtube:    'https://www.youtube.com/@RDEngineeringCollegeOfficial',
   email:      'mailto:syntaxis@rdec.in',
 }
 
 export const FEST_INFO = {
   name:     'SYNTAXIS 2026',
-  dates:    'September 18–20, 2026',
+  dates:    'October 29–31, 2026',
   venue:    'R.D. Engineering College, Ghaziabad',
-  target:   new Date('2026-09-18T09:00:00+05:30'),
+  target:   new Date('2026-10-29T09:00:00+05:30'),
   colleges: '25+',
   participants: '700–900',
 }
 
 export const REVEAL_DATE = new Date('2026-08-10T00:00:00+05:30').getTime();
+

@@ -1,6 +1,6 @@
 import { Link as ScrollLink } from 'react-scroll';
 import { Mail } from 'lucide-react';
-import { Instagram, Linkedin } from './icons/SocialIcons';
+import { Instagram, Twitter, Linkedin, Youtube } from './icons/SocialIcons';
 import { SECTION_IDS, EXTERNAL_LINKS, FEST_INFO, REVEAL_DATE } from '../lib/constants';
 import { useIsRevealed } from '../hooks/useCountdown';
 
@@ -29,24 +29,42 @@ export function Footer() {
               {FEST_INFO.name} — R.D. Engineering College (RDEC) Ghaziabad. Join the NCR's ultimate inter-college tech fest from {FEST_INFO.dates}.
             </p>
             {/* Social Icons */}
-            <div className="flex gap-4 items-center mt-2">
+            <div className="flex gap-3 items-center mt-2">
               <a
                 href={EXTERNAL_LINKS.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-8 h-8 rounded-full border border-[var(--color-border)]/50 bg-bg flex items-center justify-center text-[var(--color-text-sec)] hover:text-[var(--color-brand)] hover:border-[var(--color-brand)] transition-colors cursor-pointer"
+                className="w-9 h-9 rounded-full border border-[var(--color-border)]/50 bg-[var(--color-bg-glass)] flex items-center justify-center text-[var(--color-text-sec)] hover:text-[var(--color-brand)] hover:border-[var(--color-brand)] hover:shadow-[0_0_12px_var(--color-brand-glow)] transition-all cursor-pointer"
                 aria-label="Instagram"
               >
                 <Instagram className="w-4 h-4" />
               </a>
               <a
+                href={EXTERNAL_LINKS.twitter}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-9 h-9 rounded-full border border-[var(--color-border)]/50 bg-[var(--color-bg-glass)] flex items-center justify-center text-[var(--color-text-sec)] hover:text-[var(--color-brand)] hover:border-[var(--color-brand)] hover:shadow-[0_0_12px_var(--color-brand-glow)] transition-all cursor-pointer"
+                aria-label="Twitter"
+              >
+                <Twitter className="w-4 h-4" />
+              </a>
+              <a
                 href={EXTERNAL_LINKS.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-8 h-8 rounded-full border border-[var(--color-border)]/50 bg-bg flex items-center justify-center text-[var(--color-text-sec)] hover:text-[var(--color-brand)] hover:border-[var(--color-brand)] transition-colors cursor-pointer"
+                className="w-9 h-9 rounded-full border border-[var(--color-border)]/50 bg-[var(--color-bg-glass)] flex items-center justify-center text-[var(--color-text-sec)] hover:text-[var(--color-brand)] hover:border-[var(--color-brand)] hover:shadow-[0_0_12px_var(--color-brand-glow)] transition-all cursor-pointer"
                 aria-label="LinkedIn"
               >
                 <Linkedin className="w-4 h-4" />
+              </a>
+              <a
+                href={EXTERNAL_LINKS.youtube}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-9 h-9 rounded-full border border-[var(--color-border)]/50 bg-[var(--color-bg-glass)] flex items-center justify-center text-[var(--color-text-sec)] hover:text-[var(--color-brand)] hover:border-[var(--color-brand)] hover:shadow-[0_0_12px_var(--color-brand-glow)] transition-all cursor-pointer"
+                aria-label="YouTube"
+              >
+                <Youtube className="w-4 h-4" />
               </a>
             </div>
           </div>

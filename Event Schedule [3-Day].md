@@ -1,6 +1,6 @@
 # **SYNTAXIS 2026: Official Event Schedule**
 
-**Theme:** Automate. Innovate. Elevate. **Dates:** September 17-19, 2026 **Venue:** R.D. Engineering College (RDEC) Campus, Ghaziabad **Standard Operating Hours:** 9:00 AM – 5:30 PM 
+**Theme:** Automate. Innovate. Elevate. **Dates:** October 29-31, 2026 **Venue:** R.D. Engineering College (RDEC) Campus, Ghaziabad **Standard Operating Hours:** 9:00 AM – 5:30 PM 
 
 ## **Day 1: GENESIS (Origin & Discourse)**
 
@@ -14,31 +14,31 @@
   * Format: Hybrid enabled. 
 * **12:30 PM | Lunch Break** 
 * **1:30 PM | Logika (DSA Workshop)** 
-  * Intensive session on Data Structures and Algorithms focusing on pure logical thinking.  
+  * Intensive session on Data Structures and Algorithms focusing on pure logical thinking. 
   * Format: Hybrid enabled. 
-* **3:15 PM | Rhesis (TEDx-style Talks) \+ Problem Statements Released for Archithon**  
-  * Format: 2 speakers delivering ideas and spoken discourse.  
+* **3:15 PM | Rhesis (TEDx-style Talks) \+ Problem Statements Released for Archithon** 
+  * Format: 2 speakers delivering ideas and spoken discourse. 
   * Duration: 45 minutes per speaker. 
-  * Format: Hybrid setup, streamed via YouTube Live.  
+  * Format: Hybrid setup, streamed via YouTube Live. 
 * **5:30 PM | End of Day 1**
 
 ## **Day 2: ATHLON (Pure Competition)**
 
 *Day 2 is dedicated strictly to technical contests and problem-solving endurance.*
 
-* **9:00 AM | Heureka (DSA/Problem Solving)**  
-  * Individual competition hosted on the GeeksforGeeks platform.  
+* **9:00 AM | Heureka (DSA/Problem Solving)** 
+  * Individual competition hosted on the GeeksforGeeks platform. 
   * Duration: 2.5 hours. 
-* **11:30 AM | Agon (Competitive Programming)**  
-  * Individual competitive programming contest hosted on HackerRank.  
+* **11:30 AM | Agon (Competitive Programming)** 
+  * Individual competitive programming contest hosted on HackerRank. 
   * Duration: 1.5 hours. 
-* **1:00 PM | Lunch Break and Pantheon Games**  
-* **2:30 PM | Katharsis (Debugging Duel)**  
-  * Duo competition focused on purging bugs from broken code.  
-  * Duration: 1.5 hours via manual submission.  
-* **4:00 PM | Networking Session / Alumni Meet**  
-  * Participants can connect with each other and gain guidance from college alumni.  
-* **5:15 PM | Results & Leaderboard Update**  
+* **1:00 PM | Lunch Break** 
+* **2:30 PM | Katharsis (Debugging Duel)** 
+  * Duo competition focused on purging bugs from broken code. 
+  * Duration: 1.5 hours via manual submission. 
+* **4:00 PM | Networking Session / Alumni Meet** 
+  * Participants can connect with each other and gain guidance from college alumni. 
+* **5:15 PM | Results & Leaderboard Update** 
 * **5:30 PM | End of Day 2**
 
 ## **Day 2: GENESIS TRACK (Parallel to Athlon)**
@@ -51,8 +51,6 @@
   * School students pitch everyday-life automation themes. 
 * **12:00 PM | Lunch & Shortlist Announcement** 
   * Top 3 school teams announced for final project expo. 
-* **1:00 PM | Pantheon Games** 
-  * Multi-genre competition housing FreeFire, Call of Duty Mobile, BGMI, etc. 
 * **5:30 PM | Departure** 
   * School students and non-hackathon participants depart the campus.
 
@@ -64,6 +62,8 @@
   * School students arrive for the science-fair style exhibition. 
 * **9:30 AM | Archithon Final Submissions** 
   * The development clock ends. Code and hardware freezes. 
+* **9:00 AM - 2:00 PM | Pantheon Games** 
+  * Multi-genre competition housing FreeFire, Call of Duty Mobile, BGMI, etc. 
 * **10:00 AM | Pythia Expo (Parallel Tracks)** 
   * **College Track:** Projects displayed on college grounds for industry judges. 
   * **Genesis Track:** School projects displayed in a clearly marked parallel zone. 
