@@ -28,37 +28,37 @@ export function Schedule() {
     {
       dayLabel: 'Day 1: GENESIS',
       dateLabel: 'Oct 29, 2026',
-      title: 'Origin & Discourse',
-      description: 'Day 1 births the fest, establishing the technical and cultural foundation.',
+      title: 'Origin & Workshop Package',
+      description: 'Day 1 births the fest, establishing the technical foundation with the Workshop Package, keynotes, and Archithon reveal.',
       events: [
         {
           time: '09:30 AM',
           title: 'The Kindling (Inauguration)',
-          venue: 'RDEC Campus',
+          venue: 'RDEC Campus Auditorium',
           duration: '1.5 Hours',
           notes: 'Lamp lighting, welcome address, and official fest reveal. Sponsor acknowledgements and opening keynote.',
           category: 'main'
         },
         {
           time: '11:00 AM',
-          title: 'Syndesis (API Building with FastAPI)',
-          venue: 'RDEC Campus (Hybrid Enabled)',
+          title: 'Workshop Package Part 1: Syndesis (API Building)',
+          venue: 'RDEC Campus Labs',
           duration: '1.5 Hours',
-          notes: 'Building a Python script to build and test a live endpoint.',
+          notes: 'Hands-on session building live FastAPI endpoints in Python. BYOD Policy: Bring your own laptop; high-speed Wi-Fi and charging provided.',
           category: 'main'
         },
         {
           time: '12:30 PM',
           title: 'Lunch Break',
-          venue: 'Campus Grounds',
+          venue: 'Campus Food Court & Vendor Zone',
           duration: '1 Hour',
-          notes: 'Mid-day meal and networking break.',
+          notes: 'Lunch break. Meals are not provided by management, but a variety of food & beverages are available for purchase from campus vendors.',
           category: 'main'
         },
         {
           time: '01:30 PM',
-          title: 'Logika (DSA Workshop)',
-          venue: 'RDEC Campus (Hybrid Enabled)',
+          title: 'Workshop Package Part 2: Logika (DSA & Logic)',
+          venue: 'RDEC Campus Labs',
           duration: '1.75 Hours',
           notes: 'Intensive session on Data Structures and Algorithms focusing on pure logical thinking.',
           category: 'main'
@@ -66,9 +66,9 @@ export function Schedule() {
         {
           time: '03:15 PM',
           title: 'Rhesis (TEDx-style Talks) + Archithon Problem Statements',
-          venue: 'RDEC Campus / YouTube Live Stream',
+          venue: 'Main Auditorium / Stream',
           duration: '1.5 Hours',
-          notes: '2 speakers delivering ideas and spoken discourse (45 mins per speaker). Release of Archithon problem statements.',
+          notes: 'Visionary speakers delivering ideas and spoken discourse. Official release of problem statements for the Hackathon Package (Archithon).',
           category: 'main'
         },
         {
@@ -84,15 +84,15 @@ export function Schedule() {
     {
       dayLabel: 'Day 2: ATHLON',
       dateLabel: 'Oct 30, 2026',
-      title: 'Pure Competition & Parallel Genesis Track',
-      description: 'Day 2 is dedicated strictly to technical contests, problem-solving endurance, and parallel school student activities.',
+      title: 'Contest Package & Eureka Pitch Round 1',
+      description: 'Day 2 is dedicated strictly to the Contest Package (Heureka, Agon, Katharsis) and Eureka Pitch Round 1 for school geniuses.',
       events: [
         {
           time: '09:00 AM',
-          title: 'Heureka (DSA / Problem Solving)',
-          venue: 'GeeksforGeeks Platform',
+          title: 'Contest Package Part 1: Heureka (DSA Sprint)',
+          venue: 'Online Coding Arena',
           duration: '2.5 Hours',
-          notes: 'Individual competition hosted on GeeksforGeeks platform.',
+          notes: 'Individual algorithmic problem solving sprint. BYOD Policy strictly enforced; power outlets & Wi-Fi supplied.',
           category: 'athlon'
         },
         {
@@ -100,47 +100,47 @@ export function Schedule() {
           title: 'Genesis Track Arrival & Orientation',
           venue: 'Dedicated Genesis Zone',
           duration: '30 Mins',
-          notes: 'Class 9 to 12 school students arrive for dedicated orientation.',
+          notes: 'Class 9 to 12 school participants arrive for orientation.',
           category: 'genesis'
         },
         {
           time: '09:30 AM',
-          title: 'Eureka Pitch (Genesis Track)',
+          title: 'Eureka Pitch — Round 1 (Genesis Track)',
           venue: 'Genesis Seminar Hall',
           duration: '2.5 Hours',
-          notes: 'School students pitch everyday-life automation themes.',
+          notes: 'School student teams deliver initial pitches on everyday-life automation themes for Round 1 judging.',
           category: 'genesis'
         },
         {
           time: '11:30 AM',
-          title: 'Agon (Competitive Programming)',
+          title: 'Contest Package Part 2: Agon (Competitive Programming)',
           venue: 'HackerRank Platform',
           duration: '1.5 Hours',
-          notes: 'Individual competitive programming contest hosted on HackerRank.',
+          notes: 'Individual high-speed algorithmic programming contest on HackerRank.',
           category: 'athlon'
         },
         {
           time: '12:00 PM',
           title: 'Genesis Lunch & Shortlist Announcement',
-          venue: 'Campus Cafeteria',
+          venue: 'Vendor Court',
           duration: '1 Hour',
-          notes: 'Top 3 school teams announced for final project expo.',
+          notes: 'Top school teams shortlisted for Day 3 Pitch Finals. Meals available for purchase from vendors.',
           category: 'genesis'
         },
         {
           time: '01:00 PM',
           title: 'Lunch Break (Athlon Track)',
-          venue: 'Campus Grounds',
+          venue: 'Campus Vendor Zone',
           duration: '1.5 Hours',
-          notes: 'Mid-day meal and rest period for competitive programming participants.',
+          notes: 'Lunch & rest period for competitors. Meals not provided by management; available for purchase from campus vendors.',
           category: 'athlon'
         },
         {
           time: '02:30 PM',
-          title: 'Katharsis (Debugging Duel)',
+          title: 'Contest Package Part 3: Katharsis (Debugging Duel)',
           venue: 'RDEC Computer Labs',
           duration: '1.5 Hours',
-          notes: 'Duo competition focused on purging bugs from broken code via manual submission.',
+          notes: 'Duo competition focused on purging bugs from broken code under tight constraints.',
           category: 'athlon'
         },
         {
@@ -148,7 +148,7 @@ export function Schedule() {
           title: 'Networking Session / Alumni Meet',
           venue: 'Main Auditorium',
           duration: '1.25 Hours',
-          notes: 'Participants connect with peers and gain mentorship from college alumni.',
+          notes: 'Connect with peers and gain guidance from college alumni.',
           category: 'athlon'
         },
         {
@@ -172,15 +172,15 @@ export function Schedule() {
     {
       dayLabel: 'Day 3: TELOS',
       dateLabel: 'Oct 31, 2026',
-      title: 'Fulfillment & Conclusion',
-      description: 'Day 3 concludes the arc with final project exhibitions, judging, gaming tournaments, and valediction ceremony.',
+      title: 'Hackathon Package Finals & Valediction',
+      description: 'Day 3 concludes the fest with the Hackathon Package judging, Pythia Expo, Eureka Pitch Finals, and Apotheosis ceremony.',
       events: [
         {
           time: '09:00 AM',
           title: 'Genesis Track Arrival',
           venue: 'Exhibition Zone',
           duration: '30 Mins',
-          notes: 'School students arrive for science-fair style project exhibition.',
+          notes: 'School teams arrive for science-fair style exhibition.',
           category: 'telos'
         },
         {
@@ -188,12 +188,12 @@ export function Schedule() {
           title: 'Pantheon Games',
           venue: 'Esports Arena',
           duration: '5 Hours',
-          notes: 'Multi-genre gaming tournament featuring FreeFire, Call of Duty Mobile, BGMI, and tactical esports.',
+          notes: 'Multi-genre gaming tournament featuring FreeFire, Call of Duty Mobile, and BGMI.',
           category: 'telos'
         },
         {
           time: '09:30 AM',
-          title: 'Archithon Final Submissions',
+          title: 'Hackathon Package: Archithon Code Freeze',
           venue: 'Hackathon Base',
           duration: 'Deadline',
           notes: 'The development clock ends. Code repositories and hardware prototypes freeze.',
@@ -201,32 +201,32 @@ export function Schedule() {
         },
         {
           time: '10:00 AM',
-          title: 'Pythia Expo (Parallel College & Genesis Tracks)',
+          title: 'Hackathon Package: Pythia Expo',
           venue: 'College Grounds & Genesis Zone',
           duration: '4.5 Hours',
-          notes: 'College Track: Projects displayed for industry judges. Genesis Track: School projects displayed in parallel marked zone.',
+          notes: 'Project exhibition open for all existing participants to attend and view! Projects displayed for industry judges.',
           category: 'telos'
         },
         {
           time: '10:00 AM',
-          title: 'Eureka Pitch Finals',
+          title: 'Eureka Pitch Finals (Genesis Track)',
           venue: 'Main Auditorium',
           duration: '4.5 Hours',
-          notes: 'Top 5 college and top 3 school teams deliver extended 3-minute pitches + 3-minute Q&A.',
+          notes: 'Shortlisted school teams deliver extended 3-minute pitches + 3-minute Q&A in the final round.',
           category: 'telos'
         },
         {
           time: '02:30 PM',
-          title: 'The Tribunal (Hackathon Judging)',
+          title: 'Hackathon Package: The Tribunal (Judging)',
           venue: 'Grand Jury Hall',
           duration: '1.5 Hours',
-          notes: 'Archithon teams present finalized builds to the judging council.',
+          notes: 'Archithon teams present finalized builds to jury council. Open for existing participants to view.',
           category: 'telos'
         },
         {
           time: '04:00 PM',
           title: 'Results & Genesis Departure',
-          venue: 'Main Stage / Departure Area',
+          venue: 'Main Stage',
           duration: '30 Mins',
           notes: 'Final results compiled. School students depart campus safely.',
           category: 'telos'
@@ -236,7 +236,7 @@ export function Schedule() {
           title: 'Apotheosis (Valediction Ceremony)',
           venue: 'Grand Amphitheatre',
           duration: '1 Hour',
-          notes: 'Highest honors awarded. Trophy and prize distribution for all Syntaxis 2026 events.',
+          notes: 'Highest honors awarded. Trophy and prize distribution for all Syntaxis 2026 packages.',
           category: 'telos'
         },
         {
@@ -429,4 +429,3 @@ export function Schedule() {
 }
 
 export default Schedule;
-

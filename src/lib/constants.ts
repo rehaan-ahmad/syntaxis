@@ -32,7 +32,7 @@ export const FEST_INFO = {
   venue:    'R.D. Engineering College, Ghaziabad',
   target:   new Date('2026-10-29T09:00:00+05:30'),
   colleges: '25+',
-  participants: '700–900',
+  participants: '500–700',
 }
 
 export const REVEAL_DATE = new Date('2026-08-10T00:00:00+05:30').getTime();

@@ -8,15 +8,15 @@ import { SECTION_IDS, EXTERNAL_LINKS } from '../lib/constants';
 export function GenesisTrack() {
   const juniorEvents = [
     {
-      title: 'Genesis Hack',
-      description: 'A junior algorithmic and logic battle. Work in teams to build basic computational logic coordinates and solve escape puzzles.',
+      title: 'Eureka Pitch (Round 1 & Finals)',
+      description: 'The flagship school innovation competition. Teams pitch everyday-life automation themes in Round 1 on Day 2, with shortlisted teams advancing to the extended Pitch Finals & Q&A on Day 3.',
       teamSize: '2-3 Students',
       prize: '[PRIZE POOL TBD]'
     },
     {
-      title: 'Genesis Quiz',
-      description: 'Science, technology, and logical reasoning trivia contest testing broad awareness and STEM concepts.',
-      teamSize: '2 Students',
+      title: 'Pythia Expo (Genesis Parallel Track)',
+      description: 'Science-fair style exhibition on Day 3 where school teams showcase their physical prototypes and software models in a dedicated parallel zone.',
+      teamSize: '2-3 Students',
       prize: '[PRIZE POOL TBD]'
     }
   ];
@@ -72,7 +72,7 @@ export function GenesisTrack() {
               NURTURING JUNIOR GENIUSES
             </h3>
             <p className="text-base text-[var(--color-text-body)] leading-relaxed">
-              Curated exclusively for students in grades 9 to 12, the <strong>Genesis Track</strong> provides school students an introduction to the inter-college tech ecosystem. This dedicated wing aims to build interest in STEM concepts, logical thinking, and engineering fields.
+              Curated exclusively for students in grades 9 to 12, the <strong>Genesis Track</strong> provides school students an introduction to the inter-college tech ecosystem. This dedicated wing features the flagship <strong>Eureka Pitch</strong> across two rounds (Day 2 Round 1 & Day 3 Finals).
             </p>
 
             {/* Why Join Points */}
@@ -100,14 +100,14 @@ export function GenesisTrack() {
                   <Award className="w-5 h-5" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-[var(--color-text-pri)] font-heading">7+ Partnered Schools</h4>
-                  <p className="text-xs text-[var(--color-text-body)] mt-1">Join students from approximately 7+ partnered schools across the region in this exclusive track.</p>
+                  <h4 className="font-bold text-[var(--color-text-pri)] font-heading">5+ Partnered Schools</h4>
+                  <p className="text-xs text-[var(--color-text-body)] mt-1">Join students from partnered schools across NCR in this exclusive track.</p>
                 </div>
               </div>
             </div>
           </motion.div>
 
-          {/* Right Image Showcase */}
+          {/* Right Image Showcase — 4:3 aspect ratio per requirement */}
           <motion.div 
             initial="initial"
             whileInView="animate"
@@ -118,8 +118,8 @@ export function GenesisTrack() {
             <div className="absolute inset-0 bg-gradient-to-br from-[var(--color-brand)] to-transparent rounded-[var(--radius-lg)] blur-md opacity-25" />
             <img 
               src={`${import.meta.env.BASE_URL}assets/events/placeholder-genesis.svg`}
-              alt="[Genesis Track — PLACEHOLDER photo]" 
-              className="w-full max-w-md mx-auto aspect-square object-cover rounded-[var(--radius-lg)] border border-[var(--color-border-gold)] shadow-2xl relative z-10"
+              alt="[Genesis Track — 4:3 Banner Photo]" 
+              className="w-full max-w-md mx-auto aspect-[4/3] object-cover rounded-[var(--radius-lg)] border border-[var(--color-border-gold)] shadow-2xl relative z-10"
               loading="lazy"
             />
           </motion.div>

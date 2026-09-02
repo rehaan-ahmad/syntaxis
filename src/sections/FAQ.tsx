@@ -7,35 +7,43 @@ export function FAQ() {
   const faqItems = [
     {
       question: 'Who Can Participate?',
-      answer: "Any college student in technical fields. It isn't specific to just CSE/IT, ECE, if mechanical branch students want to join us, they're most welcome. Moreover, schools students from classes 9th to 12th are also encouraged to participate."
+      answer: "Any college student in technical fields. It isn't specific to just CSE/IT or ECE — if mechanical or civil engineering students want to join us, they're most welcome! Moreover, school students from classes 9th to 12th are encouraged to participate in the Genesis Track."
+    },
+    {
+      question: 'What is the Device Policy for Tech Events?',
+      answer: "All technical events strictly follow a Bring Your Own Device (BYOD) policy. Participants must bring their own laptops, chargers, and development tools. High-speed Wi-Fi, power charging points, and extension boards will be provided by the management."
+    },
+    {
+      question: 'Are Meals Provided During Lunch Breaks?',
+      answer: "Meals are not provided by the management during lunch breaks. However, a wide variety of food, snacks, and beverages are available for purchase from authorized campus vendors and food stalls available throughout all 3 days."
     },
     {
       question: 'How to Register?',
-      answer: "Users can register via our exclusive EMS, Pragma, which will be revealed on 5th August, 2026. Students can participate in Solo, Duo or Groups team sizes."
+      answer: "Participants can register via our official EMS platform, Pragma. Students can participate in Solo, Duo, or Group team formats depending on the event package."
     },
     {
-      question: 'Is There Registration Fee?',
-      answer: 'Yes. Confirmed final registration fees will be listed on Pragma.'
+      question: 'Is There a Registration Fee?',
+      answer: 'Yes. Confirmed final registration fees and category passes will be listed on Pragma.'
     },
     {
-      question: 'Can Outstation Participants Participate?',
-      answer: 'Yes, outstation participants participate provided they take care of their own travel and accomodation. RDEC will not be liable for any kind of harm done to them during travels.'
+      question: 'Can Outstation Participants Join?',
+      answer: 'Yes, outstation participants are welcome to participate provided they arrange their own travel and accommodation.'
     },
     {
-      question: 'What is Genesis Track?',
-      answer: 'Genesis Track is an exclusive Junior level track designed for school students of classes 9th to 12th. It is designed primarily to encourage students to gain interest in STEM fields.'
+      question: 'What is the Genesis Track?',
+      answer: 'Genesis Track is an exclusive junior division designed for school students of classes 9th to 12th, featuring Eureka Pitch (Round 1 & Finals) and Pythia Expo.'
     },
     {
-      question: 'How many events a single team participate in?',
-      answer: "Teams can participate in as many events as they want, provided the events they participate aren't running parallely, and the event's times don't overlap."
+      question: 'How Many Events Can a Team Participate In?',
+      answer: "Teams can participate in multiple event packages, provided event schedules do not overlap."
     },
     {
       question: 'Where is RDEC Located?',
-      answer: 'RDEC is located in Duhai, Ghaziabad.'
+      answer: 'R.D. Engineering College (RDEC) is located in Duhai, Ghaziabad, NCR.'
     },
     {
-      question: 'When Winners will be announced?',
-      answer: "Winners will be announced on Day 3, which will mark the closing of SYNTAXIS 2026. Digital prizes will be sent to the participants/winners within 14 days of the fest's ending."
+      question: 'When Will Winners Be Announced?',
+      answer: "Winners will be announced on Day 3 during the Apotheosis Valediction Ceremony. Digital certificates and cash prizes will be dispatched within 14 days of the fest."
     }
   ];
 

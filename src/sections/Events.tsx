@@ -7,13 +7,14 @@ import Badge from '../components/ui/Badge';
 import EventCarousel from '../components/carousel/EventCarousel';
 import { SECTION_IDS, EXTERNAL_LINKS } from '../lib/constants';
 
-interface EventItem {
+export interface EventItem {
   title: string;
   category: 'Technical' | 'Non-Technical' | 'Workshop' | 'Open';
   description: string;
   teamSize: string;
   prizePool: string;
   image: string;
+  isGenesis?: boolean;
   pragmaUrl: string;
 }
 
@@ -32,21 +33,40 @@ export function Events() {
 
   const eventList: EventItem[] = [
     {
-      title: 'Syndesis',
+      title: 'Contest Package',
+      category: 'Technical',
+      description: 'An intensive competitive programming and problem-solving suite bundling Heureka (DSA / Problem Solving), Agon (HackerRank contest), and Katharsis (Debugging Duel).',
+      teamSize: 'Individual & Duos',
+      prizePool: '[PRIZE POOL TBD]',
+      image: `${import.meta.env.BASE_URL}assets/events/placeholder-event.svg`,
+      pragmaUrl: EXTERNAL_LINKS.pragma
+    },
+    {
+      title: 'Workshop Package',
       category: 'Workshop',
-      description: 'Master API building with FastAPI. Build and test a live endpoint using Python scripts in this hands-on session.',
+      description: 'Comprehensive hands-on technical workshop series bundling Syndesis (Live API building with FastAPI) and Logika (Data Structures & Algorithmic logic).',
       teamSize: 'Individual',
       prizePool: 'Certificates Offered',
       image: `${import.meta.env.BASE_URL}assets/events/placeholder-event.svg`,
       pragmaUrl: EXTERNAL_LINKS.pragma
     },
     {
-      title: 'Logika',
-      category: 'Workshop',
-      description: 'Deep dive into Data Structures and Algorithms focusing on pure logical thinking and efficient problem solving.',
-      teamSize: 'Individual',
-      prizePool: 'Certificates Offered',
+      title: 'Hackathon Package',
+      category: 'Technical',
+      description: 'The flagship build sprint bundling Archithon, Pythia Expo project exhibition, and The Tribunal jury defense. (Note: Pythia Expo & The Tribunal are open for any existing participant to attend for viewing).',
+      teamSize: '2–4 Members',
+      prizePool: '[PRIZE POOL TBD]',
       image: `${import.meta.env.BASE_URL}assets/events/placeholder-event.svg`,
+      pragmaUrl: EXTERNAL_LINKS.pragma
+    },
+    {
+      title: 'Eureka Pitch (Genesis Track)',
+      category: 'Technical',
+      description: 'Flagship school innovation competition conducted across two rounds — Round 1 on Day 2 and the Final Round on Day 3.',
+      teamSize: '2–3 Students',
+      prizePool: '[PRIZE POOL TBD]',
+      image: `${import.meta.env.BASE_URL}assets/events/placeholder-genesis.svg`,
+      isGenesis: true,
       pragmaUrl: EXTERNAL_LINKS.pragma
     },
     {
@@ -59,63 +79,9 @@ export function Events() {
       pragmaUrl: EXTERNAL_LINKS.pragma
     },
     {
-      title: 'Heureka',
-      category: 'Technical',
-      description: 'Individual DSA and problem solving competition hosted on the GeeksforGeeks platform. Test your limits.',
-      teamSize: 'Individual',
-      prizePool: '[PRIZE POOL TBD]',
-      image: `${import.meta.env.BASE_URL}assets/events/placeholder-event.svg`,
-      pragmaUrl: EXTERNAL_LINKS.pragma
-    },
-    {
-      title: 'Agon',
-      category: 'Technical',
-      description: 'Competitive programming contest on HackerRank. High-speed algorithmic challenges for the sharpest minds.',
-      teamSize: 'Individual',
-      prizePool: '[PRIZE POOL TBD]',
-      image: `${import.meta.env.BASE_URL}assets/events/placeholder-event.svg`,
-      pragmaUrl: EXTERNAL_LINKS.pragma
-    },
-    {
-      title: 'Katharsis',
-      category: 'Technical',
-      description: 'The Debugging Duel. A duo competition focused on purging bugs from broken code under tight constraints.',
-      teamSize: '2 Members',
-      prizePool: '[PRIZE POOL TBD]',
-      image: `${import.meta.env.BASE_URL}assets/events/placeholder-event.svg`,
-      pragmaUrl: EXTERNAL_LINKS.pragma
-    },
-    {
-      title: 'Pythia Expo',
-      category: 'Open',
-      description: 'A massive exhibition of innovation. Showcase your projects to industry judges and fellow developers.',
-      teamSize: 'Team',
-      prizePool: '[PRIZE POOL TBD]',
-      image: `${import.meta.env.BASE_URL}assets/events/placeholder-event.svg`,
-      pragmaUrl: EXTERNAL_LINKS.pragma
-    },
-    {
-      title: 'Eureka Pitch Finals',
-      category: 'Technical',
-      description: 'The ultimate pitch battle. Top teams deliver extended pitches and face a rigorous Q&A session with judges.',
-      teamSize: 'Team',
-      prizePool: '[PRIZE POOL TBD]',
-      image: `${import.meta.env.BASE_URL}assets/events/placeholder-event.svg`,
-      pragmaUrl: EXTERNAL_LINKS.pragma
-    },
-    {
-      title: 'The Tribunal',
-      category: 'Technical',
-      description: 'Final Hackathon judging. Present your finalized builds and architectural decisions to the judging council.',
-      teamSize: 'Team',
-      prizePool: '[PRIZE POOL TBD]',
-      image: `${import.meta.env.BASE_URL}assets/events/placeholder-event.svg`,
-      pragmaUrl: EXTERNAL_LINKS.pragma
-    },
-    {
       title: 'Pantheon Games',
       category: 'Open',
-      description: 'Multi-genre gaming arena featuring FreeFire, COD Mobile, and BGMI. Competitive play for gaming veterans.',
+      description: 'Multi-genre gaming arena featuring FreeFire, Call of Duty Mobile, and BGMI. Competitive play for gaming veterans.',
       teamSize: 'Varies',
       prizePool: '[PRIZE POOL TBD]',
       image: `${import.meta.env.BASE_URL}assets/events/placeholder-event.svg`,
@@ -188,11 +154,14 @@ export function Events() {
                 className="h-full flex flex-col"
               >
                 <Card className="h-full flex flex-col justify-between p-0 overflow-hidden border border-[var(--color-border)] hover:border-[var(--color-border-gold)] transition-colors duration-300">
-                  {/* Event banner placeholder */}
-                  <div className="relative h-44 w-full overflow-hidden bg-[var(--color-bg)]">
+                  {/* Event banner image — 16:9 landscape or 4:3 for Genesis Track */}
+                  <div className={clsx(
+                    "relative w-full overflow-hidden bg-[var(--color-bg)]",
+                    event.isGenesis ? "aspect-[4/3]" : "aspect-video"
+                  )}>
                     <img 
                       src={event.image} 
-                      alt="[EVENT BANNER PLACEHOLDER — 400x200 — replace with event poster]" 
+                      alt={`[${event.title} Banner]`}
                       className="w-full h-full object-cover opacity-60 hover:scale-105 transition-transform duration-500"
                       loading="lazy"
                     />
@@ -208,7 +177,7 @@ export function Events() {
                       <h3 className="text-xl font-bold uppercase font-heading text-[var(--color-text-pri)] tracking-wide">
                         {event.title}
                       </h3>
-                      <p className="text-xs text-[var(--color-text-body)] leading-relaxed line-clamp-3">
+                      <p className="text-xs text-[var(--color-text-body)] leading-relaxed line-clamp-4">
                         {event.description}
                       </p>
                     </div>

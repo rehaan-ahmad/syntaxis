@@ -1,11 +1,18 @@
-import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Send, AlertTriangle, CheckCircle } from 'lucide-react';
+import { ExternalLink, MessageSquare } from 'lucide-react';
 import { Linkedin } from '../components/icons/SocialIcons';
 import SectionHeading from '../components/ui/SectionHeading';
 import Card from '../components/ui/Card';
-import Button from '../components/ui/Button';
 import { SECTION_IDS } from '../lib/constants';
+
+declare global {
+  interface Window {
+    Tally?: {
+      openPopup: (formId: string, options?: Record<string, unknown>) => void;
+      closePopup: (formId: string) => void;
+    };
+  }
+}
 
 interface TeamMember {
   id: number;
@@ -61,59 +68,26 @@ export function TeamContact() {
     }
   ];
 
-  // Form States
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [institution, setInstitution] = useState('');
-  const [message, setMessage] = useState('');
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState<string | null>(null);
-  const [success, setSuccess] = useState(false);
-
-  const handleSubmit = async () => {
-    // Basic validations
-    if (!name.trim() || !email.trim() || !institution.trim() || !message.trim()) {
-      setError("All fields are required.");
-      return;
-    }
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-      setError("Please enter a valid email address.");
-      return;
-    }
-
-    setLoading(true);
-    setError(null);
-    setSuccess(false);
-
+  // Tally popup trigger with fallback redirect
+  const handleOpenTally = () => {
+    const tallyUrl = 'https://tally.so/r/ZjBZro';
     try {
-      const res = await fetch('https://api.web3forms.com/submit', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          access_key: 'a1e5eb6a-cabe-4409-b289-9a30811d8f7d',
-          name,
-          email,
-          institution,
-          message,
-          subject: 'Syntaxis 2026 — Contact Form',
-        })
-      });
-      const data = await res.json();
-      
-      if (data.success) {
-        setSuccess(true);
-        setName('');
-        setEmail('');
-        setInstitution('');
-        setMessage('');
+      if (window.Tally && typeof window.Tally.openPopup === 'function') {
+        window.Tally.openPopup('ZjBZro', {
+          layout: 'modal',
+          width: 700,
+          hideTitle: true,
+          emoji: {
+            text: '👋',
+            animation: 'wave'
+          },
+          autoClose: 3000
+        });
       } else {
-        setError(data.message || "Something went wrong. Email us at syntaxis@rdec.in");
+        window.open(tallyUrl, '_blank', 'noopener,noreferrer');
       }
     } catch {
-      setError("Something went wrong. Email us at syntaxis@rdec.in");
-    } finally {
-      setLoading(false);
+      window.open(tallyUrl, '_blank', 'noopener,noreferrer');
     }
   };
 
@@ -156,10 +130,11 @@ export function TeamContact() {
             {team.map((member) => (
               <motion.div key={member.id} variants={fadeUpVariants}>
                 <Card className="flex flex-col items-center text-center p-6 border border-[var(--color-border)] hover:border-[var(--color-border-gold)] transition-colors duration-300">
-                  <div className="w-28 h-28 rounded-full overflow-hidden border border-[var(--color-border)] mb-4 shrink-0">
+                  {/* 1:1 Aspect Ratio profile avatar */}
+                  <div className="w-28 h-28 aspect-square rounded-full overflow-hidden border border-[var(--color-border)] mb-4 shrink-0">
                     <img 
                       src={member.image} 
-                      alt="[TEAM MEMBER PHOTO 150x150 circle]" 
+                      alt={`[${member.name} — 1:1 Profile Photo]`}
                       className="w-full h-full object-cover"
                       loading="lazy"
                     />
@@ -186,7 +161,7 @@ export function TeamContact() {
           </motion.div>
         </div>
 
-        {/* Sub-Section 2: Contact Form */}
+        {/* Sub-Section 2: Contact Section with Tally Popup */}
         <div className="flex flex-col gap-12 max-w-2xl mx-auto w-full">
           <motion.div
             initial="initial"
@@ -202,96 +177,32 @@ export function TeamContact() {
             whileInView="animate"
             viewport={{ once: true, margin: "-100px" }}
             variants={fadeUpVariants}
-            className="flex flex-col bg-bg/50 border border-[var(--color-border)] p-6 sm:p-10 rounded-[var(--radius-lg)] shadow-2xl backdrop-blur-sm gap-6 mt-4"
+            className="flex flex-col bg-bg/50 border border-[var(--color-border)] p-6 sm:p-10 rounded-[var(--radius-lg)] shadow-2xl backdrop-blur-sm gap-8 text-center"
           >
-            {/* NO FORM TAGS - CONTROLLED DIV INPUT WORKFLOW */}
-            <div className="flex flex-col gap-4">
-              {/* Name */}
-              <div className="flex flex-col gap-1.5">
-                <label className="text-[10px] font-bold text-[var(--color-text-sec)] uppercase tracking-wider">Full Name</label>
-                <input
-                  type="text"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                  placeholder="Enter your name"
-                  className="bg-bg/80 border border-[var(--color-border)] text-[var(--color-text-pri)] rounded-[var(--radius-sm)] px-4 py-3 text-sm focus:outline-none focus:border-[var(--color-brand)] transition-colors"
-                  disabled={loading}
-                />
-              </div>
-
-              {/* Email */}
-              <div className="flex flex-col gap-1.5">
-                <label className="text-[10px] font-bold text-[var(--color-text-sec)] uppercase tracking-wider">Email Address</label>
-                <input
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Enter your email"
-                  className="bg-bg/80 border border-[var(--color-border)] text-[var(--color-text-pri)] rounded-[var(--radius-sm)] px-4 py-3 text-sm focus:outline-none focus:border-[var(--color-brand)] transition-colors"
-                  disabled={loading}
-                />
-              </div>
-
-              {/* Institution */}
-              <div className="flex flex-col gap-1.5">
-                <label className="text-[10px] font-bold text-[var(--color-text-sec)] uppercase tracking-wider">Institution / College</label>
-                <input
-                  type="text"
-                  value={institution}
-                  onChange={(e) => setInstitution(e.target.value)}
-                  placeholder="Enter your college name"
-                  className="bg-bg/80 border border-[var(--color-border)] text-[var(--color-text-pri)] rounded-[var(--radius-sm)] px-4 py-3 text-sm focus:outline-none focus:border-[var(--color-brand)] transition-colors"
-                  disabled={loading}
-                />
-              </div>
-
-              {/* Message */}
-              <div className="flex flex-col gap-1.5">
-                <label className="text-[10px] font-bold text-[var(--color-text-sec)] uppercase tracking-wider">Your Message</label>
-                <textarea
-                  value={message}
-                  onChange={(e) => setMessage(e.target.value)}
-                  placeholder="Type your query here..."
-                  rows={4}
-                  className="bg-bg/80 border border-[var(--color-border)] text-[var(--color-text-pri)] rounded-[var(--radius-sm)] px-4 py-3 text-sm focus:outline-none focus:border-[var(--color-brand)] transition-colors resize-none"
-                  disabled={loading}
-                />
-              </div>
+            {/* Tally Interactive Form Launch Portal */}
+            <div className="flex flex-col items-center gap-4 p-6 bg-gradient-to-b from-[var(--color-accent)]/30 to-[var(--color-bg)]/80 border border-[var(--color-brand)]/60 rounded-[var(--radius-md)] shadow-[0_0_20px_var(--color-brand-glow)]">
+              <MessageSquare className="w-10 h-10 text-[var(--color-brand)] animate-bounce" />
+              <h4 className="text-lg font-bold font-heading text-[var(--color-text-pri)] uppercase tracking-wider">
+                Official Inquiry & Feedback Portal
+              </h4>
+              <p className="text-xs text-[var(--color-text-body)] leading-relaxed max-w-md">
+                Click below to launch our instant interactive inquiry form. For quick response, submit your query directly to our team.
+              </p>
+              
+              <button
+                onClick={handleOpenTally}
+                data-tally-open="ZjBZro"
+                data-tally-width="700"
+                data-tally-hide-title="1"
+                data-tally-emoji-text="👋"
+                data-tally-emoji-animation="wave"
+                data-tally-auto-close="2500"
+                className="w-full py-4 px-6 bg-[var(--color-brand)] text-[var(--color-bg)] font-extrabold text-sm uppercase tracking-wider font-heading rounded-[var(--radius-md)] hover:scale-105 hover:shadow-[0_0_25px_var(--color-brand-glow)] transition-all duration-200 cursor-pointer flex items-center justify-center gap-2 select-none"
+              >
+                <span>Get In Touch (Launch Form)</span>
+                <ExternalLink className="w-4 h-4" />
+              </button>
             </div>
-
-            {/* Error Message */}
-            {error && (
-              <div className="flex items-center gap-2 text-xs font-semibold text-red-500 bg-red-500/10 border border-red-500/30 p-3 rounded-[var(--radius-sm)]">
-                <AlertTriangle className="w-4 h-4 shrink-0" />
-                <span>{error}</span>
-              </div>
-            )}
-
-            {/* Success Message */}
-            {success && (
-              <div className="flex items-center gap-2 text-xs font-semibold text-emerald-500 bg-emerald-500/10 border border-emerald-500/30 p-3 rounded-[var(--radius-sm)]">
-                <CheckCircle className="w-4 h-4 shrink-0" />
-                <span>Message sent! We'll get back to you soon.</span>
-              </div>
-            )}
-
-            {/* Submit state: Abstergo Loader spinner overlay or Standard submit button */}
-            <div className="flex flex-col items-center justify-center mt-2">
-              {loading ? (
-                <div className="ui-abstergo">
-                  <div className="abstergo-loader"></div>
-                </div>
-              ) : (
-                <Button 
-                  onClick={handleSubmit}
-                  className="w-full flex justify-center items-center gap-2 py-3 bg-[var(--color-brand)] text-[var(--color-bg)] font-bold text-sm tracking-wider uppercase font-heading"
-                >
-                  <Send className="w-4 h-4" />
-                  <span>Send Message</span>
-                </Button>
-              )}
-            </div>
-
           </motion.div>
         </div>
 

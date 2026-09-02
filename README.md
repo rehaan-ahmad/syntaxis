@@ -30,7 +30,7 @@
 
 ## ✨ Overview
 
-**Syntaxis 2026** is the flagship tech fest of R.D. Engineering College, organized by the **Nexora Tech Club** and **GeeksforGeeks Student Community**. This repository contains the official event website — a high-performance single-page application featuring an immersive WebGL plasma background, glass morphism UI, Framer Motion animations, and a fully responsive design.
+**Syntaxis 2026** is the flagship tech fest of R.D. Engineering College, organized by the **Nexora Tech Club**. This repository contains the official event website — a high-performance single-page application featuring an immersive WebGL plasma background, glass morphism UI, Framer Motion animations, and a fully responsive design.
 
 > *"Syntaxis" — from the Greek root meaning order, arrangement, and systematic coordination.*
 
