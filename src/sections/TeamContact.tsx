@@ -3,6 +3,8 @@ import { Mail, MessageSquare } from 'lucide-react';
 import { Linkedin } from '../components/icons/SocialIcons';
 import SectionHeading from '../components/ui/SectionHeading';
 import Card from '../components/ui/Card';
+import Reveal from '../components/ui/Reveal';
+import { staggerContainerVariants, fadeUpVariants } from '../lib/animations';
 import { SECTION_IDS } from '../lib/constants';
 
 declare global {
@@ -106,15 +108,6 @@ export function TeamContact() {
     }
   };
 
-  const fadeUpVariants = {
-    initial: { opacity: 0, y: 40 },
-    animate: { 
-      opacity: 1, 
-      y: 0,
-      transition: { duration: 0.8, ease: 'easeOut' as const }
-    }
-  };
-
   return (
     <div className="bg-[var(--color-bg-glass)] backdrop-blur-[12px] border-y border-[var(--color-border)]">
       <section 
@@ -124,22 +117,12 @@ export function TeamContact() {
         
         {/* Sub-Section 1: Organizing Team */}
         <div className="flex flex-col gap-12">
-          <motion.div
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={fadeUpVariants}
-          >
+          <Reveal>
             <SectionHeading title="ORGANIZING TEAM" subtitle="Nexora Tech Club" />
-          </motion.div>
+          </Reveal>
 
-          <motion.div
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={{
-              animate: { transition: { staggerChildren: 0.1 } }
-            }}
+          <Reveal
+            variants={staggerContainerVariants}
             className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 justify-center"
           >
             {team.map((member) => (
@@ -147,8 +130,8 @@ export function TeamContact() {
                 <Card className="flex flex-col items-center text-center p-6 border border-[var(--color-border)] hover:border-[var(--color-border-gold)] transition-colors duration-300">
                   {/* 1:1 Aspect Ratio profile avatar */}
                   <div className="w-28 h-28 aspect-square rounded-full overflow-hidden border border-[var(--color-border)] mb-4 shrink-0">
-                    <img 
-                      src={member.image} 
+                    <img
+                      src={member.image}
                       alt={`[${member.name} — 1:1 Profile Photo]`}
                       className="w-full h-full object-cover"
                       loading="lazy"
@@ -160,10 +143,10 @@ export function TeamContact() {
                   <span className="text-xs text-[var(--color-brand)] font-semibold uppercase tracking-wider mb-4">
                     {member.role}
                   </span>
-                  
-                  <a 
-                    href={member.linkedin} 
-                    target="_blank" 
+
+                  <a
+                    href={member.linkedin}
+                    target="_blank"
                     rel="noopener noreferrer"
                     className="text-[var(--color-text-sec)] hover:text-[var(--color-brand)] transition-colors mt-auto"
                     aria-label={`${member.name} LinkedIn`}
@@ -173,25 +156,16 @@ export function TeamContact() {
                 </Card>
               </motion.div>
             ))}
-          </motion.div>
+          </Reveal>
         </div>
 
         {/* Sub-Section 2: Contact Section */}
         <div className="flex flex-col gap-12 max-w-2xl mx-auto w-full">
-          <motion.div
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={fadeUpVariants}
-          >
+          <Reveal>
             <SectionHeading title="GET IN TOUCH" subtitle="SEND US A MESSAGE" />
-          </motion.div>
+          </Reveal>
 
-          <motion.div
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={fadeUpVariants}
+          <Reveal
             className="flex flex-col bg-bg/50 border border-[var(--color-border)] p-6 sm:p-10 rounded-[var(--radius-lg)] shadow-2xl backdrop-blur-sm text-center"
           >
             <div className="flex flex-col items-center gap-4 p-6 bg-gradient-to-b from-[var(--color-accent)]/30 to-[var(--color-bg)]/80 border border-[var(--color-brand)]/60 rounded-[var(--radius-md)] shadow-[0_0_20px_var(--color-brand-glow)]">
@@ -202,7 +176,7 @@ export function TeamContact() {
               <p className="text-xs text-[var(--color-text-body)] leading-relaxed max-w-md">
                 Have questions or want to collaborate with Syntaxis 2026? Reach out directly to our team below.
               </p>
-              
+
               <button
                 onClick={handleOpenTally}
                 data-tally-open="ZjBZro"
@@ -217,7 +191,7 @@ export function TeamContact() {
                 <Mail className="w-4 h-4" />
               </button>
             </div>
-          </motion.div>
+          </Reveal>
         </div>
 
       </section>

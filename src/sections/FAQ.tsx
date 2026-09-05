@@ -1,6 +1,6 @@
-import { motion } from 'framer-motion';
 import SectionHeading from '../components/ui/SectionHeading';
 import Accordion from '../components/ui/Accordion';
+import Reveal from '../components/ui/Reveal';
 import { SECTION_IDS } from '../lib/constants';
 
 export function FAQ() {
@@ -47,40 +47,20 @@ export function FAQ() {
     }
   ];
 
-  const fadeUpVariants = {
-    initial: { opacity: 0, y: 40 },
-    animate: { 
-      opacity: 1, 
-      y: 0,
-      transition: { duration: 0.8, ease: 'easeOut' as const }
-    }
-  };
-
   return (
     <section 
       id={SECTION_IDS.faq} 
       className="max-w-4xl mx-auto px-6 py-20 sm:py-32 relative z-10 bg-[var(--color-bg)]"
     >
       {/* Section Heading */}
-      <motion.div
-        initial="initial"
-        whileInView="animate"
-        viewport={{ once: true, margin: "-100px" }}
-        variants={fadeUpVariants}
-      >
+      <Reveal>
         <SectionHeading title="FREQUENTLY ASKED" subtitle="HAVE QUESTIONS?" />
-      </motion.div>
+      </Reveal>
 
       {/* Accordion container */}
-      <motion.div 
-        initial="initial"
-        whileInView="animate"
-        viewport={{ once: true, margin: "-100px" }}
-        variants={fadeUpVariants}
-        className="bg-[var(--color-bg-glass)] border border-[var(--color-border)] p-6 sm:p-8 rounded-[var(--radius-lg)] shadow-2xl backdrop-blur-sm mt-4"
-      >
+      <Reveal className="bg-[var(--color-bg-glass)] border border-[var(--color-border)] p-6 sm:p-8 rounded-[var(--radius-lg)] shadow-2xl backdrop-blur-sm mt-4">
         <Accordion items={faqItems} />
-      </motion.div>
+      </Reveal>
       
     </section>
   );

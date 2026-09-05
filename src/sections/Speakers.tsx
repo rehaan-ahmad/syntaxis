@@ -3,6 +3,8 @@ import { Globe } from 'lucide-react';
 import { Linkedin, Twitter } from '../components/icons/SocialIcons';
 import SectionHeading from '../components/ui/SectionHeading';
 import Card from '../components/ui/Card';
+import Reveal from '../components/ui/Reveal';
+import { staggerContainerVariants, fadeUpVariants } from '../lib/animations';
 import RevealCountdown from '../components/ui/RevealCountdown';
 import { useCountdown } from '../hooks/useCountdown';
 import { SECTION_IDS } from '../lib/constants';
@@ -50,15 +52,6 @@ export function Speakers() {
     }
   ];
 
-  const fadeUpVariants = {
-    initial: { opacity: 0, y: 40 },
-    animate: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.8, ease: 'easeOut' as const }
-    }
-  };
-
   return (
     <div className="bg-[var(--color-bg-glass)] backdrop-blur-[12px] border-y border-[var(--color-border)]">
       <section
@@ -66,14 +59,9 @@ export function Speakers() {
         className="max-w-7xl mx-auto px-6 py-20 sm:py-32 flex flex-col gap-16 relative z-10"
       >
         {/* Section Heading */}
-        <motion.div
-          initial="initial"
-          whileInView="animate"
-          viewport={{ once: true, margin: "-100px" }}
-          variants={fadeUpVariants}
-        >
+        <Reveal>
           <SectionHeading title="KEYNOTE SPEAKERS" subtitle="GUEST LECTURERS" />
-        </motion.div>
+        </Reveal>
 
         {!isExpired ? (
           <RevealCountdown
@@ -81,13 +69,8 @@ export function Speakers() {
             label="Speakers Reveal In"
           />
         ) : (
-          <motion.div
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={{
-              animate: { transition: { staggerChildren: 0.1 } }
-            }}
+          <Reveal
+            variants={staggerContainerVariants}
             className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 justify-center"
           >
             {speakers.map((speaker) => (
@@ -162,7 +145,7 @@ export function Speakers() {
                 </Card>
               </motion.div>
             ))}
-          </motion.div>
+          </Reveal>
         )}
       </section>
     </div>

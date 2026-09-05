@@ -1,6 +1,6 @@
-import { motion } from 'framer-motion';
 import { Mail, Phone } from 'lucide-react';
 import SectionHeading from '../components/ui/SectionHeading';
+import Reveal from '../components/ui/Reveal';
 import RevealCountdown from '../components/ui/RevealCountdown';
 import { useCountdown } from '../hooks/useCountdown';
 import { SECTION_IDS, EXTERNAL_LINKS } from '../lib/constants';
@@ -31,15 +31,6 @@ export function Sponsors() {
   const revealDate = new Date('2026-08-15T00:00:00+05:30').getTime();
   const { isExpired } = useCountdown(revealDate);
 
-  const fadeUpVariants = {
-    initial: { opacity: 0, y: 40 },
-    animate: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.7, ease: 'easeOut' as const }
-    }
-  };
-
   return (
     <section
       id={SECTION_IDS.sponsors}
@@ -49,17 +40,11 @@ export function Sponsors() {
       <SectionHeading title="SPONSORSHIP & PARTNERSHIPS" subtitle="OFFICIAL TIERS & BRAND OUTREACH" />
 
       {/* Intro Description */}
-      <motion.div
-        initial="initial"
-        whileInView="animate"
-        viewport={{ once: true, margin: "-100px" }}
-        variants={fadeUpVariants}
-        className="text-center max-w-2xl mx-auto"
-      >
+      <Reveal className="text-center max-w-2xl mx-auto">
         <p className="text-xs sm:text-sm text-[var(--color-text-body)] leading-relaxed">
           Partner with Syntaxis 2026 to showcase your brand to <strong>500–700+</strong> technical students across 25+ NCR colleges and partner school networks.
         </p>
-      </motion.div>
+      </Reveal>
 
       {/* Confirmed Partners Showcase Grid */}
       <div className="flex flex-col gap-10 max-w-5xl mx-auto w-full">
@@ -75,13 +60,7 @@ export function Sponsors() {
         ) : (
           <div className="flex flex-col gap-12 w-full">
             {/* Archimedes Tier (Title Partner Slot - 1 Slot) */}
-            <motion.div
-              initial="initial"
-              whileInView="animate"
-              viewport={{ once: true, margin: "-100px" }}
-              variants={fadeUpVariants}
-              className="flex flex-col items-center gap-4 text-center"
-            >
+            <Reveal className="flex flex-col items-center gap-4 text-center">
               <div className="flex flex-col items-center gap-1">
                 <span className="text-xs font-bold font-heading uppercase tracking-[0.25em] text-[var(--color-brand)]">
                   Archimedes Tier (Title Partner)
@@ -91,16 +70,10 @@ export function Sponsors() {
                 </span>
               </div>
               <SponsorLogo tier="Archimedes Title" className="w-72 h-36 md:w-80 md:h-40" />
-            </motion.div>
+            </Reveal>
 
             {/* Euclid Tier (Co-Sponsor Slots - 2 Slots) */}
-            <motion.div
-              initial="initial"
-              whileInView="animate"
-              viewport={{ once: true, margin: "-100px" }}
-              variants={fadeUpVariants}
-              className="flex flex-col items-center gap-4 text-center mt-2"
-            >
+            <Reveal className="flex flex-col items-center gap-4 text-center mt-2">
               <div className="flex flex-col items-center gap-1">
                 <span className="text-xs font-bold font-heading uppercase tracking-[0.25em] text-[var(--color-text-pri)]">
                   Euclid Tier (Co-Sponsors)
@@ -113,17 +86,13 @@ export function Sponsors() {
                 <SponsorLogo tier="Euclid Co-Sponsor 1" className="w-56 h-28 md:w-64 md:h-32" />
                 <SponsorLogo tier="Euclid Co-Sponsor 2" className="w-56 h-28 md:w-64 md:h-32" />
               </div>
-            </motion.div>
+            </Reveal>
           </div>
         )}
       </div>
 
       {/* Become a Sponsor Lead Contact CTA */}
-      <motion.div
-        initial="initial"
-        whileInView="animate"
-        viewport={{ once: true, margin: "-100px" }}
-        variants={fadeUpVariants}
+      <Reveal
         className="flex flex-col items-center text-center max-w-xl mx-auto mt-4 border border-[var(--color-brand)]/50 bg-[var(--color-bg-glass)] rounded-[var(--radius-xl)] p-8 backdrop-blur-[12px] shadow-[0_0_20px_var(--color-brand-glow)]"
       >
         <h4 className="text-xl font-extrabold font-heading text-[var(--color-text-pri)] tracking-wide mb-2 uppercase">
@@ -152,7 +121,7 @@ export function Sponsors() {
           <Mail className="w-4 h-4" />
           <span>Connect With Fest Lead</span>
         </a>
-      </motion.div>
+      </Reveal>
     </section>
   );
 }

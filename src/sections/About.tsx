@@ -2,6 +2,8 @@ import { motion } from 'framer-motion';
 import { Zap, Users, Award } from 'lucide-react';
 import SectionHeading from '../components/ui/SectionHeading';
 import Card from '../components/ui/Card';
+import Reveal from '../components/ui/Reveal';
+import { staggerContainerVariants, fadeUpVariants } from '../lib/animations';
 import { SECTION_IDS, FEST_INFO } from '../lib/constants';
 
 export function About() {
@@ -29,44 +31,25 @@ export function About() {
     }
   ];
 
-  const fadeUpVariants = {
-    initial: { opacity: 0, y: 40 },
-    animate: { 
-      opacity: 1, 
-      y: 0,
-      transition: { duration: 0.8, ease: 'easeOut' as const }
-    }
-  };
-
   return (
     <div className="bg-[var(--color-bg-glass)] backdrop-blur-[12px] border-y border-[var(--color-border)]">
-      <section 
-        id={SECTION_IDS.about} 
+      <section
+        id={SECTION_IDS.about}
         className="max-w-7xl mx-auto px-6 py-20 sm:py-32 flex flex-col gap-16 relative z-10"
       >
         {/* Section Heading */}
-        <motion.div
-          initial="initial"
-          whileInView="animate"
-          viewport={{ once: true, margin: "-100px" }}
-          variants={fadeUpVariants}
-        >
+        <Reveal>
           <SectionHeading title="ABOUT SYNTAXIS" subtitle="OUR IDENTITY" />
-        </motion.div>
+        </Reveal>
 
         {/* Stats Grid */}
-        <motion.div 
-          initial="initial"
-          whileInView="animate"
-          viewport={{ once: true, margin: "-100px" }}
-          variants={{
-            animate: { transition: { staggerChildren: 0.1 } }
-          }}
+        <Reveal
+          variants={staggerContainerVariants}
           className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8"
         >
           {stats.map((stat, idx) => (
-            <motion.div 
-              key={idx} 
+            <motion.div
+              key={idx}
               variants={fadeUpVariants}
             >
               <Card className="flex flex-col items-center justify-center text-center p-8 border border-[var(--color-accent)] hover:border-[var(--color-brand)] transition-colors duration-300">
@@ -79,18 +62,12 @@ export function About() {
               </Card>
             </motion.div>
           ))}
-        </motion.div>
+        </Reveal>
 
         {/* Description and Image grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mt-4">
           {/* Narrative */}
-          <motion.div 
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={fadeUpVariants}
-            className="flex flex-col gap-6 text-[var(--color-text-body)]"
-          >
+          <Reveal className="flex flex-col gap-6 text-[var(--color-text-body)]">
             <p className="text-lg sm:text-xl font-heading text-[var(--color-text-pri)] leading-relaxed italic text-gold">
               Inspired by the Greek root representing order, arrangement, and systematic coordination.
             </p>
@@ -100,24 +77,18 @@ export function About() {
             <p className="text-base leading-relaxed">
               From automated hackathons and cybersecurity drills to workshops on Artificial Intelligence and non-technical creative sprints, the festival provides a platform for participants to showcase their expertise, connect with tech leaders, and win massive prizes.
             </p>
-          </motion.div>
+          </Reveal>
 
           {/* Atmosphere Image Showcase */}
-          <motion.div 
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={fadeUpVariants}
-            className="relative"
-          >
+          <Reveal className="relative">
             <div className="absolute inset-0 bg-gradient-to-tr from-[var(--color-accent)] to-transparent rounded-[var(--radius-lg)] blur-md opacity-20" />
-            <img 
+            <img
               src={`${import.meta.env.BASE_URL}assets/about-atmosphere.PNG`}
-              alt="Syntaxis Fest Atmosphere" 
+              alt="Syntaxis Fest Atmosphere"
               className="w-full h-auto object-cover rounded-[var(--radius-lg)] border border-[var(--color-border)] shadow-2xl relative z-10"
               loading="lazy"
             />
-          </motion.div>
+          </Reveal>
         </div>
 
         {/* Core Pillars */}
@@ -125,18 +96,13 @@ export function About() {
           <h3 className="text-2xl font-bold uppercase font-heading text-center text-[var(--color-text-pri)] tracking-wider">
             THE THREE PILLARS
           </h3>
-          <motion.div 
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={{
-              animate: { transition: { staggerChildren: 0.1 } }
-            }}
+          <Reveal
+            variants={staggerContainerVariants}
             className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8"
           >
             {pillars.map((pillar, idx) => (
-              <motion.div 
-                key={idx} 
+              <motion.div
+                key={idx}
                 variants={fadeUpVariants}
               >
                 <Card className="h-full border border-[var(--color-border)] p-6 flex flex-col gap-4 hover:shadow-[0_0_20px_rgba(93,28,52,0.25)] transition-all duration-300">
@@ -152,7 +118,7 @@ export function About() {
                 </Card>
               </motion.div>
             ))}
-          </motion.div>
+          </Reveal>
         </div>
 
       </section>

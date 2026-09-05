@@ -15,7 +15,7 @@ export interface CountdownState {
  * Target date for the countdown.
  * Specified in ISO 8601 format with a +05:30 offset for India Standard Time (IST).
  */
-const TARGET_DATE = new Date('2026-09-18T09:00:00+05:30').getTime();
+const TARGET_DATE = new Date('2026-10-29T09:00:00+05:30').getTime();
 
 /**
  * Custom hook that tracks the time remaining until the festival start date.

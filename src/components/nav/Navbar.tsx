@@ -231,7 +231,7 @@ export function Navbar({ className, ...props }: React.HTMLAttributes<HTMLElement
                     className="flex items-center justify-center gap-2 p-3 rounded-lg bg-[var(--color-brand)] text-[var(--color-bg)] font-semibold mt-2"
                     onClick={() => setIsMobileMenuOpen(false)}
                  >
-                   Register / Pass Passes
+                   Register / Get Passes
                  </a>
                </div>
              </nav>

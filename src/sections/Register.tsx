@@ -1,21 +1,12 @@
-import { motion } from 'framer-motion';
 import { Link as ScrollLink } from 'react-scroll';
 import { ArrowRight, Calendar, Compass, Ticket, Check, Sparkles, Tag } from 'lucide-react';
 import CountdownTimer from '../components/ui/CountdownTimer';
+import Reveal from '../components/ui/Reveal';
 import { SECTION_IDS, EXTERNAL_LINKS, FEST_INFO, REVEAL_DATE, PASS_PRICES } from '../lib/constants';
 import { useIsRevealed } from '../hooks/useCountdown';
 
 export function Register() {
   const isRevealed = useIsRevealed(REVEAL_DATE);
-
-  const fadeUpVariants = {
-    initial: { opacity: 0, y: 35 },
-    animate: { 
-      opacity: 1, 
-      y: 0,
-      transition: { duration: 0.7, ease: 'easeOut' as const }
-    }
-  };
 
   return (
     <section 
@@ -25,13 +16,7 @@ export function Register() {
       <div className="max-w-6xl mx-auto px-6 flex flex-col items-center gap-14 text-center">
         
         {/* Title Header */}
-        <motion.div 
-          initial="initial"
-          whileInView="animate"
-          viewport={{ once: true }}
-          variants={fadeUpVariants}
-          className="flex flex-col items-center gap-3"
-        >
+        <Reveal className="flex flex-col items-center gap-3">
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-black font-heading tracking-wider leading-tight uppercase">
             {FEST_INFO.name} — PASSES & REGISTRATION
           </h2>
@@ -39,27 +24,15 @@ export function Register() {
             <Calendar className="w-4 h-4" />
             <span>{FEST_INFO.dates} | {FEST_INFO.venue}</span>
           </div>
-        </motion.div>
+        </Reveal>
 
         {/* Countdown Timer Block */}
-        <motion.div 
-          initial="initial"
-          whileInView="animate"
-          viewport={{ once: true }}
-          variants={fadeUpVariants}
-          className="w-full max-w-4xl bg-bg/30 border border-white/10 p-6 rounded-[var(--radius-lg)] shadow-2xl backdrop-blur-sm"
-        >
+        <Reveal className="w-full max-w-4xl bg-bg/30 border border-white/10 p-6 rounded-[var(--radius-lg)] shadow-2xl backdrop-blur-sm">
           <CountdownTimer />
-        </motion.div>
+        </Reveal>
 
         {/* Pass Pricing Grid */}
-        <motion.div
-          initial="initial"
-          whileInView="animate"
-          viewport={{ once: true }}
-          variants={fadeUpVariants}
-          className="w-full flex flex-col gap-6"
-        >
+        <Reveal className="w-full flex flex-col gap-6">
           <div className="flex flex-col items-center gap-2">
             <div className="flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-[var(--color-brand)] font-heading">
               <Ticket className="w-4 h-4" />
@@ -135,16 +108,10 @@ export function Register() {
               </div>
             ))}
           </div>
-        </motion.div>
+        </Reveal>
 
         {/* Call to Action Buttons */}
-        <motion.div 
-          initial="initial"
-          whileInView="animate"
-          viewport={{ once: true }}
-          variants={fadeUpVariants}
-          className="flex flex-wrap gap-4 justify-center items-center mt-2"
-        >
+        <Reveal className="flex flex-wrap gap-4 justify-center items-center mt-2">
           {/* Gold button */}
           <a 
             href={EXTERNAL_LINKS.pragma}
@@ -167,18 +134,12 @@ export function Register() {
             <Compass className="w-4 h-4" />
             <span>{isRevealed ? "View Events Sprint" : "View Details"}</span>
           </ScrollLink>
-        </motion.div>
+        </Reveal>
 
         {/* Powered by Pragma footnote */}
-        <motion.p 
-          initial="initial"
-          whileInView="animate"
-          viewport={{ once: true }}
-          variants={fadeUpVariants}
-          className="text-[10px] sm:text-xs font-semibold tracking-widest text-white/60 uppercase"
-        >
+        <Reveal className="text-[10px] sm:text-xs font-semibold tracking-widest text-white/60 uppercase">
           * All registrations and pass issuances are powered by Pragma Event Management System. Prices subject to 3% tax.
-        </motion.p>
+        </Reveal>
       </div>
     </section>
   );

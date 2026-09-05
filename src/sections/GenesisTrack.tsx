@@ -3,6 +3,8 @@ import { Award, ShieldAlert, GraduationCap, ArrowRight } from 'lucide-react';
 import SectionHeading from '../components/ui/SectionHeading';
 import Card from '../components/ui/Card';
 import Badge from '../components/ui/Badge';
+import Reveal from '../components/ui/Reveal';
+import { staggerContainerVariants, fadeUpVariants } from '../lib/animations';
 import { SECTION_IDS, EXTERNAL_LINKS } from '../lib/constants';
 
 export function GenesisTrack() {
@@ -21,15 +23,6 @@ export function GenesisTrack() {
     }
   ];
 
-  const fadeUpVariants = {
-    initial: { opacity: 0, y: 40 },
-    animate: { 
-      opacity: 1, 
-      y: 0,
-      transition: { duration: 0.8, ease: 'easeOut' as const }
-    }
-  };
-
   return (
     <div 
       className="border-y border-[var(--color-border-gold)]"
@@ -44,30 +37,18 @@ export function GenesisTrack() {
         className="max-w-7xl mx-auto px-6 py-20 sm:py-32 flex flex-col gap-16 relative z-10"
       >
         {/* Section Heading with Outreach Badge */}
-        <motion.div
-          initial="initial"
-          whileInView="animate"
-          viewport={{ once: true, margin: "-100px" }}
-          variants={fadeUpVariants}
-          className="flex flex-col items-center"
-        >
+        <Reveal className="flex flex-col items-center">
           {/* School outreach ribbon badge */}
           <Badge variant="brand" className="mb-4 bg-[var(--color-brand)]/20 border-[var(--color-brand)] text-[var(--color-brand)] px-4 py-1 tracking-[0.2em] font-semibold text-[10px] rounded-full animate-pulse shadow-[0_0_15px_var(--color-brand-glow)]">
             School Outreach Wing
           </Badge>
           <SectionHeading title="GENESIS TRACK" subtitle="FOR CLASSES 9 TO 12" />
-        </motion.div>
+        </Reveal>
 
         {/* 2-Column: Details and Image */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Description info */}
-          <motion.div 
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={fadeUpVariants}
-            className="flex flex-col gap-6"
-          >
+          <Reveal className="flex flex-col gap-6">
             <h3 className="text-2xl sm:text-3xl font-extrabold font-heading text-[var(--color-brand)] tracking-wider">
               NURTURING JUNIOR GENIUSES
             </h3>
@@ -105,24 +86,18 @@ export function GenesisTrack() {
                 </div>
               </div>
             </div>
-          </motion.div>
+          </Reveal>
 
           {/* Right Image Showcase — 4:3 aspect ratio per requirement */}
-          <motion.div 
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={fadeUpVariants}
-            className="relative"
-          >
+          <Reveal className="relative">
             <div className="absolute inset-0 bg-gradient-to-br from-[var(--color-brand)] to-transparent rounded-[var(--radius-lg)] blur-md opacity-25" />
-            <img 
+            <img
               src={`${import.meta.env.BASE_URL}assets/events/placeholder-genesis.svg`}
-              alt="[Genesis Track — 4:3 Banner Photo]" 
+              alt="[Genesis Track — 4:3 Banner Photo]"
               className="w-full max-w-md mx-auto aspect-[4/3] object-cover rounded-[var(--radius-lg)] border border-[var(--color-border-gold)] shadow-2xl relative z-10"
               loading="lazy"
             />
-          </motion.div>
+          </Reveal>
         </div>
 
         {/* Junior Event Cards Section */}
@@ -130,13 +105,8 @@ export function GenesisTrack() {
           <h4 className="text-xl font-bold uppercase font-heading text-center text-[var(--color-text-pri)] tracking-wider">
             GENESIS EVENT SLATE
           </h4>
-          <motion.div 
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={{
-              animate: { transition: { staggerChildren: 0.15 } }
-            }}
+          <Reveal
+            variants={staggerContainerVariants}
             className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 max-w-4xl mx-auto w-full"
           >
             {juniorEvents.map((event, idx) => (
@@ -158,15 +128,11 @@ export function GenesisTrack() {
                 </Card>
               </motion.div>
             ))}
-          </motion.div>
+          </Reveal>
         </div>
 
         {/* Eligibility criteria box and parent CTA */}
-        <motion.div 
-          initial="initial"
-          whileInView="animate"
-          viewport={{ once: true, margin: "-100px" }}
-          variants={fadeUpVariants}
+        <Reveal
           className="bg-[var(--color-bg)]/80 border border-[var(--color-border-gold)] p-6 sm:p-8 rounded-[var(--radius-lg)] flex flex-col md:flex-row justify-between items-center gap-6 max-w-4xl mx-auto w-full mt-4"
         >
           <div className="flex gap-4">
@@ -182,8 +148,8 @@ export function GenesisTrack() {
               </ul>
             </div>
           </div>
-          
-          <a 
+
+          <a
             href={EXTERNAL_LINKS.pragma}
             target="_blank"
             rel="noopener noreferrer"
@@ -192,7 +158,7 @@ export function GenesisTrack() {
             <span>Learn More on Pragma</span>
             <ArrowRight className="w-3.5 h-3.5" />
           </a>
-        </motion.div>
+        </Reveal>
 
       </section>
     </div>
