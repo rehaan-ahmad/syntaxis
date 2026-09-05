@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link as ScrollLink } from "react-scroll";
-import { Menu, X, ArrowUpRight, Home, User, Calendar, Zap, Clock, Globe } from "lucide-react";
+import { Menu, X, ArrowUpRight, Home, User, Calendar, Zap, Clock, Globe, Ticket } from "lucide-react";
 import clsx from "clsx";
 import { motion, AnimatePresence } from "framer-motion";
 import { SECTION_IDS, EXTERNAL_LINKS, REVEAL_DATE } from "../../lib/constants";
@@ -36,6 +36,7 @@ export function Navbar({ className, ...props }: React.HTMLAttributes<HTMLElement
     ],
     right: [
       { label: "Schedule", to: SECTION_IDS.schedule, icon: Clock },
+      { label: "Passes & Fees", to: SECTION_IDS.register, icon: Ticket },
       ...(isRevealed ? [{ label: "Sponsors", to: SECTION_IDS.sponsors, icon: Globe }] : [])
     ]
   };
@@ -127,7 +128,7 @@ export function Navbar({ className, ...props }: React.HTMLAttributes<HTMLElement
                     rel="noopener noreferrer"
                     className="px-4 py-1.5 text-xs font-semibold text-[var(--color-bg)] bg-[var(--color-brand)] rounded-[var(--radius-md)] hover:scale-105 hover:shadow-[0_0_15px_var(--color-brand-glow)] transition-all duration-200 whitespace-nowrap"
                   >
-                    Register
+                    Passes & Register
                   </a>
                 </div>
               </nav>
@@ -140,7 +141,7 @@ export function Navbar({ className, ...props }: React.HTMLAttributes<HTMLElement
                   rel="noopener noreferrer"
                   className="px-3 py-1.5 text-xs font-semibold text-[var(--color-bg)] bg-[var(--color-brand)] rounded-[var(--radius-md)] whitespace-nowrap"
                 >
-                  Register
+                  Passes
                 </a>
               </div>
 
@@ -230,7 +231,7 @@ export function Navbar({ className, ...props }: React.HTMLAttributes<HTMLElement
                     className="flex items-center justify-center gap-2 p-3 rounded-lg bg-[var(--color-brand)] text-[var(--color-bg)] font-semibold mt-2"
                     onClick={() => setIsMobileMenuOpen(false)}
                  >
-                   Register Now
+                   Register / Pass Passes
                  </a>
                </div>
              </nav>

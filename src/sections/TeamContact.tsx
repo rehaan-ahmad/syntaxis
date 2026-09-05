@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ExternalLink, MessageSquare } from 'lucide-react';
+import { Mail, MessageSquare } from 'lucide-react';
 import { Linkedin } from '../components/icons/SocialIcons';
 import SectionHeading from '../components/ui/SectionHeading';
 import Card from '../components/ui/Card';
@@ -68,11 +68,13 @@ export function TeamContact() {
     }
   ];
 
-  // Tally popup trigger with fallback redirect
-  const handleOpenTally = () => {
+  // Helper to trigger Tally popup with dynamic script loader fallback
+  const handleOpenTally = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
     const tallyUrl = 'https://tally.so/r/ZjBZro';
-    try {
-      if (window.Tally && typeof window.Tally.openPopup === 'function') {
+
+    const triggerPopup = () => {
+      if (typeof window !== 'undefined' && window.Tally && typeof window.Tally.openPopup === 'function') {
         window.Tally.openPopup('ZjBZro', {
           layout: 'modal',
           width: 700,
@@ -80,14 +82,27 @@ export function TeamContact() {
           emoji: {
             text: '👋',
             animation: 'wave'
-          },
-          autoClose: 3000
+          }
         });
-      } else {
-        window.open(tallyUrl, '_blank', 'noopener,noreferrer');
+        return true;
       }
-    } catch {
-      window.open(tallyUrl, '_blank', 'noopener,noreferrer');
+      return false;
+    };
+
+    if (!triggerPopup()) {
+      // If Tally widget script is not yet initialized, load it dynamically
+      const script = document.createElement('script');
+      script.src = 'https://tally.so/widgets/embed.js';
+      script.async = true;
+      script.onload = () => {
+        if (!triggerPopup()) {
+          window.open(tallyUrl, '_blank', 'noopener,noreferrer');
+        }
+      };
+      script.onerror = () => {
+        window.open(tallyUrl, '_blank', 'noopener,noreferrer');
+      };
+      document.head.appendChild(script);
     }
   };
 
@@ -161,7 +176,7 @@ export function TeamContact() {
           </motion.div>
         </div>
 
-        {/* Sub-Section 2: Contact Section with Tally Popup */}
+        {/* Sub-Section 2: Contact Section */}
         <div className="flex flex-col gap-12 max-w-2xl mx-auto w-full">
           <motion.div
             initial="initial"
@@ -177,30 +192,29 @@ export function TeamContact() {
             whileInView="animate"
             viewport={{ once: true, margin: "-100px" }}
             variants={fadeUpVariants}
-            className="flex flex-col bg-bg/50 border border-[var(--color-border)] p-6 sm:p-10 rounded-[var(--radius-lg)] shadow-2xl backdrop-blur-sm gap-8 text-center"
+            className="flex flex-col bg-bg/50 border border-[var(--color-border)] p-6 sm:p-10 rounded-[var(--radius-lg)] shadow-2xl backdrop-blur-sm text-center"
           >
-            {/* Tally Interactive Form Launch Portal */}
             <div className="flex flex-col items-center gap-4 p-6 bg-gradient-to-b from-[var(--color-accent)]/30 to-[var(--color-bg)]/80 border border-[var(--color-brand)]/60 rounded-[var(--radius-md)] shadow-[0_0_20px_var(--color-brand-glow)]">
-              <MessageSquare className="w-10 h-10 text-[var(--color-brand)] animate-bounce" />
+              <MessageSquare className="w-10 h-10 text-[var(--color-brand)]" />
               <h4 className="text-lg font-bold font-heading text-[var(--color-text-pri)] uppercase tracking-wider">
-                Official Inquiry & Feedback Portal
+                Inquiry & Communication Portal
               </h4>
               <p className="text-xs text-[var(--color-text-body)] leading-relaxed max-w-md">
-                Click below to launch our instant interactive inquiry form. For quick response, submit your query directly to our team.
+                Have questions or want to collaborate with Syntaxis 2026? Reach out directly to our team below.
               </p>
               
               <button
                 onClick={handleOpenTally}
                 data-tally-open="ZjBZro"
+                data-tally-layout="modal"
                 data-tally-width="700"
                 data-tally-hide-title="1"
                 data-tally-emoji-text="👋"
                 data-tally-emoji-animation="wave"
-                data-tally-auto-close="2500"
                 className="w-full py-4 px-6 bg-[var(--color-brand)] text-[var(--color-bg)] font-extrabold text-sm uppercase tracking-wider font-heading rounded-[var(--radius-md)] hover:scale-105 hover:shadow-[0_0_25px_var(--color-brand-glow)] transition-all duration-200 cursor-pointer flex items-center justify-center gap-2 select-none"
               >
-                <span>Get In Touch (Launch Form)</span>
-                <ExternalLink className="w-4 h-4" />
+                <span>Get In Touch</span>
+                <Mail className="w-4 h-4" />
               </button>
             </div>
           </motion.div>

@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Mail, ShieldCheck, Phone } from 'lucide-react';
+import { Mail, Phone } from 'lucide-react';
 import SectionHeading from '../components/ui/SectionHeading';
 import RevealCountdown from '../components/ui/RevealCountdown';
 import { useCountdown } from '../hooks/useCountdown';
@@ -117,40 +117,6 @@ export function Sponsors() {
           </div>
         )}
       </div>
-
-      {/* Sponsorship Terms & Operating Principles */}
-      <motion.div
-        initial="initial"
-        whileInView="animate"
-        viewport={{ once: true, margin: "-100px" }}
-        variants={fadeUpVariants}
-        className="max-w-5xl mx-auto w-full bg-[var(--color-bg-glass)] border border-[var(--color-border)] rounded-[var(--radius-xl)] p-6 sm:p-8 backdrop-blur-[12px]"
-      >
-        <div className="flex items-center gap-2 mb-4">
-          <ShieldCheck className="w-5 h-5 text-[var(--color-brand)]" />
-          <h4 className="text-base font-bold font-heading text-[var(--color-text-pri)] uppercase tracking-wider">
-            Sponsorship Operating Terms
-          </h4>
-        </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs text-[var(--color-text-body)]">
-          <div className="p-3.5 bg-[var(--color-bg)]/50 rounded-[var(--radius-md)] border border-[var(--color-border)]/40">
-            <span className="font-bold text-[var(--color-brand)] block mb-1">Payment Method:</span>
-            Bank transfer or UPI only. Official account details provided securely once tier agreement is signed.
-          </div>
-          <div className="p-3.5 bg-[var(--color-bg)]/50 rounded-[var(--radius-md)] border border-[var(--color-border)]/40">
-            <span className="font-bold text-[var(--color-brand)] block mb-1">In-Kind Contributions:</span>
-            Monetary value must equal or exceed tier minimum. Digital goods require min. 3-month post-fest validity.
-          </div>
-          <div className="p-3.5 bg-[var(--color-bg)]/50 rounded-[var(--radius-md)] border border-[var(--color-border)]/40">
-            <span className="font-bold text-[var(--color-brand)] block mb-1">Formal Agreement:</span>
-            Issued on official RDEC letterhead. Collateral production commences upon signed agreement and payment.
-          </div>
-          <div className="p-3.5 bg-[var(--color-bg)]/50 rounded-[var(--radius-md)] border border-[var(--color-border)]/40">
-            <span className="font-bold text-[var(--color-brand)] block mb-1">Non-Refundable Policy:</span>
-            Contributions locked once processed. In force majeure, full post-date digital visibility package is executed.
-          </div>
-        </div>
-      </motion.div>
 
       {/* Become a Sponsor Lead Contact CTA */}
       <motion.div
