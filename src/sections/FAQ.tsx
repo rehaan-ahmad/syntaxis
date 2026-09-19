@@ -50,7 +50,7 @@ export function FAQ() {
   return (
     <section 
       id={SECTION_IDS.faq} 
-      className="max-w-4xl mx-auto px-6 py-20 sm:py-32 relative z-10 bg-[var(--color-bg)]"
+      className="max-w-4xl mx-auto px-6 py-20 sm:py-32 relative z-10"
     >
       {/* Section Heading */}
       <Reveal>

@@ -279,7 +279,7 @@ export function Schedule() {
   return (
     <section
       id={SECTION_IDS.schedule}
-      className="max-w-7xl mx-auto px-6 py-20 sm:py-32 relative z-10 bg-[var(--color-bg)]"
+      className="max-w-7xl mx-auto px-6 py-20 sm:py-32 relative z-10"
     >
       {/* Section Heading */}
       <SectionHeading title="EVENT SCHEDULE" subtitle="OFFICIAL 3-DAY TIMELINE" />

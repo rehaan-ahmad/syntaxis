@@ -7,10 +7,14 @@
         FreeFireMax - INR 200
         BGMI - INR 200
         CODM - INR 100
-    d. All 3 Days Package - INR 1000
-    e. Last 2 Days Package - INR 800
+    d. All 3 Days Package - INR 850
+    e. Last 2 Days Package - INR 550
     
     All the prices need will have additional 3% taxes, so include that in the website too, and list it in the menu.
     List these prices in the websites wherever appropriate.
 4. The tally form's pop-up isn't working, only re-direction is working. Improve the pop-up part.
 5. Remove any redundant code, only keep the code which is necessary.
+6. Map link to R.D. Engineering College, Duhai, Ghaziabad, but do not mention the Duhai part in the site.
+7. The event sprint and and event schedule parts look too cumbersome separately.
+    I'm thinking of doing something like a prism;
+        Day toggle switch will be on left, when clicked on, a light will go through it, going through a prism, and then refracting into separate events for that day.

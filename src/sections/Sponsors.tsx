@@ -34,7 +34,7 @@ export function Sponsors() {
   return (
     <section
       id={SECTION_IDS.sponsors}
-      className="max-w-7xl mx-auto px-6 py-20 sm:py-32 relative z-10 bg-[var(--color-bg)] flex flex-col gap-16"
+      className="max-w-7xl mx-auto px-6 py-20 sm:py-32 relative z-10 flex flex-col gap-16"
     >
       {/* Section Heading */}
       <SectionHeading title="SPONSORSHIP & PARTNERSHIPS" subtitle="OFFICIAL TIERS & BRAND OUTREACH" />

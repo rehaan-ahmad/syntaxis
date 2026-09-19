@@ -111,7 +111,7 @@ export function Events() {
   return (
     <section 
       id={SECTION_IDS.events} 
-      className="max-w-7xl mx-auto px-6 py-20 sm:py-32 relative z-10 bg-[var(--color-bg)]"
+      className="max-w-7xl mx-auto px-6 py-20 sm:py-32 relative z-10"
     >
       {/* Section Heading */}
       <SectionHeading title="EVENTS SPRINT" subtitle="CHALLENGE YOUR LIMITS" />

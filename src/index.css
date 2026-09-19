@@ -47,7 +47,7 @@
 /* Base Styles */
 html {
   scroll-behavior: smooth;
-  background-color: var(--color-bg);
+  background-color: transparent;
   color: var(--color-text-pri);
   font-family: var(--font-body);
 }
@@ -55,10 +55,25 @@ html {
 body {
   margin: 0;
   padding: 0;
-  background-color: var(--color-bg);
+  background-color: transparent;
   color: var(--color-text-body);
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
+}
+
+/* fluid-bg web component — fixed behind all content */
+fluid-bg {
+  position: fixed !important;
+  inset: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  z-index: -1 !important;
+  pointer-events: none;
+}
+
+/* #root must be transparent so fluid-bg shows through behind all content */
+#root {
+  background-color: transparent;
 }
 
 /* Custom Thin Accent Scrollbar */

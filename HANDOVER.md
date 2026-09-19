@@ -4,17 +4,20 @@
 Build a responsive, visually stunning single-page React application for the SYNTAXIS 2026 tech fest at R.D. Engineering College (RDEC), Ghaziabad, hosted on the sub-domain syntaxis.rdec.ac.in.
 
 ## Current State
-- All build phases complete. Site is production-ready for private server deployment.  
-- Deep code review passed — all 15 AGENTS.md quality rules verified; oxlint reports 0 warnings/0 errors; `npm run build` compiles cleanly.  
-- Web3Forms email integration is live with access key `a1e5eb6a-cabe-4409-b289-9a30811d8f7d`.  
-- All 6 team member photos are now real images (no placeholders remaining).  
+- All build phases complete. Site is production-ready for private server deployment.
+- Deep code review passed — all 15 AGENTS.md quality rules verified; oxlint reports 0 warnings/0 errors; `npm run build` compiles cleanly.
+- Web3Forms email integration is live with access key `a1e5eb6a-cabe-4409-b289-9a30811d8f7d`.
+- All 6 team member photos are now real images (no placeholders remaining).
 - `README.md` has been rewritten for the GitHub repository.
+- **Background**: Replaced custom WebGL plasma shader with fluid-bg library for smoother, lighter-weight animated background.
 
 ## Files in Flight
 None.
 
 ## Changed (Latest Session — August 1, 2026)
-- **HANDOVER.md** — Updated session date and documented the removal of legacy documentation and task management files (`Changes.md`, `TODO.md`).
+- **index.html** — Added fluid-bg script from jsDelivr CDN.
+- **App.tsx** — Replaced `PlasmaBackground` component with `<fluid-bg>` web component using the provided hash configuration; added TypeScript declaration for the custom element.
+- **HANDOVER.md** — Updated session date and documented the background replacement.
 
 ## Previously Changed (July 31, 2026)
 - **TeamContact.tsx** — Updated remaining team member image paths: Palak Tyagi (`palak.png`) and Prabhati Pandey (`prabhati.png`) now use real photos instead of `placeholder-team.svg`. Web3Forms access key updated from `YOUR_ACCESS_KEY` placeholder to production key `a1e5eb6a-cabe-4409-b289-9a30811d8f7d`.
