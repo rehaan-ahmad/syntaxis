@@ -9,51 +9,72 @@ export function Register() {
   const isRevealed = useIsRevealed(REVEAL_DATE);
 
   return (
-    <section 
-      id={SECTION_IDS.register} 
-      className="relative z-10 bg-[var(--color-accent)] text-[var(--color-text-pri)] py-20 sm:py-28 select-none border-y border-[var(--color-accent)]/80"
+    <div 
+      className="border-y border-[var(--color-border-gold)]"
+      style={{
+        background: 'linear-gradient(to bottom, rgba(93, 28, 52, 0.65), rgba(17, 16, 14, 0.80))',
+        backdropFilter: 'blur(12px)',
+        WebkitBackdropFilter: 'blur(12px)'
+      }}
     >
-      <div className="max-w-6xl mx-auto px-6 flex flex-col items-center gap-14 text-center">
-        
-        {/* Title Header */}
-        <Reveal className="flex flex-col items-center gap-3">
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-black font-heading tracking-wider leading-tight uppercase">
-            {FEST_INFO.name} — PASSES & REGISTRATION
-          </h2>
-          <div className="flex items-center gap-2 text-xs sm:text-sm font-semibold uppercase tracking-widest text-[var(--color-text-pri)]/90 opacity-90">
-            <Calendar className="w-4 h-4" />
-            <span>{FEST_INFO.dates} | {FEST_INFO.venue}</span>
-          </div>
-        </Reveal>
-
-        {/* Countdown Timer Block */}
-        <Reveal className="w-full max-w-4xl bg-bg/30 border border-white/10 p-6 rounded-[var(--radius-lg)] shadow-2xl backdrop-blur-sm">
-          <CountdownTimer />
-        </Reveal>
-
-        {/* Pass Pricing Grid */}
-        <Reveal className="w-full flex flex-col gap-6">
-          <div className="flex flex-col items-center gap-2">
-            <div className="flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-[var(--color-brand)] font-heading">
-              <Ticket className="w-4 h-4" />
-              <span>OFFICIAL DAY PASSES & PACKAGES</span>
+      <section 
+        id={SECTION_IDS.register} 
+        className="relative z-10 text-[var(--color-text-pri)] py-20 sm:py-28 select-none"
+      >
+        <div className="max-w-6xl mx-auto px-6 flex flex-col items-center gap-14 text-center">
+          
+          {/* Title Header */}
+          <Reveal className="flex flex-col items-center gap-3">
+            <h2 className="text-4xl sm:text-5xl md:text-6xl font-black font-heading tracking-wider leading-tight uppercase">
+              {FEST_INFO.name} — PASSES & REGISTRATION
+            </h2>
+            <div className="flex items-center gap-2 text-xs sm:text-sm font-semibold uppercase tracking-widest text-[var(--color-text-pri)]/90 opacity-90">
+              <Calendar className="w-4 h-4" />
+              <span>{FEST_INFO.dates} | {FEST_INFO.venue}</span>
             </div>
-            <span className="text-[11px] font-mono text-white/70 bg-black/20 px-3 py-1 rounded-full border border-white/10">
-              * All pass prices are subject to additional {PASS_PRICES.taxRate} tax at checkout
-            </span>
-          </div>
+          </Reveal>
 
-          {/* Pricing Cards Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-left mt-2">
-            {PASS_PRICES.passes.map((pass) => (
-              <div 
-                key={pass.id}
-                className={`relative flex flex-col justify-between p-6 rounded-[var(--radius-xl)] backdrop-blur-md transition-all duration-300 ${
-                  pass.popular 
-                    ? 'bg-gradient-to-b from-[var(--color-brand)]/30 via-bg/80 to-bg/90 border-2 border-[var(--color-brand)] shadow-[0_0_30px_var(--color-brand-glow)] scale-[1.02]'
-                    : 'bg-bg/40 border border-white/15 hover:border-[var(--color-brand)]/60 shadow-lg'
-                }`}
-              >
+          {/* Countdown Timer Block */}
+          <Reveal className="w-full max-w-4xl p-6 rounded-[var(--radius-lg)] shadow-2xl border border-[var(--color-border-gold)]"
+            style={{
+              background: 'linear-gradient(to bottom, rgba(17, 16, 14, 0.65), rgba(26, 22, 17, 0.75))',
+              backdropFilter: 'blur(12px)',
+              WebkitBackdropFilter: 'blur(12px)'
+            }}
+          >
+            <CountdownTimer />
+          </Reveal>
+
+          {/* Pass Pricing Grid */}
+          <Reveal className="w-full flex flex-col gap-6">
+            <div className="flex flex-col items-center gap-2">
+              <div className="flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-[var(--color-brand)] font-heading">
+                <Ticket className="w-4 h-4" />
+                <span>OFFICIAL DAY PASSES & PACKAGES</span>
+              </div>
+              <span className="text-[11px] font-mono text-white/70 bg-black/40 px-3 py-1 rounded-full border border-white/10">
+                * All pass prices are subject to additional {PASS_PRICES.taxRate} tax at checkout
+              </span>
+            </div>
+
+            {/* Pricing Cards Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-left mt-2">
+              {PASS_PRICES.passes.map((pass) => (
+                <div 
+                  key={pass.id}
+                  className={`relative flex flex-col justify-between p-6 rounded-[var(--radius-xl)] transition-all duration-300 ${
+                    pass.popular 
+                      ? 'border-2 border-[var(--color-brand)] shadow-[0_0_30px_var(--color-brand-glow)] scale-[1.02]'
+                      : 'border border-white/20 hover:border-[var(--color-brand)]/60 shadow-lg'
+                  }`}
+                  style={{
+                    background: pass.popular 
+                      ? 'linear-gradient(to bottom, rgba(166, 125, 69, 0.35), rgba(17, 16, 14, 0.80))'
+                      : 'rgba(17, 16, 14, 0.65)',
+                    backdropFilter: 'blur(12px)',
+                    WebkitBackdropFilter: 'blur(12px)'
+                  }}
+                >
                 {pass.badge && (
                   <span className="absolute -top-3 right-4 bg-[var(--color-brand)] text-[var(--color-bg)] text-[9px] font-black uppercase px-3 py-1 rounded-full tracking-widest flex items-center gap-1 shadow-md">
                     <Sparkles className="w-3 h-3" /> {pass.badge}
@@ -142,7 +163,8 @@ export function Register() {
         </Reveal>
       </div>
     </section>
-  );
+  </div>
+);
 }
 
 export default Register;

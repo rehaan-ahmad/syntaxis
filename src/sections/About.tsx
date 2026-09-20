@@ -32,7 +32,14 @@ export function About() {
   ];
 
   return (
-    <div className="bg-[var(--color-bg-glass)] backdrop-blur-[12px] border-y border-[var(--color-border)]">
+    <div 
+      className="border-y border-[var(--color-border)]"
+      style={{
+        background: 'linear-gradient(to bottom, rgba(17, 16, 14, 0.75), rgba(26, 22, 17, 0.8))',
+        backdropFilter: 'blur(12px)',
+        WebkitBackdropFilter: 'blur(12px)'
+      }}
+    >
       <section
         id={SECTION_IDS.about}
         className="max-w-7xl mx-auto px-6 py-20 sm:py-32 flex flex-col gap-16 relative z-10"

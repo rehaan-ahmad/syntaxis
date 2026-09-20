@@ -124,7 +124,12 @@ export function Hero() {
         {/* Countdown Timer Block */}
         <motion.div
           variants={itemVariants}
-          className="w-full bg-[var(--color-bg-glass)] border border-[var(--color-border)] p-4 sm:p-6 rounded-[var(--radius-lg)] shadow-2xl backdrop-blur-[12px]"
+          className="w-full border border-[var(--color-border-gold)] p-4 sm:p-6 rounded-[var(--radius-lg)] shadow-2xl"
+          style={{
+            background: 'linear-gradient(to bottom, rgba(17, 16, 14, 0.65), rgba(26, 22, 17, 0.75))',
+            backdropFilter: 'blur(12px)',
+            WebkitBackdropFilter: 'blur(12px)'
+          }}
         >
           <CountdownTimer />
         </motion.div>
