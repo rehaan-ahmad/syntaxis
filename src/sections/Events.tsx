@@ -72,7 +72,7 @@ export function Events() {
     {
       title: 'Rhesis',
       category: 'Non-Technical',
-      description: 'TEDx-style talks featuring visionary speakers delivering ideas and spoken discourse on technology and innovation.',
+      description: 'Visionary speakers delivering powerful ideas and spoken discourse on technology, innovation, and the future.',
       teamSize: 'Open',
       prizePool: 'N/A',
       image: `${import.meta.env.BASE_URL}assets/events/placeholder-event.svg`,

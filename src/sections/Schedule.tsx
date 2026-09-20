@@ -65,7 +65,7 @@ export function Schedule() {
         },
         {
           time: '03:15 PM',
-          title: 'Rhesis (TEDx-style Talks) + Archithon Problem Statements',
+          title: 'Rhesis (Speaker Talks) + Archithon Problem Statements',
           venue: 'Main Auditorium / Stream',
           duration: '1.5 Hours',
           notes: 'Visionary speakers delivering ideas and spoken discourse. Official release of problem statements for the Hackathon Package (Archithon).',

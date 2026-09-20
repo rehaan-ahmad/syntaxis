@@ -3,6 +3,19 @@ import ClosingPlasma from './ClosingPlasma';
 import StaticGradientFallback from './StaticGradientFallback';
 
 /**
+ * Determine fallback mode synchronously on the client.
+ * Called once as a lazy useState initializer so the correct
+ * background is committed on the very first render, preventing
+ * the static fallback from being locked in on Vercel deployments.
+ */
+function getInitialFallback(): boolean {
+  if (typeof window === 'undefined') return true; // SSR safety
+  const isMobile = window.matchMedia('(max-width: 768px)').matches;
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  return isMobile || prefersReducedMotion;
+}
+
+/**
  * Managed background component that chooses between a high-performance
  * WebGL plasma animation and a static gradient fallback.
  *
@@ -11,7 +24,9 @@ import StaticGradientFallback from './StaticGradientFallback';
  * ensure accessibility and battery efficiency.
  */
 export function PlasmaBackground() {
-  const [useFallback, setUseFallback] = useState(true);
+  // Lazy initializer reads media queries synchronously at mount time
+  // so the correct mode is determined before the first paint.
+  const [useFallback, setUseFallback] = useState<boolean>(getInitialFallback);
 
   useEffect(() => {
     const checkMedia = () => {
@@ -19,8 +34,6 @@ export function PlasmaBackground() {
       const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       setUseFallback(isMobile || prefersReducedMotion);
     };
-
-    checkMedia();
 
     const mobileQuery = window.matchMedia('(max-width: 768px)');
     const motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');

@@ -118,7 +118,7 @@ export function TeamContact() {
         {/* Sub-Section 1: Organizing Team */}
         <div className="flex flex-col gap-12">
           <Reveal>
-            <SectionHeading title="ORGANIZING TEAM" subtitle="Nexora Tech Club" />
+            <SectionHeading title="ORGANIZING TEAM" subtitle="RDEC Tech Club" />
           </Reveal>
 
           <Reveal
