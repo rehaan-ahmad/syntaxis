@@ -154,11 +154,11 @@ export function Footer() {
         </div>
 
         <div className="border-t border-[var(--color-border)]/20 pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] font-semibold text-[var(--color-text-sec)] uppercase tracking-widest text-center md:text-left">
-          <span>
-            &copy; 2026 RDEC Tech Club. All rights reserved.
-          </span>
           <span className="text-[var(--color-text-sec)] normal-case tracking-wide">
             Made With 🤍 By Rehaan Ahmad
+          </span>
+          <span>
+            &copy; 2026 RDEC Tech Club. All rights reserved.
           </span>
         </div>
 

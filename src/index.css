@@ -107,6 +107,19 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--color-text-pri);
 }
 
+/* Thin crisp black outline for white / primary text to ensure legibility when plasma BG transitions to white */
+h1, h2, h3, h4, h5, h6,
+.text-white,
+.text-ivory,
+.text-\[var\(--color-text-pri\)\] {
+  text-shadow: 
+    -0.5px -0.5px 0 rgba(0, 0, 0, 0.8),
+     0.5px -0.5px 0 rgba(0, 0, 0, 0.8),
+    -0.5px  0.5px 0 rgba(0, 0, 0, 0.8),
+     0.5px  0.5px 0 rgba(0, 0, 0, 0.8),
+     0 1px 3px rgba(0, 0, 0, 0.9);
+}
+
 /* Glass Card Helper Class */
 .glass-panel {
   background: var(--color-bg-glass);

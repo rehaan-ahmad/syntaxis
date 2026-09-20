@@ -93,10 +93,12 @@ export function EventCarousel({
                       {event.description}
                     </p>
                     
-                    <div className="flex justify-between items-center text-[10px] text-[var(--color-text-sec)] font-bold tracking-wider mt-2 border-t border-[var(--color-border)] pt-3">
-                      <span>TEAM: {event.teamSize}</span>
-                      <span>PRIZE: {event.prizePool}</span>
-                    </div>
+                    {event.title !== 'Rhesis' && event.title !== 'Workshop Package' && (
+                      <div className="flex justify-between items-center text-[10px] text-[var(--color-text-sec)] font-bold tracking-wider mt-2 border-t border-[var(--color-border)] pt-3">
+                        <span>TEAM: {event.teamSize}</span>
+                        <span>PRIZE: {event.prizePool}</span>
+                      </div>
+                    )}
 
                     <a
                       href={event.pragmaUrl}

@@ -184,10 +184,13 @@ export function Events() {
 
                     {/* Metadata items & Button */}
                     <div className="flex flex-col gap-4 mt-auto">
-                      <div className="flex justify-between items-center text-[10px] text-[var(--color-text-sec)] font-bold tracking-wider border-t border-[var(--color-border)] pt-3">
-                        <span>TEAM SIZE: {event.teamSize}</span>
-                        <span>PRIZE: {event.prizePool}</span>
-                      </div>
+                      {event.title !== 'Rhesis' && event.title !== 'Workshop Package' && (
+                        <div className="flex justify-between items-center text-[10px] text-[var(--color-text-sec)] font-bold tracking-wider border-t border-[var(--color-border)] pt-3">
+                          <span>TEAM SIZE: {event.teamSize}</span>
+                          <span>PRIZE: {event.prizePool}</span>
+                        </div>
+                      )}
+                      
                       
                       <a 
                         href={event.pragmaUrl}
