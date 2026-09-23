@@ -155,6 +155,7 @@ export interface ClosingPlasmaProps extends React.HTMLAttributes<HTMLDivElement>
   lightColorA?: string;
   lightColorB?: string;
   lightColorC?: string;
+  onError?: () => void;
   children?: React.ReactNode;
 }
 
@@ -174,6 +175,7 @@ export function ClosingPlasma({
   lightColorA = LIGHT_A,
   lightColorB = LIGHT_B,
   lightColorC = LIGHT_C,
+  onError,
   className,
   children,
   style,
@@ -273,11 +275,19 @@ export function ClosingPlasma({
     container.addEventListener("pointermove", handlePointerMove);
     container.addEventListener("pointerleave", handlePointerLeave);
 
+    const handleContextLost = (e: Event) => {
+      e.preventDefault();
+      onError?.();
+    };
+    canvas.addEventListener("webglcontextlost", handleContextLost);
+
     const gl = canvas.getContext("webgl", { antialias: false, alpha: true });
     if (!gl) {
+      onError?.();
       return () => {
         container.removeEventListener("pointermove", handlePointerMove);
         container.removeEventListener("pointerleave", handlePointerLeave);
+        canvas.removeEventListener("webglcontextlost", handleContextLost);
       };
     }
 
@@ -298,6 +308,7 @@ export function ClosingPlasma({
     const vertexShader = compileShader(gl.VERTEX_SHADER, VERTEX_SHADER);
     const fragmentShader = compileShader(gl.FRAGMENT_SHADER, FRAGMENT_SHADER);
     if (!vertexShader || !fragmentShader) {
+      onError?.();
       return;
     }
 
@@ -305,6 +316,7 @@ export function ClosingPlasma({
     if (!program) {
       gl.deleteShader(vertexShader);
       gl.deleteShader(fragmentShader);
+      onError?.();
       return;
     }
 
@@ -315,6 +327,7 @@ export function ClosingPlasma({
       gl.deleteProgram(program);
       gl.deleteShader(vertexShader);
       gl.deleteShader(fragmentShader);
+      onError?.();
       return;
     }
 
@@ -429,6 +442,7 @@ export function ClosingPlasma({
     return () => {
       container.removeEventListener("pointermove", handlePointerMove);
       container.removeEventListener("pointerleave", handlePointerLeave);
+      canvas.removeEventListener("webglcontextlost", handleContextLost);
       cancelAnimationFrame(rafId);
       resizeObserver.disconnect();
       gl.deleteBuffer(buffer);
