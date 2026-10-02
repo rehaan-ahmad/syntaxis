@@ -16,7 +16,7 @@ import TeamContact from './sections/TeamContact';
 import Footer from './components/Footer';
 import PragmaModal from './components/ui/PragmaModal';
 import NotFound from './components/ui/NotFound';
-import PlasmaBackground from './components/bg/PlasmaBackground';
+import FluidBg from './components/bg/FluidBg';
 import { REVEAL_DATE } from './lib/constants';
 import { useIsRevealed } from './hooks/useCountdown';
 
@@ -40,7 +40,7 @@ export function App() {
   if (isNotFound) {
     return (
       <>
-        <PlasmaBackground />
+        <FluidBg />
         <NotFound />
       </>
     );
@@ -48,8 +48,8 @@ export function App() {
 
   return (
     <>
-      {/* Plasma WebGL background with mobile fallback */}
-      <PlasmaBackground />
+      {/* fluid-bg animated background */}
+      <FluidBg />
 
       {/* Sniper cursor reticle effects on user click */}
       <MouseEffects 
