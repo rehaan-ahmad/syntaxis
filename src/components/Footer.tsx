@@ -131,6 +131,16 @@ export function Footer() {
               >
                 Organizing Team
               </ScrollLink>
+              <a
+                href="#privacy"
+                onClick={(e) => {
+                  e.preventDefault();
+                  window.location.hash = 'privacy';
+                }}
+                className="text-[var(--color-text-sec)] hover:text-[var(--color-brand)] transition-colors cursor-pointer w-fit"
+              >
+                Privacy Policy
+              </a>
             </div>
           </div>
 
@@ -157,9 +167,22 @@ export function Footer() {
           <span className="text-[var(--color-text-sec)] normal-case tracking-wide">
             Made With 🤍 By Rehaan Ahmad
           </span>
-          <span>
-            &copy; 2026 RDEC Tech Club. All rights reserved.
-          </span>
+          <div className="flex items-center gap-3">
+            <a
+              href="#privacy"
+              onClick={(e) => {
+                e.preventDefault();
+                window.location.hash = 'privacy';
+              }}
+              className="hover:text-[var(--color-brand)] transition-colors cursor-pointer underline underline-offset-4"
+            >
+              Privacy Policy
+            </a>
+            <span>•</span>
+            <span>
+              &copy; 2026 RDEC Tech Club. All rights reserved.
+            </span>
+          </div>
         </div>
 
       </div>

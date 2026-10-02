@@ -16,26 +16,74 @@ import TeamContact from './sections/TeamContact';
 import Footer from './components/Footer';
 import PragmaModal from './components/ui/PragmaModal';
 import NotFound from './components/ui/NotFound';
+import PrivacyPolicy from './components/ui/PrivacyPolicy';
 import FluidBg from './components/bg/FluidBg';
 import { REVEAL_DATE } from './lib/constants';
 import { useIsRevealed } from './hooks/useCountdown';
 
 export function App() {
   const isRevealed = useIsRevealed(REVEAL_DATE);
+  const [isPrivacy, setIsPrivacy] = useState(false);
   const [isNotFound, setIsNotFound] = useState(false);
 
   useEffect(() => {
-    const path = window.location.pathname;
-    const baseUrl = import.meta.env.BASE_URL || '/';
-    // Remove base URL prefix from path
-    const relativePath = path.startsWith(baseUrl) ? path.slice(baseUrl.length) : path;
-    const cleanPath = relativePath.replace(/^\/+|\/+$/g, '');
+    const checkRoute = () => {
+      const path = window.location.pathname;
+      const hash = window.location.hash;
+      const baseUrl = import.meta.env.BASE_URL || '/';
+      // Remove base URL prefix from path
+      const relativePath = path.startsWith(baseUrl) ? path.slice(baseUrl.length) : path;
+      const cleanPath = relativePath.replace(/^\/+|\/+$/g, '');
 
-    // If path is not empty, not index.html, and not a known section hash, mark as 404
-    if (cleanPath && cleanPath !== 'index.html' && cleanPath !== '404') {
-      setIsNotFound(true);
-    }
+      if (
+        hash === '#privacy' ||
+        hash === '#privacy-policy' ||
+        cleanPath === 'privacy' ||
+        cleanPath === 'privacy-policy'
+      ) {
+        setIsPrivacy(true);
+        setIsNotFound(false);
+      } else if (cleanPath && cleanPath !== 'index.html' && cleanPath !== '404') {
+        setIsNotFound(true);
+        setIsPrivacy(false);
+      } else {
+        setIsPrivacy(false);
+        setIsNotFound(false);
+      }
+    };
+
+    checkRoute();
+    window.addEventListener('popstate', checkRoute);
+    window.addEventListener('hashchange', checkRoute);
+
+    return () => {
+      window.removeEventListener('popstate', checkRoute);
+      window.removeEventListener('hashchange', checkRoute);
+    };
   }, []);
+
+  if (isPrivacy) {
+    return (
+      <>
+        <FluidBg />
+        <MouseEffects 
+          interactionMode="sniper"
+          color="#a67d45"
+          showLabel={false}
+          effectSize={70}
+          duration={0.4}
+          strokeWidth={1.5}
+        />
+        <PrivacyPolicy
+          onBack={() => {
+            window.location.hash = '';
+            setIsPrivacy(false);
+          }}
+        />
+        <ScrollToTop />
+      </>
+    );
+  }
 
   if (isNotFound) {
     return (
