@@ -34,8 +34,8 @@ export const FEST_INFO = {
 }
 
 export const PASS_PRICES = {
-  taxRate: '3%',
-  taxNote: '+ 3% additional tax applicable at checkout',
+  taxRate: '3.75%',
+  taxNote: '+ 3.75% platform fee applicable at checkout',
   fallbackUrl: 'https://konfhub.com/syntaxis-2026',
   passes: [
     {

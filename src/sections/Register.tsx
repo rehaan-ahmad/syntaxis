@@ -88,7 +88,7 @@ export function Register() {
                   </h3>
                   <div className="my-3 flex items-baseline gap-2 border-b border-white/10 pb-3">
                     <span className="text-2xl sm:text-3xl font-extrabold font-mono text-[var(--color-brand)]">{pass.price}</span>
-                    <span className="text-[10px] text-white/70 font-mono">+ 3% tax</span>
+                    <span className="text-[10px] text-white/70 font-mono">+ 3.75% platform fee</span>
                   </div>
 
                   <p className="text-xs text-white/80 leading-relaxed mb-4">
@@ -141,7 +141,7 @@ export function Register() {
 
         {/* Powered by KonfHub footnote */}
         <Reveal className="text-[10px] sm:text-xs font-semibold tracking-widest text-white/60 uppercase">
-          * Official registrations and ticketing powered by KonfHub. Prices subject to 3% tax at checkout.
+          * Official registrations and ticketing powered by KonfHub. Prices subject to 3.75% platform fee at checkout.
         </Reveal>
       </div>
     </section>
