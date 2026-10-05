@@ -15,7 +15,7 @@ export interface EventItem {
   prizePool: string;
   image: string;
   isGenesis?: boolean;
-  pragmaUrl: string;
+  registrationUrl: string;
 }
 
 export function Events() {
@@ -39,7 +39,7 @@ export function Events() {
       teamSize: 'Individual & Duos',
       prizePool: '[PRIZE POOL TBD]',
       image: `${import.meta.env.BASE_URL}assets/events/placeholder-event.svg`,
-      pragmaUrl: EXTERNAL_LINKS.pragma
+      registrationUrl: EXTERNAL_LINKS.konfhub
     },
     {
       title: 'Workshop Package',
@@ -48,7 +48,7 @@ export function Events() {
       teamSize: 'Individual',
       prizePool: 'Certificates Offered',
       image: `${import.meta.env.BASE_URL}assets/events/placeholder-event.svg`,
-      pragmaUrl: EXTERNAL_LINKS.pragma
+      registrationUrl: EXTERNAL_LINKS.konfhub
     },
     {
       title: 'Hackathon Package',
@@ -57,7 +57,7 @@ export function Events() {
       teamSize: '2–4 Members',
       prizePool: '[PRIZE POOL TBD]',
       image: `${import.meta.env.BASE_URL}assets/events/placeholder-event.svg`,
-      pragmaUrl: EXTERNAL_LINKS.pragma
+      registrationUrl: EXTERNAL_LINKS.konfhub
     },
     {
       title: 'Eureka Pitch (Genesis Track)',
@@ -67,7 +67,7 @@ export function Events() {
       prizePool: '[PRIZE POOL TBD]',
       image: `${import.meta.env.BASE_URL}assets/events/placeholder-genesis.svg`,
       isGenesis: true,
-      pragmaUrl: EXTERNAL_LINKS.pragma
+      registrationUrl: EXTERNAL_LINKS.konfhub
     },
     {
       title: 'Rhesis',
@@ -76,7 +76,7 @@ export function Events() {
       teamSize: 'Open',
       prizePool: 'N/A',
       image: `${import.meta.env.BASE_URL}assets/events/placeholder-event.svg`,
-      pragmaUrl: EXTERNAL_LINKS.pragma
+      registrationUrl: EXTERNAL_LINKS.konfhub
     },
     {
       title: 'Pantheon Games',
@@ -85,7 +85,7 @@ export function Events() {
       teamSize: 'Varies',
       prizePool: '[PRIZE POOL TBD]',
       image: `${import.meta.env.BASE_URL}assets/events/placeholder-event.svg`,
-      pragmaUrl: EXTERNAL_LINKS.pragma
+      registrationUrl: EXTERNAL_LINKS.konfhub
     }
   ];
 
@@ -191,14 +191,13 @@ export function Events() {
                         </div>
                       )}
                       
-                      
                       <a 
-                        href={event.pragmaUrl}
+                        href={event.registrationUrl}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="w-full py-2.5 text-center text-xs font-bold text-[var(--color-bg)] bg-[var(--color-brand)] rounded-[var(--radius-md)] hover:scale-[1.02] hover:shadow-[0_0_15px_var(--color-brand-glow)] transition-all duration-200"
                       >
-                        Register on Pragma
+                        Register Here
                       </a>
                     </div>
                   </div>

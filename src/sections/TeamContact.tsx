@@ -42,31 +42,38 @@ export function TeamContact() {
     },
     {
       id: 3,
-      name: 'Palak Tyagi',
-      role: 'Executive Director',
-      image: `${import.meta.env.BASE_URL}assets/team/palak.png`,
-      linkedin: 'https://www.linkedin.com/in/palak-tyagi-'
-    },
-    {
-      id: 4,
       name: 'Priyanshi Garg',
       role: 'Marketing Head',
       image: `${import.meta.env.BASE_URL}assets/team/priyanshi.png`,
       linkedin: 'https://www.linkedin.com/in/priyanshi-garg-a34835325'
     },
     {
+      id: 4,
+      name: 'Diya Sharma',
+      role: 'Organizing Lead',
+      image: `${import.meta.env.BASE_URL}assets/team/placeholder-team.svg`,
+      linkedin: 'https://www.linkedin.com/in/diya-sharma-433b1b37b/'
+    },
+    {
       id: 5,
+      name: 'Priya Sharma',
+      role: 'Documentation Head',
+      image: `${import.meta.env.BASE_URL}assets/team/priya.png`,
+      linkedin: 'https://www.linkedin.com/in/priya-sharma-48b247330'
+    },
+    {
+      id: 6,
       name: 'Prabhati Pandey',
       role: 'Creative Head',
       image: `${import.meta.env.BASE_URL}assets/team/prabhati.png`,
       linkedin: 'https://www.linkedin.com/in/prabhati-pandey-12p'
     },
     {
-      id: 6,
-      name: 'Priya Sharma',
-      role: 'Documentation Head',
-      image: `${import.meta.env.BASE_URL}assets/team/priya.png`,
-      linkedin: 'https://www.linkedin.com/in/priya-sharma-48b247330'
+      id: 7,
+      name: 'Palak Tyagi',
+      role: 'Executive Director',
+      image: `${import.meta.env.BASE_URL}assets/team/palak.png`,
+      linkedin: 'https://www.linkedin.com/in/palak-tyagi-'
     }
   ];
 
@@ -126,7 +133,7 @@ export function TeamContact() {
             className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 justify-center"
           >
             {team.map((member) => (
-              <motion.div key={member.id} variants={fadeUpVariants}>
+              <motion.div key={member.id} className={member.id===7 ? 'col-start-2' : ''} variants={fadeUpVariants}>
                 <Card className="flex flex-col items-center text-center p-6 border border-[var(--color-border)] hover:border-[var(--color-border-gold)] transition-colors duration-300">
                   {/* 1:1 Aspect Ratio profile avatar */}
                   <div className="w-28 h-28 aspect-square rounded-full overflow-hidden border border-[var(--color-border)] mb-4 shrink-0">

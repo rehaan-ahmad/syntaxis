@@ -1,13 +1,13 @@
 import { motion } from 'framer-motion';
 import { Globe } from 'lucide-react';
-import { Linkedin, Twitter } from '../components/icons/SocialIcons';
+import { Linkedin } from '../components/icons/SocialIcons';
 import SectionHeading from '../components/ui/SectionHeading';
 import Card from '../components/ui/Card';
 import Reveal from '../components/ui/Reveal';
 import { staggerContainerVariants, fadeUpVariants } from '../lib/animations';
 import RevealCountdown from '../components/ui/RevealCountdown';
 import { useCountdown } from '../hooks/useCountdown';
-import { SECTION_IDS } from '../lib/constants';
+import { SECTION_IDS, REVEAL_DATE } from '../lib/constants';
 
 interface SpeakerItem {
   id: number;
@@ -18,8 +18,7 @@ interface SpeakerItem {
 }
 
 export function Speakers() {
-  const revealDate = new Date('2026-08-15T00:00:00+05:30').getTime();
-  const { isExpired } = useCountdown(revealDate);
+  const { isExpired } = useCountdown(REVEAL_DATE);
 
   const speakers: SpeakerItem[] = [
     {
@@ -65,8 +64,9 @@ export function Speakers() {
 
         {!isExpired ? (
           <RevealCountdown
-            targetDate={revealDate}
+            targetDate={REVEAL_DATE}
             label="Speakers Reveal In"
+            revealText="Top-Secret Keynote Lineup • Unveiling October 20, 2026"
           />
         ) : (
           <Reveal
@@ -121,15 +121,6 @@ export function Speakers() {
                         aria-label="LinkedIn"
                       >
                         <Linkedin className="w-4 h-4" />
-                      </a>
-                      <a
-                        href="#"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-[var(--color-text-sec)] hover:text-[var(--color-brand)] transition-colors"
-                        aria-label="Twitter"
-                      >
-                        <Twitter className="w-4 h-4" />
                       </a>
                       <a
                         href="#"

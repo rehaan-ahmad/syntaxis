@@ -13,7 +13,8 @@ export interface EventCarouselProps {
     prizePool: string;
     teamSize: string;
     image: string;
-    pragmaUrl: string;
+    registrationUrl?: string;
+    pragmaUrl?: string;
   }[];
   autoplay?: boolean;
   loop?: boolean;
@@ -101,12 +102,12 @@ export function EventCarousel({
                     )}
 
                     <a
-                      href={event.pragmaUrl}
+                      href={event.registrationUrl || event.pragmaUrl || 'https://konfhub.com/syntaxis-2026'}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="mt-4 w-full py-2.5 text-center text-xs font-semibold text-[var(--color-bg)] bg-[var(--color-brand)] rounded-[var(--radius-md)] hover:scale-[1.02] transition-transform duration-200"
                     >
-                      Register on Pragma
+                      Register Here
                     </a>
                   </div>
                 </motion.div>

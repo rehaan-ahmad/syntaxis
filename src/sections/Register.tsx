@@ -1,7 +1,8 @@
 import { Link as ScrollLink } from 'react-scroll';
-import { ArrowRight, Calendar, Compass, Ticket, Check, Sparkles, Tag } from 'lucide-react';
+import { ArrowRight, Calendar, Compass, Ticket, Check, Sparkles } from 'lucide-react';
 import CountdownTimer from '../components/ui/CountdownTimer';
 import Reveal from '../components/ui/Reveal';
+import { openTicketWidget } from '../components/ui/KonfHubModal';
 import { SECTION_IDS, EXTERNAL_LINKS, FEST_INFO, REVEAL_DATE, PASS_PRICES } from '../lib/constants';
 import { useIsRevealed } from '../hooks/useCountdown';
 
@@ -21,7 +22,7 @@ export function Register() {
         id={SECTION_IDS.register} 
         className="relative z-10 text-[var(--color-text-pri)] py-20 sm:py-28 select-none"
       >
-        <div className="max-w-6xl mx-auto px-6 flex flex-col items-center gap-14 text-center">
+        <div className="max-w-7xl mx-auto px-6 flex flex-col items-center gap-14 text-center">
           
           {/* Title Header */}
           <Reveal className="flex flex-col items-center gap-3">
@@ -50,15 +51,15 @@ export function Register() {
             <div className="flex flex-col items-center gap-2">
               <div className="flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-[var(--color-brand)] font-heading">
                 <Ticket className="w-4 h-4" />
-                <span>OFFICIAL DAY PASSES & PACKAGES</span>
+                <span>OFFICIAL EVENT PASSES & TICKETS</span>
               </div>
               <span className="text-[11px] font-mono text-white/70 bg-black/40 px-3 py-1 rounded-full border border-white/10">
-                * All pass prices are subject to additional {PASS_PRICES.taxRate} tax at checkout
+                * All ticket prices are subject to additional {PASS_PRICES.taxRate} tax at checkout
               </span>
             </div>
 
             {/* Pricing Cards Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-left mt-2">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 text-left mt-2">
               {PASS_PRICES.passes.map((pass) => (
                 <div 
                   key={pass.id}
@@ -86,46 +87,27 @@ export function Register() {
                     {pass.title}
                   </h3>
                   <div className="my-3 flex items-baseline gap-2 border-b border-white/10 pb-3">
-                    <span className="text-3xl font-extrabold font-mono text-[var(--color-brand)]">{pass.price}</span>
+                    <span className="text-2xl sm:text-3xl font-extrabold font-mono text-[var(--color-brand)]">{pass.price}</span>
                     <span className="text-[10px] text-white/70 font-mono">+ 3% tax</span>
                   </div>
-
-                  {pass.rdecDiscount && (
-                    <div className="flex items-center gap-1.5 text-[11px] font-semibold text-emerald-400 bg-emerald-500/10 border border-emerald-500/30 px-2.5 py-1 rounded-[var(--radius-sm)] mb-3">
-                      <Tag className="w-3.5 h-3.5 shrink-0" />
-                      <span>{pass.rdecDiscount}</span>
-                    </div>
-                  )}
 
                   <p className="text-xs text-white/80 leading-relaxed mb-4">
                     {pass.description}
                   </p>
-
-                  {pass.isGaming && pass.gamingTitles && (
-                    <div className="flex flex-col gap-1.5 my-3 bg-black/20 p-3 rounded-[var(--radius-md)] border border-white/10">
-                      {pass.gamingTitles.map((g, idx) => (
-                        <div key={idx} className="flex justify-between items-center text-xs font-mono">
-                          <span className="text-white/90 font-bold">• {g.title}</span>
-                          <span className="text-[var(--color-brand)] font-bold">{g.price} <span className="text-[9px] text-white/60">+ 3%</span></span>
-                        </div>
-                      ))}
-                    </div>
-                  )}
                 </div>
 
-                <a 
-                  href={EXTERNAL_LINKS.pragma}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`mt-4 w-full py-2.5 px-4 rounded-[var(--radius-md)] text-xs font-bold uppercase tracking-wider text-center font-heading transition-all duration-200 flex items-center justify-center gap-2 ${
+                <button 
+                  type="button"
+                  onClick={() => openTicketWidget(pass.widgetUrl, pass.title)}
+                  className={`mt-4 w-full py-2.5 px-4 rounded-[var(--radius-md)] text-xs font-bold uppercase tracking-wider text-center font-heading transition-all duration-200 flex items-center justify-center gap-2 cursor-pointer ${
                     pass.popular
                       ? 'bg-[var(--color-brand)] text-[var(--color-bg)] hover:scale-105 hover:shadow-[0_0_20px_var(--color-brand-glow)]'
                       : 'border border-[var(--color-brand)] text-[var(--color-brand)] hover:bg-[var(--color-brand)] hover:text-[var(--color-bg)]'
                   }`}
                 >
                   <Check className="w-3.5 h-3.5" />
-                  <span>Get Pass on Pragma</span>
-                </a>
+                  <span>Get Your Ticket</span>
+                </button>
               </div>
             ))}
           </div>
@@ -135,12 +117,12 @@ export function Register() {
         <Reveal className="flex flex-wrap gap-4 justify-center items-center mt-2">
           {/* Gold button */}
           <a 
-            href={EXTERNAL_LINKS.pragma}
+            href={EXTERNAL_LINKS.konfhub}
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 bg-[var(--color-brand)] text-[var(--color-bg)] font-bold px-8 py-3.5 rounded-[var(--radius-md)] hover:scale-105 hover:shadow-[0_0_25px_var(--color-brand-glow)] transition-all duration-200 text-sm uppercase tracking-wider font-heading"
           >
-            <span>Proceed to Pragma Portal</span>
+            <span>Proceed to KonfHub Portal</span>
             <ArrowRight className="w-4 h-4" />
           </a>
           
@@ -157,9 +139,9 @@ export function Register() {
           </ScrollLink>
         </Reveal>
 
-        {/* Powered by Pragma footnote */}
+        {/* Powered by KonfHub footnote */}
         <Reveal className="text-[10px] sm:text-xs font-semibold tracking-widest text-white/60 uppercase">
-          * All registrations and pass issuances are powered by Pragma Event Management System. Prices subject to 3% tax.
+          * Official registrations and ticketing powered by KonfHub. Prices subject to 3% tax at checkout.
         </Reveal>
       </div>
     </section>

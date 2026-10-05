@@ -123,12 +123,13 @@ export function Navbar({ className, ...props }: React.HTMLAttributes<HTMLElement
                   </a>
                   {/* Register CTA Button */}
                   <a 
-                    href={EXTERNAL_LINKS.pragma}
+                    href={EXTERNAL_LINKS.konfhub}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-4 py-1.5 text-xs font-semibold text-[var(--color-bg)] bg-[var(--color-brand)] rounded-[var(--radius-md)] hover:scale-105 hover:shadow-[0_0_15px_var(--color-brand-glow)] transition-all duration-200 whitespace-nowrap"
+                    className="px-4 py-1.5 text-xs font-semibold text-[var(--color-bg)] bg-[var(--color-brand)] rounded-[var(--radius-md)] hover:scale-105 hover:shadow-[0_0_15px_var(--color-brand-glow)] transition-all duration-200 whitespace-nowrap inline-flex items-center gap-1"
                   >
-                    Passes & Register
+                    <span>Register Now</span>
+                    <ArrowUpRight className="w-3 h-3" />
                   </a>
                 </div>
               </nav>
@@ -136,12 +137,13 @@ export function Navbar({ className, ...props }: React.HTMLAttributes<HTMLElement
               {/* Mobile Right Actions */}
               <div className="md:hidden flex items-center gap-2 mb-1">
                 <a 
-                  href={EXTERNAL_LINKS.pragma}
+                  href={EXTERNAL_LINKS.konfhub}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-3 py-1.5 text-xs font-semibold text-[var(--color-bg)] bg-[var(--color-brand)] rounded-[var(--radius-md)] whitespace-nowrap"
+                  className="px-3 py-1.5 text-xs font-semibold text-[var(--color-bg)] bg-[var(--color-brand)] rounded-[var(--radius-md)] whitespace-nowrap inline-flex items-center gap-1 shadow-[0_0_10px_var(--color-brand-glow)]"
                 >
-                  Passes
+                  <span>Register</span>
+                  <ArrowUpRight className="w-3 h-3" />
                 </a>
               </div>
 
@@ -169,74 +171,86 @@ export function Navbar({ className, ...props }: React.HTMLAttributes<HTMLElement
 
       </header>
 
-      {/* Mobile Menu Overlay */}
+      {/* Mobile Menu Backdrop & Overlay */}
       <AnimatePresence>
         {isMobileMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.2 }}
-            className="fixed inset-x-0 top-16 z-40 bg-[var(--color-bg-glass)] backdrop-blur-[16px] border-b border-[var(--color-border)] p-4 md:hidden shadow-lg"
-          >
-             <nav className="flex flex-col gap-2">
-               {/* Combine all left items */}
-               {items.left.map(item => (
-                 <ScrollLink 
-                   key={item.label} 
-                   to={item.to}
-                   smooth={true}
-                   duration={600}
-                   offset={-80}
-                   className="flex items-center gap-3 p-3 rounded-lg hover:bg-[var(--color-accent)]/20 transition-colors cursor-pointer"
-                   onClick={() => setIsMobileMenuOpen(false)}
-                 >
-                   <item.icon className="w-5 h-5 text-[var(--color-brand)]" />
-                   <span className="font-medium text-[var(--color-text-pri)]">{item.label}</span>
-                 </ScrollLink>
-               ))}
-               
-               {/* Combine all right items */}
-               {items.right.map(item => (
-                 <ScrollLink 
-                   key={item.label} 
-                   to={item.to}
-                   smooth={true}
-                   duration={600}
-                   offset={-80}
-                   className="flex items-center gap-3 p-3 rounded-lg hover:bg-[var(--color-accent)]/20 transition-colors cursor-pointer"
-                   onClick={() => setIsMobileMenuOpen(false)}
-                 >
-                   <item.icon className="w-5 h-5 text-[var(--color-brand)]" />
-                   <span className="font-medium text-[var(--color-text-pri)]">{item.label}</span>
-                 </ScrollLink>
-               ))}
+          <>
+            {/* Full-screen backdrop to dismiss on tapping outside */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              className="fixed inset-0 z-30 bg-black/60 backdrop-blur-sm md:hidden"
+              onClick={() => setIsMobileMenuOpen(false)}
+            />
 
-               <div className="h-px bg-[var(--color-border)] my-2" />
-               <div className="flex flex-col gap-2">
-                 <a 
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.2 }}
+              className="fixed inset-x-0 top-16 z-40 bg-[var(--color-bg-glass)] backdrop-blur-[16px] border-b border-[var(--color-border)] p-4 md:hidden shadow-2xl rounded-b-2xl max-h-[calc(100vh-5rem)] overflow-y-auto"
+            >
+              <nav className="flex flex-col gap-1.5">
+                {/* Left items */}
+                {items.left.map(item => (
+                  <ScrollLink 
+                    key={item.label} 
+                    to={item.to}
+                    smooth={true}
+                    duration={600}
+                    offset={-80}
+                    className="flex items-center gap-3 p-3 rounded-lg hover:bg-[var(--color-accent)]/20 text-[var(--color-text-pri)] transition-colors cursor-pointer"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    <item.icon className="w-5 h-5 text-[var(--color-brand)]" />
+                    <span className="font-medium text-sm">{item.label}</span>
+                  </ScrollLink>
+                ))}
+                
+                {/* Right items */}
+                {items.right.map(item => (
+                  <ScrollLink 
+                    key={item.label} 
+                    to={item.to}
+                    smooth={true}
+                    duration={600}
+                    offset={-80}
+                    className="flex items-center gap-3 p-3 rounded-lg hover:bg-[var(--color-accent)]/20 text-[var(--color-text-pri)] transition-colors cursor-pointer"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    <item.icon className="w-5 h-5 text-[var(--color-brand)]" />
+                    <span className="font-medium text-sm">{item.label}</span>
+                  </ScrollLink>
+                ))}
+
+                <div className="h-px bg-[var(--color-border)] my-2" />
+                <div className="flex flex-col gap-2">
+                  <a 
                     href={EXTERNAL_LINKS.college}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center justify-between p-3 rounded-lg hover:bg-[var(--color-accent)]/20 transition-colors font-medium text-[var(--color-text-pri)]"
+                    className="flex items-center justify-between p-3 rounded-lg hover:bg-[var(--color-accent)]/20 transition-colors font-medium text-sm text-[var(--color-text-pri)]"
                     onClick={() => setIsMobileMenuOpen(false)}
-                 >
-                   <span>College Home</span>
-                   <ArrowUpRight className="w-4 h-4" />
-                 </a>
-                 <a 
-                    href={EXTERNAL_LINKS.pragma}
+                  >
+                    <span>College Home</span>
+                    <ArrowUpRight className="w-4 h-4" />
+                  </a>
+                  <a 
+                    href={EXTERNAL_LINKS.konfhub}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center justify-center gap-2 p-3 rounded-lg bg-[var(--color-brand)] text-[var(--color-bg)] font-semibold mt-2"
+                    className="flex items-center justify-center gap-2 p-3 rounded-lg bg-[var(--color-brand)] text-[var(--color-bg)] font-bold text-sm mt-2 shadow-[0_0_15px_var(--color-brand-glow)]"
                     onClick={() => setIsMobileMenuOpen(false)}
-                 >
-                   Register / Get Passes
-                 </a>
-               </div>
-             </nav>
-
-          </motion.div>
+                  >
+                    <span>Register on KonfHub</span>
+                    <ArrowUpRight className="w-4 h-4" />
+                  </a>
+                </div>
+              </nav>
+            </motion.div>
+          </>
         )}
       </AnimatePresence>
     </>

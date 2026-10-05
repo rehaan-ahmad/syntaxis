@@ -3,7 +3,7 @@ import SectionHeading from '../components/ui/SectionHeading';
 import Reveal from '../components/ui/Reveal';
 import RevealCountdown from '../components/ui/RevealCountdown';
 import { useCountdown } from '../hooks/useCountdown';
-import { SECTION_IDS, EXTERNAL_LINKS } from '../lib/constants';
+import { SECTION_IDS, EXTERNAL_LINKS, REVEAL_DATE } from '../lib/constants';
 
 interface SponsorLogoProps {
   tier: string;
@@ -28,8 +28,7 @@ function SponsorLogo({ tier, className }: SponsorLogoProps) {
 }
 
 export function Sponsors() {
-  const revealDate = new Date('2026-08-15T00:00:00+05:30').getTime();
-  const { isExpired } = useCountdown(revealDate);
+  const { isExpired } = useCountdown(REVEAL_DATE);
 
   return (
     <section
@@ -54,8 +53,9 @@ export function Sponsors() {
 
         {!isExpired ? (
           <RevealCountdown
-            targetDate={revealDate}
+            targetDate={REVEAL_DATE}
             label="Partner Reveal In"
+            revealText="Classified Partner Roster • Unveiling October 20, 2026"
           />
         ) : (
           <div className="flex flex-col gap-12 w-full">
@@ -103,14 +103,13 @@ export function Sponsors() {
         </p>
 
         <div className="flex flex-col gap-1.5 text-xs text-[var(--color-text-sec)] font-semibold mb-6">
-          <span className="text-[var(--color-brand)] font-bold">Rehaan Ahmad (Lead Organizer)</span>
           <span className="flex items-center justify-center gap-1.5">
             <Mail className="w-3.5 h-3.5 text-[var(--color-brand)]" />
-            <a href="mailto:syntaxis@rdec.in" className="hover:underline">syntaxis@rdec.in</a> | <a href="mailto:rehaan24ai077@rdec.in" className="hover:underline">rehaan24ai077@rdec.in</a>
+            <a href="mailto:syntaxis@rdec.in" className="hover:underline">syntaxis@rdec.in</a>
           </span>
           <span className="flex items-center justify-center gap-1.5">
             <Phone className="w-3.5 h-3.5 text-[var(--color-brand)]" />
-            +91 99108 34975
+            +91 91531 30906
           </span>
         </div>
 

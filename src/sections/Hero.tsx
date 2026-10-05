@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion';
 import { Link as ScrollLink } from 'react-scroll';
-import { ChevronDown, ArrowRight } from 'lucide-react';
+import { ChevronDown, ArrowRight, ArrowUpRight } from 'lucide-react';
 import CountdownTimer from '../components/ui/CountdownTimer';
-import { Instagram, Twitter, Linkedin, Youtube } from '../components/icons/SocialIcons';
+import { Instagram, Linkedin } from '../components/icons/SocialIcons';
 import { SECTION_IDS, EXTERNAL_LINKS, FEST_INFO, REVEAL_DATE } from '../lib/constants';
 import { useIsRevealed } from '../hooks/useCountdown';
 
@@ -93,15 +93,6 @@ export function Hero() {
             <Instagram className="w-4 h-4" />
           </a>
           <a
-            href={EXTERNAL_LINKS.twitter}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-[var(--color-text-sec)] hover:text-[var(--color-brand)] transition-colors p-1"
-            aria-label="Twitter"
-          >
-            <Twitter className="w-4 h-4" />
-          </a>
-          <a
             href={EXTERNAL_LINKS.linkedin}
             target="_blank"
             rel="noopener noreferrer"
@@ -111,13 +102,13 @@ export function Hero() {
             <Linkedin className="w-4 h-4" />
           </a>
           <a
-            href={EXTERNAL_LINKS.youtube}
+            href={EXTERNAL_LINKS.college}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-[var(--color-text-sec)] hover:text-[var(--color-brand)] transition-colors p-1"
-            aria-label="YouTube"
+            className="inline-flex items-center gap-1 text-[11px] font-semibold text-[var(--color-text-sec)] hover:text-[var(--color-brand)] transition-colors px-2 py-0.5 rounded-full border border-[var(--color-border)]"
           >
-            <Youtube className="w-4 h-4" />
+            <span>RDEC Portal</span>
+            <ArrowUpRight className="w-3 h-3" />
           </a>
         </motion.div>
 
@@ -138,12 +129,12 @@ export function Hero() {
         <motion.div variants={itemVariants} className="flex flex-wrap gap-4 justify-center items-center mt-2">
           {/* Primary CTA (Gold) */}
           <a
-            href={EXTERNAL_LINKS.pragma}
+            href={EXTERNAL_LINKS.konfhub}
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 bg-[var(--color-brand)] text-[var(--color-bg)] font-bold px-8 py-3.5 rounded-[var(--radius-md)] hover:scale-105 hover:shadow-[0_0_20px_var(--color-brand-glow)] transition-all duration-200 whitespace-nowrap text-sm font-heading uppercase"
           >
-            <span>Register on Pragma</span>
+            <span>Register Now</span>
             <ArrowRight className="w-4 h-4" />
           </a>
 

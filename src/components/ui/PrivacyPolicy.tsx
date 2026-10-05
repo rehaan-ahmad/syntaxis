@@ -131,13 +131,20 @@ export function PrivacyPolicy({ onBack }: PrivacyPolicyProps) {
           </span>
           <div className="flex flex-wrap gap-2">
             {sections.map((sec) => (
-              <a
+              <button
                 key={sec.id}
-                href={`#${sec.id}`}
-                className="px-3 py-1.5 rounded-[var(--radius-pill)] bg-[var(--color-bg-glass)] border border-[var(--color-border)] text-xs text-[var(--color-text-sec)] hover:text-[var(--color-text-pri)] hover:border-[var(--color-brand)] transition-colors cursor-pointer"
+                type="button"
+                onClick={(e) => {
+                  e.preventDefault();
+                  const target = document.getElementById(sec.id);
+                  if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  }
+                }}
+                className="px-3 py-1.5 rounded-[var(--radius-pill)] bg-[var(--color-bg-glass)] border border-[var(--color-border)] text-xs text-[var(--color-text-sec)] hover:text-[var(--color-text-pri)] hover:border-[var(--color-brand)] transition-colors cursor-pointer text-left"
               >
                 {sec.title}
-              </a>
+              </button>
             ))}
           </div>
         </motion.div>
@@ -158,7 +165,7 @@ export function PrivacyPolicy({ onBack }: PrivacyPolicyProps) {
                 This Policy is drafted in strict compliance with the statutory provisions of the <strong>Digital Personal Data Protection Act, 2023 (Act No. 22 of 2023)</strong> of India, the <strong>Information Technology Act, 2000 (as amended)</strong>, and the <strong>Information Technology (Reasonable Security Practices and Procedures and Sensitive Personal Data or Information) Rules, 2011</strong>.
               </p>
               <p>
-                R.D. Engineering College (RDEC) operates as the primary <em>Data Fiduciary</em> with respect to personal data provided directly through this web application. For registrations and transactions routed through designated event management software (such as Pragma EMS or external payment aggregators), those entities process data in accordance with their respective compliance frameworks while adhering to our institutional terms of engagement.
+                R.D. Engineering College (RDEC) operates as the primary <em>Data Fiduciary</em> with respect to personal data provided directly through this web application. For registrations and transactions routed through designated event ticketing platforms (such as KonfHub or external payment aggregators), those entities process data in accordance with their respective compliance frameworks while adhering to our institutional terms of engagement.
               </p>
             </Card>
           </section>
@@ -254,7 +261,7 @@ export function PrivacyPolicy({ onBack }: PrivacyPolicyProps) {
                 <strong>Zero Storage of Sensitive Card or UPI Data:</strong> The official Syntaxis website does not directly capture, store, or process any Credit Card numbers, Debit Card CVVs, Internet Banking credentials, or UPI MPINs.
               </p>
               <p>
-                All festival pass sales and registration fee collections (including All 3 Days Package, Day Passes, and Esports Title Passes) are routed through certified, PCI-DSS Level 1 compliant payment gateways and event management systems (Pragma EMS). Transaction records retained by RDEC are limited solely to order IDs, transaction timestamps, payment status (Success/Failed), pass category, and nominal tax records (3% statutory tax).
+                All festival pass sales and registration fee collections (including Archithon, Contests Passes, Workshops, and Esports Title Passes) are routed through certified, PCI-DSS Level 1 compliant payment gateways and event ticketing platforms (KonfHub). Transaction records retained by RDEC are limited solely to order IDs, transaction timestamps, payment status (Success/Failed), pass category, and nominal statutory tax records.
               </p>
             </Card>
           </section>

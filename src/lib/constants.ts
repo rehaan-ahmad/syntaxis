@@ -17,12 +17,10 @@ export const SECTION_IDS = {
 } as const
 
 export const EXTERNAL_LINKS = {
-  pragma:     'https://pragma.rdec.ac.in',
+  konfhub:    'https://konfhub.com/syntaxis-2026',
   college:    'https://rdec.ac.in',
   instagram:  'https://www.instagram.com/rdengineeringcollege/',
-  twitter:    'https://x.com/rdec_ghaziabad',
   linkedin:   'https://www.linkedin.com/company/rd-engineering-college/',
-  youtube:    'https://www.youtube.com/@RDEngineeringCollegeOfficial',
   email:      'mailto:syntaxis@rdec.in',
 }
 
@@ -37,49 +35,47 @@ export const FEST_INFO = {
 
 export const PASS_PRICES = {
   taxRate: '3%',
-  taxNote: '+ 3% additional tax applicable on all passes',
+  taxNote: '+ 3% additional tax applicable at checkout',
+  fallbackUrl: 'https://konfhub.com/syntaxis-2026',
   passes: [
     {
-      id: 'all-3-days',
-      title: 'All 3 Days Package',
-      price: '₹1,000',
-      badge: 'Best Value',
+      id: 'archithon',
+      title: 'Archithon',
+      price: 'Price TBD',
+      badge: 'Flagship Hackathon',
       popular: true,
-      description: 'Complete 3-day all-access pass for workshops, Athlon contest sprint, hackathon, esports & valediction.'
+      description: 'The premier 24-hour architecture and software development hackathon under the Genesis Track. Build, innovate, and pitch to jury.',
+      widgetUrl: 'https://konfhub.com/widget/id/f63c7ac5-fcc5-49d7-8c29-afcb10aa875d'
     },
     {
-      id: 'last-2-days',
-      title: 'Last 2 Days Package',
-      price: '₹800',
-      badge: 'Popular',
-      description: 'Full access to Day 2 Athlon competitive contests and Day 3 hackathon finals, expo & gaming arena.'
-    },
-    {
-      id: 'day-1',
-      title: 'Day 1 Pass',
-      price: '₹200',
-      rdecDiscount: '₹50 for RDEC Students (after promo code)',
-      description: 'Day 1 access featuring Inauguration, Syndesis & Logika Workshop Package, and Rhesis talks.'
-    },
-    {
-      id: 'day-2',
-      title: 'Day 2 Pass',
+      id: 'contests-pass',
+      title: 'Contests Pass',
       price: '₹400',
-      description: 'Day 2 access featuring the Athlon Contest Package (Heureka DSA, Agon CP, Katharsis Debugging Duel).'
+      badge: 'Athlon Sprint',
+      popular: false,
+      description: 'Full competitive programming package bundling Heureka (DSA / Problem Solving), Agon (HackerRank contest), and Katharsis (Debugging Duel).',
+      widgetUrl: 'https://konfhub.com/widget/id/e3e10a39-84a8-4a7b-9624-33d2f52941ed'
     },
     {
-      id: 'day-3-esports',
-      title: 'Day 3 Gaming Passes',
-      price: 'From ₹100',
-      isGaming: true,
-      description: 'Day 3 Pantheon Games arena entry per esports title:',
-      gamingTitles: [
-        { title: 'FreeFireMax', price: '₹200' },
-        { title: 'BGMI', price: '₹200' },
-        { title: 'CODM', price: '₹100' }
-      ]
+      id: 'workshops-talks',
+      title: 'Workshops & Talks',
+      price: '₹20 Onwards',
+      badge: 'Masterclasses',
+      popular: false,
+      description: 'Hands-on technical workshop series (Syndesis FastAPI, Logika Data Structures) and visionary Rhesis industry talks.',
+      widgetUrl: 'https://konfhub.com/widget/id/d938e1c0-6045-4dbb-b343-04e8694b44e6'
+    },
+    {
+      id: 'esports',
+      title: 'E-Sports',
+      price: '₹200 / team',
+      badge: 'Pantheon Games',
+      popular: false,
+      description: 'Pantheon esports tournament arena entry (₹200 per team for each title: FreeFireMax, BGMI, and CODM).',
+      widgetUrl: 'https://konfhub.com/widget/id/fed9126b-ab98-4879-9a9b-74680ebe61c8'
     }
   ]
 };
 
-export const REVEAL_DATE = new Date('2026-08-10T00:00:00+05:30').getTime();
+// Revealed on 20th October 2026
+export const REVEAL_DATE = new Date('2026-10-20T00:00:00+05:30').getTime();

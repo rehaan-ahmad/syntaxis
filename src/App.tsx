@@ -14,9 +14,9 @@ import Register from './sections/Register';
 import FAQ from './sections/FAQ';
 import TeamContact from './sections/TeamContact';
 import Footer from './components/Footer';
-import PragmaModal from './components/ui/PragmaModal';
 import NotFound from './components/ui/NotFound';
 import PrivacyPolicy from './components/ui/PrivacyPolicy';
+import KonfHubModal from './components/ui/KonfHubModal';
 import FluidBg from './components/bg/FluidBg';
 import { REVEAL_DATE } from './lib/constants';
 import { useIsRevealed } from './hooks/useCountdown';
@@ -35,9 +35,14 @@ export function App() {
       const relativePath = path.startsWith(baseUrl) ? path.slice(baseUrl.length) : path;
       const cleanPath = relativePath.replace(/^\/+|\/+$/g, '');
 
+      const privacyHashes = [
+        '#privacy', '#privacy-policy', '#preamble', '#collection', '#purpose',
+        '#payments', '#media', '#ip', '#thirdparty', '#rights', '#security',
+        '#cookies', '#minors', '#grievance'
+      ];
+
       if (
-        hash === '#privacy' ||
-        hash === '#privacy-policy' ||
+        privacyHashes.includes(hash) ||
         cleanPath === 'privacy' ||
         cleanPath === 'privacy-policy'
       ) {
@@ -125,11 +130,9 @@ export function App() {
           <About />
         </section>
         
-        {isRevealed && (
-          <section id="events">
-            <Events />
-          </section>
-        )}
+        <section id="events">
+          <Events />
+        </section>
         
         <section id="genesis">
           <GenesisTrack />
@@ -139,17 +142,13 @@ export function App() {
           <Schedule />
         </section>
         
-        {isRevealed && (
-          <>
-            <section id="speakers">
-              <Speakers />
-            </section>
-            
-            <section id="sponsors">
-              <Sponsors />
-            </section>
-          </>
-        )}
+        <section id="speakers">
+          <Speakers />
+        </section>
+        
+        <section id="sponsors">
+          <Sponsors />
+        </section>
         
         <section id="register">
           <Register />
@@ -170,8 +169,8 @@ export function App() {
       {/* Scroll to Top floating action button */}
       <ScrollToTop />
       
-      {/* Modals */}
-      <PragmaModal />
+      {/* KonfHub Ticket Checkout Modal */}
+      <KonfHubModal />
     </>
   );
 }
