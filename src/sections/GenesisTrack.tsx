@@ -150,12 +150,12 @@ export function GenesisTrack() {
           </div>
 
           <a
-            href={EXTERNAL_LINKS.pragma}
+            href={EXTERNAL_LINKS.konfhub}
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 bg-[var(--color-brand)] text-[var(--color-bg)] font-bold px-6 py-3 rounded-[var(--radius-md)] hover:scale-105 transition-transform duration-200 text-xs shrink-0 whitespace-nowrap"
           >
-            <span>Learn More on Pragma</span>
+            <span>Learn More on KonfHub</span>
             <ArrowRight className="w-3.5 h-3.5" />
           </a>
         </Reveal>

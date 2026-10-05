@@ -18,11 +18,11 @@ import NotFound from './components/ui/NotFound';
 import PrivacyPolicy from './components/ui/PrivacyPolicy';
 import KonfHubModal from './components/ui/KonfHubModal';
 import FluidBg from './components/bg/FluidBg';
-import { REVEAL_DATE } from './lib/constants';
-import { useIsRevealed } from './hooks/useCountdown';
+
+
 
 export function App() {
-  const isRevealed = useIsRevealed(REVEAL_DATE);
+
   const [isPrivacy, setIsPrivacy] = useState(false);
   const [isNotFound, setIsNotFound] = useState(false);
 
