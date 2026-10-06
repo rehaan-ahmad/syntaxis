@@ -5,9 +5,37 @@ import Card from '../components/ui/Card';
 import Badge from '../components/ui/Badge';
 import Reveal from '../components/ui/Reveal';
 import { staggerContainerVariants, fadeUpVariants } from '../lib/animations';
-import { SECTION_IDS, EXTERNAL_LINKS } from '../lib/constants';
+import { SECTION_IDS } from '../lib/constants';
+
 
 export function GenesisTrack() {
+  const TALLY_FORM_ID = 'xXeyrr';
+  const TALLY_FALLBACK = `https://tally.so/r/${TALLY_FORM_ID}`;
+
+  const handleRegister = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    const trigger = () => {
+      if (typeof window !== 'undefined' && window.Tally?.openPopup) {
+        window.Tally.openPopup(TALLY_FORM_ID, {
+          layout: 'modal',
+          width: 720,
+          hideTitle: false,
+          transparentBackground: true,
+        });
+        return true;
+      }
+      return false;
+    };
+    if (!trigger()) {
+      const script = document.createElement('script');
+      script.src = 'https://tally.so/widgets/embed.js';
+      script.async = true;
+      script.onload = () => { if (!trigger()) window.open(TALLY_FALLBACK, '_blank', 'noopener,noreferrer'); };
+      script.onerror = () => window.open(TALLY_FALLBACK, '_blank', 'noopener,noreferrer');
+      document.head.appendChild(script);
+    }
+  };
+
   const juniorEvents = [
     {
       title: 'Eureka Pitch (Round 1 & Finals)',
@@ -149,15 +177,13 @@ export function GenesisTrack() {
             </div>
           </div>
 
-          <a
-            href={EXTERNAL_LINKS.konfhub}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 bg-[var(--color-brand)] text-[var(--color-bg)] font-bold px-6 py-3 rounded-[var(--radius-md)] hover:scale-105 transition-transform duration-200 text-xs shrink-0 whitespace-nowrap"
+          <button
+            onClick={handleRegister}
+            className="flex items-center gap-2 bg-[var(--color-brand)] text-[var(--color-bg)] font-bold px-6 py-3 rounded-[var(--radius-md)] hover:scale-105 transition-transform duration-200 text-xs shrink-0 whitespace-nowrap cursor-pointer"
           >
-            <span>Learn More on KonfHub</span>
+            <span>Register for Genesis</span>
             <ArrowRight className="w-3.5 h-3.5" />
-          </a>
+          </button>
         </Reveal>
 
       </section>

@@ -51,7 +51,7 @@ export function TeamContact() {
       id: 4,
       name: 'Diya Sharma',
       role: 'Organizing Lead',
-      image: `${import.meta.env.BASE_URL}assets/team/placeholder-team.svg`,
+      image: `${import.meta.env.BASE_URL}assets/team/diya.png`,
       linkedin: 'https://www.linkedin.com/in/diya-sharma-433b1b37b/'
     },
     {
@@ -133,7 +133,7 @@ export function TeamContact() {
             className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 justify-center"
           >
             {team.map((member) => (
-              <motion.div key={member.id} className={member.id===7 ? 'col-start-2' : ''} variants={fadeUpVariants}>
+              <motion.div key={member.id} className={member.id===7 ? 'sm:col-start-1 sm:col-span-2 sm:mx-auto sm:w-1/2 lg:col-span-1 lg:col-start-2 lg:w-full lg:mx-0' : ''} variants={fadeUpVariants}>
                 <Card className="flex flex-col items-center text-center p-6 border border-[var(--color-border)] hover:border-[var(--color-border-gold)] transition-colors duration-300">
                   {/* 1:1 Aspect Ratio profile avatar */}
                   <div className="w-28 h-28 aspect-square rounded-full overflow-hidden border border-[var(--color-border)] mb-4 shrink-0">

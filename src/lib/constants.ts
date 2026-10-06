@@ -41,11 +41,11 @@ export const PASS_PRICES = {
     {
       id: 'archithon',
       title: 'Archithon',
-      price: 'Price TBD',
+      price: 'Rs. 800',
       badge: 'Flagship Hackathon',
       popular: true,
       description: 'The premier 24-hour architecture and software development hackathon under the Genesis Track. Build, innovate, and pitch to jury.',
-      widgetUrl: 'https://konfhub.com/widget/id/f63c7ac5-fcc5-49d7-8c29-afcb10aa875d'
+      widgetUrl: 'https://konfhub.com/widget/id/53c9d720-64ca-422d-bdee-a8cacbcc8416'
     },
     {
       id: 'contests-pass',
