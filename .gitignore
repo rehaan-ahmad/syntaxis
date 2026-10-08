@@ -27,6 +27,8 @@ dist-ssr
 .vercel
 .netlify
 
-#Misc Files
+# Misc Files
 PROJECT_CHECKLIST.md
 forms.md
+*.zip
+

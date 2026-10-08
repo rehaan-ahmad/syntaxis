@@ -5,6 +5,9 @@ import { motion } from 'framer-motion';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import clsx from 'clsx';
 
+import { openTicketWidget } from '../ui/KonfHubModal';
+import { openTallyModal } from '../../lib/tally';
+
 export interface EventCarouselProps {
   events: {
     title: string;
@@ -13,6 +16,9 @@ export interface EventCarouselProps {
     prizePool: string;
     teamSize: string;
     image: string;
+    price?: string;
+    widgetUrl?: string;
+    tallyId?: string;
     registrationUrl?: string;
     pragmaUrl?: string;
   }[];
@@ -84,9 +90,16 @@ export function EventCarousel({
 
                   {/* Text content details */}
                   <div className="relative z-10 flex flex-col gap-2">
-                    <span className="text-[10px] font-bold tracking-widest text-[var(--color-brand)] uppercase">
-                      {event.category}
-                    </span>
+                    <div className="flex items-center justify-between">
+                      <span className="text-[10px] font-bold tracking-widest text-[var(--color-brand)] uppercase">
+                        {event.category}
+                      </span>
+                      {event.price && (
+                        <span className="text-[10px] font-mono font-bold text-white/90 bg-[var(--color-accent)]/80 px-2 py-0.5 rounded-full border border-white/20">
+                          {event.price}
+                        </span>
+                      )}
+                    </div>
                     <h3 className="text-xl sm:text-2xl font-black text-[var(--color-text-pri)] uppercase font-heading tracking-wide">
                       {event.title}
                     </h3>
@@ -94,21 +107,42 @@ export function EventCarousel({
                       {event.description}
                     </p>
                     
-                    {event.title !== 'Rhesis' && event.title !== 'Workshop Package' && (
-                      <div className="flex justify-between items-center text-[10px] text-[var(--color-text-sec)] font-bold tracking-wider mt-2 border-t border-[var(--color-border)] pt-3">
-                        <span>TEAM: {event.teamSize}</span>
-                        <span>PRIZE: {event.prizePool}</span>
-                      </div>
-                    )}
+                    <div className="flex justify-between items-center text-[10px] text-[var(--color-text-sec)] font-bold tracking-wider mt-2 border-t border-[var(--color-border)] pt-3">
+                      <span>TEAM: {event.teamSize}</span>
+                      <span>PRIZE: {event.prizePool}</span>
+                    </div>
 
-                    <a
-                      href={event.registrationUrl || event.pragmaUrl || 'https://konfhub.com/syntaxis-2026'}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="mt-4 w-full py-2.5 text-center text-xs font-semibold text-[var(--color-bg)] bg-[var(--color-brand)] rounded-[var(--radius-md)] hover:scale-[1.02] transition-transform duration-200"
-                    >
-                      Register Here
-                    </a>
+                    {event.tallyId ? (
+                      <button
+                        type="button"
+                        data-tally-open={event.tallyId}
+                        data-tally-layout="modal"
+                        data-tally-width="500"
+                        data-tally-emoji-text="👋"
+                        data-tally-emoji-animation="wave"
+                        onClick={() => event.tallyId && openTallyModal(event.tallyId)}
+                        className="mt-4 w-full py-2.5 text-center text-xs font-semibold text-[var(--color-bg)] bg-[var(--color-brand)] rounded-[var(--radius-md)] hover:scale-[1.02] transition-transform duration-200 cursor-pointer"
+                      >
+                        Register for Free
+                      </button>
+                    ) : event.widgetUrl ? (
+                      <button
+                        type="button"
+                        onClick={() => event.widgetUrl && openTicketWidget(event.widgetUrl, event.title)}
+                        className="mt-4 w-full py-2.5 text-center text-xs font-semibold text-[var(--color-bg)] bg-[var(--color-brand)] rounded-[var(--radius-md)] hover:scale-[1.02] transition-transform duration-200 cursor-pointer"
+                      >
+                        Get Ticket ({event.price || 'Register'})
+                      </button>
+                    ) : (
+                      <a
+                        href={event.registrationUrl || event.pragmaUrl || 'https://konfhub.com/syntaxis-2026'}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="mt-4 w-full py-2.5 text-center text-xs font-semibold text-[var(--color-bg)] bg-[var(--color-brand)] rounded-[var(--radius-md)] hover:scale-[1.02] transition-transform duration-200"
+                      >
+                        Register Here
+                      </a>
+                    )}
                   </div>
                 </motion.div>
               </div>

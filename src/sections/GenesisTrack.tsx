@@ -5,36 +5,15 @@ import Card from '../components/ui/Card';
 import Badge from '../components/ui/Badge';
 import Reveal from '../components/ui/Reveal';
 import { staggerContainerVariants, fadeUpVariants } from '../lib/animations';
+import { openTallyModal } from '../lib/tally';
 import { SECTION_IDS } from '../lib/constants';
 
-
 export function GenesisTrack() {
-  const TALLY_FORM_ID = 'xXeyrr';
-  const TALLY_FALLBACK = `https://tally.so/r/${TALLY_FORM_ID}`;
-
   const handleRegister = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
-    const trigger = () => {
-      if (typeof window !== 'undefined' && window.Tally?.openPopup) {
-        window.Tally.openPopup(TALLY_FORM_ID, {
-          layout: 'modal',
-          width: 720,
-          hideTitle: false,
-          transparentBackground: true,
-        });
-        return true;
-      }
-      return false;
-    };
-    if (!trigger()) {
-      const script = document.createElement('script');
-      script.src = 'https://tally.so/widgets/embed.js';
-      script.async = true;
-      script.onload = () => { if (!trigger()) window.open(TALLY_FALLBACK, '_blank', 'noopener,noreferrer'); };
-      script.onerror = () => window.open(TALLY_FALLBACK, '_blank', 'noopener,noreferrer');
-      document.head.appendChild(script);
-    }
+    openTallyModal('xXeyrr');
   };
+
 
   const juniorEvents = [
     {
@@ -179,6 +158,11 @@ export function GenesisTrack() {
 
           <button
             onClick={handleRegister}
+            data-tally-open="xXeyrr"
+            data-tally-layout="modal"
+            data-tally-width="500"
+            data-tally-emoji-text="👋"
+            data-tally-emoji-animation="wave"
             className="flex items-center gap-2 bg-[var(--color-brand)] text-[var(--color-bg)] font-bold px-6 py-3 rounded-[var(--radius-md)] hover:scale-105 transition-transform duration-200 text-xs shrink-0 whitespace-nowrap cursor-pointer"
           >
             <span>Register for Genesis</span>

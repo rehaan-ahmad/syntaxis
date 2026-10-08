@@ -1,8 +1,9 @@
 import { Link as ScrollLink } from 'react-scroll';
-import { ArrowRight, Calendar, Compass, Ticket, Check, Sparkles } from 'lucide-react';
+import { ArrowRight, Calendar, Compass, Ticket, Check, Sparkles, Award } from 'lucide-react';
 import CountdownTimer from '../components/ui/CountdownTimer';
 import Reveal from '../components/ui/Reveal';
 import { openTicketWidget } from '../components/ui/KonfHubModal';
+import { openTallyModal } from '../lib/tally';
 import { SECTION_IDS, EXTERNAL_LINKS, FEST_INFO, REVEAL_DATE, PASS_PRICES } from '../lib/constants';
 import { useIsRevealed } from '../hooks/useCountdown';
 
@@ -54,12 +55,12 @@ export function Register() {
                 <span>OFFICIAL EVENT PASSES & TICKETS</span>
               </div>
               <span className="text-[11px] font-mono text-white/70 bg-black/40 px-3 py-1 rounded-full border border-white/10">
-                * All ticket prices are subject to additional {PASS_PRICES.taxRate} tax at checkout
+                * All paid ticket prices are subject to additional {PASS_PRICES.taxRate} platform fee at checkout
               </span>
             </div>
 
-            {/* Pricing Cards Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 text-left mt-2">
+            {/* Pricing Cards Grid (3 Columns on Large Screens) */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-left mt-2">
               {PASS_PRICES.passes.map((pass) => (
                 <div 
                   key={pass.id}
@@ -88,26 +89,51 @@ export function Register() {
                   </h3>
                   <div className="my-3 flex items-baseline gap-2 border-b border-white/10 pb-3">
                     <span className="text-2xl sm:text-3xl font-extrabold font-mono text-[var(--color-brand)]">{pass.price}</span>
-                    <span className="text-[10px] text-white/70 font-mono">+ 3.75% platform fee</span>
+                    <span className="text-[10px] text-white/70 font-mono">
+                      {pass.isFree ? '• No Platform Fee' : '+ 3.75% platform fee'}
+                    </span>
                   </div>
+
+                  {pass.prizePool && (
+                    <div className="mb-3 flex items-center gap-1.5 text-[11px] font-bold text-[var(--color-brand)] font-heading uppercase tracking-wide">
+                      <Award className="w-3.5 h-3.5 shrink-0" />
+                      <span>{pass.prizePool}</span>
+                    </div>
+                  )}
 
                   <p className="text-xs text-white/80 leading-relaxed mb-4">
                     {pass.description}
                   </p>
                 </div>
 
-                <button 
-                  type="button"
-                  onClick={() => openTicketWidget(pass.widgetUrl, pass.title)}
-                  className={`mt-4 w-full py-2.5 px-4 rounded-[var(--radius-md)] text-xs font-bold uppercase tracking-wider text-center font-heading transition-all duration-200 flex items-center justify-center gap-2 cursor-pointer ${
-                    pass.popular
-                      ? 'bg-[var(--color-brand)] text-[var(--color-bg)] hover:scale-105 hover:shadow-[0_0_20px_var(--color-brand-glow)]'
-                      : 'border border-[var(--color-brand)] text-[var(--color-brand)] hover:bg-[var(--color-brand)] hover:text-[var(--color-bg)]'
-                  }`}
-                >
-                  <Check className="w-3.5 h-3.5" />
-                  <span>Get Your Ticket</span>
-                </button>
+                {pass.isFree ? (
+                  <button 
+                    type="button"
+                    data-tally-open={pass.tallyId}
+                    data-tally-layout="modal"
+                    data-tally-width="500"
+                    data-tally-emoji-text="👋"
+                    data-tally-emoji-animation="wave"
+                    onClick={() => pass.tallyId && openTallyModal(pass.tallyId)}
+                    className="mt-4 w-full py-2.5 px-4 rounded-[var(--radius-md)] text-xs font-bold uppercase tracking-wider text-center font-heading transition-all duration-200 flex items-center justify-center gap-2 cursor-pointer border border-[var(--color-brand)] text-[var(--color-brand)] hover:bg-[var(--color-brand)] hover:text-[var(--color-bg)]"
+                  >
+                    <Check className="w-3.5 h-3.5" />
+                    <span>Register for Free</span>
+                  </button>
+                ) : (
+                  <button 
+                    type="button"
+                    onClick={() => pass.widgetUrl && openTicketWidget(pass.widgetUrl, pass.title)}
+                    className={`mt-4 w-full py-2.5 px-4 rounded-[var(--radius-md)] text-xs font-bold uppercase tracking-wider text-center font-heading transition-all duration-200 flex items-center justify-center gap-2 cursor-pointer ${
+                      pass.popular
+                        ? 'bg-[var(--color-brand)] text-[var(--color-bg)] hover:scale-105 hover:shadow-[0_0_20px_var(--color-brand-glow)]'
+                        : 'border border-[var(--color-brand)] text-[var(--color-brand)] hover:bg-[var(--color-brand)] hover:text-[var(--color-bg)]'
+                    }`}
+                  >
+                    <Check className="w-3.5 h-3.5" />
+                    <span>Get Your Ticket</span>
+                  </button>
+                )}
               </div>
             ))}
           </div>
