@@ -112,7 +112,7 @@ export function Schedule() {
           category: 'esports'
         },
         {
-          time: '05:30 PM – 07:00 PM',
+          time: '03:30 PM – 05:00 PM',
           title: 'Rhesis',
           discipline: 'Keynote Tech-Talks & Q&A',
           venue: 'Auditorium, B-Block',
