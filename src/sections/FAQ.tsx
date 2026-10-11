@@ -11,7 +11,7 @@ export function FAQ() {
     },
     {
       question: 'What is the Device Policy for Tech Events?',
-      answer: "All technical events strictly follow a Bring Your Own Device (BYOD) policy. Participants must bring their own laptops, chargers, and development tools. High-speed Wi-Fi, power charging points, and extension boards will be provided by the management."
+      answer: "All technical events strictly follow a Bring Your Own Device (BYOD) policy. Participants must bring their own laptops, chargers, and development tools. Please note that intermittent Wi-Fi will be provided on campus, so participants are strongly advised to keep their mobile hotspots or personal data connections ready as backup. Power charging points and extension boards will be provided by the organizers."
     },
     {
       question: 'Are Meals Provided During Lunch Breaks?',
@@ -19,11 +19,11 @@ export function FAQ() {
     },
     {
       question: 'How to Register?',
-      answer: "Participants can register via our official EMS platform, Pragma. Students can participate in Solo, Duo, or Group team formats depending on the event package."
+      answer: "Participants can register via KonfHub for ticketed passes or click 'Register Now' / complete the linked Tally forms for free events. Students can participate in Solo, Duo, or Group team formats depending on the event package."
     },
     {
       question: 'Is There a Registration Fee?',
-      answer: 'Yes. Confirmed final registration fees and category passes will be listed on Pragma.'
+      answer: "Competitive packages (Contest Package, Archithon Hackathon) and technical workshops (Techne) are ticketed on KonfHub, while events like Genesis Track, Rhesis discourses, and Pantheon Games (Free Fire) are completely free to register."
     },
     {
       question: 'Can Outstation Participants Join?',
@@ -31,7 +31,7 @@ export function FAQ() {
     },
     {
       question: 'What is the Genesis Track?',
-      answer: 'Genesis Track is an exclusive junior division designed for school students of classes 9th to 12th, featuring Eureka Pitch (Round 1 & Finals) and Pythia Expo.'
+      answer: 'Genesis Track is an exclusive junior division designed for school students of classes 9th to 12th, organized on Day 2 ONLY. The top 3 qualifying teams will be invited with their Principal/Vice-Principal and Parents on Day 3 for the prize distribution ceremony. All participants receive official participation certificates and valuable perks.'
     },
     {
       question: 'How Many Events Can a Team Participate In?',

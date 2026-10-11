@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Mail, MessageSquare } from 'lucide-react';
+import { Mail, MessageSquare, ExternalLink } from 'lucide-react';
 import { Linkedin } from '../components/icons/SocialIcons';
 import SectionHeading from '../components/ui/SectionHeading';
 import Card from '../components/ui/Card';
@@ -181,22 +181,35 @@ export function TeamContact() {
                 Inquiry & Communication Portal
               </h4>
               <p className="text-xs text-[var(--color-text-body)] leading-relaxed max-w-md">
-                Have questions or want to collaborate with Syntaxis 2026? Reach out directly to our team below.
+                Have questions or want to collaborate with Syntaxis 2026? Reach out directly via our inquiry form or email <strong className="text-white underline">syntaxis@rdec.in</strong>.
               </p>
 
-              <button
-                onClick={handleOpenTally}
-                data-tally-open="ZjBZro"
-                data-tally-layout="modal"
-                data-tally-width="700"
-                data-tally-hide-title="1"
-                data-tally-emoji-text="👋"
-                data-tally-emoji-animation="wave"
-                className="w-full py-4 px-6 bg-[var(--color-brand)] text-[var(--color-bg)] font-extrabold text-sm uppercase tracking-wider font-heading rounded-[var(--radius-md)] hover:scale-105 hover:shadow-[0_0_25px_var(--color-brand-glow)] transition-all duration-200 cursor-pointer flex items-center justify-center gap-2 select-none"
-              >
-                <span>Get In Touch</span>
-                <Mail className="w-4 h-4" />
-              </button>
+              <div className="flex items-center gap-2 w-full mt-2">
+                <button
+                  onClick={handleOpenTally}
+                  data-tally-open="ZjBZro"
+                  data-tally-layout="modal"
+                  data-tally-width="700"
+                  data-tally-hide-title="1"
+                  data-tally-emoji-text="👋"
+                  data-tally-emoji-animation="wave"
+                  className="flex-1 py-4 px-6 bg-[var(--color-brand)] text-[var(--color-bg)] font-extrabold text-sm uppercase tracking-wider font-heading rounded-[var(--radius-md)] hover:scale-105 hover:shadow-[0_0_25px_var(--color-brand-glow)] transition-all duration-200 cursor-pointer flex items-center justify-center gap-2 select-none"
+                >
+                  <span>Get In Touch</span>
+                  <Mail className="w-4 h-4" />
+                </button>
+
+                <a
+                  href="https://tally.so/r/ZjBZro"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title="Open inquiry form in new tab"
+                  className="p-4 rounded-[var(--radius-md)] border border-[var(--color-border-gold)] bg-[var(--color-bg-glass)] text-[var(--color-brand)] hover:bg-[var(--color-brand)] hover:text-[var(--color-bg)] transition-all duration-200 cursor-pointer flex items-center justify-center"
+                  aria-label="Open inquiry form in new tab"
+                >
+                  <ExternalLink className="w-5 h-5" />
+                </a>
+              </div>
             </div>
           </Reveal>
         </div>

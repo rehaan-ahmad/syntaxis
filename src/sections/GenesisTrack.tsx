@@ -1,12 +1,12 @@
 import { motion } from 'framer-motion';
-import { Award, ShieldAlert, GraduationCap, ArrowRight } from 'lucide-react';
+import { Award, ShieldAlert, GraduationCap, ArrowRight, ExternalLink, Download, Mail } from 'lucide-react';
 import SectionHeading from '../components/ui/SectionHeading';
 import Card from '../components/ui/Card';
 import Badge from '../components/ui/Badge';
 import Reveal from '../components/ui/Reveal';
 import { staggerContainerVariants, fadeUpVariants } from '../lib/animations';
 import { openTallyModal } from '../lib/tally';
-import { SECTION_IDS } from '../lib/constants';
+import { SECTION_IDS, EXTERNAL_LINKS } from '../lib/constants';
 
 export function GenesisTrack() {
   const handleRegister = (e: React.MouseEvent<HTMLButtonElement>) => {
@@ -14,19 +14,18 @@ export function GenesisTrack() {
     openTallyModal('xXeyrr');
   };
 
-
   const juniorEvents = [
     {
-      title: 'Eureka Pitch (Round 1 & Finals)',
-      description: 'The flagship school innovation competition. Teams pitch everyday-life automation themes in Round 1 on Day 2, with shortlisted teams advancing to the extended Pitch Finals & Q&A on Day 3.',
-      teamSize: '2-3 Students',
-      prize: '[PRIZE POOL TBD]'
+      title: 'Eureka Pitch (Day 2 Flagship)',
+      description: 'The flagship school innovation showcase held on Day 2. Teams pitch everyday-life automation and applied STEM ideas to academic and technical mentors. The Top 3 finalists will be invited on Day 3 for the grand felicitation.',
+      teamSize: '2–3 Students',
+      prize: 'Certificates & Perks'
     },
     {
-      title: 'Pythia Expo (Genesis Parallel Track)',
-      description: 'Science-fair style exhibition on Day 3 where school teams showcase their physical prototypes and software models in a dedicated parallel zone.',
-      teamSize: '2-3 Students',
-      prize: '[PRIZE POOL TBD]'
+      title: 'STEM Discovery & Mentorship',
+      description: 'Direct interactive mentorship sessions with engineering faculty, lab tours, and exposure to cutting-edge software and hardware development on the RDEC campus.',
+      teamSize: 'Classes 9–12',
+      prize: 'Participation Badges'
     }
   ];
 
@@ -49,7 +48,7 @@ export function GenesisTrack() {
           <Badge variant="brand" className="mb-4 bg-[var(--color-brand)]/20 border-[var(--color-brand)] text-[var(--color-brand)] px-4 py-1 tracking-[0.2em] font-semibold text-[10px] rounded-full animate-pulse shadow-[0_0_15px_var(--color-brand-glow)]">
             School Outreach Wing
           </Badge>
-          <SectionHeading title="GENESIS TRACK" subtitle="FOR CLASSES 9 TO 12" />
+          <SectionHeading title="GENESIS TRACK" subtitle="FOR CLASSES 9 TO 12 • DAY 2 ONLY" />
         </Reveal>
 
         {/* 2-Column: Details and Image */}
@@ -60,7 +59,10 @@ export function GenesisTrack() {
               NURTURING JUNIOR GENIUSES
             </h3>
             <p className="text-base text-[var(--color-text-body)] leading-relaxed">
-              Curated exclusively for students in grades 9 to 12, the <strong>Genesis Track</strong> provides school students an introduction to the inter-college tech ecosystem. This dedicated wing features the flagship <strong>Eureka Pitch</strong> across two rounds (Day 2 Round 1 & Day 3 Finals).
+              Curated exclusively for students in grades 9 to 12, the <strong>Genesis Track</strong> is organized on <strong>Day 2 ONLY</strong>. Students get their first taste of the collegiate tech arena through the <strong>Eureka Pitch</strong> competition.
+            </p>
+            <p className="text-sm text-[var(--color-text-sec)] leading-relaxed bg-[var(--color-bg)]/60 border-l-2 border-[var(--color-brand)] p-3 rounded-r-[var(--radius-md)]">
+              <strong>Grand Day 3 Valedictory:</strong> The Top 3 qualifying teams will be officially invited on <strong>Day 3</strong> along with their <strong>Principal / Vice-Principal and Parents</strong> for the stage felicitation ceremony. All participants receive verified certificates and perks.
             </p>
 
             {/* Why Join Points */}
@@ -71,7 +73,7 @@ export function GenesisTrack() {
                 </div>
                 <div>
                   <h4 className="font-bold text-[var(--color-text-pri)] font-heading">STEM Foundations</h4>
-                  <p className="text-xs text-[var(--color-text-body)] mt-1">Develop key problem-solving skills, basic logic constructs, and algorithms.</p>
+                  <p className="text-xs text-[var(--color-text-body)] mt-1">Develop key problem-solving skills, basic logic constructs, and engineering workflows.</p>
                 </div>
               </div>
               <div className="flex gap-4">
@@ -79,8 +81,8 @@ export function GenesisTrack() {
                   <Award className="w-5 h-5" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-[var(--color-text-pri)] font-heading">Mentorship</h4>
-                  <p className="text-xs text-[var(--color-text-body)] mt-1">Receive guidance from RDEC tech mentors and college computer science professors.</p>
+                  <h4 className="font-bold text-[var(--color-text-pri)] font-heading">Faculty Mentorship</h4>
+                  <p className="text-xs text-[var(--color-text-body)] mt-1">Receive direct feedback from RDEC computer science professors and industry mentors.</p>
                 </div>
               </div>
               <div className="flex gap-4">
@@ -88,14 +90,14 @@ export function GenesisTrack() {
                   <Award className="w-5 h-5" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-[var(--color-text-pri)] font-heading">5+ Partnered Schools</h4>
-                  <p className="text-xs text-[var(--color-text-body)] mt-1">Join students from partnered schools across NCR in this exclusive track.</p>
+                  <h4 className="font-bold text-[var(--color-text-pri)] font-heading">4 Partnered Schools</h4>
+                  <p className="text-xs text-[var(--color-text-body)] mt-1">Join talented student innovators from our 4 partnered schools across NCR.</p>
                 </div>
               </div>
             </div>
           </Reveal>
 
-          {/* Right Image Showcase — 4:3 aspect ratio per requirement */}
+          {/* Right Image Showcase */}
           <Reveal className="relative">
             <div className="absolute inset-0 bg-gradient-to-br from-[var(--color-brand)] to-transparent rounded-[var(--radius-lg)] blur-md opacity-25" />
             <img
@@ -110,7 +112,7 @@ export function GenesisTrack() {
         {/* Junior Event Cards Section */}
         <div className="flex flex-col gap-8 mt-4">
           <h4 className="text-xl font-bold uppercase font-heading text-center text-[var(--color-text-pri)] tracking-wider">
-            GENESIS EVENT SLATE
+            GENESIS EVENT SLATE (DAY 2 ONLY)
           </h4>
           <Reveal
             variants={staggerContainerVariants}
@@ -130,7 +132,7 @@ export function GenesisTrack() {
                   </div>
                   <div className="flex justify-between items-center text-[10px] text-[var(--color-text-sec)] font-bold tracking-wider mt-6 border-t border-[var(--color-border-gold)]/40 pt-4">
                     <span>TEAM: {event.teamSize}</span>
-                    <span>PRIZE: {event.prize}</span>
+                    <span>AWARDS: {event.prize}</span>
                   </div>
                 </Card>
               </motion.div>
@@ -138,36 +140,89 @@ export function GenesisTrack() {
           </Reveal>
         </div>
 
-        {/* Eligibility criteria box and parent CTA */}
+        {/* Mandatory School Consent Letter Download Card */}
+        <Reveal className="max-w-4xl mx-auto w-full bg-[var(--color-bg-glass)] border border-[var(--color-border-gold)] p-6 sm:p-8 rounded-[var(--radius-lg)] shadow-2xl backdrop-blur-[12px] flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="flex items-start gap-4">
+            <div className="w-12 h-12 rounded-xl bg-[var(--color-accent)]/30 border border-[var(--color-border)] flex items-center justify-center text-[var(--color-brand)] shrink-0">
+              <Download className="w-6 h-6" />
+            </div>
+            <div>
+              <div className="flex items-center gap-2">
+                <span className="text-[10px] font-bold font-mono uppercase bg-[var(--color-accent)] text-white px-2 py-0.5 rounded">MANDATORY FORM</span>
+                <h4 className="text-base sm:text-lg font-bold font-heading text-[var(--color-text-pri)]">
+                  Genesis School Consent & Indemnity Letter
+                </h4>
+              </div>
+              <p className="text-xs text-[var(--color-text-body)] mt-1.5 leading-relaxed">
+                Download the official printable consent letter. It must be filled, signed by parents/teacher, stamped with the official <strong>School / Principal Seal</strong>, and emailed to both official desks:
+              </p>
+              <div className="flex flex-wrap gap-x-4 gap-y-1 mt-2 text-xs font-mono font-semibold text-[var(--color-brand)]">
+                <a href={EXTERNAL_LINKS.email} className="hover:underline flex items-center gap-1">
+                  <Mail className="w-3.5 h-3.5" /> syntaxis@rdec.in
+                </a>
+                <span className="text-white/40">•</span>
+                <a href={EXTERNAL_LINKS.genesisEmail} className="hover:underline flex items-center gap-1">
+                  <Mail className="w-3.5 h-3.5" /> rehaan24ai077@rdec.in
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <a
+            href={`${import.meta.env.BASE_URL}docs/genesis-consent.html`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 bg-transparent border border-[var(--color-brand)] text-[var(--color-brand)] hover:bg-[var(--color-brand)] hover:text-[var(--color-bg)] font-bold px-6 py-3 rounded-[var(--radius-md)] text-xs transition-all duration-200 shrink-0 uppercase tracking-wider font-heading cursor-pointer shadow-md hover:shadow-[0_0_15px_var(--color-brand-glow)]"
+          >
+            <Download className="w-4 h-4" />
+            <span>Download Consent Form</span>
+          </a>
+        </Reveal>
+
+        {/* Eligibility criteria box and Register CTAs */}
         <Reveal
-          className="bg-[var(--color-bg)]/80 border border-[var(--color-border-gold)] p-6 sm:p-8 rounded-[var(--radius-lg)] flex flex-col md:flex-row justify-between items-center gap-6 max-w-4xl mx-auto w-full mt-4"
+          className="bg-[var(--color-bg)]/80 border border-[var(--color-border-gold)] p-6 sm:p-8 rounded-[var(--radius-lg)] flex flex-col md:flex-row justify-between items-center gap-6 max-w-4xl mx-auto w-full mt-2"
         >
           <div className="flex gap-4">
             <div className="w-10 h-10 shrink-0 bg-[var(--color-accent)]/20 border border-[var(--color-accent)]/50 rounded-full flex items-center justify-center text-[var(--color-text-pri)]">
               <ShieldAlert className="w-5 h-5 text-[var(--color-brand)]" />
             </div>
             <div>
-              <h5 className="font-bold text-[var(--color-text-pri)] font-heading">Eligibility Criteria</h5>
+              <h5 className="font-bold text-[var(--color-text-pri)] font-heading">Eligibility & Guidelines</h5>
               <ul className="text-xs text-[var(--color-text-body)] mt-1 list-disc list-inside flex flex-col gap-1 pr-4">
                 <li>Strictly limited to current class 9 to 12 students.</li>
+                <li>Organized on Day 2 only; Top 3 teams return on Day 3 for prize distribution.</li>
                 <li>Official school nomination letter or valid school ID card is mandatory.</li>
                 <li>Zero registration fees for all qualified participants.</li>
               </ul>
             </div>
           </div>
 
-          <button
-            onClick={handleRegister}
-            data-tally-open="xXeyrr"
-            data-tally-layout="modal"
-            data-tally-width="500"
-            data-tally-emoji-text="👋"
-            data-tally-emoji-animation="wave"
-            className="flex items-center gap-2 bg-[var(--color-brand)] text-[var(--color-bg)] font-bold px-6 py-3 rounded-[var(--radius-md)] hover:scale-105 transition-transform duration-200 text-xs shrink-0 whitespace-nowrap cursor-pointer"
-          >
-            <span>Register for Genesis</span>
-            <ArrowRight className="w-3.5 h-3.5" />
-          </button>
+          <div className="flex items-center gap-2 shrink-0">
+            <button
+              onClick={handleRegister}
+              data-tally-open="xXeyrr"
+              data-tally-layout="modal"
+              data-tally-width="500"
+              data-tally-emoji-text="👋"
+              data-tally-emoji-animation="wave"
+              className="flex items-center gap-2 bg-[var(--color-brand)] text-[var(--color-bg)] font-bold px-6 py-3 rounded-[var(--radius-md)] hover:scale-105 transition-transform duration-200 text-xs shrink-0 whitespace-nowrap cursor-pointer uppercase font-heading"
+            >
+              <span>Register for Genesis</span>
+              <ArrowRight className="w-3.5 h-3.5" />
+            </button>
+
+            <a
+              href="https://tally.so/r/xXeyrr"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Open form in new tab"
+              className="p-3 rounded-[var(--radius-md)] border border-[var(--color-border-gold)] bg-[var(--color-bg-glass)] text-[var(--color-brand)] hover:bg-[var(--color-brand)] hover:text-[var(--color-bg)] transition-colors duration-200 cursor-pointer"
+              aria-label="Open Genesis registration form in new tab"
+            >
+              <ExternalLink className="w-4 h-4" />
+            </a>
+          </div>
         </Reveal>
 
       </section>

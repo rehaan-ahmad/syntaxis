@@ -35,7 +35,7 @@ export function Schedule() {
           time: '08:30 AM – 10:00 AM',
           title: 'Participant Check-In & Badge Collection',
           discipline: 'General Registration',
-          venue: 'Main Gate & Reception',
+          venue: 'Main Gate',
           notes: 'Registration verification, official lanyard & welcome badge distribution, and campus venue directions.',
           category: 'main'
         },
@@ -43,7 +43,7 @@ export function Schedule() {
           time: '10:00 AM – 11:30 AM',
           title: 'The Kindling (Inauguration Ceremony)',
           discipline: 'Fest Ceremony',
-          venue: 'Main Auditorium',
+          venue: 'Main Stage, College Grounds',
           notes: 'Lamp lighting ceremony, keynote welcome address by institute leadership, and the official unveiling of Syntaxis 2026.',
           category: 'main'
         },
@@ -51,7 +51,7 @@ export function Schedule() {
           time: '11:30 AM – 01:30 PM',
           title: 'Techne (Google Cloud Skill Badges)',
           discipline: 'Cloud & DevOps Workshop',
-          venue: 'Seminar Hall',
+          venue: 'DSA Lab, Basement A-Block',
           notes: 'Hands-on cloud architecture workshop focused on earning Google Cloud Skill Badges, Docker containers, and live deployment.',
           category: 'workshop'
         },
@@ -59,7 +59,7 @@ export function Schedule() {
           time: '01:30 PM – 04:30 PM',
           title: 'Code Trilogy — Round 1: HEUREKA',
           discipline: 'DSA & Problem Solving (200 → 100 Cut)',
-          venue: 'B-Block Computer Labs',
+          venue: 'DSA Lab + Java Lab, Basement A-Block',
           notes: 'High-octane algorithmic problem-solving sprint. Top 100 fastest & most optimal problem solvers advance to Round 2 (Agon).',
           category: 'code'
         },
@@ -67,7 +67,7 @@ export function Schedule() {
           time: '04:30 PM – 05:30 PM',
           title: 'Day 1 Closing & R2 Qualifier Announcements',
           discipline: 'Announcements & Networking',
-          venue: 'Main Auditorium',
+          venue: 'Main Stage, College Grounds',
           notes: 'Declaration of Heureka qualifiers advancing to Agon, Day 1 closing remarks, and technical networking mixer.',
           category: 'main'
         }
@@ -77,13 +77,13 @@ export function Schedule() {
       dayLabel: 'Day 2: Friday',
       dateLabel: 'Oct 30, 2026',
       title: 'Archithon 24H Kickoff, Genesis, Pantheon & Rhesis',
-      description: 'Day 2 ignites the 24-hour Archithon development clock, school Genesis Track presentations, Pantheon mobile esports battles, and Rhesis keynote discourses.',
+      description: 'Day 2 ignites the 24-hour Archithon development clock, school Genesis Track presentations, Pantheon Free Fire mobile esports battles, and Rhesis keynote discourses.',
       events: [
         {
           time: '09:00 AM – 10:00 AM',
           title: 'Archithon: Problem Statement Release',
           discipline: 'Hackathon Orientation',
-          venue: 'Main Auditorium',
+          venue: 'A-Block, RDEC',
           notes: 'Official release of the multi-track hackathon problem statements, evaluation criteria, and mentor introductions.',
           category: 'hackathon'
         },
@@ -91,31 +91,31 @@ export function Schedule() {
           time: '10:00 AM (Starts)',
           title: 'Archithon: 24-Hour Hackathon Hacking Window',
           discipline: 'Full-Stack / AI Development',
-          venue: 'Hackathon Arenas (B-Block)',
+          venue: 'A-Block, RDEC',
           notes: '24-hour non-stop hacking window begins! Teams design architecture, code full-stack & AI pipelines, and consult industry mentors.',
           category: 'hackathon'
         },
         {
           time: '11:00 AM – 01:30 PM',
-          title: 'Genesis Track (incl. Eureka Pitch)',
+          title: 'Genesis Track (Eureka Pitch)',
           discipline: 'School Program (Classes 9–12)',
-          venue: 'Seminar Hall',
-          notes: 'Dedicated school outreach track where classes 9–12 students pitch automation and STEM ideas in the Eureka Pitch round.',
+          venue: 'Auditorium, Ground Floor B-Block',
+          notes: 'Exclusive school outreach wing organized on Day 2 ONLY. Classes 9–12 students pitch automation and STEM ideas in the Eureka Pitch round. Top 3 teams will be invited with their Principal/Vice-Principal and Parents on Day 3 for prize distribution (certificates & perks).',
           category: 'genesis'
         },
         {
           time: '02:30 PM – 05:30 PM',
           title: 'Pantheon Games',
-          discipline: 'Mobile Esports (BGMI & FF Max Squads)',
-          venue: 'Gaming Zone (Student Center)',
-          notes: 'Squad arena tournament showdown for BGMI and FreeFire Max. Compete for gaming prestige, in-game currency, and vouchers.',
+          discipline: 'Mobile Esports (Free Fire Max Squads)',
+          venue: 'Third Floor, A-Block',
+          notes: 'Squad arena tournament showdown for Free Fire Max. 100% free registration — compete for gaming prestige, in-game diamonds, and vouchers.',
           category: 'esports'
         },
         {
           time: '05:30 PM – 07:00 PM',
           title: 'Rhesis',
           discipline: 'Keynote Tech-Talks & Q&A',
-          venue: 'Main Auditorium',
+          venue: 'Auditorium, B-Block',
           notes: 'Visionary industry tech-leaders deliver keynotes and hold live interactive discourse on next-gen tech engineering.',
           category: 'talk'
         },
@@ -123,7 +123,7 @@ export function Schedule() {
           time: 'Overnight Session',
           title: 'Archithon: Continuous Dev & Midnight Reviews',
           discipline: 'Overnight Campus Stay',
-          venue: 'Hackathon Arenas (B-Block)',
+          venue: 'A-Block, RDEC',
           notes: 'Overnight stay in campus arenas. Midnight mentor checkpoint evaluations, developer refueling, and continuous build progress.',
           category: 'hackathon'
         }
@@ -133,21 +133,21 @@ export function Schedule() {
       dayLabel: 'Day 3: Saturday',
       dateLabel: 'Oct 31, 2026',
       title: 'Hackathon Freeze, Agon, Katharsis & Apotheosis',
-      description: 'Day 3 brings the grand crescendo: Archithon repo freeze, Pythia Expo jury defense, Code Trilogy finals, and the Apotheosis valediction ceremony.',
+      description: 'Day 3 brings the grand crescendo: Archithon repo freeze, The Tribunal jury defense, Code Trilogy finals, and the Apotheosis valediction ceremony.',
       events: [
         {
           time: '10:00 AM – 04:00 PM',
-          title: 'Pythia Expo & The Tribunal',
-          discipline: 'Project Exhibition & Hackathon Judging',
-          venue: 'Exhibition Hall & B-Block',
-          notes: 'Public project exhibition open to all attendees, accompanied by The Tribunal live jury defense and prototype evaluations.',
+          title: 'The Tribunal (Archithon Hackathon Judging)',
+          discipline: 'Hackathon Jury Defense & Evaluation',
+          venue: 'A-Block, RDEC',
+          notes: 'The Tribunal live jury defense and prototype evaluations before industry leaders and academic judges.',
           category: 'hackathon'
         },
         {
           time: '11:00 AM (Deadline)',
           title: 'Archithon: Code Freeze & Repo Submissions',
           discipline: 'Submission Deadline',
-          venue: 'Custom Online Form',
+          venue: 'A-Block, RDEC',
           notes: 'Hard development deadline. All repository commits, live preview deployments, and pitch deck links freeze.',
           category: 'hackathon'
         },
@@ -155,7 +155,7 @@ export function Schedule() {
           time: '11:30 AM – 01:30 PM',
           title: 'Code Trilogy — Round 2: AGON',
           discipline: 'Speed CP Sprint (100 → 50 Cut)',
-          venue: 'B-Block Computer Labs',
+          venue: 'DSA Lab, Basement A-Block',
           notes: 'Speed algorithmic contest on HackerRank. 100 qualifiers compete under intense time pressure for the top 50 finals spots.',
           category: 'code'
         },
@@ -163,7 +163,7 @@ export function Schedule() {
           time: '01:30 PM – 02:30 PM',
           title: 'Lunch & Finalist Briefing',
           discipline: 'Break',
-          venue: 'Central Cafeteria',
+          venue: 'College Premises [ONLY DESIGNATED AREAS]',
           notes: 'Lunch interval and technical setup briefing for the top 50 qualifiers entering the Katharsis live debugging finals.',
           category: 'main'
         },
@@ -171,7 +171,7 @@ export function Schedule() {
           time: '02:30 PM – 04:00 PM',
           title: 'Code Trilogy — Round 3: KATHARSIS',
           discipline: 'Real-Time Debugging Finals',
-          venue: 'B-Block Computer Labs',
+          venue: 'DSA Lab, Basement A-Block',
           notes: 'Ultimate debugging championship duel. Identifying, patching, and stabilizing complex broken codebases under ticking clocks.',
           category: 'code'
         },
@@ -179,8 +179,8 @@ export function Schedule() {
           time: '04:30 PM – 06:30 PM',
           title: 'Apotheosis (Valedictory & Prize Distribution)',
           discipline: 'Fest Finale & Awarding',
-          venue: 'Main Auditorium',
-          notes: 'Grand closing ceremony, felicitation of partners, and prize distribution celebrating champions across all tracks.',
+          venue: 'Main Stage, College Grounds',
+          notes: 'Grand closing ceremony, felicitation of partners, and prize distribution celebrating champions across all tracks (including Top 3 Genesis Track school teams with their Principals and Parents).',
           category: 'main'
         }
       ]
@@ -223,10 +223,10 @@ export function Schedule() {
 
       {/* Venues Pill Strip */}
       <div className="flex flex-wrap justify-center items-center gap-2 max-w-4xl mx-auto mb-8 text-[11px] font-mono text-[var(--color-text-sec)]">
-        <span className="px-3 py-1 rounded-full bg-[var(--color-bg-glass)] border border-[var(--color-border)]">🏛️ Main Auditorium</span>
-        <span className="px-3 py-1 rounded-full bg-[var(--color-bg-glass)] border border-[var(--color-border)]">💻 B-Block Computer Labs</span>
-        <span className="px-3 py-1 rounded-full bg-[var(--color-bg-glass)] border border-[var(--color-border)]">🎤 Seminar Hall</span>
-        <span className="px-3 py-1 rounded-full bg-[var(--color-bg-glass)] border border-[var(--color-border)]">🎮 Designated Gaming Zone</span>
+        <span className="px-3 py-1 rounded-full bg-[var(--color-bg-glass)] border border-[var(--color-border)]">🏛️ Main Stage, College Grounds</span>
+        <span className="px-3 py-1 rounded-full bg-[var(--color-bg-glass)] border border-[var(--color-border)]">💻 DSA & Java Labs, Basement A-Block</span>
+        <span className="px-3 py-1 rounded-full bg-[var(--color-bg-glass)] border border-[var(--color-border)]">🏢 A-Block (Archithon & 3rd Floor Games)</span>
+        <span className="px-3 py-1 rounded-full bg-[var(--color-bg-glass)] border border-[var(--color-border)]">🎭 Auditorium, B-Block</span>
       </div>
 
       {/* Days Tabs */}

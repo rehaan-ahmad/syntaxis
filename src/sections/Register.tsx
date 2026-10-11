@@ -1,5 +1,5 @@
 import { Link as ScrollLink } from 'react-scroll';
-import { ArrowRight, Calendar, Compass, Ticket, Check, Sparkles, Award } from 'lucide-react';
+import { ArrowRight, Calendar, Compass, Ticket, Check, Sparkles, Award, ExternalLink, Download, AlertCircle } from 'lucide-react';
 import CountdownTimer from '../components/ui/CountdownTimer';
 import Reveal from '../components/ui/Reveal';
 import { openTicketWidget } from '../components/ui/KonfHubModal';
@@ -104,22 +104,58 @@ export function Register() {
                   <p className="text-xs text-white/80 leading-relaxed mb-4">
                     {pass.description}
                   </p>
+
+                  {/* Archithon Mandatory Consent Form Action in Pass Card */}
+                  {pass.id === 'archithon' && (
+                    <div className="mb-4 p-2.5 rounded-[var(--radius-md)] bg-[#191613] border border-[var(--color-border-gold)] flex flex-col gap-1.5 text-[10px]">
+                      <div className="flex items-center gap-1.5 text-[var(--color-brand)] font-bold font-mono">
+                        <AlertCircle className="w-3.5 h-3.5 shrink-0" />
+                        <span>MANDATORY CONSENT LETTER</span>
+                      </div>
+                      <p className="text-[10px] text-[#cdbbad] leading-tight">
+                        Fill, print, sign & email in a single PDF to <strong className="text-white underline">syntaxis@rdec.in</strong>.
+                      </p>
+                      <a
+                        href={`${import.meta.env.BASE_URL}docs/archithon-consent.html`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="mt-1 flex items-center justify-center gap-1.5 py-1.5 px-3 rounded border border-[var(--color-border-gold)] text-[var(--color-brand)] hover:bg-[var(--color-brand)] hover:text-[var(--color-bg)] transition-all font-heading font-semibold text-[10px] uppercase tracking-wider"
+                      >
+                        <Download className="w-3 h-3" />
+                        <span>Download Consent Letter</span>
+                      </a>
+                    </div>
+                  )}
                 </div>
 
                 {pass.isFree ? (
-                  <button 
-                    type="button"
-                    data-tally-open={pass.tallyId}
-                    data-tally-layout="modal"
-                    data-tally-width="500"
-                    data-tally-emoji-text="👋"
-                    data-tally-emoji-animation="wave"
-                    onClick={() => pass.tallyId && openTallyModal(pass.tallyId)}
-                    className="mt-4 w-full py-2.5 px-4 rounded-[var(--radius-md)] text-xs font-bold uppercase tracking-wider text-center font-heading transition-all duration-200 flex items-center justify-center gap-2 cursor-pointer border border-[var(--color-brand)] text-[var(--color-brand)] hover:bg-[var(--color-brand)] hover:text-[var(--color-bg)]"
-                  >
-                    <Check className="w-3.5 h-3.5" />
-                    <span>Register for Free</span>
-                  </button>
+                  <div className="mt-4 flex items-center gap-2">
+                    <button 
+                      type="button"
+                      data-tally-open={pass.tallyId}
+                      data-tally-layout="modal"
+                      data-tally-width="500"
+                      data-tally-emoji-text="👋"
+                      data-tally-emoji-animation="wave"
+                      onClick={() => pass.tallyId && openTallyModal(pass.tallyId)}
+                      className="flex-1 py-2.5 px-4 rounded-[var(--radius-md)] text-xs font-bold uppercase tracking-wider text-center font-heading transition-all duration-200 flex items-center justify-center gap-2 cursor-pointer border border-[var(--color-brand)] text-[var(--color-brand)] hover:bg-[var(--color-brand)] hover:text-[var(--color-bg)]"
+                    >
+                      <Check className="w-3.5 h-3.5" />
+                      <span>Register for Free</span>
+                    </button>
+                    {pass.tallyId && (
+                      <a
+                        href={`https://tally.so/r/${pass.tallyId}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        title="Open form in new tab"
+                        className="p-2.5 rounded-[var(--radius-md)] border border-[var(--color-brand)] bg-[var(--color-bg-glass)] text-[var(--color-brand)] hover:bg-[var(--color-brand)] hover:text-[var(--color-bg)] transition-all cursor-pointer flex items-center justify-center"
+                        aria-label={`Open ${pass.title} in new tab`}
+                      >
+                        <ExternalLink className="w-4 h-4" />
+                      </a>
+                    )}
+                  </div>
                 ) : (
                   <button 
                     type="button"
@@ -148,7 +184,7 @@ export function Register() {
             rel="noopener noreferrer"
             className="flex items-center gap-2 bg-[var(--color-brand)] text-[var(--color-bg)] font-bold px-8 py-3.5 rounded-[var(--radius-md)] hover:scale-105 hover:shadow-[0_0_25px_var(--color-brand-glow)] transition-all duration-200 text-sm uppercase tracking-wider font-heading"
           >
-            <span>Proceed to KonfHub Portal</span>
+            <span>Register Now</span>
             <ArrowRight className="w-4 h-4" />
           </a>
           
@@ -165,9 +201,9 @@ export function Register() {
           </ScrollLink>
         </Reveal>
 
-        {/* Powered by KonfHub footnote */}
+        {/* Registration footnote */}
         <Reveal className="text-[10px] sm:text-xs font-semibold tracking-widest text-white/60 uppercase">
-          * Official registrations and ticketing powered by KonfHub. Prices subject to 3.75% platform fee at checkout.
+          * Paid ticket prices are subject to an additional 3.75% platform fee at checkout. Free events register directly.
         </Reveal>
       </div>
     </section>

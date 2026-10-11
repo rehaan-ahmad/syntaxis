@@ -244,7 +244,7 @@ export function Navbar({ className, ...props }: React.HTMLAttributes<HTMLElement
                     className="flex items-center justify-center gap-2 p-3 rounded-lg bg-[var(--color-brand)] text-[var(--color-bg)] font-bold text-sm mt-2 shadow-[0_0_15px_var(--color-brand-glow)]"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
-                    <span>Register on KonfHub</span>
+                    <span>Register Now</span>
                     <ArrowUpRight className="w-4 h-4" />
                   </a>
                 </div>

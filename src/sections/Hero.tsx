@@ -37,32 +37,45 @@ export function Hero() {
         animate="animate"
         className="w-full max-w-6xl mx-auto text-center flex flex-col items-center gap-6 sm:gap-8"
       >
-        {/* Top Header Logos Bar (Top of Page) */}
+        {/* Top Header Logos Bar: College Logo on Top-Left, NAAC Logo on Top-Right */}
         <motion.div
           variants={itemVariants}
-          className="w-full max-w-6xl mx-auto px-2 sm:px-6 mb-4 flex flex-col items-center gap-4"
+          className="w-full max-w-6xl mx-auto px-2 sm:px-6 mb-2 flex items-center justify-between gap-4"
         >
-          {/* Banner Image */}
-          <img
-            src={`${import.meta.env.BASE_URL}assets/logo/college-banner.png`}
-            alt="College Banner"
-            className="w-full max-h-48 object-contain hover:scale-105 transition-transform drop-shadow-md"
-          />
+          {/* Top-Left: College Logo */}
+          <div className="flex items-center justify-start">
+            <img
+              src={`${import.meta.env.BASE_URL}assets/logo/college-logo.png`}
+              alt="R.D. Engineering College Logo"
+              className="h-12 sm:h-16 md:h-20 w-auto object-contain hover:scale-105 transition-transform drop-shadow-md"
+            />
+          </div>
 
-          {/* Centered Syntaxis Logo below banner */}
+          {/* Top-Right: NAAC Logo */}
+          <div className="flex items-center justify-end">
+            <img
+              src={`${import.meta.env.BASE_URL}assets/logo/naac-logo.png`}
+              alt="NAAC Accreditation Logo"
+              className="h-12 sm:h-16 md:h-20 w-auto object-contain hover:scale-105 transition-transform drop-shadow-md"
+            />
+          </div>
+        </motion.div>
+
+        {/* Centered Syntaxis Logo */}
+        <motion.div variants={itemVariants} className="flex justify-center items-center my-1 sm:my-2">
           <img
             src={`${import.meta.env.BASE_URL}assets/logo/syntaxis-logo.png`}
             alt="Syntaxis Logo"
-            className="h-36 sm:h-72 md:h-96 w-auto object-contain hover:scale-105 transition-transform"
+            className="h-28 sm:h-48 md:h-64 w-auto object-contain hover:scale-105 transition-transform drop-shadow-2xl"
           />
         </motion.div>
 
         {/* Fest Title */}
         <motion.div variants={itemVariants} className="flex flex-col items-center">
-          <h1 className="text-6xl sm:text-7xl md:text-8xl font-black tracking-widest text-[var(--color-text-pri)] font-heading leading-none drop-shadow-lg">
+          <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-widest text-[var(--color-text-pri)] font-heading leading-none drop-shadow-lg text-center">
             SYNTAXIS
           </h1>
-          <span className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-[0.25em] text-[var(--color-brand)] font-heading mt-2 drop-shadow-[0_0_15px_var(--color-brand-glow)]">
+          <span className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-[0.25em] text-[var(--color-brand)] font-heading mt-2 drop-shadow-[0_0_15px_var(--color-brand-glow)] text-center">
             2026
           </span>
         </motion.div>

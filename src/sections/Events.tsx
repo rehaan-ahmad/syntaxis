@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { ExternalLink, Download, AlertCircle } from 'lucide-react';
 import clsx from 'clsx';
 import SectionHeading from '../components/ui/SectionHeading';
 import Card from '../components/ui/Card';
@@ -11,7 +12,7 @@ import { SECTION_IDS, EXTERNAL_LINKS } from '../lib/constants';
 
 export interface EventItem {
   title: string;
-  category: 'Technical' | 'Non-Technical' | 'Workshop' | 'Open';
+  category: 'Technical' | 'Non-Technical' | 'Workshop' | 'Games';
   description: string;
   teamSize: string;
   prizePool: string;
@@ -21,10 +22,11 @@ export interface EventItem {
   widgetUrl?: string;
   tallyId?: string;
   registrationUrl?: string;
+  hasConsentForm?: boolean;
 }
 
 export function Events() {
-  const [activeFilter, setActiveFilter] = useState<'All' | 'Technical' | 'Non-Technical' | 'Workshop' | 'Open'>('All');
+  const [activeFilter, setActiveFilter] = useState<'All' | 'Technical' | 'Non-Technical' | 'Workshop' | 'Games'>('All');
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -62,25 +64,26 @@ export function Events() {
     {
       title: 'Archithon (Hackathon)',
       category: 'Technical',
-      description: 'The flagship 24-hour architecture and software development hackathon, featuring live mentorship, overnight campus stay, Pythia Expo project showcase, and The Tribunal grand jury defense.',
+      description: 'The flagship 24-hour architecture and software development hackathon, featuring live mentorship, overnight campus stay, and The Tribunal grand jury defense.',
       teamSize: '2–4 Members',
       prizePool: 'Rs. 20,000',
       price: 'Rs. 800',
       image: `${import.meta.env.BASE_URL}assets/events/placeholder-event.svg`,
       widgetUrl: 'https://konfhub.com/widget/id/98f627ba-8118-4419-ae24-ef1d0d3edf0f',
-      registrationUrl: EXTERNAL_LINKS.konfhub
+      registrationUrl: EXTERNAL_LINKS.konfhub,
+      hasConsentForm: true
     },
     {
       title: 'Genesis Track',
       category: 'Technical',
-      description: 'Curated exclusively for school students in classes 9 to 12. Includes the Eureka Pitch automation competition across Day 2 and Day 3, plus Pythia Expo scientific prototyping.',
+      description: 'Curated exclusively for school students in classes 9 to 12. Held on Day 2 only, featuring Eureka Pitch. Top 3 teams invited on Day 3 for prize distribution (certificates & perks).',
       teamSize: '2–3 Students',
-      prizePool: 'Trophies & Mentorship',
+      prizePool: 'Certificates & Perks',
       price: 'Free',
       image: `${import.meta.env.BASE_URL}assets/events/placeholder-genesis.svg`,
       isGenesis: true,
       tallyId: 'xXeyrr',
-      registrationUrl: EXTERNAL_LINKS.konfhub
+      registrationUrl: 'https://tally.so/r/xXeyrr'
     },
     {
       title: 'Rhesis',
@@ -91,18 +94,18 @@ export function Events() {
       price: 'Free',
       image: `${import.meta.env.BASE_URL}assets/events/placeholder-event.svg`,
       tallyId: '9qz8j5',
-      registrationUrl: EXTERNAL_LINKS.konfhub
+      registrationUrl: 'https://tally.so/r/9qz8j5'
     },
     {
       title: 'Pantheon Games',
-      category: 'Open',
-      description: 'High-stakes mobile esports arena tournament featuring BGMI and FreeFire Max squad championship matches. Battle for gaming glory, in-game currency, and vouchers.',
+      category: 'Games',
+      description: 'High-stakes mobile esports arena tournament featuring Free Fire Max squad championship matches. Battle for gaming glory, in-game diamonds, and vouchers. 100% free registration.',
       teamSize: 'Squad (4 Players)',
-      prizePool: 'Currency + Vouchers',
-      price: 'Rs. 200',
+      prizePool: 'Diamonds + Vouchers',
+      price: 'Free',
       image: `${import.meta.env.BASE_URL}assets/events/placeholder-event.svg`,
-      widgetUrl: 'https://konfhub.com/widget/id/d99341d8-ab71-480c-a55d-437613be6466',
-      registrationUrl: EXTERNAL_LINKS.konfhub
+      tallyId: 'Y5EYWN',
+      registrationUrl: 'https://tally.so/r/Y5EYWN'
     }
   ];
 
@@ -110,8 +113,8 @@ export function Events() {
     ? eventList
     : eventList.filter(item => item.category === activeFilter);
 
-  const filters: ('All' | 'Technical' | 'Non-Technical' | 'Workshop' | 'Open')[] = [
-    'All', 'Technical', 'Non-Technical', 'Workshop', 'Open'
+  const filters: ('All' | 'Technical' | 'Non-Technical' | 'Workshop' | 'Games')[] = [
+    'All', 'Technical', 'Non-Technical', 'Workshop', 'Games'
   ];
 
   const cardVariants = {
@@ -140,7 +143,7 @@ export function Events() {
             key={filter}
             onClick={() => setActiveFilter(filter)}
             className={clsx(
-              "px-4 py-2 text-xs sm:text-sm font-semibold rounded-[var(--radius-md)] border transition-all duration-200 cursor-pointer outline-none",
+              "px-4 py-2 text-xs sm:text-sm font-semibold rounded-[var(--radius-md)] border transition-all duration-200 cursor-pointer outline-none uppercase font-heading",
               activeFilter === filter
                 ? "bg-[var(--color-accent)] text-[var(--color-text-pri)] border-[var(--color-accent)] shadow-md"
                 : "border-[var(--color-text-sec)]/50 text-[var(--color-text-sec)] hover:border-[var(--color-brand)] hover:text-[var(--color-text-pri)]"
@@ -171,7 +174,7 @@ export function Events() {
                 className="h-full flex flex-col"
               >
                 <Card className="h-full flex flex-col justify-between p-0 overflow-hidden border border-[var(--color-border)] hover:border-[var(--color-border-gold)] transition-colors duration-300">
-                  {/* Event banner image — 16:9 landscape or 4:3 for Genesis Track */}
+                  {/* Event banner image */}
                   <div className={clsx(
                     "relative w-full overflow-hidden bg-[var(--color-bg)]",
                     event.isGenesis ? "aspect-[4/3]" : "aspect-video"
@@ -204,31 +207,65 @@ export function Events() {
                       </p>
                     </div>
 
-                    {/* Metadata items & Button */}
-                    <div className="flex flex-col gap-4 mt-auto">
+                    {/* Metadata items, Consent Box & Buttons */}
+                    <div className="flex flex-col gap-3 mt-auto">
                       <div className="flex justify-between items-center text-[10px] text-[var(--color-text-sec)] font-bold tracking-wider border-t border-[var(--color-border)] pt-3">
                         <span>TEAM SIZE: {event.teamSize}</span>
                         <span>PRIZE: {event.prizePool}</span>
                       </div>
+
+                      {/* Archithon Mandatory Consent Form Action */}
+                      {event.hasConsentForm && (
+                        <div className="p-2.5 rounded-[var(--radius-md)] bg-[#191613] border border-[var(--color-border-gold)] flex flex-col gap-1.5 text-[10px]">
+                          <div className="flex items-center gap-1.5 text-[var(--color-brand)] font-bold font-mono">
+                            <AlertCircle className="w-3.5 h-3.5 shrink-0" />
+                            <span>MANDATORY CONSENT LETTER</span>
+                          </div>
+                          <p className="text-[10px] text-[#cdbbad] leading-tight">
+                            Download, sign, and email in a single PDF to <strong className="text-white underline">syntaxis@rdec.in</strong>.
+                          </p>
+                          <a
+                            href={`${import.meta.env.BASE_URL}docs/archithon-consent.html`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="mt-1 flex items-center justify-center gap-1.5 py-1.5 px-3 rounded border border-[var(--color-border-gold)] text-[var(--color-brand)] hover:bg-[var(--color-brand)] hover:text-[var(--color-bg)] transition-all font-heading font-semibold tracking-wider text-[10px] uppercase"
+                          >
+                            <Download className="w-3 h-3" />
+                            <span>Download Consent Letter</span>
+                          </a>
+                        </div>
+                      )}
                       
                       {event.tallyId ? (
-                        <button 
-                          type="button"
-                          data-tally-open={event.tallyId}
-                          data-tally-layout="modal"
-                          data-tally-width="500"
-                          data-tally-emoji-text="👋"
-                          data-tally-emoji-animation="wave"
-                          onClick={() => event.tallyId && openTallyModal(event.tallyId)}
-                          className="w-full py-2.5 text-center text-xs font-bold text-[var(--color-bg)] bg-[var(--color-brand)] rounded-[var(--radius-md)] hover:scale-[1.02] hover:shadow-[0_0_15px_var(--color-brand-glow)] transition-all duration-200 cursor-pointer"
-                        >
-                          Register for Free
-                        </button>
+                        <div className="flex items-center gap-2 w-full">
+                          <button 
+                            type="button"
+                            data-tally-open={event.tallyId}
+                            data-tally-layout="modal"
+                            data-tally-width="500"
+                            data-tally-emoji-text="👋"
+                            data-tally-emoji-animation="wave"
+                            onClick={() => event.tallyId && openTallyModal(event.tallyId)}
+                            className="flex-1 py-2.5 text-center text-xs font-bold text-[var(--color-bg)] bg-[var(--color-brand)] rounded-[var(--radius-md)] hover:scale-[1.02] hover:shadow-[0_0_15px_var(--color-brand-glow)] transition-all duration-200 cursor-pointer font-heading uppercase"
+                          >
+                            Register for Free
+                          </button>
+                          <a
+                            href={`https://tally.so/r/${event.tallyId}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            title="Open form in new tab"
+                            className="p-2.5 rounded-[var(--radius-md)] border border-[var(--color-border-gold)] bg-[var(--color-bg-glass)] text-[var(--color-brand)] hover:bg-[var(--color-brand)] hover:text-[var(--color-bg)] transition-all cursor-pointer flex items-center justify-center"
+                            aria-label={`Open ${event.title} form in new tab`}
+                          >
+                            <ExternalLink className="w-4 h-4" />
+                          </a>
+                        </div>
                       ) : event.widgetUrl ? (
                         <button 
                           type="button"
                           onClick={() => event.widgetUrl && openTicketWidget(event.widgetUrl, event.title)}
-                          className="w-full py-2.5 text-center text-xs font-bold text-[var(--color-bg)] bg-[var(--color-brand)] rounded-[var(--radius-md)] hover:scale-[1.02] hover:shadow-[0_0_15px_var(--color-brand-glow)] transition-all duration-200 cursor-pointer"
+                          className="w-full py-2.5 text-center text-xs font-bold text-[var(--color-bg)] bg-[var(--color-brand)] rounded-[var(--radius-md)] hover:scale-[1.02] hover:shadow-[0_0_15px_var(--color-brand-glow)] transition-all duration-200 cursor-pointer font-heading uppercase"
                         >
                           Get Ticket ({event.price})
                         </button>
@@ -237,7 +274,7 @@ export function Events() {
                           href={event.registrationUrl || EXTERNAL_LINKS.konfhub}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="w-full py-2.5 text-center text-xs font-bold text-[var(--color-bg)] bg-[var(--color-brand)] rounded-[var(--radius-md)] hover:scale-[1.02] hover:shadow-[0_0_15px_var(--color-brand-glow)] transition-all duration-200"
+                          className="w-full py-2.5 text-center text-xs font-bold text-[var(--color-bg)] bg-[var(--color-brand)] rounded-[var(--radius-md)] hover:scale-[1.02] hover:shadow-[0_0_15px_var(--color-brand-glow)] transition-all duration-200 font-heading uppercase"
                         >
                           Register Here
                         </a>

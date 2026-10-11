@@ -17,11 +17,12 @@ export const SECTION_IDS = {
 } as const
 
 export const EXTERNAL_LINKS = {
-  konfhub:    'https://konfhub.com/syntaxis-2026',
-  college:    'https://rdec.ac.in',
-  instagram:  'https://www.instagram.com/rdengineeringcollege/',
-  linkedin:   'https://www.linkedin.com/company/rd-engineering-college/',
-  email:      'mailto:syntaxis@rdec.in',
+  konfhub:      'https://konfhub.com/syntaxis-2026',
+  college:      'https://rdec.ac.in',
+  instagram:    'https://www.instagram.com/rdengineeringcollege/',
+  linkedin:     'https://www.linkedin.com/company/rd-engineering-college/',
+  email:        'mailto:syntaxis@rdec.in',
+  genesisEmail: 'mailto:rehaan24ai077@rdec.in',
 }
 
 export const FEST_INFO = {
@@ -34,9 +35,10 @@ export const FEST_INFO = {
 }
 
 export const TALLY_FORMS = {
-  genesis: 'xXeyrr',
-  rhesis: '9qz8j5',
-  contact: 'ZjBZro',
+  genesis:  'xXeyrr',
+  rhesis:   '9qz8j5',
+  pantheon: 'Y5EYWN',
+  contact:  'ZjBZro',
 } as const;
 
 export const PASS_PRICES = {
@@ -80,13 +82,13 @@ export const PASS_PRICES = {
     {
       id: 'pantheon-games',
       title: 'Pantheon Games',
-      price: 'Rs. 200',
-      badge: 'Esports Arena',
+      price: 'Free',
+      badge: 'Esports Arena (Free Fire)',
       popular: false,
-      prizePool: 'In-Game Currency + Vouchers',
-      description: 'Pantheon mobile esports tournament arena entry for BGMI & FreeFire Max squads. Win in-game currency and sponsor vouchers.',
-      widgetUrl: 'https://konfhub.com/widget/id/d99341d8-ab71-480c-a55d-437613be6466',
-      isFree: false
+      prizePool: 'In-Game Diamonds + Vouchers',
+      description: 'Pantheon mobile esports tournament arena entry for Free Fire squads. Free entry — win in-game currency and sponsor vouchers.',
+      tallyId: 'Y5EYWN',
+      isFree: true
     },
     {
       id: 'genesis-track',
@@ -94,8 +96,8 @@ export const PASS_PRICES = {
       price: 'Free',
       badge: 'School Program (9–12)',
       popular: false,
-      prizePool: 'Trophies & Mentorship',
-      description: 'Exclusive school outreach wing including Eureka Pitch and Pythia Expo exhibition for school students.',
+      prizePool: 'Certificates & Perks',
+      description: 'Exclusive school outreach wing organized on Day 2 only. Top 3 finalists invited with Principal & Parents on Day 3 for prize distribution.',
       tallyId: 'xXeyrr',
       isFree: true
     },

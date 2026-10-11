@@ -2,7 +2,7 @@ import { useState, useEffect, useCallback } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
 import { motion } from 'framer-motion';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight, ExternalLink, Download } from 'lucide-react';
 import clsx from 'clsx';
 
 import { openTicketWidget } from '../ui/KonfHubModal';
@@ -20,7 +20,7 @@ export interface EventCarouselProps {
     widgetUrl?: string;
     tallyId?: string;
     registrationUrl?: string;
-    pragmaUrl?: string;
+    hasConsentForm?: boolean;
   }[];
   autoplay?: boolean;
   loop?: boolean;
@@ -112,33 +112,57 @@ export function EventCarousel({
                       <span>PRIZE: {event.prizePool}</span>
                     </div>
 
-                    {event.tallyId ? (
-                      <button
-                        type="button"
-                        data-tally-open={event.tallyId}
-                        data-tally-layout="modal"
-                        data-tally-width="500"
-                        data-tally-emoji-text="👋"
-                        data-tally-emoji-animation="wave"
-                        onClick={() => event.tallyId && openTallyModal(event.tallyId)}
-                        className="mt-4 w-full py-2.5 text-center text-xs font-semibold text-[var(--color-bg)] bg-[var(--color-brand)] rounded-[var(--radius-md)] hover:scale-[1.02] transition-transform duration-200 cursor-pointer"
+                    {event.hasConsentForm && (
+                      <a
+                        href={`${import.meta.env.BASE_URL}docs/archithon-consent.html`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="mt-2 flex items-center justify-center gap-1.5 py-1.5 px-3 rounded border border-[var(--color-border-gold)] text-[var(--color-brand)] hover:bg-[var(--color-brand)] hover:text-[var(--color-bg)] transition-all font-heading font-semibold text-[10px] uppercase"
                       >
-                        Register for Free
-                      </button>
+                        <Download className="w-3 h-3" />
+                        <span>Consent Letter (syntaxis@rdec.in)</span>
+                      </a>
+                    )}
+
+                    {event.tallyId ? (
+                      <div className="mt-3 flex items-center gap-2">
+                        <button
+                          type="button"
+                          data-tally-open={event.tallyId}
+                          data-tally-layout="modal"
+                          data-tally-width="500"
+                          data-tally-emoji-text="👋"
+                          data-tally-emoji-animation="wave"
+                          onClick={() => event.tallyId && openTallyModal(event.tallyId)}
+                          className="flex-1 py-2.5 text-center text-xs font-semibold text-[var(--color-bg)] bg-[var(--color-brand)] rounded-[var(--radius-md)] hover:scale-[1.02] transition-transform duration-200 cursor-pointer font-heading uppercase"
+                        >
+                          Register for Free
+                        </button>
+                        <a
+                          href={`https://tally.so/r/${event.tallyId}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          title="Open form in new tab"
+                          className="p-2.5 rounded-[var(--radius-md)] border border-[var(--color-border-gold)] bg-[var(--color-bg-glass)] text-[var(--color-brand)] hover:bg-[var(--color-brand)] hover:text-[var(--color-bg)] transition-all cursor-pointer flex items-center justify-center"
+                          aria-label={`Open ${event.title} in new tab`}
+                        >
+                          <ExternalLink className="w-4 h-4" />
+                        </a>
+                      </div>
                     ) : event.widgetUrl ? (
                       <button
                         type="button"
                         onClick={() => event.widgetUrl && openTicketWidget(event.widgetUrl, event.title)}
-                        className="mt-4 w-full py-2.5 text-center text-xs font-semibold text-[var(--color-bg)] bg-[var(--color-brand)] rounded-[var(--radius-md)] hover:scale-[1.02] transition-transform duration-200 cursor-pointer"
+                        className="mt-4 w-full py-2.5 text-center text-xs font-semibold text-[var(--color-bg)] bg-[var(--color-brand)] rounded-[var(--radius-md)] hover:scale-[1.02] transition-transform duration-200 cursor-pointer font-heading uppercase"
                       >
                         Get Ticket ({event.price || 'Register'})
                       </button>
                     ) : (
                       <a
-                        href={event.registrationUrl || event.pragmaUrl || 'https://konfhub.com/syntaxis-2026'}
+                        href={event.registrationUrl || 'https://konfhub.com/syntaxis-2026'}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="mt-4 w-full py-2.5 text-center text-xs font-semibold text-[var(--color-bg)] bg-[var(--color-brand)] rounded-[var(--radius-md)] hover:scale-[1.02] transition-transform duration-200"
+                        className="mt-4 w-full py-2.5 text-center text-xs font-semibold text-[var(--color-bg)] bg-[var(--color-brand)] rounded-[var(--radius-md)] hover:scale-[1.02] transition-transform duration-200 font-heading uppercase"
                       >
                         Register Here
                       </a>
