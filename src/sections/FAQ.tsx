@@ -16,7 +16,7 @@ export function FAQ() {
     },
     {
       question: 'Are Meals Provided During Lunch Breaks?',
-      answer: "Meals are not provided by the management during lunch breaks. However, a wide variety of food, snacks, and beverages are available for purchase from authorized campus vendors and food stalls available throughout all 3 days."
+      answer: "Meals can be provided, subject to an additional payment made on the same day directly to the vendor / food partner. Additionally, a wide variety of food, snacks, and beverages are available for purchase from authorized campus vendors and food stalls throughout all 3 days."
     },
     {
       question: 'How to Register?',
