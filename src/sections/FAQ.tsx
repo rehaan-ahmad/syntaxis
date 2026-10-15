@@ -1,7 +1,8 @@
+import { ExternalLink } from 'lucide-react';
 import SectionHeading from '../components/ui/SectionHeading';
 import Accordion from '../components/ui/Accordion';
 import Reveal from '../components/ui/Reveal';
-import { SECTION_IDS } from '../lib/constants';
+import { SECTION_IDS, EXTERNAL_LINKS } from '../lib/constants';
 
 export function FAQ() {
   const faqItems = [
@@ -11,7 +12,7 @@ export function FAQ() {
     },
     {
       question: 'What is the Device Policy for Tech Events?',
-      answer: "All technical events strictly follow a Bring Your Own Device (BYOD) policy. Participants must bring their own laptops, chargers, and development tools. Please note that intermittent Wi-Fi will be provided on campus, so participants are strongly advised to keep their mobile hotspots or personal data connections ready as backup. Power charging points and extension boards will be provided by the organizers."
+      answer: "All technical events strictly follow a Bring Your Own Device (BYOD) policy. Participants must bring their own laptops, chargers, and development tools. Please note that the college cannot guarantee the availability of Wi-Fi due to multiple venues requiring it across campus, so participants are strongly advised to keep their mobile hotspots or personal data connections ready as a backup. Power charging points and extension boards will be provided by the organizers."
     },
     {
       question: 'Are Meals Provided During Lunch Breaks?',
@@ -23,7 +24,7 @@ export function FAQ() {
     },
     {
       question: 'Is There a Registration Fee?',
-      answer: "Competitive packages (Contest Package, Archithon Hackathon) and technical workshops (Techne) are ticketed on KonfHub, while events like Genesis Track, Rhesis discourses, and Pantheon Games (Free Fire) are completely free to register."
+      answer: "Competitive packages (Contest Package, Archithon Hackathon), technical workshops (Techne), and esports tournament passes (Pantheon Games) are ticketed on KonfHub, while community events like Genesis Track and Rhesis discourses are completely free to register."
     },
     {
       question: 'Can Outstation Participants Join?',
@@ -39,7 +40,20 @@ export function FAQ() {
     },
     {
       question: 'Where is RDEC Located?',
-      answer: 'R.D. Engineering College (RDEC) is located in Duhai, Ghaziabad, NCR.'
+      answer: (
+        <span>
+          R.D. Engineering College (RDEC) is located on Delhi-Meerut Expressway, Duhai, Ghaziabad, Uttar Pradesh, NCR.{' '}
+          <a
+            href={EXTERNAL_LINKS.rdecGmaps}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1 text-[var(--color-brand)] font-semibold underline hover:text-[var(--color-text-pri)] transition-colors ml-1"
+          >
+            <span>Open in Google Maps</span>
+            <ExternalLink className="w-3.5 h-3.5 inline" />
+          </a>
+        </span>
+      )
     },
     {
       question: 'When Will Winners Be Announced?',

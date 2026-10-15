@@ -23,6 +23,7 @@ export const EXTERNAL_LINKS = {
   linkedin:     'https://www.linkedin.com/company/rd-engineering-college/',
   email:        'mailto:syntaxis@rdec.in',
   genesisEmail: 'mailto:rehaan24ai077@rdec.in',
+  rdecGmaps:    'https://maps.app.goo.gl/PEvYLJkc59h9BBZg7',
 }
 
 export const FEST_INFO = {
@@ -37,7 +38,6 @@ export const FEST_INFO = {
 export const TALLY_FORMS = {
   genesis:  'xXeyrr',
   rhesis:   '9qz8j5',
-  pantheon: 'Y5EYWN',
   contact:  'ZjBZro',
 } as const;
 
@@ -82,13 +82,13 @@ export const PASS_PRICES = {
     {
       id: 'pantheon-games',
       title: 'Pantheon Games',
-      price: 'Free',
+      price: 'Rs. 200',
       badge: 'Esports Arena (Free Fire)',
       popular: false,
       prizePool: 'In-Game Diamonds + Vouchers',
-      description: 'Pantheon mobile esports tournament arena entry for Free Fire squads. Free entry — win in-game currency and sponsor vouchers.',
-      tallyId: 'Y5EYWN',
-      isFree: true
+      description: 'Pantheon mobile esports tournament arena entry for Free Fire squads. Battle for gaming prestige, diamonds, and sponsor vouchers.',
+      widgetUrl: 'https://konfhub.com/widget/id/a1d6c4f0-668d-4719-a7c1-06cdb3c75012',
+      isFree: false
     },
     {
       id: 'genesis-track',

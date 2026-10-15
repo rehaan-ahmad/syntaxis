@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
 import clsx from 'clsx';
@@ -6,7 +6,7 @@ import clsx from 'clsx';
 export interface AccordionItemProps {
   id: string | number;
   question: string;
-  answer: string;
+  answer: React.ReactNode;
   isOpen: boolean;
   onToggle: () => void;
 }
@@ -47,7 +47,7 @@ export function AccordionItem({ question, answer, isOpen, onToggle }: AccordionI
 }
 
 export interface AccordionProps {
-  items: { question: string; answer: string }[];
+  items: { question: string; answer: React.ReactNode }[];
 }
 
 export function Accordion({ items }: AccordionProps) {
