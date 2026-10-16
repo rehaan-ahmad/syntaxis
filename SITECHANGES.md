@@ -22,12 +22,12 @@
 8. In the Hackathon section, I need to provide an option to download a consent letter, which needs to be filled, printed, and submitted via mail. All the team members have to fill it, and send it attached in a single email to "syntaxis@rdec.in"
 9. The Pantheon Games now contains only Free Fire, and is free. Hence, integrate this form for it instead of the KonfHub widget: Paste this HTML code snippet on the page where you want the embed to appear.
 
-<iframe data-tally-src="https://tally.so/embed/Y5EYWN?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="500" frameborder="0" marginheight="0" marginwidth="0" title="Pantheon Games Registration"></iframe>
+<iframe data-tally-src="https://tally.so/embed/1WPJAb?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="500" frameborder="0" marginheight="0" marginwidth="0" title="Pantheon Games Registration"></iframe>
 <script>var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}</script>
 
 Alternatively, simply paste this embed link in the editor of a no-code tool (Notion, Ghost, Canva, etc). To enable dynamic height, you will also need to include the script tag in the <head> section of your website.
 
-https://tally.so/embed/Y5EYWN?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1
+https://tally.so/embed/1WPJAb?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1
 
 <script async src="https://tally.so/widgets/embed.js"></script>
 

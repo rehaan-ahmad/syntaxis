@@ -38,6 +38,7 @@ export const FEST_INFO = {
 export const TALLY_FORMS = {
   genesis:  'xXeyrr',
   rhesis:   '9qz8j5',
+  pantheon: '1WPJAb',
   contact:  'ZjBZro',
 } as const;
 
@@ -82,13 +83,13 @@ export const PASS_PRICES = {
     {
       id: 'pantheon-games',
       title: 'Pantheon Games',
-      price: 'Rs. 200',
+      price: 'Free',
       badge: 'Esports Arena (Free Fire)',
       popular: false,
       prizePool: 'In-Game Diamonds + Vouchers',
-      description: 'Pantheon mobile esports tournament arena entry for Free Fire squads. Battle for gaming prestige, diamonds, and sponsor vouchers.',
-      widgetUrl: 'https://konfhub.com/widget/id/a1d6c4f0-668d-4719-a7c1-06cdb3c75012',
-      isFree: false
+      description: 'Pantheon mobile esports tournament arena entry for Free Fire squads. 100% free registration — battle for gaming prestige, diamonds, and sponsor vouchers.',
+      tallyId: '1WPJAb',
+      isFree: true
     },
     {
       id: 'genesis-track',

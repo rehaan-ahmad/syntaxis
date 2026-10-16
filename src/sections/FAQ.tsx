@@ -24,7 +24,7 @@ export function FAQ() {
     },
     {
       question: 'Is There a Registration Fee?',
-      answer: "Competitive packages (Contest Package, Archithon Hackathon), technical workshops (Techne), and esports tournament passes (Pantheon Games) are ticketed on KonfHub, while community events like Genesis Track and Rhesis discourses are completely free to register."
+      answer: "Competitive packages (Contest Package, Archithon Hackathon) and technical workshops (Techne) are ticketed on KonfHub, while events like Genesis Track, Rhesis discourses, and Pantheon Games (Free Fire) are completely free to register."
     },
     {
       question: 'Can Outstation Participants Join?',

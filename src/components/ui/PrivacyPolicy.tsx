@@ -152,7 +152,7 @@ export function PrivacyPolicy({ onBack }: PrivacyPolicyProps) {
             </p>
             <ul className="text-xs sm:text-sm text-[var(--color-text-body)] list-disc list-inside space-y-1.5 ml-2">
               <li><strong>No Financial Data Stored:</strong> SYNTAXIS and RDEC do not collect, view, or store payment card numbers, UPI PINs, or net banking credentials. Transactions are handled entirely through RBI-compliant, PCI-DSS certified payment gateways integrated by KonfHub.</li>
-              <li><strong>Free Events:</strong> Events designated as Free (Genesis Track, Rhesis Keynotes) collect registration data via secure Tally forms without requiring payment details.</li>
+              <li><strong>Free Events:</strong> Events designated as Free (Genesis Track, Rhesis Keynotes, Pantheon Games) collect registration data via secure Tally forms without requiring payment details.</li>
             </ul>
           </section>
 

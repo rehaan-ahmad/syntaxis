@@ -108,7 +108,7 @@ export function Schedule() {
           title: 'Pantheon Games',
           discipline: 'Mobile Esports (Free Fire Max Squads)',
           venue: 'Third Floor, A-Block',
-          notes: 'Squad arena tournament showdown for Free Fire Max. Compete for gaming prestige, in-game diamonds, and vouchers.',
+          notes: 'Squad arena tournament showdown for Free Fire Max. 100% free registration — compete for gaming prestige, in-game diamonds, and vouchers.',
           category: 'esports'
         },
         {

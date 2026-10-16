@@ -99,13 +99,13 @@ export function Events() {
     {
       title: 'Pantheon Games',
       category: 'Games',
-      description: 'High-stakes mobile esports arena tournament featuring Free Fire Max squad championship matches. Battle for gaming glory, in-game diamonds, and vouchers.',
+      description: 'High-stakes mobile esports arena tournament featuring Free Fire Max squad championship matches. Battle for gaming glory, in-game diamonds, and vouchers. 100% free registration.',
       teamSize: 'Squad (4 Players)',
       prizePool: 'Diamonds + Vouchers',
-      price: 'Rs. 200',
+      price: 'Free',
       image: `${import.meta.env.BASE_URL}assets/events/placeholder-event.svg`,
-      widgetUrl: 'https://konfhub.com/widget/id/a1d6c4f0-668d-4719-a7c1-06cdb3c75012',
-      registrationUrl: EXTERNAL_LINKS.konfhub
+      tallyId: '1WPJAb',
+      registrationUrl: 'https://tally.so/r/1WPJAb'
     }
   ];
 
