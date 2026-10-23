@@ -9,7 +9,7 @@
 
 **R.D. Engineering College (RDEC), Ghaziabad**
 
-**September 18 – 20, 2026**
+**October 29 - 31, 2026**
 
 [![Build Status](https://img.shields.io/badge/build-passing-brightgreen?style=flat-square)](https://github.com/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-6.0-3178C6?style=flat-square&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
