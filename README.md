@@ -30,7 +30,7 @@
 
 ## ✨ Overview
 
-**Syntaxis 2026** is the flagship tech fest of R.D. Engineering College, organized by the **Nexora Tech Club**. This repository contains the official event website — a high-performance single-page application featuring an immersive WebGL plasma background, glass morphism UI, Framer Motion animations, and a fully responsive design.
+**Syntaxis 2026** is the flagship tech fest of R.D. Engineering College. This repository contains the official event website — a high-performance single-page application featuring an immersive WebGL plasma background, glass morphism UI, Framer Motion animations, and a fully responsive design.
 
 > *"Syntaxis" — from the Greek root meaning order, arrangement, and systematic coordination.*
 
@@ -253,9 +253,9 @@ Before going live, update the following placeholders in `constants.ts`:
 
 | Day | Date | Highlights |
 |-----|------|------------|
-| **Day 1** | Sep 18 | Inauguration, Syndesis Workshop, Logika DSA Workshop, Rhesis Talks |
-| **Day 2** | Sep 19 | Heureka, Agon CP Contest, Katharsis Debug Duel, Pantheon Games |
-| **Day 3** | Sep 20 | Genesis Track, Pythia Expo, Eureka Pitch Finals, Tribunal, Valediction |
+| **Day 1** | Oct 29 | Inauguration, Syndesis Workshop, Logika DSA Workshop, Rhesis Talks |
+| **Day 2** | Oct 30 | Heureka, Agon CP Contest, Katharsis Debug Duel, Pantheon Games |
+| **Day 3** | Oct 31 | Genesis Track, Pythia Expo, Eureka Pitch Finals, Tribunal, Valediction |
 
 ---
 
@@ -264,26 +264,25 @@ Before going live, update the following placeholders in `constants.ts`:
 | Member | Role |
 |--------|------|
 | **Rehaan Ahmad** | Technical Director |
+| **Diya Sharma** | Organizing Lead |
 | **Anurag Kumar** | Operations Director |
-| **Palak Tyagi** | Executive Director |
 | **Priyanshi Garg** | Marketing Head |
 | **Prabhati Pandey** | Creative Head |
 | **Priya Sharma** | Documentation Head |
+| **Palak Tyagi** | Executive Director |
 
-> Organized by **Nexora Tech Club** & **GFG Student Community** — RDEC
 
 ---
 
 ## 📄 License
 
-This project is **UNLICENSED** — proprietary to R.D. Engineering College. All rights reserved.
+This project is **UNLICENSED** — proprietary to Rehaan Ahmad. All rights reserved.
 
 ---
 
 <div align="center">
 
-**Built with ❤️ by the Nexora Tech Club**
+**Built with 🤍 by Rehaan Ahmad**
 
-*R.D. Engineering College, Ghaziabad*
 
 </div>
