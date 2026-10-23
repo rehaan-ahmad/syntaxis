@@ -282,13 +282,13 @@ server {
 
 ## 📄 License
 
-This project is **UNLICENSED** — proprietary to Rehaan Ahmad and R.D. Engineering College. All rights reserved.
+This project is **UNLICENSED** — proprietary to Rehaan Ahmad. All rights reserved.
 
 ---
 
 <div align="center">
 
-**Built with 🤍 by Rehaan Ahmad & the Syntaxis 2026 Organizing Team**  
+**Built with 🤍 by Rehaan Ahmad**  
 *R.D. Engineering College, Delhi-Meerut Expressway, Ghaziabad*
 
 </div>
