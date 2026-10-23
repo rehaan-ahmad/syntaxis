@@ -55,7 +55,7 @@ export function Sponsors() {
           <RevealCountdown
             targetDate={REVEAL_DATE}
             label="Partner Reveal In"
-            revealText="Classified Partner Roster • Unveiling October 20, 2026"
+            revealText="Classified Partner Roster • Unveiling October 25, 2026 • 23:59 IST"
           />
         ) : (
           <div className="flex flex-col gap-12 w-full">

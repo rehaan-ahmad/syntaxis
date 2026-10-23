@@ -4,11 +4,9 @@ import CountdownTimer from '../components/ui/CountdownTimer';
 import Reveal from '../components/ui/Reveal';
 import { openTicketWidget } from '../components/ui/KonfHubModal';
 import { openTallyModal } from '../lib/tally';
-import { SECTION_IDS, EXTERNAL_LINKS, FEST_INFO, REVEAL_DATE, PASS_PRICES } from '../lib/constants';
-import { useIsRevealed } from '../hooks/useCountdown';
+import { SECTION_IDS, EXTERNAL_LINKS, FEST_INFO, PASS_PRICES } from '../lib/constants';
 
 export function Register() {
-  const isRevealed = useIsRevealed(REVEAL_DATE);
 
   return (
     <div 
@@ -190,14 +188,14 @@ export function Register() {
           
           {/* Scroll link */}
           <ScrollLink 
-            to={isRevealed ? SECTION_IDS.events : SECTION_IDS.about}
+            to={SECTION_IDS.events}
             smooth={true}
             duration={600}
             offset={-80}
             className="flex items-center gap-2 border border-white text-white hover:bg-white hover:text-[var(--color-accent)] font-semibold px-8 py-3.5 rounded-[var(--radius-md)] transition-all duration-200 cursor-pointer text-sm uppercase tracking-wider font-heading text-center"
           >
             <Compass className="w-4 h-4" />
-            <span>{isRevealed ? "View Events Sprint" : "View Details"}</span>
+            <span>View Events Sprint</span>
           </ScrollLink>
         </Reveal>
 

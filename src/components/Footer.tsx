@@ -75,15 +75,24 @@ export function Footer() {
               >
                 About
               </ScrollLink>
+              <ScrollLink
+                to={SECTION_IDS.events}
+                smooth={true}
+                duration={600}
+                offset={-80}
+                className="text-[var(--color-text-sec)] hover:text-[var(--color-text-pri)] transition-colors cursor-pointer w-fit"
+              >
+                Events
+              </ScrollLink>
               {isRevealed && (
                 <ScrollLink
-                  to={SECTION_IDS.events}
+                  to={SECTION_IDS.sponsors}
                   smooth={true}
                   duration={600}
                   offset={-80}
                   className="text-[var(--color-text-sec)] hover:text-[var(--color-text-pri)] transition-colors cursor-pointer w-fit"
                 >
-                  Events
+                  Sponsors
                 </ScrollLink>
               )}
               <ScrollLink

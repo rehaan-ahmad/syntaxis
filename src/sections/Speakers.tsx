@@ -66,7 +66,7 @@ export function Speakers() {
           <RevealCountdown
             targetDate={REVEAL_DATE}
             label="Speakers Reveal In"
-            revealText="Top-Secret Keynote Lineup • Unveiling October 20, 2026"
+            revealText="Top-Secret Keynote Lineup • Unveiling October 25, 2026 • 23:59 IST"
           />
         ) : (
           <Reveal

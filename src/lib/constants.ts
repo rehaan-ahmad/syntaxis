@@ -116,6 +116,6 @@ export const PASS_PRICES = {
   ]
 };
 
-// Revealed on 20th October 2026
-export const REVEAL_DATE = new Date('2026-10-20T00:00:00+05:30').getTime();
+// Revealed on 25th October 2026 at 23:59 IST
+export const REVEAL_DATE = new Date('2026-10-25T23:59:00+05:30').getTime();
 

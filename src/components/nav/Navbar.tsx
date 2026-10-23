@@ -31,7 +31,7 @@ export function Navbar({ className, ...props }: React.HTMLAttributes<HTMLElement
     left: [
       { label: "Home", to: SECTION_IDS.home, icon: Home },
       { label: "About", to: SECTION_IDS.about, icon: User },
-      ...(isRevealed ? [{ label: "Events", to: SECTION_IDS.events, icon: Calendar }] : []),
+      { label: "Events", to: SECTION_IDS.events, icon: Calendar },
       { label: "Genesis Track", to: SECTION_IDS.genesis, icon: Zap }
     ],
     right: [
