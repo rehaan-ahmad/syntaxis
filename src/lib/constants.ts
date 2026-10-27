@@ -7,7 +7,6 @@ export const SECTION_IDS = {
   home:     'home',
   about:    'about',
   events:   'events',
-  genesis:  'genesis',
   schedule: 'schedule',
   speakers: 'speakers',
   sponsors: 'sponsors',
@@ -22,7 +21,6 @@ export const EXTERNAL_LINKS = {
   instagram:    'https://www.instagram.com/rdengineeringcollege/',
   linkedin:     'https://www.linkedin.com/company/rd-engineering-college/',
   email:        'mailto:syntaxis@rdec.in',
-  genesisEmail: 'mailto:rehaan24ai077@rdec.in',
   rdecGmaps:    'https://maps.app.goo.gl/PEvYLJkc59h9BBZg7',
 }
 
@@ -36,7 +34,6 @@ export const FEST_INFO = {
 }
 
 export const TALLY_FORMS = {
-  genesis:  'xXeyrr',
   rhesis:   '9qz8j5',
   pantheon: '1WPJAb',
   contact:  'ZjBZro',
@@ -89,17 +86,6 @@ export const PASS_PRICES = {
       prizePool: 'In-Game Diamonds + Vouchers',
       description: 'Pantheon mobile esports tournament arena entry for Free Fire squads. 100% free registration — battle for gaming prestige, diamonds, and sponsor vouchers.',
       tallyId: '1WPJAb',
-      isFree: true
-    },
-    {
-      id: 'genesis-track',
-      title: 'Genesis Track',
-      price: 'Free',
-      badge: 'School Program (9–12)',
-      popular: false,
-      prizePool: 'Certificates & Perks',
-      description: 'Exclusive school outreach wing organized on Day 2 only. Top 3 finalists invited with Principal & Parents on Day 3 for prize distribution.',
-      tallyId: 'xXeyrr',
       isFree: true
     },
     {

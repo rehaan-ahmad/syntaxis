@@ -6,13 +6,14 @@ import Navbar from './components/nav/Navbar';
 import Hero from './sections/Hero';
 import About from './sections/About';
 import Events from './sections/Events';
-import GenesisTrack from './sections/GenesisTrack';
+
 import Schedule from './sections/Schedule';
 import Speakers from './sections/Speakers';
 import Sponsors from './sections/Sponsors';
 import Register from './sections/Register';
 import FAQ from './sections/FAQ';
 import TeamContact from './sections/TeamContact';
+import { OrganizerAbout } from './sections/OrganizerAbout';
 import Footer from './components/Footer';
 import NotFound from './components/ui/NotFound';
 import PrivacyPolicy from './components/ui/PrivacyPolicy';
@@ -134,15 +135,13 @@ export function App() {
           <Events />
         </section>
         
-        <section id="genesis">
-          <GenesisTrack />
-        </section>
+
         
         <section id="schedule">
           <Schedule />
         </section>
         
-        <section id="speakers">
+        <section id="speakers" hidden>
           <Speakers />
         </section>
         
@@ -160,6 +159,10 @@ export function App() {
         
         <section id="contact">
           <TeamContact />
+        </section>
+
+        <section id="organizer-about">
+          <OrganizerAbout />
         </section>
       </main>
 

@@ -1,21 +1,19 @@
 import { Mail, Phone } from 'lucide-react';
 import SectionHeading from '../components/ui/SectionHeading';
 import Reveal from '../components/ui/Reveal';
-import RevealCountdown from '../components/ui/RevealCountdown';
-import { useCountdown } from '../hooks/useCountdown';
-import { SECTION_IDS, EXTERNAL_LINKS, REVEAL_DATE } from '../lib/constants';
+import { SECTION_IDS, EXTERNAL_LINKS } from '../lib/constants';
 
 interface SponsorLogoProps {
   tier: string;
+  src: string;
   className?: string;
 }
 
-function SponsorLogo({ tier, className }: SponsorLogoProps) {
+function SponsorLogo({ tier, src, className }: SponsorLogoProps) {
   return (
     <div className={`group relative flex items-center justify-center bg-[var(--color-bg-glass)] border border-[var(--color-border)] rounded-[var(--radius-md)] overflow-hidden transition-all duration-300 hover:border-[var(--color-brand)] hover:shadow-[0_0_15px_var(--color-brand-glow)] ${className}`}>
-      {/* Grayscale overlay and hover transition */}
       <img
-        src={`${import.meta.env.BASE_URL}assets/sponsors/placeholder-sponsor.svg`}
+        src={src}
         alt={`[SPONSOR LOGO — ${tier}]`}
         className="w-full h-full object-contain filter grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300 scale-90"
         loading="lazy"
@@ -28,8 +26,6 @@ function SponsorLogo({ tier, className }: SponsorLogoProps) {
 }
 
 export function Sponsors() {
-  const { isExpired } = useCountdown(REVEAL_DATE);
-
   return (
     <section
       id={SECTION_IDS.sponsors}
@@ -48,47 +44,73 @@ export function Sponsors() {
       {/* Confirmed Partners Showcase Grid */}
       <div className="flex flex-col gap-10 max-w-5xl mx-auto w-full">
         <h3 className="text-center text-lg font-bold font-heading text-[var(--color-brand)] uppercase tracking-wider">
-          Official Sponsorship Tiers & Partner Grid
+          Confirmed Partners
         </h3>
 
-        {!isExpired ? (
-          <RevealCountdown
-            targetDate={REVEAL_DATE}
-            label="Partner Reveal In"
-            revealText="Classified Partner Roster • Unveiling October 25, 2026 • 23:59 IST"
-          />
-        ) : (
-          <div className="flex flex-col gap-12 w-full">
-            {/* Archimedes Tier (Title Partner Slot - 1 Slot) */}
-            <Reveal className="flex flex-col items-center gap-4 text-center">
-              <div className="flex flex-col items-center gap-1">
-                <span className="text-xs font-bold font-heading uppercase tracking-[0.25em] text-[var(--color-brand)]">
-                  Archimedes Tier (Title Partner)
-                </span>
-                <span className="text-[10px] font-mono text-[var(--color-text-sec)]">
-                  1 Slot Available | ₹1,20,000
-                </span>
-              </div>
-              <SponsorLogo tier="Archimedes Title" className="w-72 h-36 md:w-80 md:h-40" />
-            </Reveal>
+        <div className="flex flex-col gap-12 w-full">
+          {/* Title Sponsor */}
+          <Reveal className="flex flex-col items-center gap-4 text-center">
+            <div className="flex flex-col items-center gap-1">
+              <span className="text-xs font-bold font-heading uppercase tracking-[0.25em] text-[var(--color-brand)]">
+                Title Sponsor
+              </span>
+              <span className="text-[10px] font-mono text-[var(--color-text-sec)]">
+                GeeksforGeeks
+              </span>
+            </div>
+            <SponsorLogo
+              tier="Title Sponsor"
+              src={`${import.meta.env.BASE_URL}assets/sponsors/GeeksforGeeks.svg`}
+              className="w-72 h-36 md:w-80 md:h-40"
+            />
+          </Reveal>
 
-            {/* Euclid Tier (Co-Sponsor Slots - 2 Slots) */}
-            <Reveal className="flex flex-col items-center gap-4 text-center mt-2">
-              <div className="flex flex-col items-center gap-1">
-                <span className="text-xs font-bold font-heading uppercase tracking-[0.25em] text-[var(--color-text-pri)]">
-                  Euclid Tier (Co-Sponsors)
-                </span>
-                <span className="text-[10px] font-mono text-[var(--color-text-sec)]">
-                  2 Slots Available | ₹70,000 Each
-                </span>
-              </div>
-              <div className="flex flex-wrap gap-6 justify-center w-full">
-                <SponsorLogo tier="Euclid Co-Sponsor 1" className="w-56 h-28 md:w-64 md:h-32" />
-                <SponsorLogo tier="Euclid Co-Sponsor 2" className="w-56 h-28 md:w-64 md:h-32" />
-              </div>
-            </Reveal>
-          </div>
-        )}
+          {/* Co-Sponsor */}
+          <Reveal className="flex flex-col items-center gap-4 text-center mt-2">
+            <div className="flex flex-col items-center gap-1">
+              <span className="text-xs font-bold font-heading uppercase tracking-[0.25em] text-[var(--color-text-pri)]">
+                Co-Sponsor
+              </span>
+              <span className="text-[10px] font-mono text-[var(--color-text-sec)]">
+                Coding Blocks
+              </span>
+            </div>
+            <SponsorLogo
+              tier="Co-Sponsor"
+              src={`${import.meta.env.BASE_URL}assets/sponsors/CodingBlocks.webp`}
+              className="w-56 h-28 md:w-64 md:h-32"
+            />
+          </Reveal>
+
+          {/* Associate Sponsors */}
+          <Reveal className="flex flex-col items-center gap-4 text-center mt-2">
+            <div className="flex flex-col items-center gap-1">
+              <span className="text-xs font-bold font-heading uppercase tracking-[0.25em] text-[var(--color-brand)]">
+                Associate Sponsors
+              </span>
+              <span className="text-[10px] font-mono text-[var(--color-text-sec)]">
+                TrueAQI • NovoInvent • Gabfest
+              </span>
+            </div>
+            <div className="flex flex-wrap gap-6 justify-center w-full">
+              <SponsorLogo
+                tier="TrueAQI"
+                src={`${import.meta.env.BASE_URL}assets/sponsors/TrueAQI.jpeg`}
+                className="w-48 h-24 md:w-56 md:h-28"
+              />
+              <SponsorLogo
+                tier="NovoInvent"
+                src={`${import.meta.env.BASE_URL}assets/sponsors/NovoInvent.png`}
+                className="w-48 h-24 md:w-56 md:h-28"
+              />
+              <SponsorLogo
+                tier="Gabfest"
+                src={`${import.meta.env.BASE_URL}assets/sponsors/GabFest.webp`}
+                className="w-48 h-24 md:w-56 md:h-28"
+              />
+            </div>
+          </Reveal>
+        </div>
       </div>
 
       {/* Become a Sponsor Lead Contact CTA */}

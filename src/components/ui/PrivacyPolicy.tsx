@@ -152,7 +152,7 @@ export function PrivacyPolicy({ onBack }: PrivacyPolicyProps) {
             </p>
             <ul className="text-xs sm:text-sm text-[var(--color-text-body)] list-disc list-inside space-y-1.5 ml-2">
               <li><strong>No Financial Data Stored:</strong> SYNTAXIS and RDEC do not collect, view, or store payment card numbers, UPI PINs, or net banking credentials. Transactions are handled entirely through RBI-compliant, PCI-DSS certified payment gateways integrated by KonfHub.</li>
-              <li><strong>Free Events:</strong> Events designated as Free (Genesis Track, Rhesis Keynotes, Pantheon Games) collect registration data via secure Tally forms without requiring payment details.</li>
+              <li><strong>Free Events:</strong> Events designated as Free (Rhesis Keynotes, Pantheon Games) collect registration data via secure Tally forms without requiring payment details.</li>
             </ul>
           </section>
 
@@ -178,7 +178,6 @@ export function PrivacyPolicy({ onBack }: PrivacyPolicyProps) {
             </p>
             <ul className="text-xs sm:text-sm text-[var(--color-text-body)] list-disc list-inside space-y-1.5 ml-2">
               <li><strong>Archithon Consent Form:</strong> All team members entering the 24-hour hackathon must fill, sign, and email the mandatory printable consent and undertaking form in a single submission to <strong className="text-white underline">syntaxis@rdec.in</strong>.</li>
-              <li><strong>Genesis Track Minor Protection:</strong> High school participants (classes 9 to 12) require written parental/guardian consent and official faculty coordinator endorsement, sealed by their School Principal/Headmaster.</li>
             </ul>
           </section>
 

@@ -18,7 +18,6 @@ export interface EventItem {
   prizePool: string;
   price: string;
   image: string;
-  isGenesis?: boolean;
   widgetUrl?: string;
   tallyId?: string;
   registrationUrl?: string;
@@ -72,18 +71,6 @@ export function Events() {
       widgetUrl: 'https://konfhub.com/widget/id/98f627ba-8118-4419-ae24-ef1d0d3edf0f',
       registrationUrl: EXTERNAL_LINKS.konfhub,
       hasConsentForm: true
-    },
-    {
-      title: 'Genesis Track',
-      category: 'Technical',
-      description: 'Curated exclusively for school students in classes 9 to 12. Held on Day 2 only, featuring Eureka Pitch. Top 3 teams invited on Day 3 for prize distribution (certificates & perks).',
-      teamSize: '2–3 Students',
-      prizePool: 'Certificates & Perks',
-      price: 'Free',
-      image: `${import.meta.env.BASE_URL}assets/events/placeholder-genesis.svg`,
-      isGenesis: true,
-      tallyId: 'xXeyrr',
-      registrationUrl: 'https://tally.so/r/xXeyrr'
     },
     {
       title: 'Rhesis',
@@ -177,7 +164,7 @@ export function Events() {
                   {/* Event banner image */}
                   <div className={clsx(
                     "relative w-full overflow-hidden bg-[var(--color-bg)]",
-                    event.isGenesis ? "aspect-[4/3]" : "aspect-video"
+                    "aspect-video"
                   )}>
                     <img 
                       src={event.image} 

@@ -74,6 +74,13 @@ export function TeamContact() {
       role: 'Executive Director',
       image: `${import.meta.env.BASE_URL}assets/team/palak.png`,
       linkedin: 'https://www.linkedin.com/in/palak-tyagi-'
+    },
+    {
+      id: 8,
+      name: 'Shikhar Singh',
+      role: 'Volunteer Head/Incharge',
+      image: `${import.meta.env.BASE_URL}assets/team/shikhar.png`,
+      linkedin: 'https://www.linkedin.com/in/shikhar-20306-singh/'
     }
   ];
 
@@ -115,6 +122,8 @@ export function TeamContact() {
     }
   };
 
+  const slugify = (name: string) => name.toLowerCase().replace(/\s+/g, '-');
+
   return (
     <div className="bg-[var(--color-bg-glass)] backdrop-blur-[12px] border-y border-[var(--color-border)]">
       <section 
@@ -132,37 +141,46 @@ export function TeamContact() {
             variants={staggerContainerVariants}
             className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 justify-center"
           >
-            {team.map((member) => (
-              <motion.div key={member.id} className={member.id===7 ? 'sm:col-start-1 sm:col-span-2 sm:mx-auto sm:w-1/2 lg:col-span-1 lg:col-start-2 lg:w-full lg:mx-0' : ''} variants={fadeUpVariants}>
-                <Card className="flex flex-col items-center text-center p-6 border border-[var(--color-border)] hover:border-[var(--color-border-gold)] transition-colors duration-300">
-                  {/* 1:1 Aspect Ratio profile avatar */}
-                  <div className="w-28 h-28 aspect-square rounded-full overflow-hidden border border-[var(--color-border)] mb-4 shrink-0">
-                    <img
-                      src={member.image}
-                      alt={`[${member.name} — 1:1 Profile Photo]`}
-                      className="w-full h-full object-cover"
-                      loading="lazy"
-                    />
-                  </div>
-                  <h5 className="font-bold text-[var(--color-text-pri)] font-heading tracking-wide mb-1 px-1">
-                    {member.name}
-                  </h5>
-                  <span className="text-xs text-[var(--color-brand)] font-semibold uppercase tracking-wider mb-4">
-                    {member.role}
-                  </span>
-
-                  <a
-                    href={member.linkedin}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-[var(--color-text-sec)] hover:text-[var(--color-brand)] transition-colors mt-auto"
-                    aria-label={`${member.name} LinkedIn`}
-                  >
-                    <Linkedin className="w-4 h-4" />
-                  </a>
-                </Card>
-              </motion.div>
-            ))}
+            {team.map((member) => {
+              const aboutUrl = `${import.meta.env.BASE_URL}#organizer-about?member=${slugify(member.name)}`;
+              return (
+                <motion.div key={member.id} className={member.id===7 ? 'sm:col-start-1 sm:col-span-2 sm:mx-auto sm:w-1/2 lg:col-span-1 lg:col-start-2 lg:w-full lg:mx-0' : ''} variants={fadeUpVariants}>
+                  <Card className="flex flex-col items-center text-center p-6 border border-[var(--color-border)] hover:border-[var(--color-border-gold)] transition-colors duration-300">
+                    {/* About link: image, name, role */}
+                    <a
+                      href={aboutUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex flex-col items-center w-full"
+                    >
+                      <div className="w-28 h-28 aspect-square rounded-full overflow-hidden border border-[var(--color-border)] mb-4 shrink-0">
+                        <img
+                          src={member.image}
+                          alt={`[${member.name} — 1:1 Profile Photo]`}
+                          className="w-full h-full object-cover"
+                          loading="lazy"
+                        />
+                      </div>
+                      <h5 className="font-bold text-[var(--color-text-pri)] font-heading tracking-wide mb-1 px-1">
+                        {member.name}
+                      </h5>
+                      <span className="text-xs text-[var(--color-brand)] font-semibold uppercase tracking-wider mb-4">
+                        {member.role}
+                      </span>
+                    </a>
+                    {/* LinkedIn icon */}
+                    <a
+                      href={member.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-4"
+                    >
+                      <Linkedin className="w-4 h-4" />
+                    </a>
+                  </Card>
+                </motion.div>
+              );
+            })}
           </Reveal>
         </div>
 

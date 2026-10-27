@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link as ScrollLink } from "react-scroll";
-import { Menu, X, ArrowUpRight, Home, User, Calendar, Zap, Clock, Globe, Ticket } from "lucide-react";
+import { Menu, X, ArrowUpRight, Home, User, Calendar, Clock, Globe, Ticket } from "lucide-react";
 import clsx from "clsx";
 import { motion, AnimatePresence } from "framer-motion";
 import { SECTION_IDS, EXTERNAL_LINKS, REVEAL_DATE } from "../../lib/constants";
@@ -31,8 +31,7 @@ export function Navbar({ className, ...props }: React.HTMLAttributes<HTMLElement
     left: [
       { label: "Home", to: SECTION_IDS.home, icon: Home },
       { label: "About", to: SECTION_IDS.about, icon: User },
-      { label: "Events", to: SECTION_IDS.events, icon: Calendar },
-      { label: "Genesis Track", to: SECTION_IDS.genesis, icon: Zap }
+      { label: "Events", to: SECTION_IDS.events, icon: Calendar }
     ],
     right: [
       { label: "Schedule", to: SECTION_IDS.schedule, icon: Clock },

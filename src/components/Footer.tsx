@@ -96,15 +96,6 @@ export function Footer() {
                 </ScrollLink>
               )}
               <ScrollLink
-                to={SECTION_IDS.genesis}
-                smooth={true}
-                duration={600}
-                offset={-80}
-                className="text-[var(--color-text-sec)] hover:text-[var(--color-text-pri)] transition-colors cursor-pointer w-fit"
-              >
-                Genesis Track
-              </ScrollLink>
-              <ScrollLink
                 to={SECTION_IDS.register}
                 smooth={true}
                 duration={600}

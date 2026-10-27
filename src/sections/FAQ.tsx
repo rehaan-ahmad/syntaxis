@@ -8,7 +8,7 @@ export function FAQ() {
   const faqItems = [
     {
       question: 'Who Can Participate?',
-      answer: "Any college student in technical fields. It isn't specific to just CSE/IT or ECE — if mechanical or civil engineering students want to join us, they're most welcome! Moreover, school students from classes 9th to 12th are encouraged to participate in the Genesis Track."
+      answer: "Any college student in technical fields. It isn't specific to just CSE/IT or ECE — if mechanical or civil engineering students want to join us, they're most welcome!"
     },
     {
       question: 'What is the Device Policy for Tech Events?',
@@ -24,15 +24,11 @@ export function FAQ() {
     },
     {
       question: 'Is There a Registration Fee?',
-      answer: "Competitive packages (Contest Package, Archithon Hackathon) and technical workshops (Techne) are ticketed on KonfHub, while events like Genesis Track, Rhesis discourses, and Pantheon Games (Free Fire) are completely free to register."
+      answer: "Competitive packages (Contest Package, Archithon Hackathon) and technical workshops (Techne) are ticketed on KonfHub, while events like Rhesis discourses and Pantheon Games (Free Fire) are completely free to register."
     },
     {
       question: 'Can Outstation Participants Join?',
       answer: 'Yes, outstation participants are welcome to participate provided they arrange their own travel and accommodation.'
-    },
-    {
-      question: 'What is the Genesis Track?',
-      answer: 'Genesis Track is an exclusive junior division designed for school students of classes 9th to 12th, organized on Day 2 ONLY. The top 3 qualifying teams will be invited with their Principal/Vice-Principal and Parents on Day 3 for the prize distribution ceremony. All participants receive official participation certificates and valuable perks.'
     },
     {
       question: 'How Many Events Can a Team Participate In?',

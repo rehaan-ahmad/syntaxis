@@ -9,7 +9,7 @@ interface TimelineItem {
   discipline: string;
   venue: string;
   notes?: string;
-  category?: 'all' | 'main' | 'hackathon' | 'code' | 'workshop' | 'genesis' | 'esports' | 'talk';
+  category?: 'all' | 'main' | 'hackathon' | 'code' | 'workshop' | 'esports' | 'talk';
 }
 
 interface DaySchedule {
@@ -22,7 +22,7 @@ interface DaySchedule {
 
 export function Schedule() {
   const [activeDay, setActiveDay] = useState<number>(0);
-  const [day2Filter, setDay2Filter] = useState<'all' | 'hackathon' | 'genesis' | 'arena'>('all');
+  const [day2Filter, setDay2Filter] = useState<'all' | 'hackathon' | 'arena'>('all');
 
   const scheduleData: DaySchedule[] = [
     {
@@ -76,8 +76,8 @@ export function Schedule() {
     {
       dayLabel: 'Day 2: Friday',
       dateLabel: 'Oct 30, 2026',
-      title: 'Archithon 24H Kickoff, Genesis, Pantheon & Rhesis',
-      description: 'Day 2 ignites the 24-hour Archithon development clock, school Genesis Track presentations, Pantheon Free Fire mobile esports battles, and Rhesis keynote discourses.',
+      title: 'Archithon 24H Kickoff, Pantheon & Rhesis',
+      description: 'Day 2 ignites the 24-hour Archithon development clock, Pantheon Free Fire mobile esports battles, and Rhesis keynote discourses.',
       events: [
         {
           time: '09:00 AM – 10:00 AM',
@@ -96,14 +96,6 @@ export function Schedule() {
           category: 'hackathon'
         },
         {
-          time: '11:00 AM – 01:30 PM',
-          title: 'Genesis Track (Eureka Pitch)',
-          discipline: 'School Program (Classes 9–12)',
-          venue: 'Auditorium, Ground Floor B-Block',
-          notes: 'Exclusive school outreach wing organized on Day 2 ONLY. Classes 9–12 students pitch automation and STEM ideas in the Eureka Pitch round. Top 3 teams will be invited with their Principal/Vice-Principal and Parents on Day 3 for prize distribution (certificates & perks).',
-          category: 'genesis'
-        },
-        {
           time: '02:30 PM – 05:30 PM',
           title: 'Pantheon Games',
           discipline: 'Mobile Esports (Free Fire Max Squads)',
@@ -112,12 +104,11 @@ export function Schedule() {
           category: 'esports'
         },
         {
-          time: '03:30 PM – 05:00 PM',
+          time: '02:00 PM – 04:00 PM',
           title: 'Rhesis',
           discipline: 'Keynote Tech-Talks & Q&A',
           venue: 'Auditorium, B-Block',
-          notes: 'Visionary industry tech-leaders deliver keynotes and hold live interactive discourse on next-gen tech engineering.',
-          category: 'talk'
+          notes: 'Visionary industry tech-leaders deliver keynotes and hold live interactive discourse on next-gen tech engineering, held on Day 2 from 02:00 PM onwards to a maximum of 04:00 PM.'
         },
         {
           time: 'Overnight Session',
@@ -180,7 +171,7 @@ export function Schedule() {
           title: 'Apotheosis (Valedictory & Prize Distribution)',
           discipline: 'Fest Finale & Awarding',
           venue: 'Main Stage, College Grounds',
-          notes: 'Grand closing ceremony, felicitation of partners, and prize distribution celebrating champions across all tracks (including Top 3 Genesis Track school teams with their Principals and Parents).',
+          notes: 'Grand closing ceremony, felicitation of partners, and prize distribution celebrating champions across all tracks.',
           category: 'main'
         }
       ]
@@ -208,7 +199,6 @@ export function Schedule() {
     if (activeDay !== 1) return true;
     if (day2Filter === 'all') return true;
     if (day2Filter === 'hackathon') return event.category === 'hackathon';
-    if (day2Filter === 'genesis') return event.category === 'genesis';
     if (day2Filter === 'arena') return event.category === 'esports' || event.category === 'talk';
     return true;
   });
@@ -279,16 +269,7 @@ export function Schedule() {
             >
               Archithon (24H)
             </button>
-            <button
-              onClick={() => setDay2Filter('genesis')}
-              className={`px-4 py-1.5 rounded-[var(--radius-pill)] text-[11px] font-semibold transition-all ${
-                day2Filter === 'genesis'
-                  ? 'bg-[var(--color-brand)] text-[var(--color-bg)] font-bold shadow-sm'
-                  : 'text-[var(--color-text-sec)] hover:text-[var(--color-text-pri)]'
-              }`}
-            >
-              Genesis Track (School)
-            </button>
+
             <button
               onClick={() => setDay2Filter('arena')}
               className={`px-4 py-1.5 rounded-[var(--radius-pill)] text-[11px] font-semibold transition-all ${
