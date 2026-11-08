@@ -21,6 +21,7 @@ export const FEST_ENDED_DATE = new Date('2026-10-31T23:59:00+05:30').getTime();
 export const FEST_HAS_ENDED = Date.now() >= FEST_ENDED_DATE;
 
 export const EXTERNAL_LINKS = {
+  github:       'https://github.com/rehaan-ahmad/syntaxis',
   konfhub:      'https://konfhub.com/syntaxis-2026',
   college:      'https://rdec.ac.in',
   instagram:    'https://www.instagram.com/rdengineeringcollege/',

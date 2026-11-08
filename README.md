@@ -1,217 +1,182 @@
-# SYNTAXIS 2026
-
 <div align="center">
 
-![Syntaxis 2026 Banner](public/assets/logo/syntaxis-logo.svg)
+<img src="public/assets/logo/syntaxis-logo.png" alt="Syntaxis 2026 Logo" width="380" />
 
-### ⚡ NCR's Premier Inter-College Tech Fest
+# SYNTAXIS 2026
+### Premier Inter-College Technical Festival
 
 **R.D. Engineering College (RDEC), Ghaziabad**  
 **October 29 – 31, 2026**
 
-[![Build Status](https://img.shields.io/badge/build-passing-brightgreen?style=flat-square)](https://github.com/rehaan-ahmad/syntaxis)
-[![TypeScript](https://img.shields.io/badge/TypeScript-6.0-3178C6?style=flat-square&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
-[![React](https://img.shields.io/badge/React-19-61DAFB?style=flat-square&logo=react&logoColor=black)](https://react.dev/)
-[![Vite](https://img.shields.io/badge/Vite-8-646CFF?style=flat-square&logo=vite&logoColor=white)](https://vite.dev/)
-[![Tailwind CSS](https://img.shields.io/badge/TailwindCSS-v4-38B2AC?style=flat-square&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
-[![License](https://img.shields.io/badge/license-UNLICENSED-red?style=flat-square)](LICENSE)
+[![Build Status](https://img.shields.io/badge/Build-Passing-22c55e?style=for-the-badge&logo=githubactions&logoColor=white)](https://github.com/rehaan-ahmad/syntaxis)
+[![TypeScript](https://img.shields.io/badge/TypeScript-6.0-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![React](https://img.shields.io/badge/React-19.0-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev/)
+[![Vite](https://img.shields.io/badge/Vite-8.0-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vite.dev/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-v4.0-38B2AC?style=for-the-badge&logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
+[![License](https://img.shields.io/badge/License-Proprietary-a67d45?style=for-the-badge)](LICENSE)
 
-[Fest Portal](https://syntaxis.rdec.ac.in) · [Venue Location](https://maps.app.goo.gl/PEvYLJkc59h9BBZg7) · [Contact Committee](mailto:syntaxis@rdec.in)
+[Official Web Portal](https://syntaxis.rdec.ac.in) • [Photo & Video Archive](https://drive.google.com/drive/folders/13Rub1wxVaKiAO7EEhOR7QL-whivDs5c1?usp=drive_link) • [Campus Location](https://maps.app.goo.gl/PEvYLJkc59h9BBZg7) • [Contact Desk](mailto:syntaxis@rdec.in)
+
+---
+
+</div>
+
+## 📌 Executive Summary
+
+**SYNTAXIS 2026** is the official technical festival of R.D. Engineering College, organized by the student community. The festival brought together students from **25+ colleges** across the National Capital Region (NCR) for three days of competitive programming, hackathons, cloud computing workshops, technology talks, and esports tournaments.
+
+This repository holds the complete source code for the festival web platform. The application is a single-page web app built with React 19, TypeScript, Vite, and Tailwind CSS. The festival concluded on October 31, 2026, and this repository is preserved in an archived post-event state.
+
+> **Origin:** *Syntaxis* comes from the Ancient Greek root *σύνταξις*, meaning systematic arrangement and coordination.
+
+---
+
+## 🏆 Official Festival Leadership & Credits
+
+Syntaxis 2026 was organized and directed by the student committee at R.D. Engineering College:
+
+<div align="center">
+
+| Name | Role & Department | Primary Responsibilities |
+|:---|:---|:---|
+| **Rehaan Ahmad** | Fest Director | Platform Architecture, System Design, Engineering, and Directorship |
+| **Diya Sharma** | Organizing Lead | Overall Fest Execution, Outreach Coordination, and Operations |
+| **Anurag Kumar** | Operations Director | Campus Infrastructure, Lab Allocations, and Logistics |
+| **Priyanshi Garg** | Marketing Head | Digital PR, Ambassador Network, and Media Outreach |
+| **Prabhati Pandey** | Creative Head | Brand Identity, Stage Aesthetics, and Graphic Production |
+| **Priya Sharma** | Documentation Head | Festival Regulations, Compliance, and Written Records |
+| **Palak Tyagi** | Executive Director | Institutional Coordination and Departmental Operations |
+| **Shikhar Singh** | Volunteer Head / Incharge | On-Ground Volunteer Operations and Participant Flow |
 
 </div>
 
 ---
 
-## ✨ Overview
+## 🤝 Confirmed Corporate Partners
 
-**Syntaxis 2026** is the flagship inter-college tech fest of R.D. Engineering College, hosted by the student developer community. Bringing together 25+ NCR colleges, 4 partnered schools, and 500–700 participants across 3 intensive days, Syntaxis showcases hackathons, competitive programming, AI exhibitions, gaming tournaments, workshops, and high-impact talks.
+Syntaxis 2026 was sponsored and supported by leading technology and education organizations:
 
-This repository houses the official festival web portal — a modern, single-page application built with React 19, TypeScript, Vite 8, and Tailwind CSS v4. The platform features an interactive WebGL plasma shader background, glassmorphism UI tokens, custom Framer Motion view triggers, seamless KonfHub checkout modals, native Tally registration popups, and print-ready digital consent documents.
-
-> *"Syntaxis" — from the Greek root meaning order, arrangement, and systematic coordination.*
+| Tier | Partner Organization | Association & Activation |
+|:---|:---|:---|
+| **Title Sponsor** | **GeeksforGeeks** | Co-branding, Stage Recognition, and Heureka Contest Platform |
+| **Co-Sponsor** | **Coding Blocks** | Secondary Stage Visibility, Workshop Partnership, and Booth Presence |
+| **Associate Sponsor** | **TrueAQI** | Environmental Intelligence Track and Product Showcase |
+| **Associate Sponsor** | **NovoInvent** | Software Innovation Partner and Technical Showcase |
+| **Associate Sponsor** | **Gabfest** | Community Engagement and Youth Media Distribution |
 
 ---
 
-## 🏛️ Architecture & Directory Layout
+## ⚡ Technical Architecture & Stack
 
 ```
-syntaxis/
-├── public/                    # Static assets & SEO files
+syntaxis-portal/
+├── public/                    # Production static assets
 │   ├── assets/
-│   │   ├── logo/              # College crest, Syntaxis logo, Nexora banners
-│   │   ├── events/            # High-res event banner graphics
-│   │   ├── speakers/          # Keynote speaker profile pictures
-│   │   ├── sponsors/          # Sponsor logos & partner crests
-│   │   └── team/              # Organizing committee headshots
-│   ├── docs/                  # Printable consent & compliance letters
-│   │   ├── genesis-consent.html    # Class 9–12 parental consent
-│   │   └── archithon-consent.html  # Overnight hackathon guardian consent
-│   ├── favicon.svg            # Custom SVG favicon
-│   ├── robots.txt             # Search crawler directives
-│   └── sitemap.xml            # Canonical sitemap
+│   │   ├── events/            # High-resolution event banners
+│   │   ├── logo/              # College crest, NAAC, and Syntaxis marks
+│   │   ├── sponsors/          # Verified corporate sponsor logos
+│   │   └── team/              # Core committee profile images
+│   ├── docs/                  # Printable participant consent documents
+│   │   └── archithon-consent.html # 24-hour overnight hackathon waiver
+│   └── favicon.svg
 ├── src/
-│   ├── App.tsx                # Single-page layout (Plasma + Nav + Sections + Modals + Footer)
-│   ├── main.tsx               # Vite React 19 bootstrap
-│   ├── index.css              # Design tokens (:root), utilities, and typography
 │   ├── components/
-│   │   ├── bg/                # WebGL plasma shader canvas + static mobile fallback
-│   │   ├── carousel/          # Embla Carousel for responsive event browsing
-│   │   ├── effects/           # Sniper reticle cursor interaction
-│   │   ├── icons/             # Custom SVG icons & social branding
-│   │   ├── modals/            # Legal, DPDP, Privacy, and Ticket checkout modals
-│   │   ├── nav/               # Responsive notch header with smooth section scrolling
-│   │   ├── ui/                # UI primitives (Card, Badge, Button, CountdownTimer, etc.)
-│   │   └── Footer.tsx         # Site footer with credits, college links & quick anchors
-│   ├── sections/              # 10 full-width page sections
-│   │   ├── Hero.tsx           # Countdown, live status, primary CTA
-│   │   ├── About.tsx          # Key metrics (colleges, prizes, footfall) & core pillars
-│   │   ├── Events.tsx         # Categorized event catalog with modal checkouts
-│   │   ├── GenesisTrack.tsx   # Junior track (Classes 9–12) with school registration
-│   │   ├── Schedule.tsx       # 3-day timeline with tab navigation & venue locations
-│   │   ├── Speakers.tsx       # Keynote speakers & panelist profiles
-│   │   ├── Sponsors.tsx       # Tiered sponsorship showcase & brochure download
-│   │   ├── Register.tsx       # Pricing tiers, multi-event packages, & ticketing breakdown
-│   │   ├── FAQ.tsx            # Expandable FAQs (Wi-Fi, BYOD, food, rules, GMaps)
-│   │   └── TeamContact.tsx    # Organizing committee & Web3Forms contact integration
-│   ├── hooks/
-│   │   └── useCountdown.ts    # Live countdown state to October 29, 2026
-│   └── lib/
-│       └── constants.ts       # Festival metadata, ticket pricing, links, schedule data
-├── vite.config.ts             # Vite build config with path aliases & chunk splitting
-├── tailwind.config.ts         # Tailwind CSS theme extensions
-├── tsconfig.app.json          # Strict TypeScript configuration
-└── package.json
+│   │   ├── bg/FluidBg.tsx     # WebGL-inspired animated fluid canvas background
+│   │   ├── carousel/          # Embla carousel for mobile event exploration
+│   │   ├── effects/           # Sniper click reticle interaction
+│   │   ├── nav/Navbar.tsx     # Three-slice responsive notch header
+│   │   ├── ui/                # Modals, countdown, cards, badges, and alerts
+│   │   │   ├── FestEndedBanner.tsx # Dynamic post-fest notification bar
+│   │   │   ├── KonfHubModal.tsx    # Secure ticket checkout dialog
+│   │   │   └── OrganizerModal.tsx  # Interactive "About Me" organizer dialog
+│   │   └── Footer.tsx         # Site footer with credits and repo link
+│   ├── sections/              # Nine full-screen layout sections
+│   │   ├── Hero.tsx           # Hero showcase, post-fest CTA, and countdown
+│   │   ├── About.tsx          # Key metrics, college reach, and core values
+│   │   ├── Events.tsx         # Categorized event catalog with closed badges
+│   │   ├── Schedule.tsx       # Three-day master operational timeline
+│   │   ├── Sponsors.tsx       # Verified partner grid and lead contacts
+│   │   ├── Register.tsx       # Official passes and registration state
+│   │   ├── Media.tsx          # Official Google Drive media archive section
+│   │   ├── FAQ.tsx            # BYOD rules, network guidance, and venue details
+│   │   └── TeamContact.tsx    # Organizing committee grid and Tally contact
+│   ├── hooks/                 # Real-time countdown and viewport detection
+│   ├── lib/                   # Single source of truth constants and animations
+│   ├── App.tsx                # Single-page layout orchestrator
+│   └── index.css              # Design tokens and custom CSS properties
+└── docs/
+    └── archived/              # Historical planning documents
+        ├── AGENTS.md          # Engineering constraints and build guidelines
+        ├── Event Schedule [3-Day].md # Full chronological schedule
+        ├── HANDOVER.md        # Technical handover document
+        ├── SITECHANGES.md     # Implementation log
+        └── Sponsorship Tiers.md # Sponsorship packages and partner data
 ```
 
+### Core Technologies
+
+| Layer | Tool / Library | Role in Syntaxis |
+|:---|:---|:---|
+| **Frontend Framework** | React 19 | Functional component hierarchy and hooks |
+| **Language** | TypeScript 6.0 | Strict type definitions and safe data contracts |
+| **Build Tooling** | Vite 8 + Rollup | Fast development HMR and manual vendor chunk splitting |
+| **CSS & Design** | Tailwind CSS v4 | Utility styling and CSS custom properties |
+| **Animations** | Framer Motion | Viewport scroll entrance triggers and modals |
+| **In-Page Navigation** | react-scroll | Smooth single-page anchor jumping without route changes |
+| **Ticketing Integration** | KonfHub API + Tally | Secure checkout modal and free registration forms |
+| **Static Code Quality** | oxlint | High-speed Rust-based linting and validation |
+
 ---
 
-## 🎨 Design System
+## 🎨 Design System & Color Tokens
 
-Syntaxis 2026 features a bespoke dark-palette design system managed strictly via CSS custom properties in [`src/index.css`](src/index.css).
+The visual style uses a custom dark obsidian palette defined in [`src/index.css`](src/index.css):
 
-| CSS Variable | Value | Purpose |
-|--------------|-------|---------|
-| `--color-bg` | `#11100e` | Deep obsidian background |
-| `--color-accent` | `#5d1c34` | Crimson wine accent |
-| `--color-brand` | `#a67d45` | Warm gold hero tone |
+| CSS Custom Variable | Hex Code | Functional Role |
+|:---|:---|:---|
+| `--color-bg` | `#11100e` | Primary obsidian background |
+| `--color-accent` | `#5d1c34` | Crimson wine accent for cards and highlights |
+| `--color-brand` | `#a67d45` | Hero gold tone for headers and primary badges |
 | `--color-text-pri` | `#f0e9e3` | Ivory primary typography |
-| `--color-text-sec` | `#899581` | Sage muted secondary typography |
+| `--color-text-sec` | `#899581` | Sage secondary muted text |
 | `--color-text-body` | `#cdbbad` | Warm parchment body copy |
-| `--color-bg-glass` | `rgba(17, 16, 14, 0.80)` | Glassmorphism card fill with blur |
-| `--color-accent-glow` | `rgba(93, 28, 52, 0.40)` | Crimson shadow glow |
-| `--color-brand-glow` | `rgba(166, 125, 69, 0.30)` | Gold halo glow |
-
-**Typography**:
-- **Headings**: `Cinzel`, `Georgia`, serif
-- **Body**: `Inter`, system-ui, sans-serif
-- **Data / Timers**: `JetBrains Mono`, monospace
+| `--color-bg-glass` | `rgba(17, 16, 14, 0.80)` | Glassmorphism blur overlay fill |
 
 ---
 
-## ⚡ Tech Stack
+## 🗓️ Three-Day Master Schedule Summary
 
-| Layer | Technology | Usage in Syntaxis |
-|---|---|---|
-| **Core Framework** | React 19 | Component hierarchy, functional state, and modern hooks |
-| **Language** | TypeScript 6.0 | Strict typing, interface safety across schedules and event passes |
-| **Bundler & Tooling** | Vite 8 + Rollup | Fast HMR, Rollup manual chunking for optimal client caching |
-| **Styling** | Tailwind CSS v4 + Vanilla CSS | CSS custom properties, utility styling, fluid clamp typography |
-| **Animation Engine** | Framer Motion 12 | Scroll-triggered entrance animations & viewport transitions |
-| **Graphics & Shaders** | WebGL (GLSL Plasma Shader) | Ambient background animation with GPU fallbacks |
-| **Navigation** | react-scroll | Smooth single-page anchor jumping without route changes |
-| **Ticketing Engine** | KonfHub API + Tally.so | Embedded modal checkout for paid passes & free event forms |
-| **Contact Integration**| Web3Forms | Serverless direct-to-inbox inquiry submissions |
-| **Linter** | oxlint | Blazing-fast Rust-based static code analysis |
+The festival occurred across three days with standard hours from 08:30 AM to 05:30 PM:
 
----
+- **Day 1 (Thursday, October 29, 2026):**
+  - Participant check-in and credentials collection at Main Gate.
+  - The Kindling (Inauguration Ceremony) on the Main Stage.
+  - Techne (Google Cloud Skill Badges) hands-on workshop in DSA Lab.
+  - Code Trilogy — Round 1: Heureka (DSA contest on GeeksforGeeks).
+- **Day 2 (Friday, October 30, 2026):**
+  - Archithon 24h Hackathon check-in and 24-hour continuous build start.
+  - Code Trilogy — Round 2: Agon (HackerRank algorithmic contest).
+  - Code Trilogy — Round 3: Katharsis (Pair debugging duel).
+  - Rhesis keynote talks and panel discussion in Main Auditorium (02:00 PM – 04:00 PM).
+  - Pantheon Games (Free Fire mobile esports tournament arena).
+- **Day 3 (Saturday, October 31, 2026):**
+  - Archithon code freeze and repository lock at 10:00 AM.
+  - Preliminary hackathon evaluations and product demos in IT labs.
+  - The Tribunal: Top finalists present to the grand jury on Main Stage.
+  - Apotheosis Valedictory Ceremony and awards distribution.
+  - Concluding remarks by Fest Directors Rehaan Ahmad & Diya Sharma.
 
-## 🎟️ Hybrid Ticketing & Event Registration Architecture
-
-Syntaxis uses a hybrid registration flow:
-
-1. **Paid Passes (KonfHub)**: Integrated via an interactive modal (`KonfHubModal.tsx`) that embeds the checkout widget (`https://konfhub.com/widget/id/a1d6c4f0-668d-4719-a7c1-06cdb3c75012`). Transparent pricing includes the +3.75% platform fee notice.
-2. **Free Events & Inquiries (Tally.so)**: Popups and embeds using official Tally form IDs:
-   - **Genesis Track**: Form ID `xXeyrr` (Schools & Classes 9–12)
-   - **Rhesis Speaker Sessions**: Form ID `9qz8j5`
-   - **Pantheon Games (Free Fire Tournament)**: Form ID `1WPJAb`
-   - **General Inquiries & Support**: Form ID `ZjBZro`
-
-### Event Tiers & Structure
-
-| Event / Pass | Format | Eligibility | Fee | Platform |
-|---|---|---|---|---|
-| **Techne (Flagship Pass)** | Solo / Team | College Students | ₹100 + ₹3.75 fee | KonfHub |
-| **Contest Package** | Agon CP + Katharsis Debug | College Students | ₹200 + ₹7.50 fee | KonfHub |
-| **Archithon Hackathon** | 24-Hour Overnight (Team 2–4) | College Students | ₹800 + ₹30 fee | KonfHub |
-| **Genesis Track** | STEM Innovation & Robotics | Classes 9–12 (Partner Schools) | **FREE** | Tally (`xXeyrr`) |
-| **Pantheon Games** | Free Fire Esports Tournament | Open (Solo & Squads) | **FREE** | Tally (`1WPJAb`) |
-| **Rhesis Keynotes** | Tech Talks & Panel Discussion | All Attendees | **FREE** | Tally (`9qz8j5`) |
+For the unabridged minute-by-minute timeline, see [`docs/archived/Event Schedule [3-Day].md`](docs/archived/Event%20Schedule%20[3-Day].md).
 
 ---
 
-## 📄 Digital Consent & Compliance Letters
-
-Located in [`public/docs/`](public/docs/), these standalone HTML documents can be viewed, downloaded, or printed directly by attendees, parents, and school coordinators:
-
-1. **Genesis Track Parental Consent Letter** (`/public/docs/genesis-consent.html`):
-   - Formal parental/guardian authorization for minor students (Classes 9–12).
-   - Code of conduct, media release, and emergency guardian contact details.
-2. **Archithon 24h Overnight Consent Letter** (`/public/docs/archithon-consent.html`):
-   - College identification and overnight campus stay agreement.
-   - Lab safety protocols, hardware bringing guidelines (BYOD), and participant liability waivers.
-
----
-
-## 🗓️ Festival Master Schedule (Oct 29 – 31, 2026)
-
-### Day 1: Foundation & Illumination (Thursday, Oct 29, 2026)
-- **09:00 AM – 10:30 AM**: Opening Ceremony & Lamp Lighting *(Main Auditorium)*
-- **10:30 AM – 01:00 PM**: Syndesis — IoT & Robotics Workshop *(Hardware Lab 3)*
-- **01:00 PM – 02:00 PM**: Lunch Break & Networking
-- **02:00 PM – 03:30 PM**: Logika — DSA & System Design Masterclass *(Seminar Hall A)*
-- **03:30 PM – 05:00 PM**: Rhesis — Industry Keynote & Panel Discussions *(Main Auditorium)*
-
-### Day 2: The Crucible of Code (Friday, Oct 30, 2026)
-- **09:30 AM – 11:30 AM**: Heureka — Science & Tech Project Exhibition *(Central Lawn)*
-- **10:00 AM (Ongoing)**: Archithon 24h — Overnight Hackathon Check-in & Kickoff *(Software Labs)*
-- **11:30 AM – 01:30 PM**: Agon — Competitive Programming Arena *(Computing Center 1)*
-- **01:30 PM – 02:30 PM**: Lunch Break
-- **02:30 PM – 04:30 PM**: Katharsis — The Reverse Debug Duel *(Lab 2)*
-- **02:30 PM – 05:30 PM**: Pantheon Games — Free Fire Esports Tournament *(E-Sports Arena)*
-
-### Day 3: Culmination & Glory (Saturday, Oct 31, 2026)
-- **09:00 AM – 01:00 PM**: Genesis Track — High School STEM Showcase *(Seminar Hall B)*
-- **10:00 AM**: Archithon 24h — Code Freeze & Hackathon Submission *(Software Labs)*
-- **10:30 AM – 01:00 PM**: Pythia — AI & Open-Source Project Expo *(Computing Center 2)*
-- **01:00 PM – 02:00 PM**: Lunch Break
-- **02:00 PM – 03:30 PM**: Eureka Pitch Finals & Archithon Live Demos *(Main Auditorium)*
-- **03:30 PM – 05:00 PM**: The Tribunal & Valedictory Awards Ceremony *(Main Auditorium)*
-
----
-
-## 👥 Organizing Committee
-
-| Name | Role | Responsibilities |
-|---|---|---|
-| **Rehaan Ahmad** | Technical Director | Architecture, Web Platform, System Design & Infrastructure |
-| **Diya Sharma** | Organizing Lead | Overall Fest Execution, Operations, Logistics & College Outreach |
-| **Anurag Kumar** | Operations Director | Event Logistics, Venue Management & Sponsorship Outreach |
-| **Priyanshi Garg** | Marketing Head | Digital PR, Social Channels, Campus Ambassador Program |
-| **Prabhati Pandey** | Creative Head | Visual Design System, Brand Collateral & Stage Aesthetics |
-| **Priya Sharma** | Documentation Head | Rules, Event Guidelines, Legal/Consent & Event Recording |
-| **Palak Tyagi** | Executive Director | Cross-Department Coordination & Institutional Relations |
-
-For corporate partnerships and stall bookings: `syntaxis@rdec.in`.
-
----
-
-## 🚀 Getting Started Locally
+## 📦 Local Development & Verification
 
 ### Prerequisites
-- **Node.js**: $\ge 18.0.0$
-- **npm**: $\ge 9.0.0$
+- Node.js $\ge 18.0.0$
+- npm $\ge 9.0.0$
 
-### Setup Instructions
+### Setup & Build Commands
 
 ```bash
 # Clone the repository
@@ -221,13 +186,13 @@ cd syntaxis
 # Install dependencies
 npm install
 
-# Start development server
+# Start local development server
 npm run dev
 
-# Run oxlint check
+# Run oxlint static code analysis
 npm run lint
 
-# Production build
+# Compile production bundle
 npm run build
 
 # Preview production build locally
@@ -236,11 +201,11 @@ npm run preview
 
 ---
 
-## 🌐 Production Deployment
+## 🚀 Production Deployment Reference
 
-The project builds a static bundle into `dist/` configured with base path `/syntaxis/` for deployment on `syntaxis.rdec.ac.in`.
+The application compiles into static files in `dist/` configured with base path `/syntaxis/` for deployment to `syntaxis.rdec.ac.in`.
 
-### Sample Nginx Configuration
+### Nginx Virtual Host Configuration
 
 ```nginx
 server {
@@ -251,7 +216,6 @@ server {
     root /var/www/syntaxis/dist;
     index index.html;
 
-    # Enable gzip compression
     gzip on;
     gzip_types text/plain text/css application/json application/javascript text/xml application/xml image/svg+xml;
 
@@ -260,7 +224,7 @@ server {
         try_files $uri $uri/ /syntaxis/index.html;
     }
 
-    location ~* \.(js|css|png|jpg|jpeg|gif|ico|svg|woff|woff2|ttf|eot)$ {
+    location ~* \.(js|css|png|jpg|jpeg|gif|ico|svg|webp|woff|woff2)$ {
         expires 1y;
         add_header Cache-Control "public, immutable";
     }
@@ -269,26 +233,26 @@ server {
 
 ---
 
-## 📱 Accessibility & Performance Features
+## 📜 Historical Documentation Archive
 
-- **Responsive Viewports**: Responsive layout system optimized from 320px mobile up to 4K displays.
-- **GPU Degradation Fallback**: Automatically disables the WebGL shader on viewports $\le 768\text{px}$ or low-end GPUs, swapping to a lightweight CSS gradient.
-- **Reduced Motion**: Full support for `prefers-reduced-motion: reduce` across Framer Motion triggers.
-- **BYOD Policy & Connectivity**: Clear offline/backup guidelines for participants regarding personal mobile hotspots in FAQ.
-- **Interactive Geolocation**: Direct link to [RDEC Campus on Google Maps](https://maps.app.goo.gl/PEvYLJkc59h9BBZg7).
-- **Privacy & Security**: Built-in modal covering the Digital Personal Data Protection (DPDP) Act 2023, IT Act, and PCI-DSS compliance via KonfHub.
+All original planning and constraint files are preserved under [`docs/archived/`](docs/archived/):
 
----
-
-## 📄 License
-
-This project is **UNLICENSED** — proprietary to Rehaan Ahmad. All rights reserved.
+- [`docs/archived/AGENTS.md`](docs/archived/AGENTS.md) — Engineering guidelines and system constraints.
+- [`docs/archived/Event Schedule [3-Day].md`](docs/archived/Event%20Schedule%20[3-Day].md) — Finalized festival schedule.
+- [`docs/archived/HANDOVER.md`](docs/archived/HANDOVER.md) — Technical handover notes.
+- [`docs/archived/SITECHANGES.md`](docs/archived/SITECHANGES.md) — Operational change records.
+- [`docs/archived/Sponsorship Tiers.md`](docs/archived/Sponsorship%20Tiers.md) — Partner structure and confirmed sponsors.
 
 ---
+
+## 📄 License & Attribution
+
+This project is **UNLICENSED** (proprietary to Rehaan Ahmad & Diya Sharma). All rights reserved.
 
 <div align="center">
 
-**Built with 🤍 by Rehaan Ahmad**  
-*R.D. Engineering College, Delhi-Meerut Expressway, Ghaziabad*
+**Made with 🤍 by Rehaan Ahmad & Diya Sharma**  
+*R.D. Engineering College (RDEC), Delhi-Meerut Expressway, Ghaziabad, UP 201206*  
+[Official Portal](https://syntaxis.rdec.ac.in) • [GitHub Repository](https://github.com/rehaan-ahmad/syntaxis)
 
 </div>

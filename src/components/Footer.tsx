@@ -157,9 +157,20 @@ export function Footer() {
         </div>
 
         <div className="border-t border-[var(--color-border)]/20 pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] font-semibold text-[var(--color-text-sec)] uppercase tracking-widest text-center md:text-left">
-          <span className="text-[var(--color-text-sec)] normal-case tracking-wide">
-            Made With 🤍 By Rehaan Ahmad
-          </span>
+          <div className="flex flex-wrap items-center gap-2">
+            <span className="text-[var(--color-text-sec)] normal-case tracking-wide">
+              Made With 🤍 By Rehaan Ahmad &amp; Diya Sharma
+            </span>
+            <span>•</span>
+            <a
+              href={EXTERNAL_LINKS.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[var(--color-brand)] hover:underline normal-case tracking-wide"
+            >
+              GitHub Repository
+            </a>
+          </div>
           <div className="flex items-center gap-3">
             <a
               href="#privacy"
