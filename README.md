@@ -15,7 +15,7 @@
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-v4.0-38B2AC?style=for-the-badge&logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
 [![License](https://img.shields.io/badge/License-Proprietary-a67d45?style=for-the-badge)](LICENSE)
 
-[Official Web Portal](https://syntaxis.rdec.ac.in) • [Photo & Video Archive](https://drive.google.com/drive/folders/13Rub1wxVaKiAO7EEhOR7QL-whivDs5c1?usp=drive_link) • [Campus Location](https://maps.app.goo.gl/PEvYLJkc59h9BBZg7) • [Contact Desk](mailto:syntaxis@rdec.in)
+[Official Web Portal](https://syntaxis.rdec.ac.in) • [Photo & Video Archive](https://drive.google.com/drive/folders/13Rub1wxVaKiAO7EEhOR7QL-whivDs5c1?usp=drive_link) • [Campus Location](https://maps.app.goo.gl/PEvYLJkc59h9BBZg7) • [Contact Desk](mailto:syntaxis@rdec.in) • [Vercel Deployment](https://syntaxis2026.vercel.app)
 
 ---
 
@@ -40,7 +40,7 @@ Syntaxis 2026 was organized and directed by the student committee at R.D. Engine
 | Name | Role & Department | Primary Responsibilities |
 |:---|:---|:---|
 | **Rehaan Ahmad** | Fest Director | Platform Architecture, System Design, Engineering, and Directorship |
-| **Diya Sharma** | Organizing Lead | Overall Fest Execution, Outreach Coordination, and Operations |
+| **Diya Sharma** | Organizing Lead | Overall Fest Execution, Outreach Coordination |
 | **Anurag Kumar** | Operations Director | Campus Infrastructure, Lab Allocations, and Logistics |
 | **Priyanshi Garg** | Marketing Head | Digital PR, Ambassador Network, and Media Outreach |
 | **Prabhati Pandey** | Creative Head | Brand Identity, Stage Aesthetics, and Graphic Production |
@@ -253,6 +253,6 @@ This project is **UNLICENSED** (proprietary to Rehaan Ahmad & Diya Sharma). All 
 
 **Made with 🤍 by Rehaan Ahmad & Diya Sharma**  
 *R.D. Engineering College (RDEC), Delhi-Meerut Expressway, Ghaziabad, UP 201206*  
-[Official Portal](https://syntaxis.rdec.ac.in) • [GitHub Repository](https://github.com/rehaan-ahmad/syntaxis)
+[Official Portal](https://syntaxis.rdec.ac.in) • [Vercel Deployment](https://syntaxis2026.vercel.app) • [GitHub Repository](https://github.com/rehaan-ahmad/syntaxis)
 
 </div>
