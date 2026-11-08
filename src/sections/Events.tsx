@@ -200,8 +200,8 @@ export function Events() {
                         <span>PRIZE: {event.prizePool}</span>
                       </div>
 
-                      {/* Archithon Mandatory Consent Form Action */}
-                      {event.hasConsentForm && (
+                      {/* Archithon Mandatory Consent Form Action — only pre-fest */}
+                      {event.hasConsentForm && !FEST_HAS_ENDED && (
                         <div className="p-2.5 rounded-[var(--radius-md)] bg-[#191613] border border-[var(--color-border-gold)] flex flex-col gap-1.5 text-[10px]">
                           <div className="flex items-center gap-1.5 text-[var(--color-brand)] font-bold font-mono">
                             <AlertCircle className="w-3.5 h-3.5 shrink-0" />

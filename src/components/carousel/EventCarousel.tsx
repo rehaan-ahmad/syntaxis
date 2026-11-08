@@ -113,7 +113,7 @@ export function EventCarousel({
                       <span>PRIZE: {event.prizePool}</span>
                     </div>
 
-                    {event.hasConsentForm && (
+                    {event.hasConsentForm && !FEST_HAS_ENDED && (
                       <a
                         href={`${import.meta.env.BASE_URL}docs/archithon-consent.html`}
                         target="_blank"

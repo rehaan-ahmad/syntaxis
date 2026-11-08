@@ -24,10 +24,11 @@
 ---
 
 ### Specification 3: Organizing Team Updates & "About Me" Pop-up
-- **Requirement:** Add Shikhar Singh after Palak Tyagi as Volunteer Head/Incharge with image `shikhar.png`. Implement "About Me" modal dialog for team members.
+- **Requirement:** Add Shikhar Singh after Palak Tyagi as Volunteer Head/Incharge with image `shikhar.png`. Implement "About Me" modal dialog for team members. Update Priya Sharma's bio with her community leadership and Sukham Club presidency background.
 - **Status:** **Completed.**
   - Added Shikhar Singh to `src/sections/TeamContact.tsx` and `src/components/ui/OrganizerModal.tsx`.
   - Built interactive glassmorphism dialog `OrganizerModal.tsx` matching the design system of `KonfHubModal.tsx`.
+  - Added full About Me profiles for all members including Priya Sharma.
   - Linked member bios, profile photos, LinkedIn shortcuts, and hash-based deep linking.
 
 ---

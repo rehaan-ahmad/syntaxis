@@ -1,6 +1,7 @@
-import { Mail, Phone } from 'lucide-react';
+import { Mail } from 'lucide-react';
 import SectionHeading from '../components/ui/SectionHeading';
 import Reveal from '../components/ui/Reveal';
+import { Linkedin } from '../components/icons/SocialIcons';
 import { SECTION_IDS, EXTERNAL_LINKS } from '../lib/constants';
 
 interface SponsorLogoProps {
@@ -121,28 +122,23 @@ export function Sponsors() {
           Direct Sponsorship Lead Contact
         </h4>
         <p className="text-xs text-[var(--color-text-body)] mb-4 leading-relaxed">
-          Contact our fest leadership to request official sponsorship proposals, customized deliverables, or discuss stall activations.
+          For sponsorship inquiries, corporate engagement, or archive records, contact our festival leadership directly or email our official desk.
         </p>
 
-        {/* 2-Column Contact Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full my-6 text-left">
-          {/* Lead 1: Fest Lead */}
-          <div className="p-4 rounded-[var(--radius-lg)] bg-[var(--color-bg)]/60 border border-[var(--color-border)] flex flex-col gap-1">
+        {/* Lead Card */}
+        <div className="w-full my-6 text-left max-w-sm mx-auto">
+          {/* Lead: Fest Lead */}
+          <div className="p-4 rounded-[var(--radius-lg)] bg-[var(--color-bg)]/60 border border-[var(--color-border)] flex flex-col gap-1.5">
             <span className="text-[10px] font-bold font-mono uppercase tracking-widest text-[var(--color-brand)]">Fest Lead</span>
             <span className="text-sm font-bold text-[var(--color-text-pri)] font-heading">Rehaan Ahmad</span>
-            <a href="tel:+919910834975" className="flex items-center gap-1.5 text-xs text-[var(--color-text-sec)] hover:text-[var(--color-brand)] transition-colors mt-1 font-mono">
-              <Phone className="w-3.5 h-3.5 text-[var(--color-brand)]" />
-              <span>+91 99108 34975</span>
-            </a>
-          </div>
-
-          {/* Lead 2: Operations Lead */}
-          <div className="p-4 rounded-[var(--radius-lg)] bg-[var(--color-bg)]/60 border border-[var(--color-border)] flex flex-col gap-1">
-            <span className="text-[10px] font-bold font-mono uppercase tracking-widest text-[var(--color-brand)]">Operations Lead</span>
-            <span className="text-sm font-bold text-[var(--color-text-pri)] font-heading">Anurag Kumar</span>
-            <a href="tel:+919153130906" className="flex items-center gap-1.5 text-xs text-[var(--color-text-sec)] hover:text-[var(--color-brand)] transition-colors mt-1 font-mono">
-              <Phone className="w-3.5 h-3.5 text-[var(--color-brand)]" />
-              <span>+91 91531 30906</span>
+            <a
+              href="https://www.linkedin.com/in/rehaan-ahmad"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1.5 text-xs text-[var(--color-text-sec)] hover:text-[var(--color-brand)] transition-colors mt-1 font-mono"
+            >
+              <Linkedin className="w-3.5 h-3.5 text-[var(--color-brand)]" />
+              <span>Connect on LinkedIn</span>
             </a>
           </div>
         </div>
@@ -159,7 +155,7 @@ export function Sponsors() {
           className="flex items-center gap-2 border border-[var(--color-brand)] bg-[var(--color-brand)] text-[var(--color-bg)] font-extrabold px-8 py-3.5 rounded-[var(--radius-md)] transition-all duration-200 text-xs shadow-lg hover:scale-105 hover:shadow-[0_0_25px_var(--color-brand-glow)] cursor-pointer select-none font-heading uppercase"
         >
           <Mail className="w-4 h-4" />
-          <span>Send Sponsorship Inquiry</span>
+          <span>Email Sponsorship Desk</span>
         </a>
       </Reveal>
     </section>

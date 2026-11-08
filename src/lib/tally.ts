@@ -10,6 +10,15 @@ export interface TallyPopupOptions {
   [key: string]: unknown;
 }
 
+declare global {
+  interface Window {
+    Tally?: {
+      openPopup: (formId: string, options?: Record<string, unknown>) => void;
+      closePopup: (formId: string) => void;
+    };
+  }
+}
+
 export function openTallyModal(
   formId: string,
   options: TallyPopupOptions = {

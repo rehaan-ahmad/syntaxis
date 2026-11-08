@@ -1,21 +1,12 @@
 import { motion } from 'framer-motion';
-import { Mail, MessageSquare, ExternalLink } from 'lucide-react';
+import { Mail, MessageSquare } from 'lucide-react';
 import { Linkedin } from '../components/icons/SocialIcons';
 import SectionHeading from '../components/ui/SectionHeading';
 import Card from '../components/ui/Card';
 import Reveal from '../components/ui/Reveal';
 import { staggerContainerVariants, fadeUpVariants } from '../lib/animations';
-import { SECTION_IDS } from '../lib/constants';
+import { SECTION_IDS, EXTERNAL_LINKS } from '../lib/constants';
 import { openOrganizerModal } from '../components/ui/OrganizerModal';
-
-declare global {
-  interface Window {
-    Tally?: {
-      openPopup: (formId: string, options?: Record<string, unknown>) => void;
-      closePopup: (formId: string) => void;
-    };
-  }
-}
 
 interface TeamMember {
   id: number;
@@ -84,44 +75,6 @@ export function TeamContact() {
       linkedin: 'https://www.linkedin.com/in/shikhar-20306-singh/'
     }
   ];
-
-  // Helper to trigger Tally popup with dynamic script loader fallback
-  const handleOpenTally = (e: React.MouseEvent<HTMLButtonElement>) => {
-    e.preventDefault();
-    const tallyUrl = 'https://tally.so/r/ZjBZro';
-
-    const triggerPopup = () => {
-      if (typeof window !== 'undefined' && window.Tally && typeof window.Tally.openPopup === 'function') {
-        window.Tally.openPopup('ZjBZro', {
-          layout: 'modal',
-          width: 700,
-          hideTitle: true,
-          emoji: {
-            text: '👋',
-            animation: 'wave'
-          }
-        });
-        return true;
-      }
-      return false;
-    };
-
-    if (!triggerPopup()) {
-      // If Tally widget script is not yet initialized, load it dynamically
-      const script = document.createElement('script');
-      script.src = 'https://tally.so/widgets/embed.js';
-      script.async = true;
-      script.onload = () => {
-        if (!triggerPopup()) {
-          window.open(tallyUrl, '_blank', 'noopener,noreferrer');
-        }
-      };
-      script.onerror = () => {
-        window.open(tallyUrl, '_blank', 'noopener,noreferrer');
-      };
-      document.head.appendChild(script);
-    }
-  };
 
   const slugify = (name: string) => name.toLowerCase().replace(/\s+/g, '-');
 
@@ -204,33 +157,16 @@ export function TeamContact() {
                 Inquiry & Communication Portal
               </h4>
               <p className="text-xs text-[var(--color-text-body)] leading-relaxed max-w-md">
-                Have questions or want to collaborate with Syntaxis 2026? Reach out directly via our inquiry form or email <strong className="text-white underline">syntaxis@rdec.in</strong>.
+                Online inquiry forms are now closed as Syntaxis 2026 has concluded. For certificates, post-event queries, or future collaborations, please email our official desk at <strong className="text-white underline">syntaxis@rdec.in</strong>.
               </p>
 
-              <div className="flex items-center gap-2 w-full mt-2">
-                <button
-                  onClick={handleOpenTally}
-                  data-tally-open="ZjBZro"
-                  data-tally-layout="modal"
-                  data-tally-width="700"
-                  data-tally-hide-title="1"
-                  data-tally-emoji-text="👋"
-                  data-tally-emoji-animation="wave"
-                  className="flex-1 py-4 px-6 bg-[var(--color-brand)] text-[var(--color-bg)] font-extrabold text-sm uppercase tracking-wider font-heading rounded-[var(--radius-md)] hover:scale-105 hover:shadow-[0_0_25px_var(--color-brand-glow)] transition-all duration-200 cursor-pointer flex items-center justify-center gap-2 select-none"
-                >
-                  <span>Get In Touch</span>
-                  <Mail className="w-4 h-4" />
-                </button>
-
+              <div className="flex items-center justify-center w-full mt-3">
                 <a
-                  href="https://tally.so/r/ZjBZro"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  title="Open inquiry form in new tab"
-                  className="p-4 rounded-[var(--radius-md)] border border-[var(--color-border-gold)] bg-[var(--color-bg-glass)] text-[var(--color-brand)] hover:bg-[var(--color-brand)] hover:text-[var(--color-bg)] transition-all duration-200 cursor-pointer flex items-center justify-center"
-                  aria-label="Open inquiry form in new tab"
+                  href={EXTERNAL_LINKS.email}
+                  className="py-3.5 px-8 bg-[var(--color-brand)] text-[var(--color-bg)] font-extrabold text-sm uppercase tracking-wider font-heading rounded-[var(--radius-md)] hover:scale-105 hover:shadow-[0_0_25px_var(--color-brand-glow)] transition-all duration-200 cursor-pointer flex items-center justify-center gap-2 select-none"
                 >
-                  <ExternalLink className="w-5 h-5" />
+                  <Mail className="w-4 h-4" />
+                  <span>Email: syntaxis@rdec.in</span>
                 </a>
               </div>
             </div>

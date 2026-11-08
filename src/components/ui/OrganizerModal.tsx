@@ -69,7 +69,11 @@ export const ORGANIZERS: OrganizerDetail[] = [
     post: 'Documentation Head',
     image: `${import.meta.env.BASE_URL}assets/team/priya.png`,
     linkedin: 'https://www.linkedin.com/in/priya-sharma-48b247330',
-    about: ['[ABOUT ME — TO BE CONFIRMED]']
+    about: [
+      "I'm Priya Sharma, a Computer Science Engineering student at R.D. Engineering College in Ghaziabad. My interests sit right at the intersection of technology, innovation, and leadership, with a strong passion for web development and building real-world projects.",
+      "A big part of my college life is dedicated to community leadership and student wellbeing. I currently serve as the President of Sukham Club—having previously spent over a year as Vice President—where my team and I organize workshops, campaigns, and events focused on mental wellness, teamwork, and personal growth. I've also served as the Campus Secretary for the GfG Student Community at RDEC.",
+      "Whether I'm diving into new web technologies or managing campus initiatives, I'm always looking for ways to learn, collaborate, and create a positive impact."
+    ]
   },
   {
     slug: 'prabhati-pandey',
