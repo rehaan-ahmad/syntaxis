@@ -2,11 +2,12 @@ import { useState, useEffect, useCallback } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
 import { motion } from 'framer-motion';
-import { ChevronLeft, ChevronRight, ExternalLink, Download } from 'lucide-react';
+import { ChevronLeft, ChevronRight, ExternalLink, Download, XCircle } from 'lucide-react';
 import clsx from 'clsx';
 
 import { openTicketWidget } from '../ui/KonfHubModal';
 import { openTallyModal } from '../../lib/tally';
+import { FEST_HAS_ENDED } from '../../lib/constants';
 
 export interface EventCarouselProps {
   events: {
@@ -124,7 +125,12 @@ export function EventCarousel({
                       </a>
                     )}
 
-                    {event.tallyId ? (
+                    {FEST_HAS_ENDED ? (
+                      <div className="mt-4 w-full py-2.5 px-4 rounded-[var(--radius-md)] text-xs font-bold uppercase tracking-wider text-center font-heading border border-white/20 text-white/40 cursor-not-allowed flex items-center justify-center gap-2">
+                        <XCircle className="w-3.5 h-3.5" />
+                        <span>Registration Closed</span>
+                      </div>
+                    ) : event.tallyId ? (
                       <div className="mt-3 flex items-center gap-2">
                         <button
                           type="button"

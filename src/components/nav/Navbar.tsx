@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { Link as ScrollLink } from "react-scroll";
-import { Menu, X, ArrowUpRight, Home, User, Calendar, Clock, Globe, Ticket } from "lucide-react";
+import { Menu, X, ArrowUpRight, Home, User, Calendar, Clock, Globe, Ticket, Images } from "lucide-react";
 import clsx from "clsx";
 import { motion, AnimatePresence } from "framer-motion";
-import { SECTION_IDS, EXTERNAL_LINKS, REVEAL_DATE } from "../../lib/constants";
+import { SECTION_IDS, EXTERNAL_LINKS, REVEAL_DATE, FEST_HAS_ENDED } from "../../lib/constants";
 import { useIsRevealed } from "../../hooks/useCountdown";
 
 // Helper component for navigation links (scroll-based)
@@ -35,7 +35,10 @@ export function Navbar({ className, ...props }: React.HTMLAttributes<HTMLElement
     ],
     right: [
       { label: "Schedule", to: SECTION_IDS.schedule, icon: Clock },
-      { label: "Passes & Fees", to: SECTION_IDS.register, icon: Ticket },
+      ...(FEST_HAS_ENDED
+        ? [{ label: "Media", to: SECTION_IDS.media, icon: Images }]
+        : [{ label: "Passes & Fees", to: SECTION_IDS.register, icon: Ticket }]
+      ),
       ...(isRevealed ? [{ label: "Sponsors", to: SECTION_IDS.sponsors, icon: Globe }] : [])
     ]
   };
@@ -120,30 +123,56 @@ export function Navbar({ className, ...props }: React.HTMLAttributes<HTMLElement
                     <span>College</span>
                     <ArrowUpRight className="w-3.5 h-3.5 opacity-60" />
                   </a>
-                  {/* Register CTA Button */}
-                  <a 
-                    href={EXTERNAL_LINKS.konfhub}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="px-4 py-1.5 text-xs font-semibold text-[var(--color-bg)] bg-[var(--color-brand)] rounded-[var(--radius-md)] hover:scale-105 hover:shadow-[0_0_15px_var(--color-brand-glow)] transition-all duration-200 whitespace-nowrap inline-flex items-center gap-1"
-                  >
-                    <span>Register Now</span>
-                    <ArrowUpRight className="w-3 h-3" />
-                  </a>
+                  {/* Register / Media CTA Button */}
+                  {FEST_HAS_ENDED ? (
+                    <ScrollLink
+                      to={SECTION_IDS.media}
+                      smooth={true}
+                      duration={600}
+                      offset={-80}
+                      className="px-4 py-1.5 text-xs font-semibold text-[var(--color-bg)] bg-[var(--color-brand)] rounded-[var(--radius-md)] hover:scale-105 hover:shadow-[0_0_15px_var(--color-brand-glow)] transition-all duration-200 whitespace-nowrap inline-flex items-center gap-1 cursor-pointer"
+                    >
+                      <Images className="w-3 h-3" />
+                      <span>Media</span>
+                    </ScrollLink>
+                  ) : (
+                    <a 
+                      href={EXTERNAL_LINKS.konfhub}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-4 py-1.5 text-xs font-semibold text-[var(--color-bg)] bg-[var(--color-brand)] rounded-[var(--radius-md)] hover:scale-105 hover:shadow-[0_0_15px_var(--color-brand-glow)] transition-all duration-200 whitespace-nowrap inline-flex items-center gap-1"
+                    >
+                      <span>Register Now</span>
+                      <ArrowUpRight className="w-3 h-3" />
+                    </a>
+                  )}
                 </div>
               </nav>
 
               {/* Mobile Right Actions */}
               <div className="md:hidden flex items-center gap-2 mb-1">
-                <a 
-                  href={EXTERNAL_LINKS.konfhub}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-3 py-1.5 text-xs font-semibold text-[var(--color-bg)] bg-[var(--color-brand)] rounded-[var(--radius-md)] whitespace-nowrap inline-flex items-center gap-1 shadow-[0_0_10px_var(--color-brand-glow)]"
-                >
-                  <span>Register</span>
-                  <ArrowUpRight className="w-3 h-3" />
-                </a>
+                {FEST_HAS_ENDED ? (
+                  <ScrollLink
+                    to={SECTION_IDS.media}
+                    smooth={true}
+                    duration={600}
+                    offset={-80}
+                    className="px-3 py-1.5 text-xs font-semibold text-[var(--color-bg)] bg-[var(--color-brand)] rounded-[var(--radius-md)] whitespace-nowrap inline-flex items-center gap-1 shadow-[0_0_10px_var(--color-brand-glow)] cursor-pointer"
+                  >
+                    <Images className="w-3 h-3" />
+                    <span>Media</span>
+                  </ScrollLink>
+                ) : (
+                  <a 
+                    href={EXTERNAL_LINKS.konfhub}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-3 py-1.5 text-xs font-semibold text-[var(--color-bg)] bg-[var(--color-brand)] rounded-[var(--radius-md)] whitespace-nowrap inline-flex items-center gap-1 shadow-[0_0_10px_var(--color-brand-glow)]"
+                  >
+                    <span>Register</span>
+                    <ArrowUpRight className="w-3 h-3" />
+                  </a>
+                )}
               </div>
 
              </div>

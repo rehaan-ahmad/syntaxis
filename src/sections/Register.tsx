@@ -1,10 +1,10 @@
 import { Link as ScrollLink } from 'react-scroll';
-import { ArrowRight, Calendar, Compass, Ticket, Check, Sparkles, Award, ExternalLink, Download, AlertCircle } from 'lucide-react';
+import { Calendar, Ticket, Check, Sparkles, Award, AlertCircle, Download, XCircle, Images } from 'lucide-react';
 import CountdownTimer from '../components/ui/CountdownTimer';
 import Reveal from '../components/ui/Reveal';
 import { openTicketWidget } from '../components/ui/KonfHubModal';
 import { openTallyModal } from '../lib/tally';
-import { SECTION_IDS, EXTERNAL_LINKS, FEST_INFO, PASS_PRICES } from '../lib/constants';
+import { SECTION_IDS, EXTERNAL_LINKS, FEST_INFO, PASS_PRICES, FEST_HAS_ENDED } from '../lib/constants';
 
 export function Register() {
 
@@ -26,7 +26,7 @@ export function Register() {
           {/* Title Header */}
           <Reveal className="flex flex-col items-center gap-3">
             <h2 className="text-4xl sm:text-5xl md:text-6xl font-black font-heading tracking-wider leading-tight uppercase">
-              {FEST_INFO.name} — PASSES & REGISTRATION
+              {FEST_INFO.name} — PASSES &amp; REGISTRATION
             </h2>
             <div className="flex items-center gap-2 text-xs sm:text-sm font-semibold uppercase tracking-widest text-[var(--color-text-pri)]/90 opacity-90">
               <Calendar className="w-4 h-4" />
@@ -34,48 +34,68 @@ export function Register() {
             </div>
           </Reveal>
 
-          {/* Countdown Timer Block */}
+          {/* Countdown / Ended banner */}
           <Reveal className="w-full max-w-4xl p-6 rounded-[var(--radius-lg)] shadow-2xl border border-[var(--color-border-gold)]"
             style={{
               background: 'linear-gradient(to bottom, rgba(17, 16, 14, 0.65), rgba(26, 22, 17, 0.75))',
               backdropFilter: 'blur(12px)',
               WebkitBackdropFilter: 'blur(12px)'
-            }}
+            } as React.CSSProperties}
           >
             <CountdownTimer />
           </Reveal>
+
+          {/* Registration closed notice */}
+          {FEST_HAS_ENDED && (
+            <Reveal className="w-full max-w-3xl">
+              <div className="flex flex-col sm:flex-row items-center gap-4 px-6 py-5 rounded-[var(--radius-lg)] border border-[var(--color-brand)]/50 bg-[var(--color-brand)]/10 shadow-[0_0_30px_var(--color-brand-glow)]">
+                <XCircle className="w-8 h-8 text-[var(--color-brand)] shrink-0" />
+                <div className="flex flex-col text-left">
+                  <span className="text-base font-bold font-heading text-[var(--color-text-pri)] uppercase tracking-wide">
+                    Registration is Now Closed
+                  </span>
+                  <span className="text-xs text-[var(--color-text-body)] mt-1 leading-relaxed">
+                    Syntaxis 2026 has successfully concluded. All ticket purchases and form registrations are closed.
+                    Thank you to everyone who participated!
+                  </span>
+                </div>
+              </div>
+            </Reveal>
+          )}
 
           {/* Pass Pricing Grid */}
           <Reveal className="w-full flex flex-col gap-6">
             <div className="flex flex-col items-center gap-2">
               <div className="flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-[var(--color-brand)] font-heading">
                 <Ticket className="w-4 h-4" />
-                <span>OFFICIAL EVENT PASSES & TICKETS</span>
+                <span>OFFICIAL EVENT PASSES &amp; TICKETS</span>
               </div>
-              <span className="text-[11px] font-mono text-white/70 bg-black/40 px-3 py-1 rounded-full border border-white/10">
-                * All paid ticket prices are subject to additional {PASS_PRICES.taxRate} platform fee at checkout
-              </span>
+              {!FEST_HAS_ENDED && (
+                <span className="text-[11px] font-mono text-white/70 bg-black/40 px-3 py-1 rounded-full border border-white/10">
+                  * All paid ticket prices are subject to additional {PASS_PRICES.taxRate} platform fee at checkout
+                </span>
+              )}
             </div>
 
-            {/* Pricing Cards Grid (3 Columns on Large Screens) */}
+            {/* Pricing Cards Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-left mt-2">
               {PASS_PRICES.passes.map((pass) => (
                 <div 
                   key={pass.id}
                   className={`relative flex flex-col justify-between p-6 rounded-[var(--radius-xl)] transition-all duration-300 ${
-                    pass.popular 
+                    pass.popular && !FEST_HAS_ENDED
                       ? 'border-2 border-[var(--color-brand)] shadow-[0_0_30px_var(--color-brand-glow)] scale-[1.02]'
-                      : 'border border-white/20 hover:border-[var(--color-brand)]/60 shadow-lg'
-                  }`}
+                      : 'border border-white/20 shadow-lg'
+                  } ${FEST_HAS_ENDED ? 'opacity-70' : ''}`}
                   style={{
-                    background: pass.popular 
+                    background: pass.popular && !FEST_HAS_ENDED
                       ? 'linear-gradient(to bottom, rgba(166, 125, 69, 0.35), rgba(17, 16, 14, 0.80))'
                       : 'rgba(17, 16, 14, 0.65)',
                     backdropFilter: 'blur(12px)',
                     WebkitBackdropFilter: 'blur(12px)'
                   }}
                 >
-                {pass.badge && (
+                {pass.badge && !FEST_HAS_ENDED && (
                   <span className="absolute -top-3 right-4 bg-[var(--color-brand)] text-[var(--color-bg)] text-[9px] font-black uppercase px-3 py-1 rounded-full tracking-widest flex items-center gap-1 shadow-md">
                     <Sparkles className="w-3 h-3" /> {pass.badge}
                   </span>
@@ -87,9 +107,11 @@ export function Register() {
                   </h3>
                   <div className="my-3 flex items-baseline gap-2 border-b border-white/10 pb-3">
                     <span className="text-2xl sm:text-3xl font-extrabold font-mono text-[var(--color-brand)]">{pass.price}</span>
-                    <span className="text-[10px] text-white/70 font-mono">
-                      {pass.isFree ? '• No Platform Fee' : '+ 3.75% platform fee'}
-                    </span>
+                    {!FEST_HAS_ENDED && (
+                      <span className="text-[10px] text-white/70 font-mono">
+                        {pass.isFree ? '• No Platform Fee' : '+ 3.75% platform fee'}
+                      </span>
+                    )}
                   </div>
 
                   {pass.prizePool && (
@@ -103,15 +125,15 @@ export function Register() {
                     {pass.description}
                   </p>
 
-                  {/* Archithon Mandatory Consent Form Action in Pass Card */}
-                  {pass.id === 'archithon' && (
+                  {/* Archithon Consent Form — only pre-fest */}
+                  {pass.id === 'archithon' && !FEST_HAS_ENDED && (
                     <div className="mb-4 p-2.5 rounded-[var(--radius-md)] bg-[#191613] border border-[var(--color-border-gold)] flex flex-col gap-1.5 text-[10px]">
                       <div className="flex items-center gap-1.5 text-[var(--color-brand)] font-bold font-mono">
                         <AlertCircle className="w-3.5 h-3.5 shrink-0" />
                         <span>MANDATORY CONSENT LETTER</span>
                       </div>
                       <p className="text-[10px] text-[#cdbbad] leading-tight">
-                        Fill, print, sign & email in a single PDF to <strong className="text-white underline">syntaxis@rdec.in</strong>.
+                        Fill, print, sign &amp; email in a single PDF to <strong className="text-white underline">syntaxis@rdec.in</strong>.
                       </p>
                       <a
                         href={`${import.meta.env.BASE_URL}docs/archithon-consent.html`}
@@ -126,7 +148,13 @@ export function Register() {
                   )}
                 </div>
 
-                {pass.isFree ? (
+                {/* CTA: closed vs open */}
+                {FEST_HAS_ENDED ? (
+                  <div className="mt-4 w-full py-2.5 px-4 rounded-[var(--radius-md)] text-xs font-bold uppercase tracking-wider text-center font-heading border border-white/20 text-white/40 cursor-not-allowed flex items-center justify-center gap-2">
+                    <XCircle className="w-3.5 h-3.5" />
+                    <span>Registration Closed</span>
+                  </div>
+                ) : pass.isFree ? (
                   <div className="mt-4 flex items-center gap-2">
                     <button 
                       type="button"
@@ -141,18 +169,6 @@ export function Register() {
                       <Check className="w-3.5 h-3.5" />
                       <span>Register for Free</span>
                     </button>
-                    {pass.tallyId && (
-                      <a
-                        href={`https://tally.so/r/${pass.tallyId}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        title="Open form in new tab"
-                        className="p-2.5 rounded-[var(--radius-md)] border border-[var(--color-brand)] bg-[var(--color-bg-glass)] text-[var(--color-brand)] hover:bg-[var(--color-brand)] hover:text-[var(--color-bg)] transition-all cursor-pointer flex items-center justify-center"
-                        aria-label={`Open ${pass.title} in new tab`}
-                      >
-                        <ExternalLink className="w-4 h-4" />
-                      </a>
-                    )}
                   </div>
                 ) : (
                   <button 
@@ -169,44 +185,66 @@ export function Register() {
                   </button>
                 )}
               </div>
-            ))}
-          </div>
-        </Reveal>
+              ))}
+            </div>
+          </Reveal>
 
-        {/* Call to Action Buttons */}
-        <Reveal className="flex flex-wrap gap-4 justify-center items-center mt-2">
-          {/* Gold button */}
-          <a 
-            href={EXTERNAL_LINKS.konfhub}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 bg-[var(--color-brand)] text-[var(--color-bg)] font-bold px-8 py-3.5 rounded-[var(--radius-md)] hover:scale-105 hover:shadow-[0_0_25px_var(--color-brand-glow)] transition-all duration-200 text-sm uppercase tracking-wider font-heading"
-          >
-            <span>Register Now</span>
-            <ArrowRight className="w-4 h-4" />
-          </a>
-          
-          {/* Scroll link */}
-          <ScrollLink 
-            to={SECTION_IDS.events}
-            smooth={true}
-            duration={600}
-            offset={-80}
-            className="flex items-center gap-2 border border-white text-white hover:bg-white hover:text-[var(--color-accent)] font-semibold px-8 py-3.5 rounded-[var(--radius-md)] transition-all duration-200 cursor-pointer text-sm uppercase tracking-wider font-heading text-center"
-          >
-            <Compass className="w-4 h-4" />
-            <span>View Events Sprint</span>
-          </ScrollLink>
-        </Reveal>
+          {/* CTA row */}
+          <Reveal className="flex flex-wrap gap-4 justify-center items-center mt-2">
+            {FEST_HAS_ENDED ? (
+              <>
+                <ScrollLink
+                  to={SECTION_IDS.media}
+                  smooth={true}
+                  duration={600}
+                  offset={-80}
+                  className="flex items-center gap-2 bg-[var(--color-brand)] text-[var(--color-bg)] font-bold px-8 py-3.5 rounded-[var(--radius-md)] hover:scale-105 hover:shadow-[0_0_25px_var(--color-brand-glow)] transition-all duration-200 text-sm uppercase tracking-wider font-heading cursor-pointer"
+                >
+                  <Images className="w-4 h-4" />
+                  <span>View Media Gallery</span>
+                </ScrollLink>
+                <ScrollLink
+                  to={SECTION_IDS.events}
+                  smooth={true}
+                  duration={600}
+                  offset={-80}
+                  className="flex items-center gap-2 border border-white text-white hover:bg-white hover:text-[var(--color-accent)] font-semibold px-8 py-3.5 rounded-[var(--radius-md)] transition-all duration-200 cursor-pointer text-sm uppercase tracking-wider font-heading text-center"
+                >
+                  <span>Explore Events</span>
+                </ScrollLink>
+              </>
+            ) : (
+              <>
+                <a 
+                  href={EXTERNAL_LINKS.konfhub}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 bg-[var(--color-brand)] text-[var(--color-bg)] font-bold px-8 py-3.5 rounded-[var(--radius-md)] hover:scale-105 hover:shadow-[0_0_25px_var(--color-brand-glow)] transition-all duration-200 text-sm uppercase tracking-wider font-heading"
+                >
+                  <span>Register Now</span>
+                </a>
+                <ScrollLink 
+                  to={SECTION_IDS.events}
+                  smooth={true}
+                  duration={600}
+                  offset={-80}
+                  className="flex items-center gap-2 border border-white text-white hover:bg-white hover:text-[var(--color-accent)] font-semibold px-8 py-3.5 rounded-[var(--radius-md)] transition-all duration-200 cursor-pointer text-sm uppercase tracking-wider font-heading text-center"
+                >
+                  <span>View Events Sprint</span>
+                </ScrollLink>
+              </>
+            )}
+          </Reveal>
 
-        {/* Registration footnote */}
-        <Reveal className="text-[10px] sm:text-xs font-semibold tracking-widest text-white/60 uppercase">
-          * Paid ticket prices are subject to an additional 3.75% platform fee at checkout. Free events register directly.
-        </Reveal>
-      </div>
-    </section>
-  </div>
-);
+          {!FEST_HAS_ENDED && (
+            <Reveal className="text-[10px] sm:text-xs font-semibold tracking-widest text-white/60 uppercase">
+              * Paid ticket prices are subject to an additional 3.75% platform fee at checkout. Free events register directly.
+            </Reveal>
+          )}
+        </div>
+      </section>
+    </div>
+  );
 }
 
 export default Register;

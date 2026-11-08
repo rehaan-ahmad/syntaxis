@@ -3,7 +3,7 @@ import { Link as ScrollLink } from 'react-scroll';
 import { ChevronDown, ArrowRight, ArrowUpRight } from 'lucide-react';
 import CountdownTimer from '../components/ui/CountdownTimer';
 import { Instagram, Linkedin } from '../components/icons/SocialIcons';
-import { SECTION_IDS, EXTERNAL_LINKS, FEST_INFO } from '../lib/constants';
+import { SECTION_IDS, EXTERNAL_LINKS, FEST_INFO, FEST_HAS_ENDED } from '../lib/constants';
 
 export function Hero() {
   const containerVariants = {
@@ -138,27 +138,55 @@ export function Hero() {
 
         {/* Action Call-to-actions */}
         <motion.div variants={itemVariants} className="flex flex-wrap gap-4 justify-center items-center mt-2">
-          {/* Primary CTA (Gold) */}
-          <a
-            href={EXTERNAL_LINKS.konfhub}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 bg-[var(--color-brand)] text-[var(--color-bg)] font-bold px-8 py-3.5 rounded-[var(--radius-md)] hover:scale-105 hover:shadow-[0_0_20px_var(--color-brand-glow)] transition-all duration-200 whitespace-nowrap text-sm font-heading uppercase"
-          >
-            <span>Register Now</span>
-            <ArrowRight className="w-4 h-4" />
-          </a>
+          {FEST_HAS_ENDED ? (
+            <>
+              {/* Post-fest: View Media */}
+              <ScrollLink
+                to={SECTION_IDS.media}
+                smooth={true}
+                duration={600}
+                offset={-80}
+                className="flex items-center gap-2 bg-[var(--color-brand)] text-[var(--color-bg)] font-bold px-8 py-3.5 rounded-[var(--radius-md)] hover:scale-105 hover:shadow-[0_0_20px_var(--color-brand-glow)] transition-all duration-200 whitespace-nowrap text-sm font-heading uppercase cursor-pointer"
+              >
+                <span>View Media</span>
+                <ArrowRight className="w-4 h-4" />
+              </ScrollLink>
 
-          {/* Secondary CTA (Outlined accent) */}
-          <ScrollLink
-            to={SECTION_IDS.events}
-            smooth={true}
-            duration={600}
-            offset={-80}
-            className="border border-[var(--color-accent)] text-[var(--color-text-pri)] font-semibold px-8 py-3.5 rounded-[var(--radius-md)] hover:bg-[var(--color-accent)] hover:text-white transition-all duration-200 cursor-pointer whitespace-nowrap text-sm text-center font-heading uppercase"
-          >
-            Explore Events
-          </ScrollLink>
+              {/* Post-fest: Explore Events (read-only) */}
+              <ScrollLink
+                to={SECTION_IDS.events}
+                smooth={true}
+                duration={600}
+                offset={-80}
+                className="border border-[var(--color-accent)] text-[var(--color-text-pri)] font-semibold px-8 py-3.5 rounded-[var(--radius-md)] hover:bg-[var(--color-accent)] hover:text-white transition-all duration-200 cursor-pointer whitespace-nowrap text-sm text-center font-heading uppercase"
+              >
+                Explore Events
+              </ScrollLink>
+            </>
+          ) : (
+            <>
+              {/* Pre-fest: Register CTA */}
+              <a
+                href={EXTERNAL_LINKS.konfhub}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 bg-[var(--color-brand)] text-[var(--color-bg)] font-bold px-8 py-3.5 rounded-[var(--radius-md)] hover:scale-105 hover:shadow-[0_0_20px_var(--color-brand-glow)] transition-all duration-200 whitespace-nowrap text-sm font-heading uppercase"
+              >
+                <span>Register Now</span>
+                <ArrowRight className="w-4 h-4" />
+              </a>
+
+              <ScrollLink
+                to={SECTION_IDS.events}
+                smooth={true}
+                duration={600}
+                offset={-80}
+                className="border border-[var(--color-accent)] text-[var(--color-text-pri)] font-semibold px-8 py-3.5 rounded-[var(--radius-md)] hover:bg-[var(--color-accent)] hover:text-white transition-all duration-200 cursor-pointer whitespace-nowrap text-sm text-center font-heading uppercase"
+              >
+                Explore Events
+              </ScrollLink>
+            </>
+          )}
         </motion.div>
 
         {/* Bouncing Scroll indicator at bottom */}

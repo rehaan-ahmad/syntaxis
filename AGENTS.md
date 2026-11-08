@@ -8,7 +8,7 @@
 
 **Site:** SYNTAXIS 2026 — Inter-college Tech Fest  
 **College:** R.D. Engineering College (RDEC), Ghaziabad  
-**Dates:** September 18-20, 2026  
+**Dates:** October 29-31
 **Scale:** 25+ NCR Colleges, 700–900 participants  
 **Contact:** syntaxis@rdec.in  
 **EMS:** Pragma (separate system — link only, do not build here)

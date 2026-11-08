@@ -11,9 +11,14 @@ export const SECTION_IDS = {
   speakers: 'speakers',
   sponsors: 'sponsors',
   register: 'register',
+  media:    'media',
   faq:      'faq',
   contact:  'contact',
 } as const
+
+/** True once the fest end date has passed (Oct 31 2026, 23:59 IST) */
+export const FEST_ENDED_DATE = new Date('2026-10-31T23:59:00+05:30').getTime();
+export const FEST_HAS_ENDED = Date.now() >= FEST_ENDED_DATE;
 
 export const EXTERNAL_LINKS = {
   konfhub:      'https://konfhub.com/syntaxis-2026',

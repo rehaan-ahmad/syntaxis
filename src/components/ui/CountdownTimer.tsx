@@ -15,8 +15,16 @@ export function CountdownTimer() {
 
   if (isExpired) {
     return (
-      <div className="text-center font-semibold text-[var(--color-brand)] text-2xl tracking-wider py-4 font-heading">
-        SYNTAXIS 2026 HAS BEGUN!
+      <div className="flex flex-col items-center gap-1 py-4 select-none">
+        <span className="text-3xl sm:text-4xl md:text-5xl font-black font-heading tracking-widest text-[var(--color-brand)] drop-shadow-[0_0_20px_var(--color-brand-glow)] uppercase text-center">
+          Syntaxis 2026
+        </span>
+        <span className="text-lg sm:text-2xl md:text-3xl font-bold font-heading tracking-[0.3em] text-[var(--color-text-pri)] uppercase text-center">
+          Has Ended!
+        </span>
+        <span className="text-xs font-mono text-[var(--color-text-sec)] tracking-widest mt-1 uppercase">
+          Thank you to all participants &amp; attendees
+        </span>
       </div>
     );
   }

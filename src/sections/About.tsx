@@ -8,8 +8,8 @@ import { SECTION_IDS, FEST_INFO } from '../lib/constants';
 
 export function About() {
   const stats = [
-    { value: FEST_INFO.colleges, label: 'NCR Colleges Participating' },
-    { value: FEST_INFO.participants, label: 'Expected Participants' },
+    { value: FEST_INFO.colleges, label: 'NCR Colleges Participated' },
+    { value: FEST_INFO.participants, label: 'Attendees & Participants' },
     { value: '3 Days', label: 'Tech & Non-Tech Events' }
   ];
 

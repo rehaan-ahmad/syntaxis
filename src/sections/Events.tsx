@@ -1,14 +1,13 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ExternalLink, Download, AlertCircle } from 'lucide-react';
-import clsx from 'clsx';
+import { ExternalLink, Download, AlertCircle, XCircle } from 'lucide-react';import clsx from 'clsx';
 import SectionHeading from '../components/ui/SectionHeading';
 import Card from '../components/ui/Card';
 import Badge from '../components/ui/Badge';
 import EventCarousel from '../components/carousel/EventCarousel';
 import { openTicketWidget } from '../components/ui/KonfHubModal';
 import { openTallyModal } from '../lib/tally';
-import { SECTION_IDS, EXTERNAL_LINKS } from '../lib/constants';
+import { SECTION_IDS, EXTERNAL_LINKS, FEST_HAS_ENDED } from '../lib/constants';
 
 export interface EventItem {
   title: string;
@@ -223,7 +222,12 @@ export function Events() {
                         </div>
                       )}
                       
-                      {event.tallyId ? (
+                      {FEST_HAS_ENDED ? (
+                        <div className="w-full py-2.5 px-4 rounded-[var(--radius-md)] text-xs font-bold uppercase tracking-wider text-center font-heading border border-white/20 text-white/40 cursor-not-allowed flex items-center justify-center gap-2">
+                          <XCircle className="w-3.5 h-3.5" />
+                          <span>Registration Closed</span>
+                        </div>
+                      ) : event.tallyId ? (
                         <div className="flex items-center gap-2 w-full">
                           <button 
                             type="button"

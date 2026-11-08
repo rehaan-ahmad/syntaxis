@@ -6,6 +6,7 @@ import Card from '../components/ui/Card';
 import Reveal from '../components/ui/Reveal';
 import { staggerContainerVariants, fadeUpVariants } from '../lib/animations';
 import { SECTION_IDS } from '../lib/constants';
+import { openOrganizerModal } from '../components/ui/OrganizerModal';
 
 declare global {
   interface Window {
@@ -142,38 +143,42 @@ export function TeamContact() {
             className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 justify-center"
           >
             {team.map((member) => {
-              const aboutUrl = `${import.meta.env.BASE_URL}#organizer-about?member=${slugify(member.name)}`;
+              const slug = slugify(member.name);
               return (
                 <motion.div key={member.id} className={member.id===7 ? 'sm:col-start-1 sm:col-span-2 sm:mx-auto sm:w-1/2 lg:col-span-1 lg:col-start-2 lg:w-full lg:mx-0' : ''} variants={fadeUpVariants}>
                   <Card className="flex flex-col items-center text-center p-6 border border-[var(--color-border)] hover:border-[var(--color-border-gold)] transition-colors duration-300">
-                    {/* About link: image, name, role */}
-                    <a
-                      href={aboutUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex flex-col items-center w-full"
+                    {/* About trigger button: image, name, role */}
+                    <button
+                      type="button"
+                      onClick={() => openOrganizerModal(slug)}
+                      className="flex flex-col items-center w-full group cursor-pointer focus:outline-none"
+                      aria-label={`View about ${member.name}`}
                     >
-                      <div className="w-28 h-28 aspect-square rounded-full overflow-hidden border border-[var(--color-border)] mb-4 shrink-0">
+                      <div className="w-28 h-28 aspect-square rounded-full overflow-hidden border border-[var(--color-border)] group-hover:border-[var(--color-brand)] transition-colors mb-4 shrink-0 shadow-md">
                         <img
                           src={member.image}
                           alt={`[${member.name} — 1:1 Profile Photo]`}
-                          className="w-full h-full object-cover"
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                           loading="lazy"
                         />
                       </div>
-                      <h5 className="font-bold text-[var(--color-text-pri)] font-heading tracking-wide mb-1 px-1">
+                      <h5 className="font-bold text-[var(--color-text-pri)] group-hover:text-[var(--color-brand)] transition-colors font-heading tracking-wide mb-1 px-1">
                         {member.name}
                       </h5>
-                      <span className="text-xs text-[var(--color-brand)] font-semibold uppercase tracking-wider mb-4">
+                      <span className="text-xs text-[var(--color-brand)] font-semibold uppercase tracking-wider mb-2">
                         {member.role}
                       </span>
-                    </a>
+                      <span className="text-[11px] text-[var(--color-text-sec)] underline underline-offset-4 opacity-75 group-hover:opacity-100 transition-opacity">
+                        Read About Me
+                      </span>
+                    </button>
                     {/* LinkedIn icon */}
                     <a
                       href={member.linkedin}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="mt-4"
+                      className="mt-4 p-2 text-[var(--color-text-sec)] hover:text-[var(--color-brand)] transition-colors rounded-full hover:bg-white/5"
+                      aria-label={`${member.name} LinkedIn Profile`}
                     >
                       <Linkedin className="w-4 h-4" />
                     </a>

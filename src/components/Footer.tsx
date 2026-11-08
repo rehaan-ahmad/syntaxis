@@ -1,9 +1,8 @@
 import { Link as ScrollLink } from 'react-scroll';
 import { Mail } from 'lucide-react';
 import { Instagram, Linkedin } from './icons/SocialIcons';
-import { SECTION_IDS, EXTERNAL_LINKS, FEST_INFO, REVEAL_DATE } from '../lib/constants';
+import { SECTION_IDS, EXTERNAL_LINKS, FEST_INFO, REVEAL_DATE, FEST_HAS_ENDED } from '../lib/constants';
 import { useIsRevealed } from '../hooks/useCountdown';
-
 export function Footer() {
   const isRevealed = useIsRevealed(REVEAL_DATE);
   return (
@@ -26,7 +25,10 @@ export function Footer() {
               </span>
             </div>
             <p className="text-xs text-[var(--color-text-body)] leading-relaxed max-w-sm">
-              {FEST_INFO.name} — R.D. Engineering College (RDEC) Ghaziabad. Join the NCR's ultimate inter-college tech fest from {FEST_INFO.dates}.
+              {FEST_INFO.name} — R.D. Engineering College (RDEC) Ghaziabad.{' '}
+              {FEST_HAS_ENDED
+                ? `The NCR's premier inter-college tech fest was held ${FEST_INFO.dates}. Thank you to all participants!`
+                : `Join the NCR's ultimate inter-college tech fest from ${FEST_INFO.dates}.`}
             </p>
             {/* Social Icons */}
             <div className="flex gap-3 items-center mt-2">
@@ -103,6 +105,15 @@ export function Footer() {
                 className="text-[var(--color-text-sec)] hover:text-[var(--color-text-pri)] transition-colors cursor-pointer w-fit"
               >
                 Register
+              </ScrollLink>
+              <ScrollLink
+                to={SECTION_IDS.media}
+                smooth={true}
+                duration={600}
+                offset={-80}
+                className="text-[var(--color-text-sec)] hover:text-[var(--color-text-pri)] transition-colors cursor-pointer w-fit"
+              >
+                Media
               </ScrollLink>
               <ScrollLink
                 to={SECTION_IDS.contact}

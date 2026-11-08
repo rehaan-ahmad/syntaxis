@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import MouseEffects from './components/effects/MouseEffects';
 import ScrollProgress from './components/ui/ScrollProgress';
 import ScrollToTop from './components/ui/ScrollToTop';
+import FestEndedBanner from './components/ui/FestEndedBanner';
 import Navbar from './components/nav/Navbar';
 import Hero from './sections/Hero';
 import About from './sections/About';
@@ -11,14 +12,16 @@ import Schedule from './sections/Schedule';
 import Speakers from './sections/Speakers';
 import Sponsors from './sections/Sponsors';
 import Register from './sections/Register';
+import Media from './sections/Media';
 import FAQ from './sections/FAQ';
 import TeamContact from './sections/TeamContact';
-import { OrganizerAbout } from './sections/OrganizerAbout';
 import Footer from './components/Footer';
 import NotFound from './components/ui/NotFound';
 import PrivacyPolicy from './components/ui/PrivacyPolicy';
 import KonfHubModal from './components/ui/KonfHubModal';
+import OrganizerModal from './components/ui/OrganizerModal';
 import FluidBg from './components/bg/FluidBg';
+import { FEST_HAS_ENDED } from './lib/constants';
 
 
 
@@ -121,6 +124,9 @@ export function App() {
       {/* Notch navigation bar */}
       <Navbar />
 
+      {/* Post-fest announcement banner */}
+      {FEST_HAS_ENDED && <FestEndedBanner />}
+
       {/* Section segments flow */}
       <main className="relative z-10 w-full overflow-x-hidden">
         <section id="home">
@@ -153,16 +159,17 @@ export function App() {
           <Register />
         </section>
         
+        {/* Media Gallery — always shown post-fest */}
+        <section id="media">
+          <Media />
+        </section>
+
         <section id="faq">
           <FAQ />
         </section>
         
         <section id="contact">
           <TeamContact />
-        </section>
-
-        <section id="organizer-about">
-          <OrganizerAbout />
         </section>
       </main>
 
@@ -174,6 +181,9 @@ export function App() {
       
       {/* KonfHub Ticket Checkout Modal */}
       <KonfHubModal />
+
+      {/* Organizer About Modal */}
+      <OrganizerModal />
     </>
   );
 }
